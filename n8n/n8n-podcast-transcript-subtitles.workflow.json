@@ -76,7 +76,7 @@
           "cachedResultName": "tidytools/audio-transcriber",
           "cachedResultUrl": "https://console.apify.com/actors/3W2KtIbvHitDH8GCc/input"
         },
-        "customBody": "={\n  \"podcastFeeds\": [\"{{ $json.feedUrl }}\"],\n  \"episodesSince\": \"7 days\",\n  \"maxEpisodesPerFeed\": 1,\n  \"newEpisodesOnly\": true,\n  \"monitorName\": \"{{ $json.monitorName }}\",\n  \"summarize\": true,\n  \"saveSubtitles\": true\n}",
+        "customBody": "={\n  \"podcastFeeds\": [\"{{ $json.feedUrl }}\"],\n  \"episodesSince\": \"7 days\",\n  \"maxEpisodesPerFeed\": 1,\n  \"newEpisodesOnly\": true,\n  \"monitorName\": \"{{ $json.monitorName }}\",\n  \"summarize\": true,\n  \"saveSubtitles\": true,\n  \"subtitleLanguages\": {{ JSON.stringify($json.subtitleLanguages) }}\n}",
         "memory": 1024,
         "maxTotalChargeUsd": 1
       }
@@ -116,31 +116,6 @@
       }
     },
     {
-      "id": "5c2d9f7a-3e41-4b8a-b1d2-7a9e0c2b0005",
-      "name": "Translate subtitles",
-      "type": "@apify/n8n-nodes-apify.apify",
-      "typeVersion": 1,
-      "position": [
-        920,
-        300
-      ],
-      "parameters": {
-        "resource": "Actors",
-        "operation": "Run actor and get dataset",
-        "actorSource": "store",
-        "actorId": {
-          "__rl": true,
-          "mode": "list",
-          "value": "Z8R6afk16yObrJais",
-          "cachedResultName": "tidytools/web-page-translator",
-          "cachedResultUrl": "https://console.apify.com/actors/Z8R6afk16yObrJais/input"
-        },
-        "customBody": "={\n  \"subtitleUrls\": [\"{{ $json.srtUrl }}\"],\n  \"targetLanguages\": {{ JSON.stringify($('Podcast settings').first().json.subtitleLanguages) }}\n}",
-        "memory": 1024,
-        "maxTotalChargeUsd": 0.5
-      }
-    },
-    {
       "id": "5c2d9f7a-3e41-4b8a-b1d2-7a9e0c2b0006",
       "name": "Episode package",
       "type": "n8n-nodes-base.set",
@@ -156,31 +131,31 @@
               "id": "e1",
               "name": "Episode",
               "type": "string",
-              "value": "={{ $('Only new transcripts').item.json.episodeTitle }}"
+              "value": "={{ $json.episodeTitle }}"
             },
             {
               "id": "e2",
               "name": "Summary",
               "type": "string",
-              "value": "={{ $('Only new transcripts').item.json.summary }}"
+              "value": "={{ $json.summary }}"
             },
             {
               "id": "e3",
               "name": "Original SRT",
               "type": "string",
-              "value": "={{ $('Only new transcripts').item.json.srtUrl }}"
+              "value": "={{ $json.srtUrl }}"
             },
             {
               "id": "e4",
-              "name": "Language",
+              "name": "Translated SRT",
               "type": "string",
-              "value": "={{ $json.targetLanguage }}"
+              "value": "={{ ($json.translatedSubtitles || []).filter(s => s.success).map(s => s.languageName + ': ' + s.srtUrl).join('\\n') }}"
             },
             {
               "id": "e5",
-              "name": "Translated SRT",
+              "name": "Subtitle languages failed",
               "type": "string",
-              "value": "={{ $json.translatedSubtitleUrl }}"
+              "value": "={{ ($json.translatedSubtitles || []).filter(s => !s.success).map(s => s.languageName).join(', ') }}"
             }
           ]
         },
@@ -200,7 +175,7 @@
         "color": 4,
         "width": 380,
         "height": 600,
-        "content": "## Podcast episode to transcript, summary and subtitles in other languages\n\n**Who it's for:** podcasters, video teams and media monitors who want show notes and subtitles without uploading files by hand.\n\n**What it does:** every morning, checks your RSS feed. Each new episode is transcribed (timestamps, summary, chapters, SRT). The SRT is then translated cue by cue into the languages you choose, with every timestamp kept.\n\n**Cost (Apify pay-per-event, Sept 2026):** transcription $0.006 per audio minute + summary $0.01 per episode; subtitle translation $1.50 per million characters, about $0.0014 per audio minute per language. A 30-minute episode with 2 subtitle languages is about $0.27.\n\n**Tested on:** 10 public-domain / CC files (NASA podcasts, Wikimedia interviews, a 62-minute episode). Timestamps within ~0.5 s of the official captions; translated SRT kept 100% of the timings.\n\n### Setup\n1. Add your Apify credential to both Apify nodes.\n2. Put your feed URL, a monitor name and the languages in **Podcast settings**.\n3. Send **Episode package** wherever you publish (Notion, Google Drive, Slack, WordPress...).\n\nThe monitor name remembers what was transcribed, so episodes are never paid for twice. `episodesSince: \"7 days\"` stops the daily run from working back through the feed's archive when there is no new episode; widen it (e.g. \"30 days\") for a first test run."
+        "content": "## Podcast episode to transcript, summary and subtitles in other languages\n\n**Who it's for:** podcasters, video teams and media monitors who want show notes and subtitles without uploading files by hand.\n\n**What it does:** every morning, checks your RSS feed. Each new episode is transcribed (timestamps, summary, chapters, SRT) and, in the same Apify run, its subtitles are translated into the languages you choose, with every timestamp and speaker label kept.\n\n**Cost (Apify pay-per-event, Sept 2026):** transcription $0.006 per audio minute + summary $0.01 per episode; translated subtitles $0.002 per audio minute per language (charged only for languages that succeed). A 30-minute episode with 2 subtitle languages is about $0.31.\n\n**Tested on:** 10 public-domain / CC files (NASA podcasts, Wikimedia interviews, a 62-minute episode). Timestamps within ~0.5 s of the official captions; translated SRT kept 100% of the timings.\n\n### Setup\n1. Add your Apify credential to the Apify node.\n2. Put your feed URL, a monitor name and the languages in **Podcast settings**.\n3. Send **Episode package** wherever you publish (Notion, Google Drive, Slack, WordPress...).\n\nThe monitor name remembers what was transcribed, so episodes are never paid for twice. `episodesSince: \"7 days\"` stops the daily run from working back through the feed's archive when there is no new episode; widen it (e.g. \"30 days\") for a first test run."
       }
     }
   ],
@@ -239,17 +214,6 @@
       ]
     },
     "Only new transcripts": {
-      "main": [
-        [
-          {
-            "node": "Translate subtitles",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Translate subtitles": {
       "main": [
         [
           {
