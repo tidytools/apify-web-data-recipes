@@ -22,8 +22,8 @@ Tested end to end on 2026-09-30 (self-hosted n8n 2.41.4, Apify node 0.8.0): 5 de
 
 File: [`n8n-podcast-transcript-subtitles.workflow.json`](n8n-podcast-transcript-subtitles.workflow.json)
 
-Every morning, transcribes new episodes of a podcast feed with [Audio & Video Transcriber](https://apify.com/tidytools/audio-transcriber) (transcript, summary, SRT/VTT subtitles; only episodes from the last 7 days that were not transcribed before) and translates the subtitles with [Bulk Text & JSON Translator](https://apify.com/tidytools/web-page-translator), keeping every timestamp.
+Every morning, transcribes new episodes of a podcast feed with [Audio & Video Transcriber](https://apify.com/tidytools/audio-transcriber) (transcript, summary, SRT/VTT subtitles; only episodes newer than the last one transcribed) and, in the same run, translates the subtitles into the languages you choose (`subtitleLanguages`), keeping every timestamp and speaker label.
 
-TidyTools Actors used: audio-transcriber, web-page-translator.
+TidyTools Actor used: audio-transcriber.
 
 Tested end to end on 2026-09-30 (self-hosted n8n 2.41.4, Apify node 0.8.0): NASA "Houston We Have a Podcast", 63-minute episode, Spanish + German: 2 rows (one per language) with summary and original + translated SRT; about 9.5 min end to end.
