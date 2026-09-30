@@ -1,0 +1,10 @@
+{
+  "name": "apify-web-data-recipes",
+  "private": true,
+  "type": "module",
+  "description": "Copy-paste recipes for TidyTools Apify Actors",
+  "license": "MIT",
+  "dependencies": {
+    "apify-client": "^2.25.0"
+  }
+}
