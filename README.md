@@ -85,7 +85,7 @@ A ready-made configuration for six of these Actors, listed in the official MCP R
 
 ## n8n
 
-[`n8n/`](n8n/) has two workflows that were executed end to end: Google Maps leads enriched with emails and company data, and podcast episodes to transcripts and translated subtitles.
+[`n8n/`](n8n/) has five workflows that were executed end to end: a weekly AI crawler access check with Slack alerts, a competitor pricing page monitor with Slack alerts, new job openings at target companies to Google Sheets, Google Maps leads enriched with emails and company data, and podcast episodes to transcripts and translated subtitles.
 
 ## Notes
 

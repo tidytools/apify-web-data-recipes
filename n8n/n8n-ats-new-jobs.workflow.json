@@ -1,0 +1,352 @@
+{
+  "name": "Track new job openings at target companies (Greenhouse, Lever, Workday) in Google Sheets with Apify",
+  "nodes": [
+    {
+      "id": "b41d7e25-6c3a-4f98-a0e1-5d2c7b9f0001",
+      "name": "Every morning",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        300
+      ],
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "triggerAtHour": 7
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "b41d7e25-6c3a-4f98-a0e1-5d2c7b9f0002",
+      "name": "Companies to track",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        220,
+        300
+      ],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "s1",
+              "name": "companies",
+              "type": "array",
+              "value": "={{ ['https://job-boards.greenhouse.io/airbnb', 'jobs.lever.co/leverdemo', 'https://apply.workable.com/huggingface/'] }}"
+            },
+            {
+              "id": "s2",
+              "name": "titleKeywords",
+              "type": "array",
+              "value": "={{ ['engineer', 'data'] }}"
+            },
+            {
+              "id": "s3",
+              "name": "monitorName",
+              "type": "string",
+              "value": "target-companies"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "b41d7e25-6c3a-4f98-a0e1-5d2c7b9f0003",
+      "name": "Get new job openings",
+      "type": "@apify/n8n-nodes-apify.apify",
+      "typeVersion": 1,
+      "position": [
+        440,
+        300
+      ],
+      "parameters": {
+        "resource": "Actors",
+        "operation": "Run actor and get dataset",
+        "actorSource": "store",
+        "actorId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "k95BFAjcwk9AX61BE",
+          "cachedResultName": "tidytools/ats-career-site-jobs",
+          "cachedResultUrl": "https://console.apify.com/actors/k95BFAjcwk9AX61BE/input"
+        },
+        "customBody": "={\n  \"companies\": {{ JSON.stringify($json.companies) }},\n  \"titleKeywords\": {{ JSON.stringify($json.titleKeywords) }},\n  \"onlyNewJobs\": true,\n  \"monitorName\": \"{{ $json.monitorName }}\",\n  \"descriptionFormat\": \"none\",\n  \"maxJobs\": 1000\n}",
+        "memory": 1024,
+        "maxTotalChargeUsd": 1
+      }
+    },
+    {
+      "id": "b41d7e25-6c3a-4f98-a0e1-5d2c7b9f0004",
+      "name": "New job?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        680,
+        300
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c1",
+              "leftValue": "={{ $json.changeType }}",
+              "rightValue": "new",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "b41d7e25-6c3a-4f98-a0e1-5d2c7b9f0005",
+      "name": "Job row",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        920,
+        280
+      ],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "s1",
+              "name": "Company",
+              "type": "string",
+              "value": "={{ $json.company }}"
+            },
+            {
+              "id": "s2",
+              "name": "Title",
+              "type": "string",
+              "value": "={{ $json.title }}"
+            },
+            {
+              "id": "s3",
+              "name": "Location",
+              "type": "string",
+              "value": "={{ $json.location ?? '' }}"
+            },
+            {
+              "id": "s4",
+              "name": "Department",
+              "type": "string",
+              "value": "={{ $json.department ?? '' }}"
+            },
+            {
+              "id": "s5",
+              "name": "Workplace",
+              "type": "string",
+              "value": "={{ $json.workplaceType ?? '' }}"
+            },
+            {
+              "id": "s6",
+              "name": "Salary",
+              "type": "string",
+              "value": "={{ $json.salaryMin ? [$json.salaryMin, $json.salaryMax].filter(Boolean).join('-') + ' ' + ($json.salaryCurrency ?? '') + ($json.salaryPeriod ? '/' + $json.salaryPeriod : '') : '' }}"
+            },
+            {
+              "id": "s7",
+              "name": "Posted",
+              "type": "string",
+              "value": "={{ $json.postedAt ?? '' }}"
+            },
+            {
+              "id": "s8",
+              "name": "First seen",
+              "type": "string",
+              "value": "={{ $json.firstSeenAt ?? '' }}"
+            },
+            {
+              "id": "s9",
+              "name": "ATS",
+              "type": "string",
+              "value": "={{ $json.ats ?? $json.source ?? '' }}"
+            },
+            {
+              "id": "s10",
+              "name": "Job URL",
+              "type": "string",
+              "value": "={{ $json.jobUrl }}"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "b41d7e25-6c3a-4f98-a0e1-5d2c7b9f0006",
+      "name": "Append new jobs to Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1160,
+        280
+      ],
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "url",
+          "value": ""
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {}
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "b41d7e25-6c3a-4f98-a0e1-5d2c7b9f0010",
+      "name": "Sticky Note - Overview",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -500,
+        0
+      ],
+      "parameters": {
+        "color": 1,
+        "width": 440,
+        "height": 880,
+        "content": "## Track new job openings at target companies in Google Sheets\n\n**Who it's for:** recruiters, sales teams selling to hiring companies, job seekers and market researchers who follow a list of companies and want every new opening the day it is posted.\n\n### How it works\n1. Every morning, **ATS Career Site Jobs** (tidytools/ats-career-site-jobs on Apify) reads the job boards of your companies: Greenhouse, Lever, Ashby, Workable, Workday, SmartRecruiters, Recruitee, Personio and more. A company website such as `stripe.com` is enough; the board is found for you.\n2. `onlyNewJobs` remembers every job per monitor name, so only openings that were not there yesterday come back.\n3. Each new job becomes one row in Google Sheets: company, title, location, department, remote, salary (when listed), posted date and link.\n\n### Setup\n1. Add your Apify credential (API key or OAuth) to the Apify node.\n2. In **Companies to track**, list the companies, optional title keywords and a monitor name.\n3. Choose your spreadsheet and sheet in **Append new jobs to Google Sheets**.\n\nThe first run returns all current jobs (they become the baseline). After that, only new ones.\n\n### Cost\n$1 per 1,000 jobs returned (Apify pay-per-event, Sept 2026). Unchanged, filtered-out and closed jobs are free. The Apify node has a $1 cost cap.\n\nUses the verified Apify community node (`@apify/n8n-nodes-apify`)."
+      }
+    },
+    {
+      "id": "b41d7e25-6c3a-4f98-a0e1-5d2c7b9f0011",
+      "name": "Sticky Note - Companies",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        160,
+        140
+      ],
+      "parameters": {
+        "color": 7,
+        "width": 200,
+        "height": 320,
+        "content": "## 1. Companies to track\nJob board URLs or company websites. Title keywords are optional (empty = all jobs)."
+      }
+    },
+    {
+      "id": "b41d7e25-6c3a-4f98-a0e1-5d2c7b9f0012",
+      "name": "Sticky Note - New jobs",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        380,
+        140
+      ],
+      "parameters": {
+        "color": 7,
+        "width": 240,
+        "height": 320,
+        "content": "## 2. New jobs only\nThe monitor name keeps the job list between runs. Closed jobs come back as free `closed` rows."
+      }
+    },
+    {
+      "id": "b41d7e25-6c3a-4f98-a0e1-5d2c7b9f0013",
+      "name": "Sticky Note - Rows",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        640,
+        140
+      ],
+      "parameters": {
+        "color": 7,
+        "width": 640,
+        "height": 320,
+        "content": "## 3. One row per new job\nClosed jobs and errors are dropped here. Add a second branch if you want to log closed jobs."
+      }
+    }
+  ],
+  "connections": {
+    "Every morning": {
+      "main": [
+        [
+          {
+            "node": "Companies to track",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Companies to track": {
+      "main": [
+        [
+          {
+            "node": "Get new job openings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get new job openings": {
+      "main": [
+        [
+          {
+            "node": "New job?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "New job?": {
+      "main": [
+        [
+          {
+            "node": "Job row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Job row": {
+      "main": [
+        [
+          {
+            "node": "Append new jobs to Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}

@@ -168,14 +168,46 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -420,
-        60
+        -500,
+        0
       ],
       "parameters": {
-        "color": 4,
-        "width": 380,
-        "height": 600,
-        "content": "## Podcast episode to transcript, summary and subtitles in other languages\n\n**Who it's for:** podcasters, video teams and media monitors who want show notes and subtitles without uploading files by hand.\n\n**What it does:** every morning, checks your RSS feed. Each new episode is transcribed (timestamps, summary, chapters, SRT) and, in the same Apify run, its subtitles are translated into the languages you choose, with every timestamp and speaker label kept.\n\n**Cost (Apify pay-per-event, Sept 2026):** transcription $0.006 per audio minute + summary $0.01 per episode; translated subtitles $0.002 per audio minute per language (charged only for languages that succeed). A 30-minute episode with 2 subtitle languages is about $0.31.\n\n**Tested on:** 10 public-domain / CC files (NASA podcasts, Wikimedia interviews, a 62-minute episode). Timestamps within ~0.5 s of the official captions; translated SRT kept 100% of the timings.\n\n### Setup\n1. Add your Apify credential to the Apify node.\n2. Put your feed URL, a monitor name and the languages in **Podcast settings**.\n3. Send **Episode package** wherever you publish (Notion, Google Drive, Slack, WordPress...).\n\nThe monitor name remembers what was transcribed, so episodes are never paid for twice. `episodesSince: \"7 days\"` stops the daily run from working back through the feed's archive when there is no new episode; widen it (e.g. \"30 days\") for a first test run."
+        "color": 1,
+        "width": 440,
+        "height": 860,
+        "content": "## Podcast episode to transcript, summary and subtitles in other languages\n\n**Who it's for:** podcasters, video teams and media monitors who want show notes and subtitles without uploading files by hand.\n\n### How it works\nEvery morning, the workflow checks your RSS feed. Each new episode is transcribed (timestamps, summary, chapters, SRT) and, in the same Apify run, its subtitles are translated into the languages you choose, with every timestamp and speaker label kept.\n\n### Cost (Apify pay-per-event, Sept 2026)\nTranscription $0.006 per audio minute + summary $0.01 per episode; translated subtitles $0.002 per audio minute per language (charged only for languages that succeed). A 30-minute episode with 2 subtitle languages is about $0.31.\n\nTested on 10 public-domain / CC files (NASA podcasts, Wikimedia interviews, a 62-minute episode). Timestamps within ~0.5 s of the official captions; translated SRT kept 100% of the timings.\n\n### Setup\n1. Add your Apify credential to the Apify node.\n2. Put your feed URL, a monitor name and the languages in **Podcast settings**.\n3. Send **Episode package** wherever you publish (Notion, Google Drive, Slack, WordPress...).\n\nThe monitor name remembers what was transcribed, so episodes are never paid for twice. `episodesSince: \"7 days\"` stops the daily run from working back through the feed's archive when there is no new episode; widen it (e.g. \"30 days\") for a first test run."
+      }
+    },
+    {
+      "id": "5c2d9f7a-3e41-4b8a-b1d2-7a9e0c2b0011",
+      "name": "Sticky Note - Transcribe",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        140
+      ],
+      "parameters": {
+        "color": 7,
+        "width": 440,
+        "height": 320,
+        "content": "## 1. Transcribe and translate new episodes\nOne Apify run: transcript, summary, SRT and translated SRT per language. `newEpisodesOnly` + monitor name = each episode paid once."
+      }
+    },
+    {
+      "id": "5c2d9f7a-3e41-4b8a-b1d2-7a9e0c2b0012",
+      "name": "Sticky Note - Package",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        640,
+        140
+      ],
+      "parameters": {
+        "color": 7,
+        "width": 640,
+        "height": 320,
+        "content": "## 2. Episode package\nKeeps episodes that produced an SRT and lists the translated subtitle links. Connect it to Drive, Notion or Slack."
       }
     }
   ],
