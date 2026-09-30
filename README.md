@@ -83,6 +83,10 @@ For several tools at once, separate names with commas, for example
 `https://mcp.apify.com/?tools=tidytools/website-markdown-crawler,tidytools/ai-crawler-access-checker`.
 A ready-made configuration for six of these Actors, listed in the official MCP Registry, is in [tidytools/tidytools-apify-mcp](https://github.com/tidytools/tidytools-apify-mcp).
 
+## Open data
+
+[AI Crawler Index](https://webcapture-api.yukailin.workers.dev/ai-crawler-index): a daily robots.txt check of 1,005 popular websites against 26 AI crawlers (GPTBot, ClaudeBot, PerplexityBot and more), by category and for the top 100, with the full table as CSV. It uses the same checks as the AI Crawler Access Checker.
+
 ## n8n
 
 [`n8n/`](n8n/) has five workflows that were executed end to end: a weekly AI crawler access check with Slack alerts, a competitor pricing page monitor with Slack alerts, new job openings at target companies to Google Sheets, Google Maps leads enriched with emails and company data, and podcast episodes to transcripts and translated subtitles.
