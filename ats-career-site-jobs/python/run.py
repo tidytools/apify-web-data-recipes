@@ -1,4 +1,4 @@
-"""ATS & Career Site Jobs Scraper - Greenhouse, Lever, Workday: run the Actor on Apify and print the results.
+"""ATS Jobs Scraper - Career Sites, Greenhouse, Lever, Workday: run the Actor on Apify and print the results.
 
 Store page: https://apify.com/tidytools/ats-career-site-jobs
 Setup:      pip install apify-client
