@@ -1,6 +1,6 @@
-"""Substack & Medium Posts Scraper (RSS) - Newsletters & Blogs: run the Actor on Apify and print the results.
+"""Substack Scraper & Medium Scraper - Newsletter & Blog Posts: run the Actor on Apify and print the results.
 
-Store page: https://apify.com/tidytools/substack-medium-posts-scraper
+Store page: apify.com/tidytools/substack-medium-posts-scraper (public from 2026-10-10)
 Setup:      pip install apify-client
             export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 Run:        python run.py
