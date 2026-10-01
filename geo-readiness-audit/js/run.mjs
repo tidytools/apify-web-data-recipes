@@ -1,5 +1,5 @@
-// AI SEO Audit (GEO/AEO) - ChatGPT & Perplexity Readiness: run the Actor on Apify and print the results.
-// Store page: https://apify.com/tidytools/geo-readiness-audit
+// GEO Audit - AI SEO & AEO Checker for ChatGPT & AI Overviews: run the Actor on Apify and print the results.
+// Store page: apify.com/tidytools/geo-readiness-audit (public from 2026-10-04)
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 // Run:   node run.mjs
