@@ -1,5 +1,5 @@
 // llms.txt Generator & Checker - llms-full.txt, AI SEO (GEO): run the Actor on Apify and print the results.
-// Store page: https://apify.com/tidytools/llms-txt-generator
+// Store page: apify.com/tidytools/llms-txt-generator (public from 2026-10-09)
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 // Run:   node run.mjs
