@@ -1,0 +1,7 @@
+{
+ "python-sphinx": {"url": "https://docs.python.org/3/tutorial/", "kind": "Sphinx docs (static HTML)"},
+ "docusaurus": {"url": "https://docusaurus.io/docs/", "kind": "Docusaurus docs (React, pre-rendered)"},
+ "nextjs": {"url": "https://nextjs.org/docs/app/", "kind": "Next.js docs (JS-heavy, React Server Components)"},
+ "intercom-help": {"url": "https://www.intercom.com/help/en/", "kind": "Help center (Intercom Articles)"},
+ "cloudflare-blog": {"url": "https://blog.cloudflare.com/", "kind": "Blog (Ghost-based, long posts with code)"}
+}

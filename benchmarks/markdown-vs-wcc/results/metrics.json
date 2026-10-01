@@ -1,0 +1,2018 @@
+{
+ "sites": {
+  "python-sphinx": {
+   "samples": {
+    "ours": [
+     "https://docs.python.org/3/tutorial/appendix.html",
+     "https://docs.python.org/3/tutorial/datastructures.html",
+     "https://docs.python.org/3/tutorial/inputoutput.html",
+     "https://docs.python.org/3/tutorial/introduction.html",
+     "https://docs.python.org/3/tutorial/stdlib2.html"
+    ],
+    "wcc": [
+     "https://docs.python.org/3/tutorial/appendix.html",
+     "https://docs.python.org/3/tutorial/datastructures.html",
+     "https://docs.python.org/3/tutorial/inputoutput.html",
+     "https://docs.python.org/3/tutorial/introduction.html",
+     "https://docs.python.org/3/tutorial/stdlib2.html"
+    ]
+   },
+   "runs": {
+    "ours-default-python-sphinx-after": {
+     "pages": 17,
+     "failed": 0,
+     "runTimeSecs": 3.323,
+     "memoryMb": 256,
+     "computeUnits": 0.00023076388888888889,
+     "userCostUsd": 0.017,
+     "platformUsageUsd": 0.00024983269567953217,
+     "costPer1000": 1.0,
+     "cuPer1000": null,
+     "events": {
+      "page-fast": 17,
+      "page-browser": 0
+     },
+     "avgChars": 17637,
+     "truncatedPages": 1,
+     "templateLinesPerPage": 0.0,
+     "boilerplateLinesPerPage": 0.0,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 337,
+     "markdownTables": 0,
+     "relativeLinks": 0,
+     "artifacts": {
+      "permalinkAnchors": 0,
+      "backslashEscapes": 421,
+      "emptyLinks": 0,
+      "rawHtmlTags": 0,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 1.0,
+      "paragraphs": 0.988,
+      "code": 1.0,
+      "codeFenced": 1.0,
+      "tables": null,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        43,
+        43
+       ],
+       "paragraphs": [
+        239,
+        242
+       ],
+       "code": [
+        131,
+        131
+       ],
+       "codeFenced": [
+        131,
+        131
+       ],
+       "tables": [
+        0,
+        0
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://docs.python.org/3/tutorial/appendix.html",
+      "https://docs.python.org/3/tutorial/datastructures.html",
+      "https://docs.python.org/3/tutorial/inputoutput.html",
+      "https://docs.python.org/3/tutorial/introduction.html",
+      "https://docs.python.org/3/tutorial/stdlib2.html"
+     ]
+    },
+    "ours-default-python-sphinx-q2after": {
+     "pages": 15,
+     "failed": 0,
+     "runTimeSecs": 2.838,
+     "memoryMb": 256,
+     "computeUnits": 0.00019708333333333334,
+     "userCostUsd": 0.015,
+     "platformUsageUsd": 0.0002429510018626849,
+     "costPer1000": 1.0,
+     "cuPer1000": null,
+     "events": {
+      "page-fast": 15,
+      "page-browser": 0
+     },
+     "avgChars": 18617,
+     "truncatedPages": 1,
+     "templateLinesPerPage": 0.0,
+     "boilerplateLinesPerPage": 0.0,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 305,
+     "markdownTables": 0,
+     "relativeLinks": 0,
+     "artifacts": {
+      "permalinkAnchors": 0,
+      "backslashEscapes": 392,
+      "emptyLinks": 0,
+      "rawHtmlTags": 0,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 1.0,
+      "paragraphs": 0.992,
+      "code": 1.0,
+      "codeFenced": 1.0,
+      "tables": null,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        38,
+        38
+       ],
+       "paragraphs": [
+        239,
+        241
+       ],
+       "code": [
+        127,
+        127
+       ],
+       "codeFenced": [
+        127,
+        127
+       ],
+       "tables": [
+        0,
+        0
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://docs.python.org/3/tutorial/datastructures.html",
+      "https://docs.python.org/3/tutorial/inputoutput.html",
+      "https://docs.python.org/3/tutorial/introduction.html",
+      "https://docs.python.org/3/tutorial/stdlib2.html",
+      "https://docs.python.org/3/tutorial/appetite.html"
+     ]
+    },
+    "ours-default-python-sphinx-q2before": {
+     "pages": 15,
+     "failed": 0,
+     "runTimeSecs": 4.064,
+     "memoryMb": 256,
+     "computeUnits": 0.00028222222222222223,
+     "userCostUsd": 0.015,
+     "platformUsageUsd": 0.0002621757695939806,
+     "costPer1000": 1.0,
+     "cuPer1000": null,
+     "events": {
+      "page-fast": 15,
+      "page-browser": 0
+     },
+     "avgChars": 18619,
+     "truncatedPages": 1,
+     "templateLinesPerPage": 0.0,
+     "boilerplateLinesPerPage": 0.0,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 305,
+     "markdownTables": 0,
+     "relativeLinks": 0,
+     "artifacts": {
+      "permalinkAnchors": 0,
+      "backslashEscapes": 392,
+      "emptyLinks": 0,
+      "rawHtmlTags": 0,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 1.0,
+      "paragraphs": 0.992,
+      "code": 1.0,
+      "codeFenced": 1.0,
+      "tables": null,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        38,
+        38
+       ],
+       "paragraphs": [
+        239,
+        241
+       ],
+       "code": [
+        127,
+        127
+       ],
+       "codeFenced": [
+        127,
+        127
+       ],
+       "tables": [
+        0,
+        0
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://docs.python.org/3/tutorial/datastructures.html",
+      "https://docs.python.org/3/tutorial/inputoutput.html",
+      "https://docs.python.org/3/tutorial/introduction.html",
+      "https://docs.python.org/3/tutorial/stdlib2.html",
+      "https://docs.python.org/3/tutorial/appetite.html"
+     ]
+    },
+    "ours-default-python-sphinx": {
+     "pages": 17,
+     "failed": 0,
+     "runTimeSecs": 4.155,
+     "memoryMb": 256,
+     "computeUnits": 0.00028854166666666666,
+     "userCostUsd": 0.017,
+     "platformUsageUsd": 0.000267233138581117,
+     "costPer1000": 1.0,
+     "cuPer1000": null,
+     "events": {
+      "page-fast": 17,
+      "page-browser": 0
+     },
+     "avgChars": 17430,
+     "truncatedPages": 1,
+     "templateLinesPerPage": 6.6,
+     "boilerplateLinesPerPage": 1.94,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 0,
+     "markdownTables": 0,
+     "relativeLinks": 639,
+     "artifacts": {
+      "permalinkAnchors": 137,
+      "backslashEscapes": 460,
+      "emptyLinks": 0,
+      "rawHtmlTags": 0,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 1.0,
+      "paragraphs": 0.988,
+      "code": 1.0,
+      "codeFenced": 0.0,
+      "tables": null,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        43,
+        43
+       ],
+       "paragraphs": [
+        239,
+        242
+       ],
+       "code": [
+        131,
+        131
+       ],
+       "codeFenced": [
+        0,
+        131
+       ],
+       "tables": [
+        0,
+        0
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://docs.python.org/3/tutorial/appendix.html",
+      "https://docs.python.org/3/tutorial/datastructures.html",
+      "https://docs.python.org/3/tutorial/inputoutput.html",
+      "https://docs.python.org/3/tutorial/introduction.html",
+      "https://docs.python.org/3/tutorial/stdlib2.html"
+     ]
+    },
+    "wcc-default-python-sphinx": {
+     "pages": 17,
+     "failed": 0,
+     "runTimeSecs": 56.028,
+     "memoryMb": 8192,
+     "computeUnits": 0.12450666666666667,
+     "userCostUsd": 0.02626472946347793,
+     "platformUsageUsd": 0.02626472946347793,
+     "costPer1000": 1.545,
+     "cuPer1000": 7.32,
+     "events": {},
+     "avgChars": 17837,
+     "truncatedPages": 1,
+     "templateLinesPerPage": 0.0,
+     "boilerplateLinesPerPage": 0.06,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 0,
+     "markdownTables": 0,
+     "relativeLinks": 0,
+     "artifacts": {
+      "permalinkAnchors": 120,
+      "backslashEscapes": 2562,
+      "emptyLinks": 362,
+      "rawHtmlTags": 0,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 1.0,
+      "paragraphs": 0.979,
+      "code": 1.0,
+      "codeFenced": 0.0,
+      "tables": null,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        43,
+        43
+       ],
+       "paragraphs": [
+        237,
+        242
+       ],
+       "code": [
+        131,
+        131
+       ],
+       "codeFenced": [
+        0,
+        131
+       ],
+       "tables": [
+        0,
+        0
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://docs.python.org/3/tutorial/appendix.html",
+      "https://docs.python.org/3/tutorial/datastructures.html",
+      "https://docs.python.org/3/tutorial/inputoutput.html",
+      "https://docs.python.org/3/tutorial/introduction.html",
+      "https://docs.python.org/3/tutorial/stdlib2.html"
+     ]
+    }
+   }
+  },
+  "docusaurus": {
+   "samples": {
+    "ours": [
+     "https://docusaurus.io/docs/2.x",
+     "https://docusaurus.io/docs/2.x/advanced/plugins",
+     "https://docusaurus.io/docs/2.x/api/misc/@docusaurus/eslint-plugin/no-untranslated-text",
+     "https://docusaurus.io/docs/2.x/api/plugin-methods/extend-infrastructure",
+     "https://docusaurus.io/docs/2.x/api/plugins/@docusaurus/plugin-client-redirects"
+    ],
+    "wcc": [
+     "https://docusaurus.io/docs/3.2.1",
+     "https://docusaurus.io/docs/3.7.0",
+     "https://docusaurus.io/docs/advanced/client",
+     "https://docusaurus.io/docs/cli",
+     "https://docusaurus.io/docs/migration/v3"
+    ]
+   },
+   "runs": {
+    "ours-default-docusaurus-after": {
+     "pages": 25,
+     "failed": 0,
+     "runTimeSecs": 14.047,
+     "memoryMb": 256,
+     "computeUnits": 0.0009754861111111111,
+     "userCostUsd": 0.025,
+     "platformUsageUsd": 0.0004481850348098411,
+     "costPer1000": 1.0,
+     "cuPer1000": null,
+     "events": {
+      "page-fast": 25,
+      "page-browser": 0
+     },
+     "avgChars": 8970,
+     "truncatedPages": 1,
+     "templateLinesPerPage": 0.9,
+     "boilerplateLinesPerPage": 0.52,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 275,
+     "markdownTables": 15,
+     "relativeLinks": 17,
+     "artifacts": {
+      "permalinkAnchors": 0,
+      "backslashEscapes": 92,
+      "emptyLinks": 0,
+      "rawHtmlTags": 0,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 0.976,
+      "paragraphs": 0.973,
+      "code": 1.0,
+      "codeFenced": 1.0,
+      "tables": 1.0,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        83,
+        85
+       ],
+       "paragraphs": [
+        144,
+        148
+       ],
+       "code": [
+        44,
+        44
+       ],
+       "codeFenced": [
+        44,
+        44
+       ],
+       "tables": [
+        9,
+        9
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://docusaurus.io/docs/cli",
+      "https://docusaurus.io/docs/2.x/advanced",
+      "https://docusaurus.io/docs/advanced/routing",
+      "https://docusaurus.io/docs/docusaurus-core",
+      "https://docusaurus.io/docs/next"
+     ]
+    },
+    "ours-default-docusaurus-q2after": {
+     "pages": 15,
+     "failed": 0,
+     "runTimeSecs": 3.306,
+     "memoryMb": 256,
+     "computeUnits": 0.00022958333333333332,
+     "userCostUsd": 0.015,
+     "platformUsageUsd": 0.0002278075308899085,
+     "costPer1000": 1.0,
+     "cuPer1000": null,
+     "events": {
+      "page-fast": 15,
+      "page-browser": 0
+     },
+     "avgChars": 6445,
+     "truncatedPages": 0,
+     "templateLinesPerPage": 0.0,
+     "boilerplateLinesPerPage": 0.13,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 102,
+     "markdownTables": 7,
+     "relativeLinks": 4,
+     "artifacts": {
+      "permalinkAnchors": 0,
+      "backslashEscapes": 70,
+      "emptyLinks": 0,
+      "rawHtmlTags": 0,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 0.914,
+      "paragraphs": 1.0,
+      "code": 1.0,
+      "codeFenced": 1.0,
+      "tables": 1.0,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        32,
+        35
+       ],
+       "paragraphs": [
+        62,
+        62
+       ],
+       "code": [
+        16,
+        16
+       ],
+       "codeFenced": [
+        16,
+        16
+       ],
+       "tables": [
+        7,
+        7
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://docusaurus.io/docs/cli",
+      "https://docusaurus.io/docs/2.x/advanced",
+      "https://docusaurus.io/docs/advanced/architecture",
+      "https://docusaurus.io/docs/advanced/ssg",
+      "https://docusaurus.io/docs/migration"
+     ]
+    },
+    "ours-default-docusaurus-q2before": {
+     "pages": 15,
+     "failed": 0,
+     "runTimeSecs": 3.307,
+     "memoryMb": 256,
+     "computeUnits": 0.0002296527777777778,
+     "userCostUsd": 0.015,
+     "platformUsageUsd": 0.00023633775936398243,
+     "costPer1000": 1.0,
+     "cuPer1000": null,
+     "events": {
+      "page-fast": 15,
+      "page-browser": 0
+     },
+     "avgChars": 4761,
+     "truncatedPages": 0,
+     "templateLinesPerPage": 2.1,
+     "boilerplateLinesPerPage": 0.13,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 107,
+     "markdownTables": 8,
+     "relativeLinks": 0,
+     "artifacts": {
+      "permalinkAnchors": 0,
+      "backslashEscapes": 74,
+      "emptyLinks": 0,
+      "rawHtmlTags": 0,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 0.96,
+      "paragraphs": 0.98,
+      "code": 1.0,
+      "codeFenced": 1.0,
+      "tables": 1.0,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        48,
+        50
+       ],
+       "paragraphs": [
+        98,
+        100
+       ],
+       "code": [
+        24,
+        24
+       ],
+       "codeFenced": [
+        24,
+        24
+       ],
+       "tables": [
+        8,
+        8
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://docusaurus.io/docs/cli",
+      "https://docusaurus.io/docs/2.x/advanced",
+      "https://docusaurus.io/docs/api/themes/@docusaurus/theme-classic",
+      "https://docusaurus.io/docs/configuration",
+      "https://docusaurus.io/docs/next"
+     ]
+    },
+    "ours-default-docusaurus": {
+     "pages": 25,
+     "failed": 0,
+     "runTimeSecs": 3.557,
+     "memoryMb": 256,
+     "computeUnits": 0.0002470138888888889,
+     "userCostUsd": 0.025,
+     "platformUsageUsd": 0.00029884222731159794,
+     "costPer1000": 1.0,
+     "cuPer1000": null,
+     "events": {
+      "page-fast": 25,
+      "page-browser": 0
+     },
+     "avgChars": 7256,
+     "truncatedPages": 0,
+     "templateLinesPerPage": 2.9,
+     "boilerplateLinesPerPage": 0.4,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 157,
+     "markdownTables": 0,
+     "relativeLinks": 135,
+     "artifacts": {
+      "permalinkAnchors": 184,
+      "backslashEscapes": 3,
+      "emptyLinks": 0,
+      "rawHtmlTags": 0,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 0.925,
+      "paragraphs": 1.0,
+      "code": 1.0,
+      "codeFenced": 1.0,
+      "tables": 0.0,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        37,
+        40
+       ],
+       "paragraphs": [
+        76,
+        76
+       ],
+       "code": [
+        18,
+        18
+       ],
+       "codeFenced": [
+        18,
+        18
+       ],
+       "tables": [
+        0,
+        2
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://docusaurus.io/docs/2.x",
+      "https://docusaurus.io/docs/2.x/advanced/plugins",
+      "https://docusaurus.io/docs/2.x/api/misc/@docusaurus/eslint-plugin/no-untranslated-text",
+      "https://docusaurus.io/docs/2.x/api/plugin-methods/extend-infrastructure",
+      "https://docusaurus.io/docs/2.x/api/plugins/@docusaurus/plugin-client-redirects"
+     ]
+    },
+    "wcc-default-docusaurus": {
+     "pages": 27,
+     "failed": 0,
+     "runTimeSecs": 83.754,
+     "memoryMb": 8192,
+     "computeUnits": 0.18612,
+     "userCostUsd": 0.04235384503258765,
+     "platformUsageUsd": 0.04235384503258765,
+     "costPer1000": 1.569,
+     "cuPer1000": 6.89,
+     "events": {},
+     "avgChars": 10853,
+     "truncatedPages": 0,
+     "templateLinesPerPage": 0.0,
+     "boilerplateLinesPerPage": 0.56,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 153,
+     "markdownTables": 12,
+     "relativeLinks": 8,
+     "artifacts": {
+      "permalinkAnchors": 171,
+      "backslashEscapes": 0,
+      "emptyLinks": 46,
+      "rawHtmlTags": 2,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 0.783,
+      "paragraphs": 0.945,
+      "code": 0.968,
+      "codeFenced": 0.177,
+      "tables": 1.0,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        72,
+        92
+       ],
+       "paragraphs": [
+        258,
+        273
+       ],
+       "code": [
+        60,
+        62
+       ],
+       "codeFenced": [
+        11,
+        62
+       ],
+       "tables": [
+        7,
+        7
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://docusaurus.io/docs/3.2.1",
+      "https://docusaurus.io/docs/3.7.0",
+      "https://docusaurus.io/docs/advanced/client",
+      "https://docusaurus.io/docs/cli",
+      "https://docusaurus.io/docs/migration/v3"
+     ]
+    }
+   }
+  },
+  "nextjs": {
+   "samples": {
+    "ours": [
+     "https://nextjs.org/docs/app/getting-started/proxy",
+     "https://nextjs.org/docs/app/getting-started/route-handlers",
+     "https://nextjs.org/docs/app/getting-started/upgrading",
+     "https://nextjs.org/docs/app/guides/ci-build-caching",
+     "https://nextjs.org/docs/app/guides/content-security-policy"
+    ],
+    "wcc": [
+     "https://nextjs.org/docs/app/getting-started/proxy",
+     "https://nextjs.org/docs/app/getting-started/route-handlers",
+     "https://nextjs.org/docs/app/getting-started/upgrading",
+     "https://nextjs.org/docs/app/guides/ci-build-caching",
+     "https://nextjs.org/docs/app/guides/content-security-policy"
+    ]
+   },
+   "runs": {
+    "ours-cheap-nextjs-after": {
+     "pages": 25,
+     "failed": 0,
+     "runTimeSecs": 7.416,
+     "memoryMb": 256,
+     "computeUnits": 0.000515,
+     "userCostUsd": 0.025,
+     "platformUsageUsd": 0.0003573819318711758,
+     "costPer1000": 1.0,
+     "cuPer1000": null,
+     "events": {
+      "page-fast": 25,
+      "page-browser": 0
+     },
+     "avgChars": 12489,
+     "truncatedPages": 0,
+     "templateLinesPerPage": 3.4,
+     "boilerplateLinesPerPage": 1.8,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 221,
+     "markdownTables": 16,
+     "relativeLinks": 0,
+     "artifacts": {
+      "permalinkAnchors": 0,
+      "backslashEscapes": 86,
+      "emptyLinks": 0,
+      "rawHtmlTags": 0,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 0.754,
+      "paragraphs": 1.0,
+      "code": 1.0,
+      "codeFenced": 1.0,
+      "tables": 1.0,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        52,
+        69
+       ],
+       "paragraphs": [
+        82,
+        82
+       ],
+       "code": [
+        22,
+        22
+       ],
+       "codeFenced": [
+        22,
+        22
+       ],
+       "tables": [
+        1,
+        1
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://nextjs.org/docs/app/getting-started/proxy",
+      "https://nextjs.org/docs/app/getting-started/route-handlers",
+      "https://nextjs.org/docs/app/getting-started/upgrading",
+      "https://nextjs.org/docs/app/getting-started",
+      "https://nextjs.org/docs/app/getting-started/linking-and-navigating"
+     ]
+    },
+    "ours-cheap-nextjs": {
+     "pages": 25,
+     "failed": 0,
+     "runTimeSecs": 3.527,
+     "memoryMb": 256,
+     "computeUnits": 0.0002449305555555556,
+     "userCostUsd": 0.025,
+     "platformUsageUsd": 0.0003000878317422337,
+     "costPer1000": 1.0,
+     "cuPer1000": null,
+     "events": {
+      "page-fast": 25,
+      "page-browser": 0
+     },
+     "avgChars": 6809,
+     "truncatedPages": 0,
+     "templateLinesPerPage": 13.9,
+     "boilerplateLinesPerPage": 2.96,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 125,
+     "markdownTables": 16,
+     "relativeLinks": 258,
+     "artifacts": {
+      "permalinkAnchors": 0,
+      "backslashEscapes": 42,
+      "emptyLinks": 0,
+      "rawHtmlTags": 0,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 0.971,
+      "paragraphs": 1.0,
+      "code": 1.0,
+      "codeFenced": 1.0,
+      "tables": 1.0,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        66,
+        68
+       ],
+       "paragraphs": [
+        82,
+        82
+       ],
+       "code": [
+        33,
+        33
+       ],
+       "codeFenced": [
+        33,
+        33
+       ],
+       "tables": [
+        2,
+        2
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://nextjs.org/docs/app/getting-started/proxy",
+      "https://nextjs.org/docs/app/getting-started/route-handlers",
+      "https://nextjs.org/docs/app/getting-started/upgrading",
+      "https://nextjs.org/docs/app/guides/ci-build-caching",
+      "https://nextjs.org/docs/app/guides/content-security-policy"
+     ]
+    },
+    "ours-default-nextjs-after": {
+     "pages": 25,
+     "failed": 0,
+     "runTimeSecs": 5.987,
+     "memoryMb": 256,
+     "computeUnits": 0.0004157638888888889,
+     "userCostUsd": 0.025,
+     "platformUsageUsd": 0.00032872211635278335,
+     "costPer1000": 1.0,
+     "cuPer1000": null,
+     "events": {
+      "page-fast": 25,
+      "page-browser": 0
+     },
+     "avgChars": 12489,
+     "truncatedPages": 0,
+     "templateLinesPerPage": 3.4,
+     "boilerplateLinesPerPage": 1.8,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 221,
+     "markdownTables": 16,
+     "relativeLinks": 0,
+     "artifacts": {
+      "permalinkAnchors": 0,
+      "backslashEscapes": 86,
+      "emptyLinks": 0,
+      "rawHtmlTags": 0,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 0.754,
+      "paragraphs": 1.0,
+      "code": 1.0,
+      "codeFenced": 1.0,
+      "tables": 1.0,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        52,
+        69
+       ],
+       "paragraphs": [
+        82,
+        82
+       ],
+       "code": [
+        22,
+        22
+       ],
+       "codeFenced": [
+        22,
+        22
+       ],
+       "tables": [
+        1,
+        1
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://nextjs.org/docs/app/getting-started/proxy",
+      "https://nextjs.org/docs/app/getting-started/route-handlers",
+      "https://nextjs.org/docs/app/getting-started/upgrading",
+      "https://nextjs.org/docs/app/getting-started",
+      "https://nextjs.org/docs/app/getting-started/linking-and-navigating"
+     ]
+    },
+    "ours-default-nextjs-q2after": {
+     "pages": 15,
+     "failed": 0,
+     "runTimeSecs": 9.524,
+     "memoryMb": 256,
+     "computeUnits": 0.0006613888888888889,
+     "userCostUsd": 0.015,
+     "platformUsageUsd": 0.00028247312678562274,
+     "costPer1000": 1.0,
+     "cuPer1000": null,
+     "events": {
+      "page-fast": 14,
+      "page-browser": 0
+     },
+     "avgChars": 12390,
+     "truncatedPages": 0,
+     "templateLinesPerPage": 0.5,
+     "boilerplateLinesPerPage": 1.33,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 139,
+     "markdownTables": 12,
+     "relativeLinks": 0,
+     "artifacts": {
+      "permalinkAnchors": 0,
+      "backslashEscapes": 53,
+      "emptyLinks": 0,
+      "rawHtmlTags": 0,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 0.815,
+      "paragraphs": 0.989,
+      "code": 1.0,
+      "codeFenced": 1.0,
+      "tables": 1.0,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        66,
+        81
+       ],
+       "paragraphs": [
+        88,
+        89
+       ],
+       "code": [
+        27,
+        27
+       ],
+       "codeFenced": [
+        27,
+        27
+       ],
+       "tables": [
+        10,
+        10
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://nextjs.org/docs/app/getting-started",
+      "https://nextjs.org/docs/app/getting-started/css",
+      "https://nextjs.org/docs/app/getting-started/fonts",
+      "https://nextjs.org/docs/app/getting-started/layouts-and-pages",
+      "https://nextjs.org/docs/app/getting-started/project-structure"
+     ]
+    },
+    "ours-default-nextjs-q2before": {
+     "pages": 15,
+     "failed": 0,
+     "runTimeSecs": 4.114,
+     "memoryMb": 256,
+     "computeUnits": 0.00028569444444444443,
+     "userCostUsd": 0.015,
+     "platformUsageUsd": 0.0002579871966474586,
+     "costPer1000": 1.0,
+     "cuPer1000": null,
+     "events": {
+      "page-fast": 15,
+      "page-browser": 0
+     },
+     "avgChars": 12766,
+     "truncatedPages": 0,
+     "templateLinesPerPage": 4.1,
+     "boilerplateLinesPerPage": 1.33,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 139,
+     "markdownTables": 12,
+     "relativeLinks": 0,
+     "artifacts": {
+      "permalinkAnchors": 0,
+      "backslashEscapes": 53,
+      "emptyLinks": 0,
+      "rawHtmlTags": 0,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 0.815,
+      "paragraphs": 0.989,
+      "code": 1.0,
+      "codeFenced": 1.0,
+      "tables": 1.0,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        66,
+        81
+       ],
+       "paragraphs": [
+        88,
+        89
+       ],
+       "code": [
+        27,
+        27
+       ],
+       "codeFenced": [
+        27,
+        27
+       ],
+       "tables": [
+        10,
+        10
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://nextjs.org/docs/app/getting-started",
+      "https://nextjs.org/docs/app/getting-started/css",
+      "https://nextjs.org/docs/app/getting-started/fonts",
+      "https://nextjs.org/docs/app/getting-started/layouts-and-pages",
+      "https://nextjs.org/docs/app/getting-started/project-structure"
+     ]
+    },
+    "ours-default-nextjs": {
+     "pages": 25,
+     "failed": 0,
+     "runTimeSecs": 3.754,
+     "memoryMb": 256,
+     "computeUnits": 0.0002606944444444444,
+     "userCostUsd": 0.025,
+     "platformUsageUsd": 0.0002894172213756376,
+     "costPer1000": 1.0,
+     "cuPer1000": null,
+     "events": {
+      "page-fast": 25,
+      "page-browser": 0
+     },
+     "avgChars": 6809,
+     "truncatedPages": 0,
+     "templateLinesPerPage": 13.9,
+     "boilerplateLinesPerPage": 2.96,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 125,
+     "markdownTables": 16,
+     "relativeLinks": 258,
+     "artifacts": {
+      "permalinkAnchors": 0,
+      "backslashEscapes": 42,
+      "emptyLinks": 0,
+      "rawHtmlTags": 0,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 0.971,
+      "paragraphs": 1.0,
+      "code": 1.0,
+      "codeFenced": 1.0,
+      "tables": 1.0,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        66,
+        68
+       ],
+       "paragraphs": [
+        82,
+        82
+       ],
+       "code": [
+        33,
+        33
+       ],
+       "codeFenced": [
+        33,
+        33
+       ],
+       "tables": [
+        2,
+        2
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://nextjs.org/docs/app/getting-started/proxy",
+      "https://nextjs.org/docs/app/getting-started/route-handlers",
+      "https://nextjs.org/docs/app/getting-started/upgrading",
+      "https://nextjs.org/docs/app/guides/ci-build-caching",
+      "https://nextjs.org/docs/app/guides/content-security-policy"
+     ]
+    },
+    "wcc-cheap-nextjs": {
+     "pages": 36,
+     "failed": 0,
+     "runTimeSecs": 169.257,
+     "memoryMb": 8192,
+     "computeUnits": 0.37612666666666666,
+     "userCostUsd": 0.07977392817284665,
+     "platformUsageUsd": 0.07977392817284665,
+     "costPer1000": 2.216,
+     "cuPer1000": 10.45,
+     "events": {},
+     "avgChars": 9089,
+     "truncatedPages": 0,
+     "templateLinesPerPage": 2.0,
+     "boilerplateLinesPerPage": 1.19,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 4,
+     "markdownTables": 13,
+     "relativeLinks": 0,
+     "artifacts": {
+      "permalinkAnchors": 323,
+      "backslashEscapes": 5,
+      "emptyLinks": 596,
+      "rawHtmlTags": 0,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 0.613,
+      "paragraphs": 1.0,
+      "code": 0.174,
+      "codeFenced": 0.174,
+      "tables": 1.0,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        38,
+        62
+       ],
+       "paragraphs": [
+        56,
+        56
+       ],
+       "code": [
+        4,
+        23
+       ],
+       "codeFenced": [
+        4,
+        23
+       ],
+       "tables": [
+        1,
+        1
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://nextjs.org/docs/app/getting-started/proxy",
+      "https://nextjs.org/docs/app/getting-started/route-handlers",
+      "https://nextjs.org/docs/app/getting-started/upgrading",
+      "https://nextjs.org/docs/app/guides/ci-build-caching",
+      "https://nextjs.org/docs/app/getting-started"
+     ]
+    },
+    "wcc-default-nextjs": {
+     "pages": 26,
+     "failed": 0,
+     "runTimeSecs": 200.444,
+     "memoryMb": 8192,
+     "computeUnits": 0.4454311111111111,
+     "userCostUsd": 0.0945170950658901,
+     "platformUsageUsd": 0.0945170950658901,
+     "costPer1000": 3.635,
+     "cuPer1000": 17.13,
+     "events": {},
+     "avgChars": 2125,
+     "truncatedPages": 0,
+     "templateLinesPerPage": 6.8,
+     "boilerplateLinesPerPage": 0.15,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 0,
+     "markdownTables": 0,
+     "relativeLinks": 0,
+     "artifacts": {
+      "permalinkAnchors": 52,
+      "backslashEscapes": 0,
+      "emptyLinks": 81,
+      "rawHtmlTags": 0,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 0.103,
+      "paragraphs": 0.0,
+      "code": 0.0,
+      "codeFenced": 0.0,
+      "tables": 0.0,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        7,
+        68
+       ],
+       "paragraphs": [
+        0,
+        82
+       ],
+       "code": [
+        0,
+        33
+       ],
+       "codeFenced": [
+        0,
+        33
+       ],
+       "tables": [
+        0,
+        2
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://nextjs.org/docs/app/getting-started/proxy",
+      "https://nextjs.org/docs/app/getting-started/route-handlers",
+      "https://nextjs.org/docs/app/getting-started/upgrading",
+      "https://nextjs.org/docs/app/guides/ci-build-caching",
+      "https://nextjs.org/docs/app/guides/content-security-policy"
+     ]
+    }
+   }
+  },
+  "intercom-help": {
+   "samples": {
+    "ours": [
+     "https://www.intercom.com/help/en/articles/167-install-intercom-for-visitors-and-leads-on-web",
+     "https://www.intercom.com/help/en/articles/173-install-intercom-on-your-wordpress-site",
+     "https://www.intercom.com/help/en/articles/180-localize-the-messenger-to-work-with-multiple-languages",
+     "https://www.intercom.com/help/en/articles/187-how-teammates-get-notifications",
+     "https://www.intercom.com/help/en/articles/197-organize-team-inboxes"
+    ],
+    "wcc": [
+     "https://www.intercom.com/help/en/articles/13868265-pro-add-on",
+     "https://www.intercom.com/help/en/articles/5952022-premier-support",
+     "https://www.intercom.com/help/en/articles/8582954-how-to-view-and-download-your-invoice",
+     "https://www.intercom.com/help/en/articles/9061703-usage-based-channels",
+     "https://www.intercom.com/help/en/collections/382-overview"
+    ]
+   },
+   "runs": {
+    "ours-default-intercom-help-after": {
+     "pages": 25,
+     "failed": 0,
+     "runTimeSecs": 33.862,
+     "memoryMb": 256,
+     "computeUnits": 0.002351527777777778,
+     "userCostUsd": 0.025,
+     "platformUsageUsd": 0.0007319530607942079,
+     "costPer1000": 1.0,
+     "cuPer1000": null,
+     "events": {
+      "page-fast": 25,
+      "page-browser": 0
+     },
+     "avgChars": 4410,
+     "truncatedPages": 0,
+     "templateLinesPerPage": 0.6,
+     "boilerplateLinesPerPage": 0.2,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 0,
+     "markdownTables": 7,
+     "relativeLinks": 0,
+     "artifacts": {
+      "permalinkAnchors": 0,
+      "backslashEscapes": 15,
+      "emptyLinks": 0,
+      "rawHtmlTags": 0,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 0.967,
+      "paragraphs": 0.979,
+      "code": null,
+      "codeFenced": null,
+      "tables": 1.0,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        58,
+        60
+       ],
+       "paragraphs": [
+        143,
+        146
+       ],
+       "code": [
+        0,
+        0
+       ],
+       "codeFenced": [
+        0,
+        0
+       ],
+       "tables": [
+        3,
+        3
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://www.intercom.com/help/en/articles/13868265-pro-add-on",
+      "https://www.intercom.com/help/en/collections/382-overview",
+      "https://www.intercom.com/help/en/articles/294-what-is-intercom",
+      "https://www.intercom.com/help/en/collections/1865264-getting-started",
+      "https://www.intercom.com/help/en/collections/2493871-academy"
+     ]
+    },
+    "ours-default-intercom-help-q2after": {
+     "pages": 15,
+     "failed": 0,
+     "runTimeSecs": 7.936,
+     "memoryMb": 256,
+     "computeUnits": 0.0005511111111111112,
+     "userCostUsd": 0.015,
+     "platformUsageUsd": 0.00018906194658411876,
+     "costPer1000": 1.0,
+     "cuPer1000": null,
+     "events": {
+      "page-fast": 1,
+      "page-browser": 0
+     },
+     "avgChars": 1497,
+     "truncatedPages": 0,
+     "templateLinesPerPage": 1.6,
+     "boilerplateLinesPerPage": 0.07,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 0,
+     "markdownTables": 0,
+     "relativeLinks": 0,
+     "artifacts": {
+      "permalinkAnchors": 0,
+      "backslashEscapes": 0,
+      "emptyLinks": 0,
+      "rawHtmlTags": 0,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 0.923,
+      "paragraphs": 0.75,
+      "code": null,
+      "codeFenced": null,
+      "tables": null,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        12,
+        13
+       ],
+       "paragraphs": [
+        3,
+        4
+       ],
+       "code": [
+        0,
+        0
+       ],
+       "codeFenced": [
+        0,
+        0
+       ],
+       "tables": [
+        0,
+        0
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://www.intercom.com/help/en/collections/382-overview",
+      "https://www.intercom.com/help/en/collections/10723236-channels",
+      "https://www.intercom.com/help/en/collections/2094721-workflows",
+      "https://www.intercom.com/help/en/collections/2094798-mobile-sdks",
+      "https://www.intercom.com/help/en/collections/2847869-community"
+     ]
+    },
+    "ours-default-intercom-help-q2before": {
+     "pages": 15,
+     "failed": 0,
+     "runTimeSecs": 104.725,
+     "memoryMb": 256,
+     "computeUnits": 0.007272569444444444,
+     "userCostUsd": 0.015,
+     "platformUsageUsd": 0.001658615213268333,
+     "costPer1000": 1.0,
+     "cuPer1000": null,
+     "events": {
+      "page-fast": 15,
+      "page-browser": 0
+     },
+     "avgChars": 1497,
+     "truncatedPages": 0,
+     "templateLinesPerPage": 1.6,
+     "boilerplateLinesPerPage": 0.07,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 0,
+     "markdownTables": 0,
+     "relativeLinks": 0,
+     "artifacts": {
+      "permalinkAnchors": 0,
+      "backslashEscapes": 0,
+      "emptyLinks": 0,
+      "rawHtmlTags": 0,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 0.923,
+      "paragraphs": 0.75,
+      "code": null,
+      "codeFenced": null,
+      "tables": null,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        12,
+        13
+       ],
+       "paragraphs": [
+        3,
+        4
+       ],
+       "code": [
+        0,
+        0
+       ],
+       "codeFenced": [
+        0,
+        0
+       ],
+       "tables": [
+        0,
+        0
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://www.intercom.com/help/en/collections/382-overview",
+      "https://www.intercom.com/help/en/collections/10723236-channels",
+      "https://www.intercom.com/help/en/collections/2094721-workflows",
+      "https://www.intercom.com/help/en/collections/2094798-mobile-sdks",
+      "https://www.intercom.com/help/en/collections/2847869-community"
+     ]
+    },
+    "ours-default-intercom-help": {
+     "pages": 25,
+     "failed": 0,
+     "runTimeSecs": 90.849,
+     "memoryMb": 256,
+     "computeUnits": 0.006308958333333333,
+     "userCostUsd": 0.025,
+     "platformUsageUsd": 0.001681453227246801,
+     "costPer1000": 1.0,
+     "cuPer1000": null,
+     "events": {
+      "page-fast": 25,
+      "page-browser": 0
+     },
+     "avgChars": 12631,
+     "truncatedPages": 0,
+     "templateLinesPerPage": 5.8,
+     "boilerplateLinesPerPage": 0.96,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 0,
+     "markdownTables": 4,
+     "relativeLinks": 0,
+     "artifacts": {
+      "permalinkAnchors": 0,
+      "backslashEscapes": 104,
+      "emptyLinks": 0,
+      "rawHtmlTags": 8,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 0.944,
+      "paragraphs": 0.972,
+      "code": 1.0,
+      "codeFenced": 0.0,
+      "tables": 1.0,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        67,
+        71
+       ],
+       "paragraphs": [
+        176,
+        181
+       ],
+       "code": [
+        2,
+        2
+       ],
+       "codeFenced": [
+        0,
+        2
+       ],
+       "tables": [
+        1,
+        1
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://www.intercom.com/help/en/articles/167-install-intercom-for-visitors-and-leads-on-web",
+      "https://www.intercom.com/help/en/articles/173-install-intercom-on-your-wordpress-site",
+      "https://www.intercom.com/help/en/articles/180-localize-the-messenger-to-work-with-multiple-languages",
+      "https://www.intercom.com/help/en/articles/187-how-teammates-get-notifications",
+      "https://www.intercom.com/help/en/articles/197-organize-team-inboxes"
+     ]
+    },
+    "wcc-default-intercom-help": {
+     "pages": 26,
+     "failed": 0,
+     "runTimeSecs": 183.004,
+     "memoryMb": 8192,
+     "computeUnits": 0.40667555555555557,
+     "userCostUsd": 0.09486134975809522,
+     "platformUsageUsd": 0.09486134975809522,
+     "costPer1000": 3.649,
+     "cuPer1000": 15.64,
+     "events": {},
+     "avgChars": 6593,
+     "truncatedPages": 0,
+     "templateLinesPerPage": 3.3,
+     "boilerplateLinesPerPage": 0.04,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 0,
+     "markdownTables": 15,
+     "relativeLinks": 0,
+     "artifacts": {
+      "permalinkAnchors": 0,
+      "backslashEscapes": 17,
+      "emptyLinks": 0,
+      "rawHtmlTags": 0,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 0.796,
+      "paragraphs": 0.343,
+      "code": null,
+      "codeFenced": null,
+      "tables": 0.667,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        82,
+        103
+       ],
+       "paragraphs": [
+        106,
+        309
+       ],
+       "code": [
+        0,
+        0
+       ],
+       "codeFenced": [
+        0,
+        0
+       ],
+       "tables": [
+        6,
+        9
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://www.intercom.com/help/en/articles/13868265-pro-add-on",
+      "https://www.intercom.com/help/en/articles/5952022-premier-support",
+      "https://www.intercom.com/help/en/articles/8582954-how-to-view-and-download-your-invoice",
+      "https://www.intercom.com/help/en/articles/9061703-usage-based-channels",
+      "https://www.intercom.com/help/en/collections/382-overview"
+     ]
+    }
+   }
+  },
+  "cloudflare-blog": {
+   "samples": {
+    "ours": [
+     "https://blog.cloudflare.com/ai-model-overuse-user-insights/",
+     "https://blog.cloudflare.com/faster-agent-sandboxes/",
+     "https://blog.cloudflare.com/ipsec-downgrade-protection/",
+     "https://blog.cloudflare.com/pay-per-use/",
+     "https://blog.cloudflare.com/100-million-donations/"
+    ],
+    "wcc": [
+     "https://blog.cloudflare.com/ai-model-overuse-user-insights/",
+     "https://blog.cloudflare.com/faster-agent-sandboxes/",
+     "https://blog.cloudflare.com/ipsec-downgrade-protection/",
+     "https://blog.cloudflare.com/pay-per-use/",
+     "https://blog.cloudflare.com/application-profiles/"
+    ]
+   },
+   "runs": {
+    "ours-default-cloudflare-blog-after": {
+     "pages": 24,
+     "failed": 0,
+     "runTimeSecs": 9.347,
+     "memoryMb": 256,
+     "computeUnits": 0.0006490972222222222,
+     "userCostUsd": 0.024,
+     "platformUsageUsd": 0.0003890567249324587,
+     "costPer1000": 1.0,
+     "cuPer1000": null,
+     "events": {
+      "page-fast": 24,
+      "page-browser": 0
+     },
+     "avgChars": 17469,
+     "truncatedPages": 0,
+     "templateLinesPerPage": 8.6,
+     "boilerplateLinesPerPage": 2.04,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 28,
+     "markdownTables": 12,
+     "relativeLinks": 0,
+     "artifacts": {
+      "permalinkAnchors": 0,
+      "backslashEscapes": 42,
+      "emptyLinks": 0,
+      "rawHtmlTags": 0,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 1.0,
+      "paragraphs": 1.0,
+      "code": 1.0,
+      "codeFenced": 1.0,
+      "tables": 1.0,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        52,
+        52
+       ],
+       "paragraphs": [
+        179,
+        179
+       ],
+       "code": [
+        7,
+        7
+       ],
+       "codeFenced": [
+        7,
+        7
+       ],
+       "tables": [
+        1,
+        1
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://blog.cloudflare.com/ai-model-overuse-user-insights/",
+      "https://blog.cloudflare.com/faster-agent-sandboxes/",
+      "https://blog.cloudflare.com/ipsec-downgrade-protection/",
+      "https://blog.cloudflare.com/pay-per-use/",
+      "https://blog.cloudflare.com/100-million-donations/"
+     ]
+    },
+    "ours-default-cloudflare-blog-q2after": {
+     "pages": 15,
+     "failed": 0,
+     "runTimeSecs": 19.423,
+     "memoryMb": 256,
+     "computeUnits": 0.0013488194444444444,
+     "userCostUsd": 0.015,
+     "platformUsageUsd": 0.00041809975924425656,
+     "costPer1000": 1.0,
+     "cuPer1000": null,
+     "events": {
+      "page-fast": 14,
+      "page-browser": 0
+     },
+     "avgChars": 14664,
+     "truncatedPages": 0,
+     "templateLinesPerPage": 0.6,
+     "boilerplateLinesPerPage": 0.13,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 14,
+     "markdownTables": 7,
+     "relativeLinks": 0,
+     "artifacts": {
+      "permalinkAnchors": 0,
+      "backslashEscapes": 15,
+      "emptyLinks": 0,
+      "rawHtmlTags": 0,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 0.808,
+      "paragraphs": 0.984,
+      "code": 1.0,
+      "codeFenced": 1.0,
+      "tables": 1.0,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        42,
+        52
+       ],
+       "paragraphs": [
+        185,
+        188
+       ],
+       "code": [
+        7,
+        7
+       ],
+       "codeFenced": [
+        7,
+        7
+       ],
+       "tables": [
+        5,
+        5
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://blog.cloudflare.com/ai-model-overuse-user-insights/",
+      "https://blog.cloudflare.com/faster-agent-sandboxes/",
+      "https://blog.cloudflare.com/pay-per-use/",
+      "https://blog.cloudflare.com/100-million-donations/",
+      "https://blog.cloudflare.com/adaptive-ai-waf-testing/"
+     ]
+    },
+    "ours-default-cloudflare-blog-q2before": {
+     "pages": 15,
+     "failed": 0,
+     "runTimeSecs": 17.824,
+     "memoryMb": 256,
+     "computeUnits": 0.0012377777777777777,
+     "userCostUsd": 0.015,
+     "platformUsageUsd": 0.0003981123974207375,
+     "costPer1000": 1.0,
+     "cuPer1000": null,
+     "events": {
+      "page-fast": 14,
+      "page-browser": 0
+     },
+     "avgChars": 17172,
+     "truncatedPages": 0,
+     "templateLinesPerPage": 9.0,
+     "boilerplateLinesPerPage": 2.0,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 14,
+     "markdownTables": 7,
+     "relativeLinks": 0,
+     "artifacts": {
+      "permalinkAnchors": 0,
+      "backslashEscapes": 15,
+      "emptyLinks": 0,
+      "rawHtmlTags": 0,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 1.0,
+      "paragraphs": 1.0,
+      "code": 1.0,
+      "codeFenced": 1.0,
+      "tables": 1.0,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        52,
+        52
+       ],
+       "paragraphs": [
+        188,
+        188
+       ],
+       "code": [
+        7,
+        7
+       ],
+       "codeFenced": [
+        7,
+        7
+       ],
+       "tables": [
+        5,
+        5
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://blog.cloudflare.com/ai-model-overuse-user-insights/",
+      "https://blog.cloudflare.com/faster-agent-sandboxes/",
+      "https://blog.cloudflare.com/pay-per-use/",
+      "https://blog.cloudflare.com/100-million-donations/",
+      "https://blog.cloudflare.com/adaptive-ai-waf-testing/"
+     ]
+    },
+    "ours-default-cloudflare-blog": {
+     "pages": 25,
+     "failed": 0,
+     "runTimeSecs": 4.237,
+     "memoryMb": 256,
+     "computeUnits": 0.0002942361111111111,
+     "userCostUsd": 0.025,
+     "platformUsageUsd": 0.00029999748174680606,
+     "costPer1000": 1.0,
+     "cuPer1000": null,
+     "events": {
+      "page-fast": 25,
+      "page-browser": 0
+     },
+     "avgChars": 13874,
+     "truncatedPages": 0,
+     "templateLinesPerPage": 35.3,
+     "boilerplateLinesPerPage": 2.04,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 16,
+     "markdownTables": 7,
+     "relativeLinks": 1264,
+     "artifacts": {
+      "permalinkAnchors": 0,
+      "backslashEscapes": 29,
+      "emptyLinks": 0,
+      "rawHtmlTags": 0,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 0.904,
+      "paragraphs": 0.983,
+      "code": 1.0,
+      "codeFenced": 1.0,
+      "tables": 1.0,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        47,
+        52
+       ],
+       "paragraphs": [
+        176,
+        179
+       ],
+       "code": [
+        7,
+        7
+       ],
+       "codeFenced": [
+        7,
+        7
+       ],
+       "tables": [
+        1,
+        1
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://blog.cloudflare.com/ai-model-overuse-user-insights/",
+      "https://blog.cloudflare.com/faster-agent-sandboxes/",
+      "https://blog.cloudflare.com/ipsec-downgrade-protection/",
+      "https://blog.cloudflare.com/pay-per-use/",
+      "https://blog.cloudflare.com/100-million-donations/"
+     ]
+    },
+    "wcc-default-cloudflare-blog": {
+     "pages": 30,
+     "failed": 0,
+     "runTimeSecs": 159.168,
+     "memoryMb": 8192,
+     "computeUnits": 0.35370666666666667,
+     "userCostUsd": 0.08297547151814898,
+     "platformUsageUsd": 0.08297547151814898,
+     "costPer1000": 2.766,
+     "cuPer1000": 11.79,
+     "events": {},
+     "avgChars": 5328,
+     "truncatedPages": 0,
+     "templateLinesPerPage": 0.0,
+     "boilerplateLinesPerPage": 0.13,
+     "duplicateContent": 0,
+     "duplicateUrls": 0,
+     "fencedCodeBlocks": 13,
+     "markdownTables": 2,
+     "relativeLinks": 0,
+     "artifacts": {
+      "permalinkAnchors": 58,
+      "backslashEscapes": 9,
+      "emptyLinks": 61,
+      "rawHtmlTags": 0,
+      "dataUris": 0,
+      "copyButtons": 0
+     },
+     "recall": {
+      "headings": 0.821,
+      "paragraphs": 0.985,
+      "code": 1.0,
+      "codeFenced": 1.0,
+      "tables": 1.0,
+      "pages": 5,
+      "counts": {
+       "headings": [
+        46,
+        56
+       ],
+       "paragraphs": [
+        196,
+        199
+       ],
+       "code": [
+        7,
+        7
+       ],
+       "codeFenced": [
+        7,
+        7
+       ],
+       "tables": [
+        2,
+        2
+       ]
+      }
+     },
+     "recallSamples": [
+      "https://blog.cloudflare.com/ai-model-overuse-user-insights/",
+      "https://blog.cloudflare.com/faster-agent-sandboxes/",
+      "https://blog.cloudflare.com/ipsec-downgrade-protection/",
+      "https://blog.cloudflare.com/pay-per-use/",
+      "https://blog.cloudflare.com/application-profiles/"
+     ]
+    }
+   }
+  }
+ }
+}
