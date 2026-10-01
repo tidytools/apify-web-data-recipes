@@ -1,6 +1,6 @@
-# AI Crawler Access Checker - robots.txt for GPTBot, ClaudeBot
+# AI Crawler Checker - robots.txt Checker for GPTBot & AI Bots
 
-Bulk-check up to 10,000 domains: which of 26 AI crawlers (GPTBot, ClaudeBot, PerplexityBot...) robots.txt allows, AI search score, fix snippet, Content Signals, change tracking. $2/1k sites.
+Which AI bots can read a site? Bulk-check up to 10,000 domains for 26 AI crawlers (GPTBot, ClaudeBot, PerplexityBot...) in robots.txt: AI search score, fix snippet, Content Signals. $2/1k sites.
 
 - Apify Store: [https://apify.com/tidytools/ai-crawler-access-checker](https://apify.com/tidytools/ai-crawler-access-checker)
 - Actor ID: `tidytools/ai-crawler-access-checker` (`fHmxS3tQMVb1EfQBu`)
