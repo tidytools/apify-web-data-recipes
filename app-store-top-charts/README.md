@@ -1,12 +1,12 @@
-# App Store Charts & Keyword Rank Tracker - Top Charts, ASO (available from 2026-10-14)
+# App Store Charts & Keyword Rank Tracker - Top Charts, ASO (available from 2026-10-08)
 
 Apple App Store top charts (free, paid, grossing, new) by country and category, Apple Podcasts charts, and keyword rank tracking for your apps, with daily rank changes. From Apple's official feeds.
 
-- Apify Store: `apify.com/tidytools/app-store-top-charts` (public from 2026-10-14)
+- Apify Store: `apify.com/tidytools/app-store-top-charts` (public from 2026-10-08)
 - Actor ID: `tidytools/app-store-top-charts` (`u2wdaOwzbQGmcNpXm`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/app-store-top-charts`
 
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-14**. Until then the recipes below return an error.
+> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-08**. Until then the recipes below return an error.
 
 ## Use case
 
