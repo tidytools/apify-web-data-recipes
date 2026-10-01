@@ -1,6 +1,6 @@
-# SEO Audit Tool - Site Crawler, SEO Score & Core Web Vitals
+# Technical SEO Audit Tool - Website SEO Checker & Site Audit
 
-Technical SEO site audit, JavaScript sites too: 0-100 SEO score and fix hints per page, site report (duplicate titles, broken pages, missing H1, meta, alt), optional PageSpeed. $5/1k pages.
+SEO crawler for technical SEO audits, JS sites too: 0-100 SEO score and fix hints per page, site report (duplicate titles, broken pages, missing H1, meta, alt), optional Core Web Vitals. $5/1k pages.
 
 - Apify Store: [https://apify.com/tidytools/seo-audit-crawler](https://apify.com/tidytools/seo-audit-crawler)
 - Actor ID: `tidytools/seo-audit-crawler` (`V1FNXB9GeyVft8LTH`)
@@ -8,7 +8,7 @@ Technical SEO site audit, JavaScript sites too: 0-100 SEO score and fix hints pe
 
 ## Use case
 
-It crawls your website and checks **every page for on-page SEO problems**, including **sites built with JavaScript or protected against bots**: when a site blocks plain requests, the page is fetched from a second network or audited in a real browser automatically. Each page gets a **score from 0 to 100**, **category scores** and a list of issues with **a fix hint for every issue**. The whole site gets a **report**: score distribution, most common problems, crawl coverage (indexable / noindex / canonicalized / 4xx / 5xx), sitemap checks, canonical and redirect problems, duplicate titles, H1s and content, and broken internal pages.
+It crawls your website and checks **every page for on-page SEO problems**, including **sites built with JavaScript or protected against bots**: when a site blocks plain requests, the page is fetched from a second network or audited in a real browser automatically, and a page that loads almost empty until JavaScript runs (a client-rendered app shell) is rendered in a real browser too. Each page gets a **score from 0 to 100**, **category scores** and a list of issues with **a fix hint for every issue**. The whole site gets a **report**: score distribution, most common problems, crawl coverage (indexable / noindex / canonicalized / 4xx / 5xx), sitemap checks, canonical and redirect problems, duplicate titles, H1s and content, and broken internal pages.
 
 ## Price (pay per event, Apify Free plan)
 
