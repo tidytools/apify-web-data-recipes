@@ -1,12 +1,10 @@
-# Website Contact Details Scraper - Emails, Phones, Socials (available from 2026-10-01)
+# Website Email Scraper - Contact Details, Phones & Socials
 
-Extract emails, phone numbers, social profiles, address and contact forms from company websites (home, contact and imprint pages), incl. obfuscated emails. $2/1,000 sites; nothing found = free.
+Contact details scraper and email extractor for company websites: emails (incl. obfuscated), phone numbers, social media links, address and contact forms. $2/1,000 sites; nothing found = free.
 
 - Apify Store: [https://apify.com/tidytools/website-contact-extractor](https://apify.com/tidytools/website-contact-extractor)
 - Actor ID: `tidytools/website-contact-extractor` (`kFhBWk7SCYTakF6Fn`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/website-contact-extractor`
-
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-01**. Until then the recipes below return an error.
 
 ## Use case
 
@@ -72,8 +70,8 @@ From the Actor's documentation (section "Output example (real result, September 
     "logo": "https://customers.seomanager.com/knowledgegraph/logo/stumptowncoffee_myshopify_com_logo.png",
     "contactFormUrl": null,
     "emailDetails": [
-        { "email": "info@stumptowncoffee.com", "page": "https://www.stumptowncoffee.com/", "method": "jsonld", "sameDomain": true },
-        { "email": "legal@stumptown.com", "page": "https://www.stumptowncoffee.com/pages/terms-and-conditions", "method": "text", "sameDomain": false }
+        { "email": "info@stumptowncoffee.com", "page": "https://www.stumptowncoffee.com/", "method": "jsonld", "sameDomain": true, "mailbox": "role" },
+        { "email": "legal@stumptown.com", "page": "https://www.stumptowncoffee.com/pages/terms-and-conditions", "method": "text", "sameDomain": false, "mailbox": "role" }
     ],
     "phoneDetails": [
         { "number": "+18777113385", "display": "877-711-3385", "national": "(877) 711-3385", "country": "US", "type": "phone", "page": "https://www.stumptowncoffee.com/", "method": "jsonld" }
