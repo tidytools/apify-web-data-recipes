@@ -1,6 +1,6 @@
-"""Bulk Email Validator & Checker - MX, Disposable, Typos: run the Actor on Apify and print the results.
+"""Bulk Email Validator - MX, Disposable Email & Typo Check: run the Actor on Apify and print the results.
 
-Store page: apify.com/tidytools/bulk-email-validator (public from 2026-10-15)
+Store page: apify.com/tidytools/bulk-email-validator (public from 2026-10-03)
 Setup:      pip install apify-client
             export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 Run:        python run.py
