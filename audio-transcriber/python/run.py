@@ -1,4 +1,4 @@
-"""Audio & Video to Text - Speech to Text Transcription, SRT: run the Actor on Apify and print the results.
+"""Audio to Text & Video to Text - Whisper Transcription, SRT: run the Actor on Apify and print the results.
 
 Store page: https://apify.com/tidytools/audio-transcriber
 Setup:      pip install apify-client
@@ -15,6 +15,8 @@ ACTOR_ID = "tidytools/audio-transcriber"
 MAX_TOTAL_CHARGE_USD = Decimal("1.00")  # cost cap: the run stops charging at this amount
 
 RUN_INPUT = {   'urls': ['https://webcapture-api.yukailin.workers.dev/samples/speech-sample.wav'],
+    'podcastFeeds': ['https://www.nasa.gov/feeds/podcasts/small-steps-giant-leaps'],
+    'maxEpisodesPerFeed': 1,
     'subtitleLanguages': []}
 
 
