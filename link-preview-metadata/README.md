@@ -1,6 +1,6 @@
 # Link Preview API - Open Graph, Meta Tags & URL Metadata (available from 2026-10-08)
 
-Get title, description, preview image, favicon, site name, author, dates and Open Graph / Twitter tags for any list of URLs. JavaScript pages too. $1 per 1,000 URLs.
+Get title, description, preview image, favicon, site name, author, dates and Open Graph / Twitter tags for any list of URLs. JavaScript pages too. $2 per 1,000 URLs.
 
 - Apify Store: `apify.com/tidytools/link-preview-metadata` (public from 2026-10-08)
 - Actor ID: `tidytools/link-preview-metadata` (`ACySefAmKCzI7W4KG`)
@@ -25,7 +25,7 @@ Give it URLs (as many as you like, in one run) and get the information you need 
 
 | Event | Price per 1,000 |
 |---|---|
-| URL preview | $1.00 |
+| URL preview | $2.00 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.
 
