@@ -1,8 +1,8 @@
-# Wayback Machine Scraper - Archived URLs, Snapshots & History (available from 2026-10-12)
+# Wayback Machine Scraper - Archived URLs & Website History (available from 2026-10-12)
 
-Internet Archive Wayback Machine data: every archived URL of a website, a page's versions over time, the closest snapshot per URL, site history and old page content as Markdown. $1 per 1,000 rows.
+Internet Archive Wayback Machine data: every archived URL of a website, a page's versions over time, the closest snapshot per URL, site history and old page content as Markdown. $1/1,000 rows.
 
-- Apify Store: [https://apify.com/tidytools/wayback-machine-scraper](https://apify.com/tidytools/wayback-machine-scraper)
+- Apify Store: `apify.com/tidytools/wayback-machine-scraper` (public from 2026-10-12)
 - Actor ID: `tidytools/wayback-machine-scraper` (`3TEyg9Aw7AqXgERUM`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/wayback-machine-scraper`
 
