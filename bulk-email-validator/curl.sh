@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
-# Bulk Email Validator & Checker - MX, Disposable, Typos: run the Actor, wait for it (up to 300 s) and print the dataset items as JSON.
-# Store page: apify.com/tidytools/bulk-email-validator (public from 2026-10-15)
+# Bulk Email Validator - MX, Disposable Email & Typo Check: run the Actor, wait for it (up to 300 s) and print the dataset items as JSON.
+# Store page: apify.com/tidytools/bulk-email-validator (public from 2026-10-03)
 # Usage: export APIFY_TOKEN=your_token && sh curl.sh
 # maxTotalChargeUsd is a cost cap: the run stops charging at this amount.
 : "${APIFY_TOKEN:?Set the APIFY_TOKEN environment variable first}"
