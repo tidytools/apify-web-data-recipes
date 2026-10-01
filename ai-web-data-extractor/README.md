@@ -25,13 +25,14 @@ This is the Actor's prefilled example input. All other fields have defaults; the
 ```json
 {
   "urls": [
-    "https://github.com/apify/crawlee"
+    "https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html"
   ],
   "fields": {
-    "name": "string",
-    "description": "string",
-    "license": "string",
-    "primary_language": "string"
+    "title": "string",
+    "price": "number",
+    "in_stock": "boolean",
+    "stock_count": "integer",
+    "upc": "string"
   }
 }
 ```
@@ -42,18 +43,11 @@ From the Actor's documentation (section "Input example: one row per page"):
 
 ```json
 {
-    "url": "https://github.com/apify/crawlee",
-    "title": "GitHub - apify/crawlee: Crawlee—A web scraping and browser automation library...",
+    "url": "https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html",
     "success": true,
-    "data": {
-        "name": "crawlee",
-        "description": "Crawlee—A web scraping and browser automation library for Node.js to build reliable crawlers...",
-        "license": "Apache License 2.0",
-        "primary_language": "JavaScript"
-    },
-    "mode": "fast",
-    "via": "backend",
-    "contentTruncated": false
+    "data": { "title": "A Light in the Attic", "price": 51.77, "in_stock": true, "stock_count": 22, "upc": "a897fe39b1053632" },
+    "completeness": 1,
+    "charged": true
 }
 ```
 
