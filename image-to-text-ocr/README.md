@@ -2,7 +2,7 @@
 
 Extract text from images with AI OCR: receipts, screenshots, signs, document photos and tables as Markdown, in English, Chinese, Japanese and more. URLs, a dataset or base64. $3/1,000 images.
 
-- Apify Store: [https://apify.com/tidytools/image-to-text-ocr](https://apify.com/tidytools/image-to-text-ocr)
+- Apify Store: `apify.com/tidytools/image-to-text-ocr` (public from 2026-10-03)
 - Actor ID: `tidytools/image-to-text-ocr` (`DuFFQzZueyf7cBjft`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/image-to-text-ocr`
 
