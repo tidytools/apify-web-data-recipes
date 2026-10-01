@@ -1,16 +1,16 @@
-# Website to Vector Embeddings for RAG - Pinecone, Qdrant (available from 2026-10-06)
+# Website Embeddings for RAG - Vector DB, Pinecone, Qdrant (available from 2026-10-09)
 
 Crawl a site or docs, chunk the pages and get 1024-dim multilingual bge-m3 embeddings with stable IDs for Pinecone, Qdrant, pgvector or any vector database. No OpenAI key. From $0.20/1k chunks.
 
-- Apify Store: `apify.com/tidytools/website-to-embeddings` (public from 2026-10-06)
+- Apify Store: `apify.com/tidytools/website-to-embeddings` (public from 2026-10-09)
 - Actor ID: `tidytools/website-to-embeddings` (`69AbOL4uxESijjy3s`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/website-to-embeddings`
 
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-06**. Until then the recipes below return an error.
+> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-09**. Until then the recipes below return an error.
 
 ## Use case
 
-It crawls a website or documentation portal, converts every page to clean text, **splits it into chunks** and returns a **1024-dimension embedding for each chunk**, ready to load into Pinecone, Qdrant, Weaviate, Milvus, Chroma, pgvector or any other vector database. One run replaces a crawler, a chunker and an embedding API.
+Website embeddings in one run: it crawls a website or documentation portal, converts every page to clean text, **splits it into chunks** and returns a **1024-dimension embedding for each chunk**, ready to load into Pinecone, Qdrant, Weaviate, Milvus, Chroma, pgvector or any other vector database. One run replaces a crawler, a chunker and an embedding API.
 
 ## Price (pay per event, Apify Free plan)
 
