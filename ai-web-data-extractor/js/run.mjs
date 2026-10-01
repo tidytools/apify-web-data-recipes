@@ -11,13 +11,14 @@ const MAX_TOTAL_CHARGE_USD = 1.0; // cost cap: the run stops charging at this am
 
 const input = {
     "urls": [
-        "https://github.com/apify/crawlee"
+        "https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html"
     ],
     "fields": {
-        "name": "string",
-        "description": "string",
-        "license": "string",
-        "primary_language": "string"
+        "title": "string",
+        "price": "number",
+        "in_stock": "boolean",
+        "stock_count": "integer",
+        "upc": "string"
     }
 };
 
