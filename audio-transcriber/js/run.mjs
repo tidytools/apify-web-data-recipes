@@ -1,4 +1,4 @@
-// Audio & Video to Text - Speech to Text Transcription, SRT: run the Actor on Apify and print the results.
+// Audio to Text & Video to Text - Whisper Transcription, SRT: run the Actor on Apify and print the results.
 // Store page: https://apify.com/tidytools/audio-transcriber
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
@@ -13,6 +13,10 @@ const input = {
     "urls": [
         "https://webcapture-api.yukailin.workers.dev/samples/speech-sample.wav"
     ],
+    "podcastFeeds": [
+        "https://www.nasa.gov/feeds/podcasts/small-steps-giant-leaps"
+    ],
+    "maxEpisodesPerFeed": 1,
     "subtitleLanguages": []
 };
 
