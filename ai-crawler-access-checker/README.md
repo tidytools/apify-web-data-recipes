@@ -1,6 +1,6 @@
 # AI Crawler Checker - robots.txt Checker for GPTBot & AI Bots
 
-Which AI bots can read a site? Bulk-check up to 10,000 domains for 26 AI crawlers (GPTBot, ClaudeBot, PerplexityBot...) in robots.txt: AI search score, fix snippet, Content Signals. $2/1k sites.
+Which AI bots can read a site? Bulk-check up to 10,000 domains for 29 AI crawlers (GPTBot, ClaudeBot, PerplexityBot...) in robots.txt: AI search score, fix snippet, Content Signals, change alerts. $2/1k sites.
 
 - Apify Store: [https://apify.com/tidytools/ai-crawler-access-checker](https://apify.com/tidytools/ai-crawler-access-checker)
 - Actor ID: `tidytools/ai-crawler-access-checker` (`fHmxS3tQMVb1EfQBu`)
@@ -8,7 +8,7 @@ Which AI bots can read a site? Bulk-check up to 10,000 domains for 26 AI crawler
 
 ## Use case
 
-It tells you **which AI crawlers are allowed to read a website** according to its `robots.txt`, scores it, gives you a **ready-to-paste robots.txt fix**, and can **track changes week to week**. It also reads **Cloudflare Content Signals** (`Content-Signal: search=yes, ai-train=no`), and checks for an **llms.txt** file and `noai` directives. Check one site or **up to 10,000 domains per run for $2 per 1,000 sites**.
+AI crawler checker and bulk robots.txt checker: it tells you **which AI crawlers are allowed to read a website** according to its `robots.txt`, scores it, gives you a **ready-to-paste robots.txt fix**, and can **track changes week to week**. It also reads **Cloudflare Content Signals** (`Content-Signal: search=yes, ai-train=no`), and checks for an **llms.txt** file and `noai` directives. Check one site or **up to 10,000 domains per run for $2 per 1,000 sites**.
 
 For a live benchmark of how popular sites treat these crawlers, see the [AI Crawler Index](https://tools.yukai.uk/ai-crawler-index) (1,005 sites, updated daily, CSV download).
 
