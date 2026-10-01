@@ -2,7 +2,7 @@
 
 Crawl a website and find every broken link and image (404, 410, 5xx, dead domains, SSL errors) with the page and anchor text. Internal and external links. $1/1k pages + $0.30/1k links.
 
-- Apify Store: [https://apify.com/tidytools/broken-link-checker](https://apify.com/tidytools/broken-link-checker)
+- Apify Store: `apify.com/tidytools/broken-link-checker` (public from 2026-10-05)
 - Actor ID: `tidytools/broken-link-checker` (`iU4sjuweSBNA1jq0f`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/broken-link-checker`
 
