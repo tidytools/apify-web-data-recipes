@@ -1,12 +1,10 @@
-# ATS & Career Site Jobs Scraper - Greenhouse, Lever, Workday (available from 2026-10-01)
+# ATS Jobs Scraper - Career Sites, Greenhouse, Lever, Workday
 
-Live jobs from company career sites: paste career pages, domains or board URLs. Auto-detects 17 ATSs incl. Greenhouse, Lever, Ashby, Workday, SmartRecruiters; only-new-jobs alerts. $1/1,000 jobs.
+Live jobs from company career sites and careers pages: paste career pages, domains or board URLs. Detects 17 ATSs incl. Greenhouse, Lever, Ashby, Workday, SmartRecruiters. New-job alerts. $1/1k jobs.
 
 - Apify Store: [https://apify.com/tidytools/ats-career-site-jobs](https://apify.com/tidytools/ats-career-site-jobs)
 - Actor ID: `tidytools/ats-career-site-jobs` (`k95BFAjcwk9AX61BE`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/ats-career-site-jobs`
-
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-01**. Until then the recipes below return an error.
 
 ## Use case
 
