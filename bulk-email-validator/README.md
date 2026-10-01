@@ -1,16 +1,16 @@
-# Bulk Email Validator & Checker - MX, Disposable, Typos (available from 2026-10-15)
+# Bulk Email Validator - MX, Disposable Email & Typo Check (available from 2026-10-03)
 
-Clean e-mail lists without SMTP pings: syntax, domain and MX records, disposable, role and free-provider flags, typo fixes (gmial.com → gmail.com), score and verdict. $0.50/1,000.
+Email list cleaner without SMTP pings: bulk-check syntax, domain and MX records, disposable email, role and free-provider flags, and typos (gmial.com → gmail.com). CSV upload or another Actor's dataset. Failed lines are free. $0.50 per 1,000.
 
-- Apify Store: `apify.com/tidytools/bulk-email-validator` (public from 2026-10-15)
+- Apify Store: `apify.com/tidytools/bulk-email-validator` (public from 2026-10-03)
 - Actor ID: `tidytools/bulk-email-validator` (`haMAC5lJnzZmQcyqh`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/bulk-email-validator`
 
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-15**. Until then the recipes below return an error.
+> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-03**. Until then the recipes below return an error.
 
 ## Use case
 
-It **cleans e-mail lists before you send**: for every address it checks the **syntax**, whether the **domain exists and accepts mail (MX records)**, and flags **disposable, role, no-reply and free-provider addresses** and **typos** such as `gmial.com` or `gmail.con`. Each address gets a **verdict** (`valid`, `risky`, `invalid`, `unknown`), a **score from 0 to 100** and a plain-English **reason**.
+**Email list cleaner** for lists you are about to send or import: give it a list, a CSV or the dataset of a lead scraper and get a verdict, score and reason per address, with no SMTP pings. **$0.50 per 1,000 addresses, no start fee, failed lines free**; the run stops at your maximum charge per run, and a restarted run never charges an address twice.
 
 ## Price (pay per event, Apify Free plan)
 
