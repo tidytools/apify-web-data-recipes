@@ -1,12 +1,10 @@
-# Audio & Video to Text Transcription - Whisper, Podcasts, SRT (available from 2026-10-01)
+# Audio & Video to Text - Speech to Text Transcription, SRT
 
-Transcribe audio and video files, Drive/Dropbox links and podcast RSS feeds to text with timestamps and SRT/VTT subtitles. Speech to text in 90+ languages, speaker labels optional. $0.006/min.
+Whisper transcription: audio to text and video to text from files, Drive/Dropbox links and podcast RSS feeds, with timestamps and SRT/VTT subtitles. 90+ languages, optional speaker labels. $0.006/min.
 
 - Apify Store: [https://apify.com/tidytools/audio-transcriber](https://apify.com/tidytools/audio-transcriber)
 - Actor ID: `tidytools/audio-transcriber` (`3W2KtIbvHitDH8GCc`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/audio-transcriber`
-
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-01**. Until then the recipes below return an error.
 
 ## Use case
 
