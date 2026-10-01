@@ -2,7 +2,7 @@
 
 Get title, description, preview image, favicon, site name, author, dates and Open Graph / Twitter tags for any list of URLs. JavaScript pages too. $1 per 1,000 URLs.
 
-- Apify Store: [https://apify.com/tidytools/link-preview-metadata](https://apify.com/tidytools/link-preview-metadata)
+- Apify Store: `apify.com/tidytools/link-preview-metadata` (public from 2026-10-08)
 - Actor ID: `tidytools/link-preview-metadata` (`ACySefAmKCzI7W4KG`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/link-preview-metadata`
 
@@ -12,7 +12,7 @@ Get title, description, preview image, favicon, site name, author, dates and Ope
 
 Give it URLs (as many as you like, in one run) and get the information you need to show a **rich link preview** or to catalogue pages:
 
-- 🏷️ **Title and description** (Open Graph first, then the HTML title and meta description)
+- 🏷️ **Title and description** (Open Graph first, then Twitter Card tags, then the HTML title and meta description)
 - 🖼️ **Preview image** (`og:image` / `twitter:image`, then schema.org JSON-LD) as an absolute URL
 - 🌐 **Site name, page type, favicon, language, theme color, charset**
 - ✍️ **Author, published and modified time, publisher and logo**, with a **JSON-LD fallback** when Open Graph tags are missing, and a `sources` object that says where each value came from (`og`, `twitter`, `html` or `jsonld`)
