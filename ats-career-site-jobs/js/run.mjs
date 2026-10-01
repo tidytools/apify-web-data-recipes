@@ -15,6 +15,7 @@ const input = {
         "jobs.lever.co/leverdemo",
         "https://apply.workable.com/huggingface/"
     ],
+    "companyPreset": "ai-labs",
     "maxJobsPerCompany": 10
 };
 
