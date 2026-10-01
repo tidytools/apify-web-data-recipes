@@ -1,5 +1,5 @@
-// AI Summarizer - Summarize Web Pages, Articles & Text: run the Actor on Apify and print the results.
-// Store page: https://apify.com/tidytools/web-page-summarizer
+// Article Summarizer & Text Summarizer - Summarize Web Pages: run the Actor on Apify and print the results.
+// Store page: apify.com/tidytools/web-page-summarizer (public from 2026-10-07)
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 // Run:   node run.mjs
