@@ -1,4 +1,4 @@
-"""Website Contact Details Scraper - Emails, Phones, Socials: run the Actor on Apify and print the results.
+"""Website Email Scraper - Contact Details, Phones & Socials: run the Actor on Apify and print the results.
 
 Store page: https://apify.com/tidytools/website-contact-extractor
 Setup:      pip install apify-client
