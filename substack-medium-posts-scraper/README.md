@@ -1,8 +1,8 @@
-# Substack & Medium Posts Scraper (RSS) - Newsletters & Blogs (available from 2026-10-10)
+# Substack Scraper & Medium Scraper - Newsletter & Blog Posts (available from 2026-10-10)
 
-Posts from Substack, Medium, Ghost, Beehiiv, WordPress or any RSS/Atom feed: title, author, date, text, tags, image, word count. Date and keyword filters, new-post alerts, paywall-aware full text. $1 per 1,000 posts.
+Posts from Substack, Medium, Ghost, Beehiiv, WordPress or any RSS/Atom feed: title, author, date, text, tags, image. Date and keyword filters, new-post alerts, paywall-aware full text. $1/1k posts.
 
-- Apify Store: [https://apify.com/tidytools/substack-medium-posts-scraper](https://apify.com/tidytools/substack-medium-posts-scraper)
+- Apify Store: `apify.com/tidytools/substack-medium-posts-scraper` (public from 2026-10-10)
 - Actor ID: `tidytools/substack-medium-posts-scraper` (`qfs46BiUpvLnavTqe`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/substack-medium-posts-scraper`
 
