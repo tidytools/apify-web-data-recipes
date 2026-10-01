@@ -1,6 +1,6 @@
-"""Apple App Store Reviews Scraper API - iOS Reviews & Ratings: run the Actor on Apify and print the results.
+"""Apple App Store Reviews Scraper - iOS App Reviews & Ratings: run the Actor on Apify and print the results.
 
-Store page: https://apify.com/tidytools/apple-app-store-reviews
+Store page: apify.com/tidytools/apple-app-store-reviews (public from 2026-10-02)
 Setup:      pip install apify-client
             export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 Run:        python run.py
