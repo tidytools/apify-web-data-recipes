@@ -1,6 +1,6 @@
-# Audio & Video to Text - Speech to Text Transcription, SRT
+# Audio to Text & Video to Text - Whisper Transcription, SRT
 
-Whisper transcription: audio to text and video to text from files, Drive/Dropbox links and podcast RSS feeds, with timestamps and SRT/VTT subtitles. 90+ languages, optional speaker labels. $0.006/min.
+Transcribe audio to text and video to text with Whisper: MP3, MP4, podcast RSS, Drive/Dropbox links. Timestamps, SRT/VTT subtitles, speaker diarization, 90+ languages. $0.006/min.
 
 - Apify Store: [https://apify.com/tidytools/audio-transcriber](https://apify.com/tidytools/audio-transcriber)
 - Actor ID: `tidytools/audio-transcriber` (`3W2KtIbvHitDH8GCc`)
@@ -8,7 +8,7 @@ Whisper transcription: audio to text and video to text from files, Drive/Dropbox
 
 ## Use case
 
-It turns **audio files, videos and podcast episodes** into **text with timestamps**, readable **paragraphs**, and ready-to-use **SRT and VTT subtitle files**. It uses OpenAI's open **Whisper large-v3-turbo** model, detects the language automatically and supports 90+ languages.
+**Input:** audio/video file URLs, uploads or podcast RSS feeds. **Output per file:** text, timestamped segments, paragraphs, SRT/VTT links. **$0.006 per minute**, failed or silent files are free.
 
 ## Price (pay per event, Apify Free plan)
 
@@ -30,6 +30,10 @@ This is the Actor's prefilled example input. All other fields have defaults; the
   "urls": [
     "https://webcapture-api.yukailin.workers.dev/samples/speech-sample.wav"
   ],
+  "podcastFeeds": [
+    "https://www.nasa.gov/feeds/podcasts/small-steps-giant-leaps"
+  ],
+  "maxEpisodesPerFeed": 1,
   "subtitleLanguages": []
 }
 ```
