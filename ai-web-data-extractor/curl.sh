@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-# AI Web Scraper - Extract Structured Data to JSON by Prompt: run the Actor, wait for it (up to 300 s) and print the dataset items as JSON.
+# AI Web Scraper - Extract Structured Data & URL to JSON: run the Actor, wait for it (up to 300 s) and print the dataset items as JSON.
 # Store page: https://apify.com/tidytools/ai-web-data-extractor
 # Usage: export APIFY_TOKEN=your_token && sh curl.sh
 # maxTotalChargeUsd is a cost cap: the run stops charging at this amount.
