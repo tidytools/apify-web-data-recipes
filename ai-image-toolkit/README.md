@@ -1,12 +1,12 @@
-# Background Remover - Image Converter, Compressor & Resizer (available from 2026-10-16)
+# Background Remover - Image Converter, Compressor & Resizer (available from 2026-10-08)
 
 Remove image backgrounds in bulk with AI (hair and fur kept): transparent PNG/WebP or any color, crop to subject. Plus resize, convert to WebP/AVIF/JPEG and compress.
 
-- Apify Store: `apify.com/tidytools/ai-image-toolkit` (public from 2026-10-16)
+- Apify Store: `apify.com/tidytools/ai-image-toolkit` (public from 2026-10-08)
 - Actor ID: `tidytools/ai-image-toolkit` (`w3p8rtI51QdMqjtKr`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/ai-image-toolkit`
 
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-16**. Until then the recipes below return an error.
+> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-08**. Until then the recipes below return an error.
 
 ## Use case
 
