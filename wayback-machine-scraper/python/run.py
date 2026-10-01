@@ -1,6 +1,6 @@
-"""Wayback Machine Scraper - Archived URLs, Snapshots & History: run the Actor on Apify and print the results.
+"""Wayback Machine Scraper - Archived URLs & Website History: run the Actor on Apify and print the results.
 
-Store page: https://apify.com/tidytools/wayback-machine-scraper
+Store page: apify.com/tidytools/wayback-machine-scraper (public from 2026-10-12)
 Setup:      pip install apify-client
             export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 Run:        python run.py
