@@ -1,4 +1,4 @@
-// Website Email Scraper - Contact Details, Phones & Socials: run the Actor on Apify and print the results.
+// Email Extractor - Website Contact Details Scraper & Socials: run the Actor on Apify and print the results.
 // Store page: https://apify.com/tidytools/website-contact-extractor
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
