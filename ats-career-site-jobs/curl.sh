@@ -15,6 +15,7 @@ curl -sS -X POST "https://api.apify.com/v2/acts/tidytools~ats-career-site-jobs/r
     "jobs.lever.co/leverdemo",
     "https://apply.workable.com/huggingface/"
   ],
+  "companyPreset": "ai-labs",
   "maxJobsPerCompany": 10
 }
 JSON
