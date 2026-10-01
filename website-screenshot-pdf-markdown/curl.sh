@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-# Website Screenshot API - Full Page, URL to PDF & Markdown: run the Actor, wait for it (up to 300 s) and print the dataset items as JSON.
+# Website Screenshot API - Full Page Screenshot & URL to PDF: run the Actor, wait for it (up to 300 s) and print the dataset items as JSON.
 # Store page: https://apify.com/tidytools/website-screenshot-pdf-markdown
 # Usage: export APIFY_TOKEN=your_token && sh curl.sh
 # maxTotalChargeUsd is a cost cap: the run stops charging at this amount.
