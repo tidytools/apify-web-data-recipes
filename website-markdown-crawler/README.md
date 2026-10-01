@@ -1,6 +1,6 @@
-# Website Content Crawler to Markdown for LLM & RAG
+# Website Content Crawler - Website to Markdown for LLM & RAG
 
-Crawl any website or docs site into clean, LLM-ready Markdown with optional RAG chunks. Sitemap support, JavaScript rendering, linked PDFs and Word files converted. From $1 per 1,000 pages.
+Markdown crawler for AI: crawl a website or docs site into clean, LLM-ready Markdown (URL to Markdown, HTML to Markdown) with RAG chunks. Sitemaps, JavaScript pages, linked PDFs and Word. $1/1k pages.
 
 - Apify Store: [https://apify.com/tidytools/website-markdown-crawler](https://apify.com/tidytools/website-markdown-crawler)
 - Actor ID: `tidytools/website-markdown-crawler` (`TpZrf66Jvgs26hMby`)
