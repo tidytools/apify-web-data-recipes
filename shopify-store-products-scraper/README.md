@@ -1,12 +1,12 @@
-# Shopify Scraper - Shopify Products, Prices & Stock Monitor (available from 2026-10-11)
+# Shopify Product Scraper & Price Monitor (available from 2026-10-04)
 
-All products of any Shopify store from its public products.json: variants, SKUs, prices, compare-at prices, stock, images. Price and stock change alerts, collections, Shopify store check. $1/1k.
+Every product of any Shopify store from its public products.json: variants, SKUs, prices, stock, images. Shopify price monitor with price-drop and back-in-stock alerts. $1/1k products, no start fee.
 
-- Apify Store: `apify.com/tidytools/shopify-store-products-scraper` (public from 2026-10-11)
+- Apify Store: `apify.com/tidytools/shopify-store-products-scraper` (public from 2026-10-04)
 - Actor ID: `tidytools/shopify-store-products-scraper` (`99dLaQ0LJuZveBXc2`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/shopify-store-products-scraper`
 
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-11**. Until then the recipes below return an error.
+> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-04**. Until then the recipes below return an error.
 
 ## Use case
 
