@@ -1,6 +1,6 @@
 """Link Preview API - Open Graph, Meta Tags & URL Metadata: run the Actor on Apify and print the results.
 
-Store page: https://apify.com/tidytools/link-preview-metadata
+Store page: apify.com/tidytools/link-preview-metadata (public from 2026-10-08)
 Setup:      pip install apify-client
             export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 Run:        python run.py
