@@ -1,6 +1,6 @@
 # Website Change Monitor - Page Change Detection & Alerts
 
-Monitor web pages for content and price changes: CSS selector per URL, keyword triggers, noise filters, screenshots, e-mail, Slack, Discord and webhook alerts, AI summaries. $2/1k checks.
+Website change tracker and content monitor: text and price changes, CSS selector per URL, keyword triggers, noise filters, screenshots, email, Slack, Discord, webhook alerts, AI summary. $2/1k checks.
 
 - Apify Store: [https://apify.com/tidytools/website-change-monitor](https://apify.com/tidytools/website-change-monitor)
 - Actor ID: `tidytools/website-change-monitor` (`rhX83ewDzbmT6Fq94`)
