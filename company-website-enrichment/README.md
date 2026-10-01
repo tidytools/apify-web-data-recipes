@@ -1,6 +1,6 @@
 # Lead Enrichment - Company Enrichment for Google Maps Leads (available from 2026-10-02)
 
-Company enrichment for domains or Google Maps leads: emails, phones, socials, AI one-line description, industry, B2B/B2C, tech stack. Rows map back to the source. $6/1,000.
+Company data and lead enrichment for domains or Google Maps leads: emails, phones, socials, AI one-line description, industry, B2B/B2C, tech stack. Rows map back to the source. $6/1,000.
 
 - Apify Store: `apify.com/tidytools/company-website-enrichment` (public from 2026-10-02)
 - Actor ID: `tidytools/company-website-enrichment` (`RcPuCbK3BPevD8Uau`)
