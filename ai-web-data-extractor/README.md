@@ -1,6 +1,6 @@
-# AI Web Scraper - Extract Structured Data to JSON by Prompt
+# AI Web Scraper - Extract Structured Data & URL to JSON
 
-List the fields or just describe what you want: AI reads each page and returns clean JSON. No selectors or code. One row per item on list pages, follows detail links. $0.01 per page.
+AI scraper and AI extractor: list the fields or describe what you want, and an LLM reads each page and returns JSON. No selectors or code. One row per list item, follows detail links. $0.01/page.
 
 - Apify Store: [https://apify.com/tidytools/ai-web-data-extractor](https://apify.com/tidytools/ai-web-data-extractor)
 - Actor ID: `tidytools/ai-web-data-extractor` (`zuXZ7jgllbXStKb3f`)
