@@ -1,6 +1,6 @@
 """Image to Text OCR API - Extract Text from Images with AI: run the Actor on Apify and print the results.
 
-Store page: https://apify.com/tidytools/image-to-text-ocr
+Store page: apify.com/tidytools/image-to-text-ocr (public from 2026-10-03)
 Setup:      pip install apify-client
             export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 Run:        python run.py
