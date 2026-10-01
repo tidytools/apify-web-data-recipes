@@ -14,11 +14,12 @@ from apify_client import ApifyClient
 ACTOR_ID = "tidytools/ai-web-data-extractor"
 MAX_TOTAL_CHARGE_USD = Decimal("1.00")  # cost cap: the run stops charging at this amount
 
-RUN_INPUT = {   'urls': ['https://github.com/apify/crawlee'],
-    'fields': {   'name': 'string',
-                  'description': 'string',
-                  'license': 'string',
-                  'primary_language': 'string'}}
+RUN_INPUT = {   'urls': ['https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html'],
+    'fields': {   'title': 'string',
+                  'price': 'number',
+                  'in_stock': 'boolean',
+                  'stock_count': 'integer',
+                  'upc': 'string'}}
 
 
 def main():
