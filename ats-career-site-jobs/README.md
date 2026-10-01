@@ -30,6 +30,7 @@ This is the Actor's prefilled example input. All other fields have defaults; the
     "jobs.lever.co/leverdemo",
     "https://apply.workable.com/huggingface/"
   ],
+  "companyPreset": "ai-labs",
   "maxJobsPerCompany": 10
 }
 ```
