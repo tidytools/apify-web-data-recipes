@@ -11,7 +11,8 @@ const MAX_TOTAL_CHARGE_USD = 1.0; // cost cap: the run stops charging at this am
 
 const input = {
     "urls": [
-        "https://www.python.org/"
+        "https://www.python.org/",
+        "books.toscrape.com"
     ],
     "maxPages": 20
 };
