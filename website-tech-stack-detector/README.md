@@ -1,6 +1,6 @@
 # Tech Stack Detector - BuiltWith & Wappalyzer Alternative (available from 2026-10-02)
 
-Tech stack detector for any list of websites: CMS, e-commerce, JS frameworks, analytics, ads, CDN, hosting, payments. 320+ technologies with evidence. $4/1,000 sites; none found = free.
+Tech stack detector and website technology lookup for site lists: CMS, e-commerce, JS frameworks, analytics, CDN, hosting, payments. 480+ technologies with evidence. $7/1,000 sites; none found = free.
 
 - Apify Store: `apify.com/tidytools/website-tech-stack-detector` (public from 2026-10-02)
 - Actor ID: `tidytools/website-tech-stack-detector` (`znF3B0Qjf11cv97Wa`)
@@ -24,7 +24,7 @@ Give it a list of websites (bare domains like `stripe.com` or full URLs) and get
 
 | Event | Price per 1,000 |
 |---|---|
-| Analyzed website | $4.00 |
+| Analyzed website | $7.00 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.
 
