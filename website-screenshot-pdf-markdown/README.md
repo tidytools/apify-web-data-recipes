@@ -1,6 +1,6 @@
-# Website Screenshot API - Full Page, URL to PDF & Markdown
+# Website Screenshot API - Full Page Screenshot & URL to PDF
 
-Bulk website screenshots (full page, element, mobile, tablet), URL to PDF and clean Markdown in one run. PNG, JPEG or WebP, ad and cookie banner hiding. Pay only for successful outputs.
+Bulk website screenshots: full page screenshot, one element, mobile or tablet, several widths. URL to PDF (website to PDF) and clean Markdown in one run. Hides ads and cookie banners. Failures free.
 
 - Apify Store: [https://apify.com/tidytools/website-screenshot-pdf-markdown](https://apify.com/tidytools/website-screenshot-pdf-markdown)
 - Actor ID: `tidytools/website-screenshot-pdf-markdown` (`aHKoTOLGnFnzHgHPI`)
