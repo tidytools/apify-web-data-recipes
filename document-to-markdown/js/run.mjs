@@ -1,4 +1,4 @@
-// PDF to Markdown & Text Extractor - Word, Excel, OCR: run the Actor on Apify and print the results.
+// PDF Text Extractor & PDF to Markdown - OCR, Word, Excel: run the Actor on Apify and print the results.
 // Store page: https://apify.com/tidytools/document-to-markdown
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
