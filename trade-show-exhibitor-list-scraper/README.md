@@ -1,12 +1,12 @@
-# Trade Show Exhibitor List Scraper - Company, Booth, Website (available from 2026-10-13)
+# Trade Show Exhibitor List Scraper - Company, Booth, Website (available from 2026-10-06)
 
 Exhibitor lists from trade show and expo directories: company, booth, hall, categories, country, website, description, logo. a2z (Personify) and ExpoFP natively; other sites via AI. Company data only.
 
-- Apify Store: `apify.com/tidytools/trade-show-exhibitor-list-scraper` (public from 2026-10-13)
+- Apify Store: `apify.com/tidytools/trade-show-exhibitor-list-scraper` (public from 2026-10-06)
 - Actor ID: `tidytools/trade-show-exhibitor-list-scraper` (`kF9CLDGcwUS4BehnG`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/trade-show-exhibitor-list-scraper`
 
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-13**. Until then the recipes below return an error.
+> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-06**. Until then the recipes below return an error.
 
 ## Use case
 
