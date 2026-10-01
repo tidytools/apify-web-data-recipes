@@ -1,6 +1,6 @@
 """Schema Markup Validator - JSON-LD Structured Data Checker: run the Actor on Apify and print the results.
 
-Store page: https://apify.com/tidytools/structured-data-validator
+Store page: apify.com/tidytools/structured-data-validator (public from 2026-10-05)
 Setup:      pip install apify-client
             export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 Run:        python run.py
