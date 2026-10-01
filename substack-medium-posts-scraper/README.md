@@ -1,16 +1,16 @@
-# Substack Scraper & Medium Scraper - Newsletter & Blog Posts (available from 2026-10-10)
+# Substack Scraper & Medium Scraper - Newsletter & Blog Posts (available from 2026-10-05)
 
 Posts from Substack, Medium, Ghost, Beehiiv, WordPress or any RSS/Atom feed: title, author, date, text, tags, image. Date and keyword filters, new-post alerts, paywall-aware full text. $1/1k posts.
 
-- Apify Store: `apify.com/tidytools/substack-medium-posts-scraper` (public from 2026-10-10)
+- Apify Store: `apify.com/tidytools/substack-medium-posts-scraper` (public from 2026-10-05)
 - Actor ID: `tidytools/substack-medium-posts-scraper` (`qfs46BiUpvLnavTqe`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/substack-medium-posts-scraper`
 
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-10**. Until then the recipes below return an error.
+> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-05**. Until then the recipes below return an error.
 
 ## Use case
 
-It returns the **posts of any newsletter or blog** from its **public feed** (RSS, Atom or JSON Feed): Substack newsletters (also on custom domains), Medium authors, publications and tags, Ghost, Beehiiv, WordPress, Blogger, Hashnode or any site with a feed. Paste newsletter URLs, blog home pages, feed URLs or Medium handles; get one clean row per post.
+It returns the **posts of any newsletter or blog** from its **public feed** (RSS, Atom or JSON Feed): Substack newsletters (also on custom domains), Medium authors, publications and tags, Ghost, Beehiiv, WordPress, Blogger, Hashnode or any site with a feed. Paste newsletter URLs, blog home pages, feed URLs or Medium handles; get one clean row per post. **No start fee, no login**: $1 per 1,000 posts, so small jobs and daily newsletter monitoring stay cheap.
 
 ## Price (pay per event, Apify Free plan)
 
