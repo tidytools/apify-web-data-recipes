@@ -1,5 +1,5 @@
-// Wayback Machine Scraper - Archived URLs, Snapshots & History: run the Actor on Apify and print the results.
-// Store page: https://apify.com/tidytools/wayback-machine-scraper
+// Wayback Machine Scraper - Archived URLs & Website History: run the Actor on Apify and print the results.
+// Store page: apify.com/tidytools/wayback-machine-scraper (public from 2026-10-12)
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 // Run:   node run.mjs
