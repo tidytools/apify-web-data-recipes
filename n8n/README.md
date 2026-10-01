@@ -46,7 +46,7 @@ Tested: the Lever demo board and Hugging Face (Workable), with the title keyword
 
 File: [`n8n-google-maps-lead-enrichment.workflow.json`](n8n-google-maps-lead-enrichment.workflow.json)
 
-Runs the Google Maps Scraper on Apify for a search term and location, then passes its dataset to [Lead Enrichment](https://apify.com/tidytools/company-website-enrichment). Enrichment adds the email, phone, social profiles, a one-line AI description, B2B / B2C and the tech stack. One lead row per place is appended to Google Sheets, and every row joins back to Google Maps by Place ID.
+Runs the Google Maps Scraper on Apify for a search term and location, then passes its dataset to Lead Enrichment (`tidytools/company-website-enrichment`, public on the Apify Store from 2026-10-02). Enrichment adds the email, phone, social profiles, a one-line AI description, B2B / B2C and the tech stack. One lead row per place is appended to Google Sheets, and every row joins back to Google Maps by Place ID.
 
 Tested: 5 dentists in Austin, Texas. All 5 rows had a Place ID and phone; Facebook 5/5, description 5/5, CMS 4/5, email 1/5; 23 s.
 
