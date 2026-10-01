@@ -1,4 +1,4 @@
-"""AI Web Scraper - Extract Structured Data to JSON by Prompt: run the Actor on Apify and print the results.
+"""AI Web Scraper - Extract Structured Data & URL to JSON: run the Actor on Apify and print the results.
 
 Store page: https://apify.com/tidytools/ai-web-data-extractor
 Setup:      pip install apify-client
