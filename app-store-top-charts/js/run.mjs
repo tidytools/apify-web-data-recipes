@@ -1,5 +1,5 @@
 // App Store Charts & Keyword Rank Tracker - Top Charts, ASO: run the Actor on Apify and print the results.
-// Store page: apify.com/tidytools/app-store-top-charts (public from 2026-10-14)
+// Store page: apify.com/tidytools/app-store-top-charts (public from 2026-10-08)
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 // Run:   node run.mjs
