@@ -1,5 +1,5 @@
 // Website Classifier & Text Classifier - Industry & Sentiment: run the Actor on Apify and print the results.
-// Store page: apify.com/tidytools/ai-page-classifier (public from 2026-10-07)
+// Store page: apify.com/tidytools/ai-page-classifier (public from 2026-10-09)
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 // Run:   node run.mjs
