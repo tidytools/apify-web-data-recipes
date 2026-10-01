@@ -1,8 +1,8 @@
-# Apple App Store Reviews Scraper API - iOS Reviews & Ratings (available from 2026-10-02)
+# Apple App Store Reviews Scraper - iOS App Reviews & Ratings (available from 2026-10-02)
 
-App Store reviews and app details from Apple's official public feeds, many countries. Star, date and keyword filters, new-review alerts, optional AI summary. $0.10 per 1,000 reviews.
+App Store scraper for iOS app reviews and app details from Apple's official public feeds, many countries. Star, date and keyword filters, new-review alerts, optional AI summary. $0.10/1,000 reviews.
 
-- Apify Store: [https://apify.com/tidytools/apple-app-store-reviews](https://apify.com/tidytools/apple-app-store-reviews)
+- Apify Store: `apify.com/tidytools/apple-app-store-reviews` (public from 2026-10-02)
 - Actor ID: `tidytools/apple-app-store-reviews` (`Z9MXLhY9FvkLVvdB2`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/apple-app-store-reviews`
 
