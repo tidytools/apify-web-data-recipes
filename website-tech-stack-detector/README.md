@@ -1,8 +1,8 @@
 # Tech Stack Detector - BuiltWith & Wappalyzer Alternative (available from 2026-10-02)
 
-Find the technologies behind any list of websites: CMS, e-commerce, JS frameworks, analytics, ads, CDN, hosting, payments. 320+ technologies with evidence. $4/1,000 sites; none found = free.
+Tech stack detector for any list of websites: CMS, e-commerce, JS frameworks, analytics, ads, CDN, hosting, payments. 320+ technologies with evidence. $4/1,000 sites; none found = free.
 
-- Apify Store: [https://apify.com/tidytools/website-tech-stack-detector](https://apify.com/tidytools/website-tech-stack-detector)
+- Apify Store: `apify.com/tidytools/website-tech-stack-detector` (public from 2026-10-02)
 - Actor ID: `tidytools/website-tech-stack-detector` (`znF3B0Qjf11cv97Wa`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/website-tech-stack-detector`
 
@@ -18,6 +18,7 @@ Give it a list of websites (bare domains like `stripe.com` or full URLs) and get
 - 📊 **Analytics, tag managers and ads**: Google Analytics, Google Tag Manager, Hotjar, Microsoft Clarity, Mixpanel, Segment, Meta Pixel, LinkedIn Insight, TikTok Pixel, Google Ads…
 - ☁️ **CDN, hosting and web servers**: Cloudflare, Fastly, Akamai, CloudFront, Vercel, Netlify, Heroku, WP Engine, Kinsta, Nginx (with version), Apache, LiteSpeed…
 - 💳 **Payments, chat, marketing automation, A/B testing, cookie consent, bot protection, fonts, maps and video**: Stripe, PayPal, Klarna, Intercom, Zendesk, HubSpot, Klaviyo, Optimizely, OneTrust, Cookiebot, reCAPTCHA, DataDome, Google Fonts, YouTube…
+- ✉️ **E-mail provider and SaaS seen in DNS** (new): the MX provider (Google Workspace, Microsoft 365, Proofpoint, Mimecast…), senders from SPF and DKIM (SendGrid, Mailchimp, Amazon SES, Postmark, HubSpot, Marketo, Salesforce…) and the domain-verification records companies add for Atlassian, Zoom, DocuSign, Slack, Apple, Meta, OpenAI, Notion and 80+ other services.
 
 ## Price (pay per event, Apify Free plan)
 
