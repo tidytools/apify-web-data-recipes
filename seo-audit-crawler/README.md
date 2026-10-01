@@ -26,7 +26,8 @@ This is the Actor's prefilled example input. All other fields have defaults; the
 ```json
 {
   "urls": [
-    "https://www.python.org/"
+    "https://www.python.org/",
+    "books.toscrape.com"
   ],
   "maxPages": 20
 }
