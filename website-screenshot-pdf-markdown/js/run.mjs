@@ -1,4 +1,4 @@
-// Website Screenshot API - Full Page, URL to PDF & Markdown: run the Actor on Apify and print the results.
+// Website Screenshot API - Full Page Screenshot & URL to PDF: run the Actor on Apify and print the results.
 // Store page: https://apify.com/tidytools/website-screenshot-pdf-markdown
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
