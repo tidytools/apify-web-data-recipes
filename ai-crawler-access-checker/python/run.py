@@ -1,4 +1,4 @@
-"""AI Crawler Access Checker - robots.txt for GPTBot, ClaudeBot: run the Actor on Apify and print the results.
+"""AI Crawler Checker - robots.txt Checker for GPTBot & AI Bots: run the Actor on Apify and print the results.
 
 Store page: https://apify.com/tidytools/ai-crawler-access-checker
 Setup:      pip install apify-client
