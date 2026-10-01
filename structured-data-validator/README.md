@@ -10,7 +10,7 @@ Validate JSON-LD and Microdata schema markup on a URL list, a sitemap or a whole
 
 ## Use case
 
-It **extracts the structured data (schema.org markup in JSON-LD and Microdata) from your pages and checks it** against what Google needs for rich results: stars, prices, breadcrumbs, recipes, events, job postings and more. It also checks the **Open Graph and X (Twitter) tags** that control how shared links look. Check a list of URLs, every page in your **sitemap**, or crawl a whole website, then export every problem as a table with a **stable issue code**.
+**Schema markup validator for many pages at once**: it extracts and validates schema.org **JSON-LD and Microdata** against Google rich result rules, with **stable issue codes**. A bulk alternative to Google's Rich Results Test and validator.schema.org, which check one page at a time.
 
 ## Price (pay per event, Apify Free plan)
 
