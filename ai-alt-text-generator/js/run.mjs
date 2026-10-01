@@ -1,5 +1,5 @@
-// AI Alt Text Generator - Bulk Image Descriptions & Captions: run the Actor on Apify and print the results.
-// Store page: https://apify.com/tidytools/ai-alt-text-generator
+// AI Alt Text Generator - Image Alt Text & Image Captions: run the Actor on Apify and print the results.
+// Store page: apify.com/tidytools/ai-alt-text-generator (public from 2026-10-06)
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 // Run:   node run.mjs
