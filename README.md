@@ -4,6 +4,8 @@ Copy-paste recipes for the [TidyTools Actors on Apify](https://apify.com/tidytoo
 Each Actor has its own folder with a short description, the minimal input, a sample output row and three ready-to-run scripts.
 The Actors cover web scraping for LLMs and RAG (Markdown, embeddings, documents, audio), SEO and AI-search (GEO) audits, lead generation and monitoring.
 
+Catalog with prices: [tools.yukai.uk](https://tools.yukai.uk/). For AI agents: [tools.yukai.uk/llms.txt](https://tools.yukai.uk/llms.txt).
+
 34 Actors: 10 are public on the Apify Store now; the others show the date from which they are available.
 
 ## Actors
@@ -89,7 +91,7 @@ A ready-made configuration for six of these Actors, listed in the official MCP R
 
 ## Open data
 
-[AI Crawler Index](https://webcapture-api.yukailin.workers.dev/ai-crawler-index): a daily robots.txt check of 1,005 popular websites against 26 AI crawlers (GPTBot, ClaudeBot, PerplexityBot and more), by category and for the top 100, with the full table as CSV. It uses the same checks as the AI Crawler Access Checker.
+[AI Crawler Index](https://tools.yukai.uk/ai-crawler-index): a daily robots.txt check of 1,005 popular websites against 26 AI crawlers (GPTBot, ClaudeBot, PerplexityBot and more), by category and for the top 100, with the full table as CSV. It uses the same checks as the AI Crawler Access Checker.
 
 ## n8n
 
