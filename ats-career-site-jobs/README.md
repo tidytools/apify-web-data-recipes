@@ -1,6 +1,6 @@
 # ATS Jobs Scraper - Career Sites, Greenhouse, Lever, Workday
 
-Live jobs from company career sites and careers pages: paste career pages, domains or board URLs. Detects 17 ATSs incl. Greenhouse, Lever, Ashby, Workday, SmartRecruiters. New-job alerts. $1/1k jobs.
+Give company domains or career-page URLs, get their live open jobs: Greenhouse, Lever, Ashby, Workday + 13 more ATSs, auto-detected. Salary, remote, new-job alerts. $1/1,000 jobs.
 
 - Apify Store: [https://apify.com/tidytools/ats-career-site-jobs](https://apify.com/tidytools/ats-career-site-jobs)
 - Actor ID: `tidytools/ats-career-site-jobs` (`k95BFAjcwk9AX61BE`)
