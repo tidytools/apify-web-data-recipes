@@ -1,12 +1,12 @@
-# Wayback Machine Scraper - Archived URLs & Website History (available from 2026-10-12)
+# Wayback Machine Scraper - Archived URLs & Website History (available from 2026-10-07)
 
 Internet Archive Wayback Machine data: every archived URL of a website, a page's versions over time, the closest snapshot per URL, site history and old page content as Markdown. $1/1,000 rows.
 
-- Apify Store: `apify.com/tidytools/wayback-machine-scraper` (public from 2026-10-12)
+- Apify Store: `apify.com/tidytools/wayback-machine-scraper` (public from 2026-10-07)
 - Actor ID: `tidytools/wayback-machine-scraper` (`3TEyg9Aw7AqXgERUM`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/wayback-machine-scraper`
 
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-12**. Until then the recipes below return an error.
+> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-07**. Until then the recipes below return an error.
 
 ## Use case
 
@@ -18,7 +18,7 @@ It reads the **Internet Archive's Wayback Machine** for any list of websites or 
 - 📈 **Site history summary**: one row per domain or page with first and last capture, the last month (and day) with a real page (HTTP 200), months that only redirected, captures per year, number of content versions and the longest gap without captures. Useful before buying an expired domain or when researching a company's past
 - 📝 **Optional page content**: in Snapshots and Closest modes, each archived page can be downloaded and returned as **clean Markdown** (or plain text), ready for an LLM, a diff or a report
 - 🧹 **Clean, de-duplicated rows**: `http://example.com:80/a/` and `https://www.example.com/a` count once; malformed index entries are skipped; the same fields on every row
-- 🤝 **Polite by design**: all requests share one rate limit (default one index query per second, page downloads every 2 seconds), with automatic back-off when the Internet Archive is busy
+- 🤝 **Polite by design**: all requests share one rate limit (default one index query every 2.5 seconds, page downloads every 5 seconds), with automatic back-off when the Internet Archive is busy
 - 💵 **$1 per 1,000 rows** ($0.001 per archived URL or snapshot). No start fee. Inputs that were never archived are free
 
 ## Price (pay per event, Apify Free plan)
