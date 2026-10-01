@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 # App Store Charts & Keyword Rank Tracker - Top Charts, ASO: run the Actor, wait for it (up to 300 s) and print the dataset items as JSON.
-# Store page: apify.com/tidytools/app-store-top-charts (public from 2026-10-14)
+# Store page: apify.com/tidytools/app-store-top-charts (public from 2026-10-08)
 # Usage: export APIFY_TOKEN=your_token && sh curl.sh
 # maxTotalChargeUsd is a cost cap: the run stops charging at this amount.
 : "${APIFY_TOKEN:?Set the APIFY_TOKEN environment variable first}"
