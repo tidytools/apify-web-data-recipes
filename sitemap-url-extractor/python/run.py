@@ -1,6 +1,6 @@
 """Sitemap URL Extractor & Sitemap Scraper - All Website URLs: run the Actor on Apify and print the results.
 
-Store page: apify.com/tidytools/sitemap-url-extractor (public from 2026-10-09)
+Store page: apify.com/tidytools/sitemap-url-extractor (public from 2026-10-07)
 Setup:      pip install apify-client
             export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 Run:        python run.py
