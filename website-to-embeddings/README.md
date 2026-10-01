@@ -1,8 +1,8 @@
 # Website to Vector Embeddings for RAG - Pinecone, Qdrant (available from 2026-10-06)
 
-Crawl a site or docs, chunk the pages and get 1024-dim multilingual bge-m3 embeddings with stable IDs for Pinecone, Qdrant or pgvector. No OpenAI key needed. From $0.20 per 1,000 chunks.
+Crawl a site or docs, chunk the pages and get 1024-dim multilingual bge-m3 embeddings with stable IDs for Pinecone, Qdrant, pgvector or any vector database. No OpenAI key. From $0.20/1k chunks.
 
-- Apify Store: [https://apify.com/tidytools/website-to-embeddings](https://apify.com/tidytools/website-to-embeddings)
+- Apify Store: `apify.com/tidytools/website-to-embeddings` (public from 2026-10-06)
 - Actor ID: `tidytools/website-to-embeddings` (`69AbOL4uxESijjy3s`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/website-to-embeddings`
 
