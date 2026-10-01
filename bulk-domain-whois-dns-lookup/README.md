@@ -1,16 +1,16 @@
-# WHOIS Lookup & DNS Lookup - Bulk Domain Age, Expiry, RDAP (available from 2026-10-08)
+# Bulk WHOIS & DNS Lookup - Domain Age, Expiry, Availability (available from 2026-10-06)
 
 Look up many domains at once: registrar, creation and expiry dates, status and name servers via RDAP (WHOIS fallback), availability, A/MX/NS/TXT/CAA records, SPF/DMARC grade. $1/1,000.
 
-- Apify Store: `apify.com/tidytools/bulk-domain-whois-dns-lookup` (public from 2026-10-08)
+- Apify Store: `apify.com/tidytools/bulk-domain-whois-dns-lookup` (public from 2026-10-06)
 - Actor ID: `tidytools/bulk-domain-whois-dns-lookup` (`zgj89sxvwUhvsPnpA`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/bulk-domain-whois-dns-lookup`
 
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-08**. Until then the recipes below return an error.
+> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-06**. Until then the recipes below return an error.
 
 ## Use case
 
-Give it a list of domains, URLs or e-mail addresses and get, for each domain:
+Bulk WHOIS and DNS lookup: give it a list of domains, URLs or e-mail addresses and get the registrar, creation and expiry dates (domain age), availability and DNS records for each domain. In detail, each domain gets:
 
 - 📅 **Registration data (WHOIS)**: registrar and IANA ID, **creation, update and expiry dates**, **days to expiry**, domain age, status codes (e.g. `clientTransferProhibited`), name servers, DNSSEC, and the **registrant organization and country** when the registry or registrar publishes them
 - 🌐 **DNS records**: A, AAAA, MX, NS, TXT and CAA, the CNAME of `www`, and the `_dmarc` record
