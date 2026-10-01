@@ -1,4 +1,4 @@
-"""SEO Audit Tool - Site Crawler, SEO Score & Core Web Vitals: run the Actor on Apify and print the results.
+"""Technical SEO Audit Tool - Website SEO Checker & Site Audit: run the Actor on Apify and print the results.
 
 Store page: https://apify.com/tidytools/seo-audit-crawler
 Setup:      pip install apify-client
