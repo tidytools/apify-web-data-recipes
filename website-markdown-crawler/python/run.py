@@ -1,4 +1,4 @@
-"""Website Content Crawler to Markdown for LLM & RAG: run the Actor on Apify and print the results.
+"""Website Content Crawler - Website to Markdown for LLM & RAG: run the Actor on Apify and print the results.
 
 Store page: https://apify.com/tidytools/website-markdown-crawler
 Setup:      pip install apify-client
