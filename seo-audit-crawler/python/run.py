@@ -14,7 +14,7 @@ from apify_client import ApifyClient
 ACTOR_ID = "tidytools/seo-audit-crawler"
 MAX_TOTAL_CHARGE_USD = Decimal("1.00")  # cost cap: the run stops charging at this amount
 
-RUN_INPUT = {'urls': ['https://www.python.org/'], 'maxPages': 20}
+RUN_INPUT = {'urls': ['https://www.python.org/', 'books.toscrape.com'], 'maxPages': 20}
 
 
 def main():
