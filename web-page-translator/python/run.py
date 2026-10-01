@@ -1,6 +1,6 @@
 """AI Translator - Bulk Translate Text, JSON, Subtitles & Pages: run the Actor on Apify and print the results.
 
-Store page: https://apify.com/tidytools/web-page-translator
+Store page: apify.com/tidytools/web-page-translator (public from 2026-10-04)
 Setup:      pip install apify-client
             export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 Run:        python run.py
