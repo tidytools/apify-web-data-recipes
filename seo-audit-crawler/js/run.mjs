@@ -1,4 +1,4 @@
-// Technical SEO Audit Tool - Website SEO Checker & Site Audit: run the Actor on Apify and print the results.
+// SEO Audit Tool - SEO Checker, Site Audit & Core Web Vitals: run the Actor on Apify and print the results.
 // Store page: https://apify.com/tidytools/seo-audit-crawler
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
