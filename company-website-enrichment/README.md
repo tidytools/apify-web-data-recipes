@@ -1,8 +1,8 @@
-# Lead Enrichment - Google Maps Emails & Company Data (available from 2026-10-02)
+# Lead Enrichment - Company Enrichment for Google Maps Leads (available from 2026-10-02)
 
-Enrich company domains or Google Maps / lead scraper results: emails, phones, socials, AI one-line description, industry, B2B/B2C, tech stack. Rows map back to the source. $6/1,000.
+Company enrichment for domains or Google Maps leads: emails, phones, socials, AI one-line description, industry, B2B/B2C, tech stack. Rows map back to the source. $6/1,000.
 
-- Apify Store: [https://apify.com/tidytools/company-website-enrichment](https://apify.com/tidytools/company-website-enrichment)
+- Apify Store: `apify.com/tidytools/company-website-enrichment` (public from 2026-10-02)
 - Actor ID: `tidytools/company-website-enrichment` (`RcPuCbK3BPevD8Uau`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/company-website-enrichment`
 
