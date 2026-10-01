@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 # AI Translator - Bulk Translate Text, JSON, Subtitles & Pages: run the Actor, wait for it (up to 300 s) and print the dataset items as JSON.
-# Store page: https://apify.com/tidytools/web-page-translator
+# Store page: apify.com/tidytools/web-page-translator (public from 2026-10-04)
 # Usage: export APIFY_TOKEN=your_token && sh curl.sh
 # maxTotalChargeUsd is a cost cap: the run stops charging at this amount.
 : "${APIFY_TOKEN:?Set the APIFY_TOKEN environment variable first}"
