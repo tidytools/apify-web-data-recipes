@@ -6,6 +6,8 @@ The Actors cover web scraping for LLMs and RAG (Markdown, embeddings, documents,
 
 Catalog with prices: [tools.yukai.uk](https://tools.yukai.uk/). For AI agents: [tools.yukai.uk/llms.txt](https://tools.yukai.uk/llms.txt).
 
+**Try without an account (free, no key, rate limited):** `https://tools.yukai.uk/md/<url>` returns any web page as clean Markdown, and `https://tools.yukai.uk/ai-crawlers/<domain>` says which AI crawlers the site's robots.txt allows.
+
 34 Actors: 10 are public on the Apify Store now; the others show the date from which they are available.
 
 ## Actors
