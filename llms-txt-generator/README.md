@@ -2,7 +2,7 @@
 
 Generate llms.txt and llms-full.txt for any website from its sitemap or a crawl, with sections and AI descriptions, or validate existing llms.txt files in bulk. $2 per 1,000 pages or sites.
 
-- Apify Store: [https://apify.com/tidytools/llms-txt-generator](https://apify.com/tidytools/llms-txt-generator)
+- Apify Store: `apify.com/tidytools/llms-txt-generator` (public from 2026-10-09)
 - Actor ID: `tidytools/llms-txt-generator` (`egcg4cyQFYEB7CfPM`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/llms-txt-generator`
 
