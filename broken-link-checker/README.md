@@ -1,6 +1,6 @@
 # Broken Link Checker - Find 404 & Dead Links on Any Website (available from 2026-10-05)
 
-Crawl a website and find every broken link and image (404, 410, 5xx, dead domains, SSL errors) with the page and anchor text. Internal and external links. $1/1k pages + $0.30/1k links.
+Crawl a website and find every broken link and image (404, 410, 5xx, dead domains, SSL errors) with the page and anchor text. Alerts on new broken links. $1/1k pages + $0.30/1k links.
 
 - Apify Store: `apify.com/tidytools/broken-link-checker` (public from 2026-10-05)
 - Actor ID: `tidytools/broken-link-checker` (`iU4sjuweSBNA1jq0f`)
@@ -10,7 +10,7 @@ Crawl a website and find every broken link and image (404, 410, 5xx, dead domain
 
 ## Use case
 
-It **crawls your website, collects every link and image on every page and checks each one**. You get a list of broken links (404, 410, server errors, dead domains, expired SSL certificates…) together with **the pages where each link appears and its anchor text**, plus a shareable **Markdown report** with a fix list per page.
+**Broken link checker for any website**: it crawls your site, collects every link and image on every page and checks each one, so you get **every broken (404) and dead link with the pages where it appears and its anchor text**. Reasons include 404, 410, server errors, dead domains and expired SSL certificates, and a shareable **Markdown report** lists the fixes per page. **Monitoring mode** reports only links that broke since the last run.
 
 ## Price (pay per event, Apify Free plan)
 
