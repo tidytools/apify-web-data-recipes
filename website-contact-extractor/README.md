@@ -1,6 +1,6 @@
-# Website Email Scraper - Contact Details, Phones & Socials
+# Email Extractor - Website Contact Details Scraper & Socials
 
-Contact details scraper and email extractor for company websites: emails (incl. obfuscated), phone numbers, social media links, address and contact forms. $2/1,000 sites; nothing found = free.
+Email extractor and contact details scraper for company websites or Google Maps results: emails (incl. obfuscated), phones, social links, address, contact form. $2/1,000 sites; nothing found = free.
 
 - Apify Store: [https://apify.com/tidytools/website-contact-extractor](https://apify.com/tidytools/website-contact-extractor)
 - Actor ID: `tidytools/website-contact-extractor` (`kFhBWk7SCYTakF6Fn`)
@@ -8,7 +8,7 @@ Contact details scraper and email extractor for company websites: emails (incl. 
 
 ## Use case
 
-Give it company or business websites (URLs or bare domains) and get one clean record per website:
+A bulk email extractor for a list of domains or for Google Maps results: give it company or business websites (URLs or bare domains, up to 50,000 per run) or the dataset of a Google Maps run, and get one clean record per website:
 
 - 📧 **Emails**: `mailto:` links, addresses written in the text, **obfuscated addresses** ("info [at] firm [dot] de", "info(at)firm.de") and **Cloudflare-protected emails** (decoded). Lower-cased, de-duplicated, and junk is filtered out: image file names such as `logo@2x.png`, placeholder and example addresses (`you@example.com`, `name@domain.com`), error-tracking IDs and no-reply addresses.
 - 📞 **Phone and fax numbers** in international format (`+12122542246`), from `tel:` links, schema.org data and the page text. Every number is checked with Google's libphonenumber rules for its country, and numbers in text are only taken after a label ("Tel:", "Phone", "電話"...), in international format, or in a typical phone layout, so order numbers, dates and prices are not picked up.
