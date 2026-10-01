@@ -1,6 +1,6 @@
-"""AI Website & Text Classifier - Industry, Category, Sentiment: run the Actor on Apify and print the results.
+"""Website Classifier & Text Classifier - Industry & Sentiment: run the Actor on Apify and print the results.
 
-Store page: https://apify.com/tidytools/ai-page-classifier
+Store page: apify.com/tidytools/ai-page-classifier (public from 2026-10-07)
 Setup:      pip install apify-client
             export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 Run:        python run.py
