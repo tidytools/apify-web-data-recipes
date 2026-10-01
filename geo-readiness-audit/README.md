@@ -1,6 +1,6 @@
 # GEO Audit - AI SEO & AEO Checker for ChatGPT & AI Overviews (available from 2026-10-04)
 
-GEO audit: can ChatGPT, Perplexity and Google AI Overviews reach and cite your site? GEO/AEO score, AI crawler and firewall test, llms.txt, schema, prioritized fixes, HTML report. From $0.01/site.
+GEO audit: can ChatGPT, Perplexity and Google AI Overviews reach and cite your site? GEO/AEO score, AI crawler and firewall test, llms.txt, schema, prioritized fixes, HTML report. From $0.03/site.
 
 - Apify Store: `apify.com/tidytools/geo-readiness-audit` (public from 2026-10-04)
 - Actor ID: `tidytools/geo-readiness-audit` (`mcmwUZfsZ9rTlgMqr`)
@@ -16,8 +16,8 @@ It checks **whether AI search engines and assistants (ChatGPT, Perplexity, Claud
 
 | Event | Price per 1,000 |
 |---|---|
-| Audited website | $10.00 |
-| Sampled page | $2.00 |
+| Audited website | $30.00 |
+| Sampled page | $4.00 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.
 
