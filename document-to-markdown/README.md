@@ -8,7 +8,7 @@ Document parser and PDF parser for LLMs: convert PDF, Word (DOCX/DOC), PowerPoin
 
 ## Use case
 
-Give it documents (links, an uploaded file, or base64 from your code) and get back **clean Markdown text** for each one: ready for ChatGPT / Claude prompts, vector databases, RAG pipelines, search indexes or content migration.
+PDF to text and PDF to Markdown extractor for PDF, Word (DOCX), PowerPoint, Excel and CSV files: give it links, an uploaded file or base64 and get back **clean Markdown** for each document, ready for ChatGPT / Claude, vector databases and RAG pipelines. **$0.002 per document, no start fee, not per page.**
 
 ## Price (pay per event, Apify Free plan)
 
