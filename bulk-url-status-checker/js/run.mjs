@@ -1,5 +1,5 @@
-// Bulk URL Status Checker - HTTP Status Codes & Redirects: run the Actor on Apify and print the results.
-// Store page: https://apify.com/tidytools/bulk-url-status-checker
+// Bulk URL Status Checker - HTTP Status & Redirect Checker: run the Actor on Apify and print the results.
+// Store page: apify.com/tidytools/bulk-url-status-checker (public from 2026-10-03)
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 // Run:   node run.mjs
