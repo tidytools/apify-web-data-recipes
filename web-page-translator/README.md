@@ -10,7 +10,7 @@ Translate texts, JSON and datasets, SRT/VTT subtitles and web pages into many la
 
 ## Use case
 
-A **bulk text & JSON translator** and web page translator in one: it translates **web pages, your own texts, JSON items or another Actor's dataset into one or many languages** with AI, and keeps the **Markdown structure intact**: headings, lists, tables, bold/italic, links (targets unchanged) and code blocks (not translated). A Google Translate / DeepL alternative with no API key.
+**Bulk AI translator for texts, JSON, datasets, SRT/VTT subtitles and web pages: several languages at once, glossary, Markdown and timestamps kept. $1.50 per 1M characters, no API key.**
 
 ## Price (pay per event, Apify Free plan)
 
