@@ -1,6 +1,6 @@
 """AI Alt Text Generator - Image Alt Text & Image Captions: run the Actor on Apify and print the results.
 
-Store page: apify.com/tidytools/ai-alt-text-generator (public from 2026-10-06)
+Store page: apify.com/tidytools/ai-alt-text-generator (public from 2026-10-09)
 Setup:      pip install apify-client
             export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 Run:        python run.py
