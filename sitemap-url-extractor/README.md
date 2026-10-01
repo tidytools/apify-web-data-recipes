@@ -1,8 +1,8 @@
-# Sitemap URL Extractor - Get All URLs of a Website (available from 2026-10-09)
+# Sitemap URL Extractor & Sitemap Scraper - All Website URLs (available from 2026-10-09)
 
 Get every URL of a website from its sitemaps: finds them via robots.txt, follows indexes and .gz files, returns lastmod, images and hreflang, optional status codes and changes. $0.30/1k URLs.
 
-- Apify Store: [https://apify.com/tidytools/sitemap-url-extractor](https://apify.com/tidytools/sitemap-url-extractor)
+- Apify Store: `apify.com/tidytools/sitemap-url-extractor` (public from 2026-10-09)
 - Actor ID: `tidytools/sitemap-url-extractor` (`FHYQa0BejmepV5Bwb`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/sitemap-url-extractor`
 
