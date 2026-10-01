@@ -17,6 +17,7 @@ MAX_TOTAL_CHARGE_USD = Decimal("1.00")  # cost cap: the run stops charging at th
 RUN_INPUT = {   'companies': [   'https://job-boards.greenhouse.io/airbnb',
                      'jobs.lever.co/leverdemo',
                      'https://apply.workable.com/huggingface/'],
+    'companyPreset': 'ai-labs',
     'maxJobsPerCompany': 10}
 
 
