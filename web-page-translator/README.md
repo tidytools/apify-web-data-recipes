@@ -2,7 +2,7 @@
 
 Translate texts, JSON and datasets, SRT/VTT subtitles and web pages into many languages at once. Glossary, tone, Markdown kept. A Google Translate / DeepL alternative, no API key. $1.50/1M chars.
 
-- Apify Store: [https://apify.com/tidytools/web-page-translator](https://apify.com/tidytools/web-page-translator)
+- Apify Store: `apify.com/tidytools/web-page-translator` (public from 2026-10-04)
 - Actor ID: `tidytools/web-page-translator` (`Z8R6afk16yObrJais`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/web-page-translator`
 
