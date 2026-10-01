@@ -8,7 +8,7 @@ Website change tracker and content monitor: text and price changes, CSS selector
 
 ## Use case
 
-It watches web pages and tells you **what changed since the last check**: which text was added and which was removed. Run it on a schedule (hourly, daily, weekly) and get the changes in the dataset, by **e-mail**, in **Slack or Discord**, or pushed to a **webhook** (Zapier, Make, n8n, your own app). It accepts **Content Checker inputs** (`url`, `contentSelector`, `sendNotificationTo` and more), takes **before and after screenshots**, and can watch thousands of pages in one run.
+It watches web pages and tells you **what changed since the last check**: which text was added and which was removed. Run it on a schedule (hourly, daily, weekly) and get the changes in the dataset, by **e-mail**, in **Slack or Discord**, or pushed to a **webhook** (Zapier, Make, n8n, your own app). It accepts **Content Checker inputs** (`url`, `contentSelector`, `sendNotificationTo` and more) and the input fields of other change monitors (`startUrls`, `kvStoreName`, `slackWebhookUrl`...), takes **before and after screenshots**, and can watch thousands of pages in one run.
 
 ## Price (pay per event, Apify Free plan)
 
