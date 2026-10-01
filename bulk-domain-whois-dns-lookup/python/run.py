@@ -1,6 +1,6 @@
-"""Bulk WHOIS & DNS Lookup - Domain Age, Expiry & Availability: run the Actor on Apify and print the results.
+"""WHOIS Lookup & DNS Lookup - Bulk Domain Age, Expiry, RDAP: run the Actor on Apify and print the results.
 
-Store page: https://apify.com/tidytools/bulk-domain-whois-dns-lookup
+Store page: apify.com/tidytools/bulk-domain-whois-dns-lookup (public from 2026-10-08)
 Setup:      pip install apify-client
             export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 Run:        python run.py
