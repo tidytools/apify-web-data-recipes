@@ -2,7 +2,7 @@
 
 Validate JSON-LD and Microdata schema markup on a URL list, a sitemap or a whole site against Google rich result rules (Product, FAQ, Recipe, Event, Job...), plus Open Graph. $2 per 1,000 pages.
 
-- Apify Store: [https://apify.com/tidytools/structured-data-validator](https://apify.com/tidytools/structured-data-validator)
+- Apify Store: `apify.com/tidytools/structured-data-validator` (public from 2026-10-05)
 - Actor ID: `tidytools/structured-data-validator` (`H8eTuBhWOXKumBSIs`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/structured-data-validator`
 
