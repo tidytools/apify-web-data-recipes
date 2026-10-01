@@ -11,7 +11,8 @@ curl -sS -X POST "https://api.apify.com/v2/acts/tidytools~seo-audit-crawler/run-
   -d @- <<'JSON'
 {
   "urls": [
-    "https://www.python.org/"
+    "https://www.python.org/",
+    "books.toscrape.com"
   ],
   "maxPages": 20
 }
