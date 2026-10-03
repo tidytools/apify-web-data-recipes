@@ -184,9 +184,9 @@
             },
             {
               "id": "b13",
-              "name": "Website CMS",
+              "name": "Website platform",
               "type": "string",
-              "value": "={{ ($json.techStack?.CMS || []).join(', ') }}"
+              "value": "={{ [...($json.techStack?.CMS || []), ...($json.techStack?.['E-commerce'] || [])].join(', ') }}"
             },
             {
               "id": "b14",
@@ -252,7 +252,7 @@
         "color": 1,
         "width": 440,
         "height": 860,
-        "content": "## Google Maps leads with emails, socials and a one-line description\n\n**Who it's for:** agencies, freelancers and sales teams who build local-business lead lists (dentists, restaurants, gyms...).\n\n### How it works\nSearches Google Maps, then reads each business website once and adds the email, social profiles, a one-line description and the website's CMS. One row per place goes to Google Sheets.\n\n### Cost (Apify pay-per-event, Sept 2026)\nGoogle Maps Scraper ~$4 per 1,000 places + enrichment $6 per 1,000 websites read. Places without a website, Instagram/Facebook pages used as a website, and dead domains are not charged by the enrichment step. Both Apify nodes have a $1 cost cap; raise it for bigger runs.\n\nReal test (30 places, Portland/Austin/Munich): 30/30 rows mapped back by placeId; emails found on 88% of the websites that could be read.\n\n### Setup\n1. Add your Apify credential (API key or OAuth) to both Apify nodes.\n2. Edit **Search settings**.\n3. Pick your sheet in **Append to Google Sheet** (or delete that node and export the table).\n\nOnly needs emails and socials? Swap the enrichment Actor for `tidytools~website-contact-extractor` ($2 per 1,000 websites)."
+        "content": "## Google Maps leads with emails, socials and a one-line description\n\n**Who it's for:** agencies, freelancers and sales teams who build local-business lead lists (dentists, restaurants, gyms...).\n\n### How it works\nSearches Google Maps, then reads each business website once and adds the email, social profiles, a one-line description and the website platform (CMS or shop system). One row per place goes to Google Sheets.\n\n### Cost (Apify pay-per-event, Sept 2026)\nGoogle Maps Scraper ~$4 per 1,000 places + enrichment $6 per 1,000 websites read. Places without a website, Instagram/Facebook pages used as a website, and dead domains are not charged by the enrichment step. Both Apify nodes have a $1 cost cap; raise it for bigger runs.\n\nReal test (30 places, Portland/Austin/Munich): 30/30 rows mapped back by placeId; emails found on 88% of the websites that could be read.\n\n### Setup\n1. Add your Apify credential (API key or OAuth) to both Apify nodes.\n2. Edit **Search settings**.\n3. Pick your sheet in **Append to Google Sheet** (or delete that node and export the table).\n\nOnly needs emails and socials? Swap the enrichment Actor for `tidytools~website-contact-extractor` ($2 per 1,000 websites)."
       }
     },
     {
@@ -268,7 +268,7 @@
         "color": 7,
         "width": 440,
         "height": 220,
-        "content": "### Every Google Maps place gets exactly one row\n- no website -> Status `no_website`\n- Instagram/Facebook/Yelp page instead of a website -> `not_a_website` (not read, not charged)\n- chain branches sharing one website -> read once, copied to every branch\n- website redirects to another domain -> Status starts with `check:`\n\nJoin back to the Maps data with **Place ID**."
+        "content": "### Every Google Maps place gets exactly one row\n- no website -> Status `no_website`\n- Instagram/Facebook/Yelp page -> `not_a_website` (not charged)\n- chain branches sharing one website -> read once, copied to each\n- redirect to another domain -> Status starts with `check:`\n\nJoin back with **Place ID**."
       }
     }
   ],
