@@ -1,4 +1,4 @@
-// Website Content Crawler - Website to Markdown for LLM & RAG: run the Actor on Apify and print the results.
+// Website to Markdown Crawler - Content Crawler for LLM & RAG: run the Actor on Apify and print the results.
 // Store page: https://apify.com/tidytools/website-markdown-crawler
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)

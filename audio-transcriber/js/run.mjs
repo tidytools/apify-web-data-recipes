@@ -1,4 +1,4 @@
-// Speech to Text: Audio to Text & Video to Text - Whisper, SRT: run the Actor on Apify and print the results.
+// Audio Transcription - Speech to Text, Audio to Text, Whisper: run the Actor on Apify and print the results.
 // Store page: https://apify.com/tidytools/audio-transcriber
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)

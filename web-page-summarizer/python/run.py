@@ -1,4 +1,4 @@
-"""Article Summarizer & Text Summarizer - Summarize Web Pages: run the Actor on Apify and print the results.
+"""Article Summarizer & Web Page Summarizer - AI Text Summarizer: run the Actor on Apify and print the results.
 
 Store page: apify.com/tidytools/web-page-summarizer (public from 2026-10-07)
 Setup:      pip install apify-client

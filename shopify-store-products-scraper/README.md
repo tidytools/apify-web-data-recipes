@@ -1,4 +1,4 @@
-# Shopify Product Scraper & Price Monitor (available from 2026-10-04)
+# Shopify Product Scraper & Shopify Price Monitor (available from 2026-10-04)
 
 Every product of any Shopify store from its public products.json: variants, SKUs, prices, stock, images. Shopify price monitor with price-drop and back-in-stock alerts. $1/1k products, no start fee.
 

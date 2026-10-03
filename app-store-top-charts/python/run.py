@@ -1,4 +1,4 @@
-"""App Store Keyword Rank Tracker & Top Charts - ASO: run the Actor on Apify and print the results.
+"""App Store Keyword Rank Tracker & App Store Charts - ASO: run the Actor on Apify and print the results.
 
 Store page: apify.com/tidytools/app-store-top-charts (public from 2026-10-08)
 Setup:      pip install apify-client

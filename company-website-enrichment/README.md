@@ -1,4 +1,4 @@
-# Lead Enrichment - Company Enrichment for Google Maps Leads
+# Google Maps Lead Enrichment - Company Enrichment & Contact Data
 
 Company data and lead enrichment for domains or Google Maps leads: emails, phones, socials, AI one-line description, industry, B2B/B2C, tech stack. Rows map back to the source. $6/1,000.
 

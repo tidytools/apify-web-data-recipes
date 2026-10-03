@@ -1,4 +1,4 @@
-"""Lead Enrichment - Company Enrichment for Google Maps Leads: run the Actor on Apify and print the results.
+"""Google Maps Lead Enrichment - Company Enrichment & Contact Data: run the Actor on Apify and print the results.
 
 Store page: https://apify.com/tidytools/company-website-enrichment
 Setup:      pip install apify-client

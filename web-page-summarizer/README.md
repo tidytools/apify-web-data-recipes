@@ -1,4 +1,4 @@
-# Article Summarizer & Text Summarizer - Summarize Web Pages (available from 2026-10-07)
+# Article Summarizer & Web Page Summarizer - AI Text Summarizer (available from 2026-10-07)
 
 AI summarizer for URLs, articles or your own text: TL;DR, bullets or executive summary, plus key points, topics, sentiment and keywords. Any language, JavaScript sites. No API key. $6/1,000.
 

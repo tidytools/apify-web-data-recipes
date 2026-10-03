@@ -1,4 +1,4 @@
-# Bulk WHOIS & DNS Lookup - Domain Age, Expiry, Availability (available from 2026-10-06)
+# Bulk WHOIS Lookup & DNS Lookup - Domain Age & Expiry (available from 2026-10-06)
 
 Look up many domains at once: registrar, creation and expiry dates, status and name servers via RDAP (WHOIS fallback), availability, A/MX/NS/TXT/CAA records, SPF/DMARC grade. $1/1,000.
 

@@ -1,4 +1,4 @@
-# Email Extractor - Website Contact Details Scraper & Socials
+# Website Email Extractor - Bulk Contact Details & Socials
 
 Email extractor and contact details scraper for company websites or Google Maps results: emails (incl. obfuscated), phones, social links, address, contact form. $2/1,000 sites; nothing found = free.
 

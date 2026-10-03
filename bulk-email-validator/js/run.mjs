@@ -1,4 +1,4 @@
-// Bulk Email Validator - MX, Disposable Email & Typo Check: run the Actor on Apify and print the results.
+// Bulk Email Validator & Email List Cleaner - Disposable Check: run the Actor on Apify and print the results.
 // Store page: https://apify.com/tidytools/bulk-email-validator
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)

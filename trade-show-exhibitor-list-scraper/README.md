@@ -1,4 +1,4 @@
-# Trade Show Exhibitor List Scraper - Company, Booth, Website (available from 2026-10-06)
+# Trade Show Exhibitors Scraper - Exhibitor List, Booth, Website (available from 2026-10-06)
 
 Exhibitor lists from trade show and expo directories: company, booth, hall, categories, country, website, description, logo. a2z (Personify) and ExpoFP natively; other sites via AI. Company data only.
 

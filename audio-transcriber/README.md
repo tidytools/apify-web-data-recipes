@@ -1,4 +1,4 @@
-# Speech to Text: Audio to Text & Video to Text - Whisper, SRT
+# Audio Transcription - Speech to Text, Audio to Text, Whisper
 
 Speech to text transcription with Whisper: audio to text, video to text, MP3 to text, podcast RSS, Drive/Dropbox links. SRT/VTT subtitle generator, speaker diarization, TXT/Markdown, 90+ languages. $0.006/min.
 

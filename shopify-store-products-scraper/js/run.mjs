@@ -1,4 +1,4 @@
-// Shopify Product Scraper & Price Monitor: run the Actor on Apify and print the results.
+// Shopify Product Scraper & Shopify Price Monitor: run the Actor on Apify and print the results.
 // Store page: apify.com/tidytools/shopify-store-products-scraper (public from 2026-10-04)
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)

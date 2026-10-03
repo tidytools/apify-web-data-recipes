@@ -1,4 +1,4 @@
-# Bulk Email Validator - MX, Disposable Email & Typo Check
+# Bulk Email Validator & Email List Cleaner - Disposable Check
 
 Email list cleaner without SMTP pings: bulk-check syntax, domain and MX records, disposable email, role and free-provider flags, and typos (gmial.com → gmail.com). CSV upload or another Actor's dataset. Failed lines are free. $0.50 per 1,000.
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-# Website Content Crawler - Website to Markdown for LLM & RAG: run the Actor, wait for it (up to 300 s) and print the dataset items as JSON.
+# Website to Markdown Crawler - Content Crawler for LLM & RAG: run the Actor, wait for it (up to 300 s) and print the dataset items as JSON.
 # Store page: https://apify.com/tidytools/website-markdown-crawler
 # Usage: export APIFY_TOKEN=your_token && sh curl.sh
 # maxTotalChargeUsd is a cost cap: the run stops charging at this amount.

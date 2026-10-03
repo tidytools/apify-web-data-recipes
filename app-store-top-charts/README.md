@@ -1,4 +1,4 @@
-# App Store Keyword Rank Tracker & Top Charts - ASO (available from 2026-10-08)
+# App Store Keyword Rank Tracker & App Store Charts - ASO (available from 2026-10-08)
 
 Apple App Store keyword rank tracker and top charts (free, paid, grossing, new) by country and category, plus Apple Podcasts charts and daily rank changes. Official Apple feeds, $0.50/1k rows.
 

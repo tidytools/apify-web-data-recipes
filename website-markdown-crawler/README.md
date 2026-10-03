@@ -1,4 +1,4 @@
-# Website Content Crawler - Website to Markdown for LLM & RAG
+# Website to Markdown Crawler - Content Crawler for LLM & RAG
 
 Markdown crawler for AI: crawl a website or docs site into clean, LLM-ready Markdown (URL to Markdown, HTML to Markdown) with RAG chunks. Sitemaps, JavaScript pages, linked PDFs and Word. $1/1k pages.
 

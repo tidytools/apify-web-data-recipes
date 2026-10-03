@@ -1,4 +1,4 @@
-# PDF Text Extractor & PDF to Markdown - OCR, Word, Excel
+# PDF to Markdown & Document to Markdown - Text Extractor, OCR
 
 Document parser and PDF parser for LLMs: convert PDF, Word (DOCX/DOC), PowerPoint, Excel and CSV to clean Markdown text. PDF OCR for scanned files, RAG chunks. URLs, uploads, base64. $2/1,000 docs.
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-# Local Business Leads by City and Category - Places Database: run the Actor, wait for it (up to 300 s) and print the dataset items as JSON.
+# Google Maps Scraper Alternative - Local Business Leads by City: run the Actor, wait for it (up to 300 s) and print the dataset items as JSON.
 # Store page: apify.com/tidytools/places-database (public from 2026-10-04)
 # Usage: export APIFY_TOKEN=your_token && sh curl.sh
 # maxTotalChargeUsd is a cost cap: the run stops charging at this amount.

@@ -1,4 +1,4 @@
-"""Local Business Leads by City and Category - Places Database: run the Actor on Apify and print the results.
+"""Google Maps Scraper Alternative - Local Business Leads by City: run the Actor on Apify and print the results.
 
 Store page: apify.com/tidytools/places-database (public from 2026-10-04)
 Setup:      pip install apify-client

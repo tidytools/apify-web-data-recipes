@@ -1,4 +1,4 @@
-"""PDF Text Extractor & PDF to Markdown - OCR, Word, Excel: run the Actor on Apify and print the results.
+"""PDF to Markdown & Document to Markdown - Text Extractor, OCR: run the Actor on Apify and print the results.
 
 Store page: https://apify.com/tidytools/document-to-markdown
 Setup:      pip install apify-client

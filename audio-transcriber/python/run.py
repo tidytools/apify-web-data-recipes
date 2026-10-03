@@ -1,4 +1,4 @@
-"""Speech to Text: Audio to Text & Video to Text - Whisper, SRT: run the Actor on Apify and print the results.
+"""Audio Transcription - Speech to Text, Audio to Text, Whisper: run the Actor on Apify and print the results.
 
 Store page: https://apify.com/tidytools/audio-transcriber
 Setup:      pip install apify-client

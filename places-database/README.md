@@ -1,4 +1,4 @@
-# Local Business Leads by City and Category - Places Database (available from 2026-10-04)
+# Google Maps Scraper Alternative - Local Business Leads by City (available from 2026-10-04)
 
 Business lead lists for any city, box or country from the open Overture Maps places data: name, category, address, coordinates, website, phone, role emails (info@) and socials. No proxies, no blocking. $1/1,000 places.
 

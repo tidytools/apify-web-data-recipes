@@ -1,4 +1,4 @@
-"""Trade Show Exhibitor List Scraper - Company, Booth, Website: run the Actor on Apify and print the results.
+"""Trade Show Exhibitors Scraper - Exhibitor List, Booth, Website: run the Actor on Apify and print the results.
 
 Store page: apify.com/tidytools/trade-show-exhibitor-list-scraper (public from 2026-10-06)
 Setup:      pip install apify-client
