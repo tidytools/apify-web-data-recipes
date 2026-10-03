@@ -1,6 +1,6 @@
-# App Store Charts & Keyword Rank Tracker - Top Charts, ASO (available from 2026-10-08)
+# App Store Keyword Rank Tracker & Top Charts - ASO (available from 2026-10-08)
 
-Apple App Store top charts (free, paid, grossing, new) by country and category, Apple Podcasts charts, and keyword rank tracking for your apps, with daily rank changes. From Apple's official feeds.
+Apple App Store keyword rank tracker and top charts (free, paid, grossing, new) by country and category, plus Apple Podcasts charts and daily rank changes. Official Apple feeds, $0.50/1k rows.
 
 - Apify Store: `apify.com/tidytools/app-store-top-charts` (public from 2026-10-08)
 - Actor ID: `tidytools/app-store-top-charts` (`u2wdaOwzbQGmcNpXm`)

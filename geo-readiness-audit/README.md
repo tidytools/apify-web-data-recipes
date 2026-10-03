@@ -1,12 +1,12 @@
-# GEO Audit - AI SEO & AEO Checker for ChatGPT & AI Overviews (available from 2026-10-04)
+# GEO Audit - AI SEO & AEO Checker for ChatGPT & AI Overviews (available from 2026-10-10)
 
 GEO audit: can ChatGPT, Perplexity and Google AI Overviews reach and cite your site? GEO/AEO score, AI crawler and firewall test, llms.txt, schema, prioritized fixes, HTML report. From $0.03/site.
 
-- Apify Store: `apify.com/tidytools/geo-readiness-audit` (public from 2026-10-04)
+- Apify Store: `apify.com/tidytools/geo-readiness-audit` (public from 2026-10-10)
 - Actor ID: `tidytools/geo-readiness-audit` (`mcmwUZfsZ9rTlgMqr`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/geo-readiness-audit`
 
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-04**. Until then the recipes below return an error.
+> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-10**. Until then the recipes below return an error.
 
 ## Use case
 

@@ -10,12 +10,12 @@ Email extractor and contact details scraper for company websites or Google Maps 
 
 A bulk email extractor for a list of domains or for Google Maps results: give it company or business websites (URLs or bare domains, up to 50,000 per run) or the dataset of a Google Maps run, and get one clean record per website:
 
-- 📧 **Emails**: `mailto:` links, addresses written in the text, **obfuscated addresses** ("info [at] firm [dot] de", "info(at)firm.de") and **Cloudflare-protected emails** (decoded). Lower-cased, de-duplicated, and junk is filtered out: image file names such as `logo@2x.png`, placeholder and example addresses (`you@example.com`, `name@domain.com`), error-tracking IDs and no-reply addresses.
+- 📧 **Emails**: `mailto:` links, addresses written in the text, **obfuscated addresses** ("info [at] firm [dot] de", "info(at)firm.de", the full-width "info＠firm.com.tw", addresses written backwards or put together by a script, WordPress email-encoder plugins) and **Cloudflare-protected emails** (decoded). Lower-cased, de-duplicated, and junk is filtered out: image file names such as `logo@2x.png`, placeholder and example addresses (`you@example.com`, `name@domain.com`), error-tracking IDs and no-reply addresses.
 - 📞 **Phone and fax numbers** in international format (`+12122542246`), from `tel:` links, schema.org data and the page text. Every number is checked with Google's libphonenumber rules for its country, and numbers in text are only taken after a label ("Tel:", "Phone", "電話"...), in international format, or in a typical phone layout, so order numbers, dates and prices are not picked up.
 - 👥 **Social profiles**: Facebook, X, LinkedIn, Instagram, YouTube, TikTok, GitHub, Pinterest, Threads, Trustpilot, Discord, Telegram and WhatsApp. Only real profile URLs count (share buttons, posts and videos are ignored), and default profiles from website templates (e.g. `facebook.com/wix`) are skipped.
 - 🏢 **Organization name, logo and postal address** from the site's schema.org data (JSON-LD or Microdata: Organization, LocalBusiness, Restaurant, Dentist...).
 - 📝 **Contact form URL**: the page with a contact form (HTML forms with a message box, or HubSpot, Contact Form 7, Typeform, Jotform and other embeds).
-- 🔎 **Where each value was found**: the page and the method (`mailto`, `text`, `obfuscated`, `cloudflare`, `jsonld`, `tel-link`), plus the list of pages checked.
+- 🔎 **Where each value was found**: the page and the method (`mailto`, `text`, `obfuscated`, `cloudflare`, `jsonld`, `attribute`, `script`, `tel-link`), plus the list of pages checked.
 
 ## Price (pay per event, Apify Free plan)
 

@@ -1,12 +1,10 @@
-# Bulk URL Status Checker - HTTP Status & Redirect Checker (available from 2026-10-03)
+# Bulk URL Status Checker - HTTP Status & Redirect Checker
 
 Check thousands of URLs, a sitemap or a CSV for HTTP status codes, redirect chains, 404s, DNS and SSL errors. Verify a redirect map for site migrations, track changes. $1 per 1,000 URLs.
 
-- Apify Store: `apify.com/tidytools/bulk-url-status-checker` (public from 2026-10-03)
+- Apify Store: [https://apify.com/tidytools/bulk-url-status-checker](https://apify.com/tidytools/bulk-url-status-checker)
 - Actor ID: `tidytools/bulk-url-status-checker` (`ZOWuVMgMJNRNJnmyb`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/bulk-url-status-checker`
-
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-03**. Until then the recipes below return an error.
 
 ## Use case
 

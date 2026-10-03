@@ -1,6 +1,6 @@
 """GEO Audit - AI SEO & AEO Checker for ChatGPT & AI Overviews: run the Actor on Apify and print the results.
 
-Store page: apify.com/tidytools/geo-readiness-audit (public from 2026-10-04)
+Store page: apify.com/tidytools/geo-readiness-audit (public from 2026-10-10)
 Setup:      pip install apify-client
             export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 Run:        python run.py

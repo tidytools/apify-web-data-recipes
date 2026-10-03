@@ -1,5 +1,5 @@
 // Lead Enrichment - Company Enrichment for Google Maps Leads: run the Actor on Apify and print the results.
-// Store page: apify.com/tidytools/company-website-enrichment (public from 2026-10-02)
+// Store page: https://apify.com/tidytools/company-website-enrichment
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 // Run:   node run.mjs

@@ -1,6 +1,6 @@
 """Lead Enrichment - Company Enrichment for Google Maps Leads: run the Actor on Apify and print the results.
 
-Store page: apify.com/tidytools/company-website-enrichment (public from 2026-10-02)
+Store page: https://apify.com/tidytools/company-website-enrichment
 Setup:      pip install apify-client
             export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 Run:        python run.py

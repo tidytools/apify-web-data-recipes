@@ -1,5 +1,5 @@
 // Apple App Store Reviews Scraper - iOS App Reviews & Ratings: run the Actor on Apify and print the results.
-// Store page: apify.com/tidytools/apple-app-store-reviews (public from 2026-10-02)
+// Store page: https://apify.com/tidytools/apple-app-store-reviews
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 // Run:   node run.mjs

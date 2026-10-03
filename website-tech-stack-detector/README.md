@@ -1,12 +1,10 @@
-# Tech Stack Detector - BuiltWith & Wappalyzer Alternative (available from 2026-10-02)
+# Tech Stack Detector - BuiltWith & Wappalyzer Alternative
 
 Tech stack detector and website technology lookup for site lists: CMS, e-commerce, JS frameworks, analytics, CDN, hosting, payments. 480+ technologies with evidence. $7/1,000 sites; none found = free.
 
-- Apify Store: `apify.com/tidytools/website-tech-stack-detector` (public from 2026-10-02)
+- Apify Store: [https://apify.com/tidytools/website-tech-stack-detector](https://apify.com/tidytools/website-tech-stack-detector)
 - Actor ID: `tidytools/website-tech-stack-detector` (`znF3B0Qjf11cv97Wa`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/website-tech-stack-detector`
-
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-02**. Until then the recipes below return an error.
 
 ## Use case
 

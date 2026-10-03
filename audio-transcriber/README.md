@@ -1,6 +1,6 @@
-# Audio to Text & Video to Text - Whisper Transcription, SRT
+# Speech to Text: Audio to Text & Video to Text - Whisper, SRT
 
-Transcribe audio to text and video to text with Whisper: MP3, MP4, podcast RSS, Drive/Dropbox links. Timestamps, SRT/VTT subtitles, speaker diarization, 90+ languages. $0.006/min.
+Speech to text transcription with Whisper: audio to text, video to text, MP3 to text, podcast RSS, Drive/Dropbox links. SRT/VTT subtitle generator, speaker diarization, TXT/Markdown, 90+ languages. $0.006/min.
 
 - Apify Store: [https://apify.com/tidytools/audio-transcriber](https://apify.com/tidytools/audio-transcriber)
 - Actor ID: `tidytools/audio-transcriber` (`3W2KtIbvHitDH8GCc`)
@@ -8,7 +8,7 @@ Transcribe audio to text and video to text with Whisper: MP3, MP4, podcast RSS, 
 
 ## Use case
 
-**Input:** audio/video file URLs, uploads or podcast RSS feeds. **Output per file:** text, timestamped segments, paragraphs, SRT/VTT links. **$0.006 per minute**, failed or silent files are free.
+**Input:** audio/video file URLs, uploads or podcast RSS feeds. **Output per file:** text, timestamped segments, paragraphs, SRT/VTT subtitles and TXT/Markdown transcript files. **$0.006 per minute**, failed or silent files are free.
 
 ## Price (pay per event, Apify Free plan)
 
@@ -68,6 +68,8 @@ From the Actor's documentation (section "Output example (real result, shortened)
     ],
     "srtUrl": "https://api.apify.com/v2/key-value-stores/.../records/0000-Gerald-20Ford-...mp4.srt",
     "vttUrl": "https://api.apify.com/v2/key-value-stores/.../records/0000-Gerald-20Ford-...mp4.vtt",
+    "txtUrl": "https://api.apify.com/v2/key-value-stores/.../records/0000-Gerald-20Ford-...mp4.txt",
+    "mdUrl": "https://api.apify.com/v2/key-value-stores/.../records/0000-Gerald-20Ford-...mp4.md",
     "processingSeconds": 33
 }
 ```

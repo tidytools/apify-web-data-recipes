@@ -1,12 +1,10 @@
-# Bulk Email Validator - MX, Disposable Email & Typo Check (available from 2026-10-03)
+# Bulk Email Validator - MX, Disposable Email & Typo Check
 
 Email list cleaner without SMTP pings: bulk-check syntax, domain and MX records, disposable email, role and free-provider flags, and typos (gmial.com → gmail.com). CSV upload or another Actor's dataset. Failed lines are free. $0.50 per 1,000.
 
-- Apify Store: `apify.com/tidytools/bulk-email-validator` (public from 2026-10-03)
+- Apify Store: [https://apify.com/tidytools/bulk-email-validator](https://apify.com/tidytools/bulk-email-validator)
 - Actor ID: `tidytools/bulk-email-validator` (`haMAC5lJnzZmQcyqh`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/bulk-email-validator`
-
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-03**. Until then the recipes below return an error.
 
 ## Use case
 
