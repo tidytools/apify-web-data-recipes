@@ -1,5 +1,5 @@
 // Google Maps Scraper Alternative - Local Business Leads by City: run the Actor on Apify and print the results.
-// Store page: apify.com/tidytools/places-database (public from 2026-10-04)
+// Store page: https://apify.com/tidytools/places-database
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 // Run:   node run.mjs
@@ -15,7 +15,8 @@ const input = {
     ],
     "categories": [
         "dental_clinic"
-    ]
+    ],
+    "maxResults": 20
 };
 
 const token = process.env.APIFY_TOKEN;

@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-# Website Email Extractor - Bulk Contact Details & Socials: run the Actor, wait for it (up to 300 s) and print the dataset items as JSON.
+# Google Maps Email Extractor - Website Emails, Phones & Socials: run the Actor, wait for it (up to 300 s) and print the dataset items as JSON.
 # Store page: https://apify.com/tidytools/website-contact-extractor
 # Usage: export APIFY_TOKEN=your_token && sh curl.sh
 # maxTotalChargeUsd is a cost cap: the run stops charging at this amount.

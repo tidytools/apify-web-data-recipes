@@ -8,7 +8,7 @@ Speech to text transcription with Whisper: audio to text, video to text, MP3 to 
 
 ## Use case
 
-**Input:** audio/video file URLs, uploads or podcast RSS feeds. **Output per file:** text, timestamped segments, paragraphs, SRT/VTT subtitles and TXT/Markdown transcript files. **$0.006 per minute**, failed or silent files are free.
+**Audio transcription for $0.006 per minute: turn audio files, videos, podcast feeds and YouTube links into text with timestamps and SRT/VTT subtitles (Whisper large-v3-turbo, 90+ languages). Failed or silent files are free.**
 
 ## Price (pay per event, Apify Free plan)
 
@@ -40,37 +40,21 @@ This is the Actor's prefilled example input. All other fields have defaults; the
 
 ## Sample output
 
-From the Actor's documentation (section "Output example (real result, shortened)"):
+From the Actor's documentation (section "Output (real result, shortened)"):
 
 ```json
 {
-    "url": "https://archive.org/download/gerald-ford-inaugural-address-august-9-1974-720p/Gerald%20Ford%20inaugural%20address_%20August%209%2C%201974%20%28720p%29.mp4",
     "success": true,
-    "format": "mp4",
-    "fileSizeBytes": 48964530,
     "durationSeconds": 500.1,
     "billedMinutes": 9,
     "language": "en",
-    "wordCount": 876,
     "text": "Mr. Chief Justice, my dear friends, my fellow Americans, the oath that I have taken is the same oath that was taken by George Washington...",
     "segments": [
-        { "start": 1.36, "end": 20.4, "text": "Mr. Chief Justice, my dear friends, my fellow Americans, the oath that I have taken is the same oath that was taken by George Washington and by every president under the Constitution." },
-        { "start": 20.4, "end": 31.32, "text": "But I assume the presidency under extraordinary circumstances never before experienced by Americans." }
+        { "start": 1.36, "end": 20.4, "text": "Mr. Chief Justice, my dear friends, my fellow Americans, the oath that I have taken ..." }
     ],
-    "paragraphs": [
-        { "start": 1.36, "end": 39.68, "text": "Mr. Chief Justice, my dear friends, ... This is an hour of history that troubles our minds and hurts our hearts." },
-        { "start": 41.44, "end": 73.64, "text": "Therefore, I feel it is my first duty to make an unprecedented compact with my countrymen. ..." }
-    ],
-    "summary": "The president assumes office under extraordinary circumstances ... and asks for prayers for Richard Nixon and his family.",
-    "chapters": [
-        { "startSeconds": 0, "start": "0:00", "title": "Introduction and Compact with the Nation" },
-        { "startSeconds": 304, "start": "5:04", "title": "Message of Hope and Unity" }
-    ],
+    "chapters": [{ "start": "0:00", "title": "Introduction and Compact with the Nation" }, { "start": "5:04", "title": "Message of Hope and Unity" }],
     "srtUrl": "https://api.apify.com/v2/key-value-stores/.../records/0000-Gerald-20Ford-...mp4.srt",
-    "vttUrl": "https://api.apify.com/v2/key-value-stores/.../records/0000-Gerald-20Ford-...mp4.vtt",
-    "txtUrl": "https://api.apify.com/v2/key-value-stores/.../records/0000-Gerald-20Ford-...mp4.txt",
-    "mdUrl": "https://api.apify.com/v2/key-value-stores/.../records/0000-Gerald-20Ford-...mp4.md",
-    "processingSeconds": 33
+    "txtUrl": "https://api.apify.com/v2/key-value-stores/.../records/0000-Gerald-20Ford-...mp4.txt"
 }
 ```
 

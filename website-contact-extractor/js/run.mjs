@@ -1,4 +1,4 @@
-// Website Email Extractor - Bulk Contact Details & Socials: run the Actor on Apify and print the results.
+// Google Maps Email Extractor - Website Emails, Phones & Socials: run the Actor on Apify and print the results.
 // Store page: https://apify.com/tidytools/website-contact-extractor
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)

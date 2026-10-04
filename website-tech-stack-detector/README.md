@@ -8,15 +8,7 @@ Tech stack detector and website technology lookup for site lists: CMS, e-commerc
 
 ## Use case
 
-Give it a list of websites (bare domains like `stripe.com` or full URLs) and get the **technologies each site runs**, with the evidence for every detection:
-
-- 🧱 **CMS and site builders**: WordPress, Drupal, Joomla, Ghost, Wix, Squarespace, Webflow, HubSpot CMS, Framer, Duda, Weebly, headless CMSs (Contentful, Sanity, Storyblok, Prismic)…
-- 🛒 **E-commerce**: Shopify, WooCommerce, Magento, BigCommerce, PrestaShop, Salesforce Commerce Cloud, Ecwid…
-- ⚛️ **JavaScript frameworks and libraries**: Next.js, Nuxt, React, Vue.js, Angular, Svelte/SvelteKit, Astro, Gatsby, Remix, jQuery (with version), Bootstrap, Tailwind CSS…
-- 📊 **Analytics, tag managers and ads**: Google Analytics, Google Tag Manager, Hotjar, Microsoft Clarity, Mixpanel, Segment, Meta Pixel, LinkedIn Insight, TikTok Pixel, Google Ads…
-- ☁️ **CDN, hosting and web servers**: Cloudflare, Fastly, Akamai, CloudFront, Vercel, Netlify, Heroku, WP Engine, Kinsta, Nginx (with version), Apache, LiteSpeed…
-- 💳 **Payments, chat, marketing automation, A/B testing, cookie consent, bot protection, fonts, maps and video**: Stripe, PayPal, Klarna, Intercom, Zendesk, HubSpot, Klaviyo, Optimizely, OneTrust, Cookiebot, reCAPTCHA, DataDome, Google Fonts, YouTube…
-- ✉️ **E-mail provider and SaaS seen in DNS** (new): the MX provider (Google Workspace, Microsoft 365, Proofpoint, Mimecast…), senders from SPF and DKIM (SendGrid, Mailchimp, Amazon SES, Postmark, HubSpot, Marketo, Salesforce…) and the domain-verification records companies add for Atlassian, Zoom, DocuSign, Slack, Apple, Meta, OpenAI, Notion and 80+ other services.
+**Tech stack detector and BuiltWith / Wappalyzer alternative for $7 per 1,000 websites: get the CMS, e-commerce platform, frameworks, analytics, hosting and e-mail provider of any list of domains, with the evidence for every detection. Sites with no technology detected and sites that fail are free.**
 
 ## Price (pay per event, Apify Free plan)
 
@@ -43,46 +35,20 @@ This is the Actor's prefilled example input. All other fields have defaults; the
 
 ## Sample output
 
-From the Actor's documentation (section "Output example (real result, September 2026)"):
+From the Actor's documentation (section "Output (real result, shortened)"):
 
 ```json
 {
     "input": "wordpress.org",
-    "inputIndex": 0,
-    "url": "https://wordpress.org",
-    "site": "wordpress.org",
-    "finalUrl": "https://wordpress.org/",
-    "httpStatus": 200,
     "success": true,
     "technologyCount": 5,
     "technologyNames": "WordPress 7.2, Google Tag Manager, Nginx, PHP, Jetpack",
     "cms": "WordPress",
-    "ecommerce": null,
-    "jsFramework": null,
     "analytics": "Google Tag Manager",
-    "hosting": null,
     "technologies": [
-        {
-            "name": "WordPress",
-            "category": "CMS",
-            "confidence": "high",
-            "version": "7.2",
-            "evidence": [
-                "header: link: <https://wordpress.org/wp-json/>; rel=\"https://api.w.org/\", <https://wordpress.…",
-                "meta: generator: WordPress 7.2-alpha-63999",
-                "script: https://wordpress.org/wp-content/mu-plugins/pub-sync/blocks/language-suggest/build/front.js?ver=5f3f8a2de66964d2bf04"
-            ]
-        },
-        { "name": "Google Tag Manager", "category": "Tag manager", "confidence": "high", "version": null,
-          "evidence": ["iframe: https://www.googletagmanager.com/ns.html?id=GTM-P24PF4B", "..."] },
-        { "name": "Nginx", "category": "Web server", "confidence": "high", "version": null, "evidence": ["header: server: nginx"] },
-        { "name": "PHP", "category": "Programming language", "confidence": "high", "version": null, "evidence": ["implied by WordPress"], "impliedBy": "WordPress" },
-        { "name": "Jetpack", "category": "WordPress plugin", "confidence": "high", "version": null, "evidence": ["script: https://stats.wp.com/e-202640.js"] }
+        { "name": "WordPress", "category": "CMS", "confidence": "high", "version": "7.2", "evidence": ["meta: generator: WordPress 7.2-alpha-63999", "..."] },
+        { "name": "Nginx", "category": "Web server", "confidence": "high", "version": null, "evidence": ["header: server: nginx"] }
     ],
-    "categories": { "CMS": ["WordPress"], "Tag manager": ["Google Tag Manager"], "Web server": ["Nginx"], "Programming language": ["PHP"], "WordPress plugin": ["Jetpack"] },
-    "pagesChecked": ["https://wordpress.org/"],
-    "signals": "full",
-    "via": "direct",
     "charged": true
 }
 ```

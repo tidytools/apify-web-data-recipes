@@ -1,6 +1,6 @@
 """Google Maps Scraper Alternative - Local Business Leads by City: run the Actor on Apify and print the results.
 
-Store page: apify.com/tidytools/places-database (public from 2026-10-04)
+Store page: https://apify.com/tidytools/places-database
 Setup:      pip install apify-client
             export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 Run:        python run.py
@@ -14,7 +14,7 @@ from apify_client import ApifyClient
 ACTOR_ID = "tidytools/places-database"
 MAX_TOTAL_CHARGE_USD = Decimal("1.00")  # cost cap: the run stops charging at this amount
 
-RUN_INPUT = {'locations': ['Lisbon, PT'], 'categories': ['dental_clinic']}
+RUN_INPUT = {'locations': ['Lisbon, PT'], 'categories': ['dental_clinic'], 'maxResults': 20}
 
 
 def main():

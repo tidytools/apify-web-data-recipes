@@ -1,12 +1,10 @@
-# Schema Markup Validator - JSON-LD Structured Data Checker (available from 2026-10-05)
+# Schema Markup Validator - JSON-LD Structured Data Checker
 
 Validate JSON-LD and Microdata schema markup on a URL list, a sitemap or a whole site against Google rich result rules (Product, FAQ, Recipe, Event, Job...), plus Open Graph. $2 per 1,000 pages.
 
-- Apify Store: `apify.com/tidytools/structured-data-validator` (public from 2026-10-05)
+- Apify Store: [https://apify.com/tidytools/structured-data-validator](https://apify.com/tidytools/structured-data-validator)
 - Actor ID: `tidytools/structured-data-validator` (`H8eTuBhWOXKumBSIs`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/structured-data-validator`
-
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-05**. Until then the recipes below return an error.
 
 ## Use case
 

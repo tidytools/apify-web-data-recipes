@@ -14,7 +14,7 @@ from apify_client import ApifyClient
 ACTOR_ID = "tidytools/website-markdown-crawler"
 MAX_TOTAL_CHARGE_USD = Decimal("1.00")  # cost cap: the run stops charging at this amount
 
-RUN_INPUT = {'urls': ['https://docs.apify.com/academy'], 'removeBoilerplate': True}
+RUN_INPUT = {'urls': ['https://docs.apify.com/academy'], 'requestHeaders': {}, 'removeBoilerplate': True}
 
 
 def main():

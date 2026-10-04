@@ -8,7 +8,7 @@ Email list cleaner without SMTP pings: bulk-check syntax, domain and MX records,
 
 ## Use case
 
-**Email list cleaner** for lists you are about to send or import: give it a list, a CSV or the dataset of a lead scraper and get a verdict, score and reason per address, with no SMTP pings. **$0.50 per 1,000 addresses, no start fee, failed lines free**; the run stops at your maximum charge per run, and a restarted run never charges an address twice.
+**Bulk email validator and email list cleaner for $0.50 per 1,000 addresses: check syntax, domain and MX records, disposable, role and no-reply addresses and typos for a list, a CSV or a lead scraper's dataset, without SMTP pings. Syntax errors, failed lookups and duplicates are free.**
 
 ## Price (pay per event, Apify Free plan)
 
@@ -39,36 +39,23 @@ This is the Actor's prefilled example input. All other fields have defaults; the
 
 ## Sample output
 
-From the Actor's documentation (section "Output example (from a CSV row, real run 1 October 2026)"):
+From the Actor's documentation (section "Output (real result, shortened)"):
 
 ```json
-{
-    "input": "jane@apify.com",
-    "email": "jane@apify.com",
-    "verdict": "valid",
-    "score": 90,
-    "reason": "domain accepts e-mail; mailbox not verified (no SMTP check)",
-    "didYouMean": null,
-    "syntaxValid": true,
-    "domain": "apify.com",
-    "domainExists": true,
-    "hasMx": true,
-    "acceptsMail": true,
-    "mailProvider": "Google",
-    "disposable": false,
-    "role": false,
-    "noReply": false,
-    "freeProvider": false,
-    "mxRecords": [{ "priority": 1, "host": "aspmx.l.google.com" }, { "priority": 5, "host": "alt1.aspmx.l.google.com" }],
-    "catchAll": null,
-    "mailboxChecked": false,
-    "success": true,
-    "charged": true,
-    "source": "csv",
-    "csvRow": 2,
-    "duplicates": 1,
-    "sourceFields": { "Name": "Jane", "Company": "Acme" }
-}
+[
+    {
+        "email": "jane@apify.com",
+        "verdict": "valid",
+        "score": 90,
+        "reason": "domain accepts e-mail; mailbox not verified (no SMTP check)",
+        "mailProvider": "Google",
+        "disposable": false,
+        "charged": true
+    },
+    { "email": "someone@gmial.com", "verdict": "risky", "score": 20, "reason": "disposable (temporary) e-mail domain", "didYouMean": "someone@gmail.com", "charged": true },
+    { "email": "zed@gmail.con", "verdict": "invalid", "reason": "the domain does not exist (NXDOMAIN)", "didYouMean": "zed@gmail.com", "charged": true },
+    { "email": "bad..address@gmail.com", "verdict": "invalid", "reason": "invalid syntax: consecutive dots in the local part", "charged": false }
+]
 ```
 
 ## Run it

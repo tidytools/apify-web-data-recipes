@@ -8,14 +8,14 @@ Get YouTube transcripts with timestamps from videos, whole channels or playlists
 
 ## Use case
 
-**Give it YouTube video, channel or playlist links. Get one row per video: the full transcript, timestamped segments and video details. $2 per 1,000 transcripts, and videos without a transcript are free.**
+**YouTube transcript scraper for $3 per 1,000 transcripts: paste video, channel or playlist links and get the full transcript, timestamped segments and video details, one row per video. Videos without a transcript and failed videos are free.**
 
 ## Price (pay per event, Apify Free plan)
 
 | Event | Price per 1,000 |
 |---|---|
-| Video transcript | $2.00 |
-| Speech-to-text minute | $6.00 |
+| Video transcript | $3.00 |
+| Speech-to-text minute | $8.00 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.
 
@@ -33,34 +33,23 @@ This is the Actor's prefilled example input. All other fields have defaults; the
 
 ## Sample output
 
-From the Actor's documentation (section "Output example"):
+From the Actor's documentation (section "Output (real result, shortened)"):
 
 ```json
 {
-  "success": true,
-  "status": "ok",
-  "videoId": "jNQXAC9IVRw",
-  "url": "https://www.youtube.com/watch?v=jNQXAC9IVRw",
-  "title": "Me at the zoo",
-  "channel": "jawed",
-  "channelId": "UC4QobU6STFB0P71PMvOGN5A",
-  "publishDate": "2005-04-23T20:31:52-07:00",
-  "durationSec": 19,
-  "viewCount": 439408167,
-  "requestedLanguages": [],
-  "language": "en",
-  "languageMatch": null,
-  "source": "manual_captions",
-  "isGenerated": false,
-  "availableLanguages": [{ "code": "en", "name": "English", "generated": false }, { "code": "de", "name": "German", "generated": false }],
-  "transcript": "All right, so here we are, in front of the elephants the cool thing about these guys is that they have really... really really long trunks and that's cool (baaaaaaaaaaahhh!!) and that's pretty much all there is to say",
-  "segments": [
-    { "start": 1.2, "duration": 2.16, "text": "All right, so here we are, in front of the elephants" },
-    { "start": 5.318, "duration": 2.656, "text": "the cool thing about these guys is that they have really..." }
-  ],
-  "wordCount": 39,
-  "charCount": 217,
-  "failureReason": null
+    "success": true,
+    "videoId": "jNQXAC9IVRw",
+    "title": "Me at the zoo",
+    "channel": "jawed",
+    "durationSec": 19,
+    "language": "en",
+    "source": "manual_captions",
+    "transcript": "All right, so here we are, in front of the elephants the cool thing about these guys is that they have really... really really long trunks and that's cool (baaaaaaaaaaahhh!!) and that's pretty much all there is to say",
+    "segments": [
+        { "start": 1.2, "duration": 2.16, "text": "All right, so here we are, in front of the elephants" }
+    ],
+    "wordCount": 39,
+    "failureReason": null
 }
 ```
 

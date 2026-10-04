@@ -1,6 +1,6 @@
 # ATS Jobs Scraper - Career Sites, Greenhouse, Lever, Workday
 
-Give company domains or career-page URLs, get their live open jobs: Greenhouse, Lever, Ashby, Workday + 13 more ATSs, auto-detected. Salary, remote, new-job alerts. $1/1,000 jobs.
+Give company domains or career-page URLs, get their live open jobs: Greenhouse, Lever, Ashby, Workday + 13 more ATSs, auto-detected. Salary, remote, new-job alerts. $2/1,000 jobs.
 
 - Apify Store: [https://apify.com/tidytools/ats-career-site-jobs](https://apify.com/tidytools/ats-career-site-jobs)
 - Actor ID: `tidytools/ats-career-site-jobs` (`k95BFAjcwk9AX61BE`)
@@ -8,13 +8,13 @@ Give company domains or career-page URLs, get their live open jobs: Greenhouse, 
 
 ## Use case
 
-It returns the **open jobs of any list of companies, live from their own career sites**. Paste career pages, company websites or job board URLs, in any mix: the Actor finds which applicant tracking system (ATS) each company uses and reads that ATS's **public job board feed** — the JSON, XML and RSS feeds these vendors serve so companies can show their jobs on their own websites. Every job comes back in **one normalised format**, whatever the ATS.
+**ATS and career site jobs scraper for $2 per 1,000 jobs: open jobs live from company career sites on Greenhouse, Lever, Ashby, Workday and 13 more applicant tracking systems, auto-detected from a website, in one normalised format. Companies without a readable job board and filtered-out jobs are free.**
 
 ## Price (pay per event, Apify Free plan)
 
 | Event | Price per 1,000 |
 |---|---|
-| Job | $1.00 |
+| Job | $2.00 |
 | Company ATS detected | $2.00 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.
@@ -31,52 +31,30 @@ This is the Actor's prefilled example input. All other fields have defaults; the
     "https://apply.workable.com/huggingface/"
   ],
   "companyPreset": "ai-labs",
-  "maxJobsPerCompany": 10
+  "maxJobsPerCompany": 3
 }
 ```
 
 ## Sample output
 
-From the Actor's documentation (section "Output example (jobs mode)"):
+From the Actor's documentation (section "Output (real result, shortened)"):
 
 ```json
 {
     "input": "greenhouse:reddit",
-    "inputIndex": 5,
-    "success": true,
-    "jobKey": "greenhouse:reddit:8147559",
-    "jobId": "8147559",
     "title": "Front End Software Engineer, Consumer Engineering",
     "company": "Reddit",
-    "department": "Consumer",
-    "team": null,
     "location": "Remote - United States",
-    "locations": ["Remote - United States"],
     "country": "US",
     "workplaceType": "remote",
-    "remote": true,
-    "employmentType": null,
-    "employmentTypeText": null,
     "salaryMin": 164200,
     "salaryMax": 229900,
     "salaryCurrency": "USD",
     "salaryPeriod": "year",
-    "salaryText": "$164,200—$229,900 USD",
-    "salarySource": "description",
     "postedAt": "2026-09-17T17:07:34.000Z",
-    "postedAtApproximate": false,
-    "updatedAt": "2026-09-17T17:07:34.000Z",
     "jobUrl": "https://job-boards.greenhouse.io/reddit/jobs/8147559",
-    "applyUrl": "https://job-boards.greenhouse.io/reddit/jobs/8147559",
-    "requisitionId": "Pooled",
-    "descriptionText": "Reddit is a community of communities. It’s built on shared interests, passion, and trust, and is home to the most open and authentic conversations on …",
-    "source": "ats",
     "ats": "greenhouse",
-    "atsSlug": "reddit",
-    "boardUrl": "https://job-boards.greenhouse.io/reddit",
-    "detectionMethod": "input",
-    "charged": true,
-    "scrapedAt": "2026-09-30T04:52:29.128Z"
+    "charged": true
 }
 ```
 

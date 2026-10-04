@@ -8,7 +8,7 @@ App Store scraper for iOS app reviews and app details from Apple's official publ
 
 ## Use case
 
-It returns **App Store customer reviews and app details** for any list of iPhone and iPad apps, in as many countries as you like, from **Apple's own public endpoints**: the customer reviews feed (RSS/JSON) and the iTunes Search and Lookup API. Paste app links, app ids, bundle ids or plain search terms; get one clean row per review and one row per app and country.
+**App Store reviews scraper for $0.10 per 1,000 reviews: iPhone and iPad app reviews, ratings and app details from Apple's own public feeds, many countries in one run, no login or API key. Filtered-out reviews and apps that are not found are free.**
 
 ## Price (pay per event, Apify Free plan)
 
@@ -40,15 +40,11 @@ This is the Actor's prefilled example input. All other fields have defaults; the
 
 ## Sample output
 
-From the Actor's documentation (section "Output example: review"):
+From the Actor's documentation (section "Output (real result, shortened)"):
 
 ```json
 {
     "type": "review",
-    "input": "com.spotify.client",
-    "inputIndex": 2,
-    "success": true,
-    "reviewId": "14603311144",
     "appId": "324684580",
     "appName": "Spotify: Music and Podcasts",
     "country": "us",
@@ -59,10 +55,7 @@ From the Actor's documentation (section "Output example: review"):
     "author": "Poleryeno",
     "date": "2026-09-28T13:07:21.000Z",
     "helpfulVotes": 0,
-    "totalVotes": 0,
-    "reviewsUrl": "https://apps.apple.com/us/app/id324684580?see-all=reviews",
-    "charged": true,
-    "scrapedAt": "2026-09-30T06:04:24.099Z"
+    "charged": true
 }
 ```
 

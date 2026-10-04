@@ -1,12 +1,10 @@
-# AI Translator - Bulk Translate Text, JSON, Subtitles & Pages (available from 2026-10-04)
+# AI Translator - Bulk Translate Text, JSON, Subtitles & Pages
 
 Translate texts, JSON and datasets, SRT/VTT subtitles and web pages into many languages at once. Glossary, tone, Markdown kept. A Google Translate / DeepL alternative, no API key. $1.50/1M chars.
 
-- Apify Store: `apify.com/tidytools/web-page-translator` (public from 2026-10-04)
+- Apify Store: [https://apify.com/tidytools/web-page-translator](https://apify.com/tidytools/web-page-translator)
 - Actor ID: `tidytools/web-page-translator` (`Z8R6afk16yObrJais`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/web-page-translator`
-
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-04**. Until then the recipes below return an error.
 
 ## Use case
 

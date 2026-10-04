@@ -16,7 +16,7 @@ const input = {
         "https://apply.workable.com/huggingface/"
     ],
     "companyPreset": "ai-labs",
-    "maxJobsPerCompany": 10
+    "maxJobsPerCompany": 3
 };
 
 const token = process.env.APIFY_TOKEN;

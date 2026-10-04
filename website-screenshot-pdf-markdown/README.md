@@ -8,11 +8,7 @@ Bulk website screenshots: full page, one element, mobile or tablet. URL to PDF a
 
 ## Use case
 
-Give it a list of URLs and get back, for every page:
-
-- 📸 **Screenshot**: viewport, full-page or **one element only** (e.g. a pricing table or chart), PNG / JPEG / WebP, desktop, laptop, tablet or mobile, retina (2x/3x) and dark mode
-- 📄 **PDF**: print-ready A4 / Letter / Legal, portrait or landscape, with backgrounds
-- 📝 **Markdown**: clean, LLM-ready text of the page, without navigation, headers and footers by default, optionally limited to one part of it (e.g. `article`)
+**Website screenshot API for bulk URLs: full-page, mobile or single-element screenshots for $1 per 1,000, plus URL to PDF ($2.50 per 1,000) and clean Markdown from the same page load. Failed and blocked pages are free.**
 
 ## Price (pay per event, Apify Free plan)
 
@@ -42,36 +38,21 @@ This is the Actor's prefilled example input. All other fields have defaults; the
 
 ## Sample output
 
-From the Actor's documentation (section "Output example"):
+From the Actor's documentation (section "Output (real result, shortened)"):
 
 ```json
 {
     "url": "https://stripe.com",
-    "finalUrl": "https://stripe.com/",
     "httpStatus": 200,
     "title": "Stripe | Financial Infrastructure to Grow Your Revenue",
     "success": true,
-    "inputIndex": 0,
-    "inputUrl": "stripe.com",
-    "variant": "mobile",
     "device": "mobile",
     "viewportWidth": 390,
-    "viewportHeight": 844,
     "pixelDensity": 3,
     "screenshotUrl": "https://api.apify.com/v2/key-value-stores/…/records/00000-stripe-com-screenshot-mobile.jpg",
     "screenshotBytes": 1255663,
-    "screenshotTruncated": true,
     "format": "jpeg",
     "fullPage": true,
-    "pdfUrl": null,
-    "markdown": null,
-    "scrolledPx": 16880,
-    "hiddenElements": 5,
-    "waitForSelectorTimedOut": true,
-    "errors": {},
-    "loadTimedOut": false,
-    "cookieBannersHidden": 0,
-    "capturedAt": "2026-09-29T02:01:42.003Z",
     "charged": true
 }
 ```

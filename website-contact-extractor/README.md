@@ -1,6 +1,6 @@
-# Website Email Extractor - Bulk Contact Details & Socials
+# Google Maps Email Extractor - Website Emails, Phones & Socials
 
-Email extractor and contact details scraper for company websites or Google Maps results: emails (incl. obfuscated), phones, social links, address, contact form. $2/1,000 sites; nothing found = free.
+Google Maps email extractor: add emails to Google Maps results. Reads each business's own website (from a Maps scraper dataset or a domain list) for emails, best email with MX check, phones, socials. Does not scrape Maps itself. $2/1,000 sites; nothing found = free.
 
 - Apify Store: [https://apify.com/tidytools/website-contact-extractor](https://apify.com/tidytools/website-contact-extractor)
 - Actor ID: `tidytools/website-contact-extractor` (`kFhBWk7SCYTakF6Fn`)
@@ -8,14 +8,7 @@ Email extractor and contact details scraper for company websites or Google Maps 
 
 ## Use case
 
-A bulk email extractor for a list of domains or for Google Maps results: give it company or business websites (URLs or bare domains, up to 50,000 per run) or the dataset of a Google Maps run, and get one clean record per website:
-
-- 📧 **Emails**: `mailto:` links, addresses written in the text, **obfuscated addresses** ("info [at] firm [dot] de", "info(at)firm.de", the full-width "info＠firm.com.tw", addresses written backwards or put together by a script, WordPress email-encoder plugins) and **Cloudflare-protected emails** (decoded). Lower-cased, de-duplicated, and junk is filtered out: image file names such as `logo@2x.png`, placeholder and example addresses (`you@example.com`, `name@domain.com`), error-tracking IDs and no-reply addresses.
-- 📞 **Phone and fax numbers** in international format (`+12122542246`), from `tel:` links, schema.org data and the page text. Every number is checked with Google's libphonenumber rules for its country, and numbers in text are only taken after a label ("Tel:", "Phone", "電話"...), in international format, or in a typical phone layout, so order numbers, dates and prices are not picked up.
-- 👥 **Social profiles**: Facebook, X, LinkedIn, Instagram, YouTube, TikTok, GitHub, Pinterest, Threads, Trustpilot, Discord, Telegram and WhatsApp. Only real profile URLs count (share buttons, posts and videos are ignored), and default profiles from website templates (e.g. `facebook.com/wix`) are skipped.
-- 🏢 **Organization name, logo and postal address** from the site's schema.org data (JSON-LD or Microdata: Organization, LocalBusiness, Restaurant, Dentist...).
-- 📝 **Contact form URL**: the page with a contact form (HTML forms with a message box, or HubSpot, Contact Form 7, Typeform, Jotform and other embeds).
-- 🔎 **Where each value was found**: the page and the method (`mailto`, `text`, `obfuscated`, `cloudflare`, `jsonld`, `attribute`, `script`, `tel-link`), plus the list of pages checked.
+**Google Maps email extractor for $2 per 1,000 websites: give it the results of your Google Maps scraper (or a plain list of domains) and get each business's emails, the best email to use, phone numbers and social profiles, read from the business's own website. Websites with nothing found and unreachable websites are free.**
 
 ## Price (pay per event, Apify Free plan)
 
@@ -40,51 +33,24 @@ This is the Actor's prefilled example input. All other fields have defaults; the
 
 ## Sample output
 
-From the Actor's documentation (section "Output example (real result, September 2026)"):
+From the Actor's documentation (section "Output: one row per place (shortened)"):
 
 ```json
 {
-    "input": "stumptowncoffee.com",
-    "inputIndex": 0,
-    "url": "https://stumptowncoffee.com/",
+    "businessName": "Stumptown Coffee Roasters",
+    "placeName": "Stumptown Coffee Roasters",
+    "placeAddress": "128 SW 3rd Ave, Portland, OR 97204",
+    "placePhone": "+15032241000",
+    "placeId": "ChIJ...",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=...&query_place_id=ChIJ...",
     "domain": "stumptowncoffee.com",
-    "finalUrl": "https://www.stumptowncoffee.com/",
-    "success": true,
-    "organizationName": "Stumptown Coffee Roasters",
-    "primaryEmail": "info@stumptowncoffee.com",
-    "primaryPhone": "+18777113385",
+    "bestEmail": "info@stumptowncoffee.com",
+    "bestEmailType": "role_company",
+    "bestEmailHasMx": true,
     "emailsText": "info@stumptowncoffee.com, legal@stumptown.com, customerservice@stumptown.com",
-    "phonesText": "+18777113385, +18332672844, +18557113385",
-    "emails": ["info@stumptowncoffee.com", "legal@stumptown.com", "customerservice@stumptown.com"],
-    "phones": ["+18777113385", "+18332672844", "+18557113385"],
-    "faxes": [],
-    "socialProfiles": {
-        "instagram": "https://www.instagram.com/stumptowncoffee",
-        "facebook": "https://www.facebook.com/stumptowncoffee",
-        "x": "https://twitter.com/stumptowncoffee",
-        "youtube": "https://www.youtube.com/channel/UC0yk_H5Np-uGvy98UM-jj6w",
-        "tiktok": "https://www.tiktok.com/@stumptowncoffee",
-        "pinterest": "https://www.pinterest.com/stumptowncoffee"
-    },
-    "address": "700 SW 5th Ave, 3rd Floor, #400, 97214 Portland, OR",
-    "logo": "https://customers.seomanager.com/knowledgegraph/logo/stumptowncoffee_myshopify_com_logo.png",
-    "contactFormUrl": null,
-    "emailDetails": [
-        { "email": "info@stumptowncoffee.com", "page": "https://www.stumptowncoffee.com/", "method": "jsonld", "sameDomain": true, "mailbox": "role" },
-        { "email": "legal@stumptown.com", "page": "https://www.stumptowncoffee.com/pages/terms-and-conditions", "method": "text", "sameDomain": false, "mailbox": "role" }
-    ],
-    "phoneDetails": [
-        { "number": "+18777113385", "display": "877-711-3385", "national": "(877) 711-3385", "country": "US", "type": "phone", "page": "https://www.stumptowncoffee.com/", "method": "jsonld" }
-    ],
-    "pagesChecked": [
-        { "url": "https://www.stumptowncoffee.com/", "kind": "home", "via": "direct", "httpStatus": 200 },
-        { "url": "https://www.stumptowncoffee.com/pages/contact-us", "kind": "contact", "via": "direct", "httpStatus": 200 },
-        { "url": "https://www.stumptowncoffee.com/pages/locations", "kind": "locations", "via": "direct", "httpStatus": 200 },
-        { "url": "https://www.stumptowncoffee.com/pages/our-story", "kind": "about", "via": "direct", "httpStatus": 200 },
-        { "url": "https://www.stumptowncoffee.com/pages/terms-and-conditions", "kind": "legal", "via": "direct", "httpStatus": 200 }
-    ],
-    "charged": true,
-    "via": "direct"
+    "primaryPhone": "+18777113385",
+    "socialProfiles": { "instagram": "https://www.instagram.com/stumptowncoffee", "facebook": "https://www.facebook.com/stumptowncoffee" },
+    "charged": true
 }
 ```
 

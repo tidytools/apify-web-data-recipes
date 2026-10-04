@@ -1,12 +1,10 @@
-# Google Maps Scraper Alternative - Local Business Leads by City (available from 2026-10-04)
+# Google Maps Scraper Alternative - Local Business Leads by City
 
 Business lead lists for any city, box or country from the open Overture Maps places data: name, category, address, coordinates, website, phone, role emails (info@) and socials. No proxies, no blocking. $1/1,000 places.
 
-- Apify Store: `apify.com/tidytools/places-database` (public from 2026-10-04)
+- Apify Store: [https://apify.com/tidytools/places-database](https://apify.com/tidytools/places-database)
 - Actor ID: `tidytools/places-database` (`jSovfkbjeiDdEMz7f`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/places-database`
-
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-04**. Until then the recipes below return an error.
 
 ## Use case
 
@@ -32,13 +30,37 @@ This is the Actor's prefilled example input. All other fields have defaults; the
   ],
   "categories": [
     "dental_clinic"
-  ]
+  ],
+  "maxResults": 20
 }
 ```
 
 ## Sample output
 
-See the output examples on the Store page.
+From the Actor's documentation (section "Output example"):
+
+```json
+{
+    "id": "eb8be1be-fb13-4309-84af-f2578e753841",
+    "name": "Gragger Brot",
+    "category": "bakery",
+    "categoryPath": ["food_and_drink", "casual_eatery", "bakery"],
+    "website": "http://www.gragger.de/",
+    "phone": "+493081866477",
+    "emails": ["marketing@gragger.de"],
+    "emailType": "role-only",
+    "address": "Potsdamer Str. 107",
+    "city": "Berlin",
+    "postcode": "10785",
+    "country": "DE",
+    "latitude": 52.5,
+    "longitude": 13.36,
+    "confidence": 0.996,
+    "release": "2026-09-23.1",
+    "license": "CDLA-Permissive-2.0",
+    "attribution": "© Overture Maps Foundation (places)"
+}
+```
 
 ## Run it
 
