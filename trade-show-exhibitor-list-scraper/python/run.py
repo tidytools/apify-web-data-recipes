@@ -1,6 +1,6 @@
 """Trade Show Exhibitors Scraper - Exhibitor List, Booth, Website: run the Actor on Apify and print the results.
 
-Store page: apify.com/tidytools/trade-show-exhibitor-list-scraper (public from 2026-10-06)
+Store page: https://apify.com/tidytools/trade-show-exhibitor-list-scraper
 Setup:      pip install apify-client
             export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 Run:        python run.py

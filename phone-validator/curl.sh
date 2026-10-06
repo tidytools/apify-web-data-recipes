@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 # Bulk Phone Number Validator - Format, Type & Country: run the Actor, wait for it (up to 300 s) and print the dataset items as JSON.
-# Store page: apify.com/tidytools/phone-validator (public from 2026-10-06)
+# Store page: https://apify.com/tidytools/phone-validator
 # Usage: export APIFY_TOKEN=your_token && sh curl.sh
 # maxTotalChargeUsd is a cost cap: the run stops charging at this amount.
 : "${APIFY_TOKEN:?Set the APIFY_TOKEN environment variable first}"

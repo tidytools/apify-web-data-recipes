@@ -1,12 +1,10 @@
-# Bulk WHOIS Lookup & DNS Lookup - Domain Age & Expiry (available from 2026-10-06)
+# Bulk WHOIS Lookup & DNS Lookup - Domain Age & Expiry
 
-Look up many domains at once: registrar, creation and expiry dates, status and name servers via RDAP (WHOIS fallback), availability, A/MX/NS/TXT/CAA records, SPF/DMARC grade. $1/1,000.
+Look up many domains at once: registrar, creation and expiry dates, status and name servers via RDAP (WHOIS fallback), availability, A/MX/NS/TXT/CAA records, SPF/DMARC grade. $2/1,000.
 
-- Apify Store: `apify.com/tidytools/bulk-domain-whois-dns-lookup` (public from 2026-10-06)
+- Apify Store: [https://apify.com/tidytools/bulk-domain-whois-dns-lookup](https://apify.com/tidytools/bulk-domain-whois-dns-lookup)
 - Actor ID: `tidytools/bulk-domain-whois-dns-lookup` (`zgj89sxvwUhvsPnpA`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/bulk-domain-whois-dns-lookup`
-
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-06**. Until then the recipes below return an error.
 
 ## Use case
 
@@ -21,7 +19,7 @@ Bulk WHOIS and DNS lookup: give it a list of domains, URLs or e-mail addresses a
 
 | Event | Price per 1,000 |
 |---|---|
-| Domain looked up | $1.00 |
+| Domain looked up | $2.00 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.
 

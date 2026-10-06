@@ -8,7 +8,9 @@ Business lead lists for any city, box or country from the open Overture Maps pla
 
 ## Use case
 
-It returns **business lead lists for any city, area or country**, straight from the open **Overture Maps places dataset**: name, category, address, coordinates, website, phone, role e-mail addresses (info@, contact@) and social links. You give it `Berlin, DE` and `dental_clinic`; it gives you a clean table.
+- **You give:** a city and a business type, e.g. `Austin, US` + `dentist` (or `München, DE` + `Zahnarzt`).
+- **You get:** one row per business with name, category, address, coordinates, website, phone (in +E.164 form), role e-mail addresses (info@, contact@) and social links, from the open **Overture Maps places dataset**.
+- **You pay:** **$1 per 1,000 places** returned, no start fee. Locations that are not found, filtered-out places and duplicates are free. 20 places cost $0.02.
 
 ## Price (pay per event, Apify Free plan)
 

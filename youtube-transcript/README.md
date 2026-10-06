@@ -1,6 +1,6 @@
-# YouTube Transcript Scraper - Captions, Timestamps & Metadata
+# YouTube Transcript Scraper - Timestamps, No API Key or Login
 
-Get YouTube transcripts with timestamps from videos, whole channels or playlists: manual or auto-generated captions in any language, plus title, channel, duration, views and publish date. Optional speech-to-text for videos without captions. Failed videos are free.
+YouTube transcript API without a YouTube API key: transcripts with timestamps from videos, channels or playlists, manual or auto captions in any language, plus title, channel, views and date. Optional speech-to-text. Failed videos free. $3/1,000.
 
 - Apify Store: [https://apify.com/tidytools/youtube-transcript](https://apify.com/tidytools/youtube-transcript)
 - Actor ID: `tidytools/youtube-transcript` (`HquiZorfA0G2SsVDc`)
@@ -8,7 +8,7 @@ Get YouTube transcripts with timestamps from videos, whole channels or playlists
 
 ## Use case
 
-**YouTube transcript scraper for $3 per 1,000 transcripts: paste video, channel or playlist links and get the full transcript, timestamped segments and video details, one row per video. Videos without a transcript and failed videos are free.**
+**YouTube Transcript Scraper is a YouTube transcript API that needs no YouTube API key: paste video, channel or playlist links and get the full transcript, timestamped segments and video details, one row per video, for $3 per 1,000 transcripts. Videos without a transcript and failed videos are free.**
 
 ## Price (pay per event, Apify Free plan)
 

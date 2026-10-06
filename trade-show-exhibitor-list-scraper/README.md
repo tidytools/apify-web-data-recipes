@@ -1,12 +1,10 @@
-# Trade Show Exhibitors Scraper - Exhibitor List, Booth, Website (available from 2026-10-06)
+# Trade Show Exhibitors Scraper - Exhibitor List, Booth, Website
 
 Exhibitor lists from trade show and expo directories: company, booth, hall, categories, country, website, description, logo. a2z (Personify) and ExpoFP natively; other sites via AI. Company data only.
 
-- Apify Store: `apify.com/tidytools/trade-show-exhibitor-list-scraper` (public from 2026-10-06)
+- Apify Store: [https://apify.com/tidytools/trade-show-exhibitor-list-scraper](https://apify.com/tidytools/trade-show-exhibitor-list-scraper)
 - Actor ID: `tidytools/trade-show-exhibitor-list-scraper` (`kF9CLDGcwUS4BehnG`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/trade-show-exhibitor-list-scraper`
-
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-06**. Until then the recipes below return an error.
 
 ## Use case
 
@@ -16,7 +14,7 @@ It turns **trade show exhibitor directories into a clean company list**: one row
 
 | Event | Price per 1,000 |
 |---|---|
-| Exhibitor | $2.00 |
+| Exhibitor | $3.00 |
 | Exhibitor (name and booth only) | $0.50 |
 | Exhibitor (AI-extracted) | $3.00 |
 

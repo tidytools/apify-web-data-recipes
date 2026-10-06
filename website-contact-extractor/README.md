@@ -1,6 +1,6 @@
-# Google Maps Email Extractor - Website Emails, Phones & Socials
+# Website Email Extractor for Google Maps Leads & Domain Lists
 
-Google Maps email extractor: add emails to Google Maps results. Reads each business's own website (from a Maps scraper dataset or a domain list) for emails, best email with MX check, phones, socials. Does not scrape Maps itself. $2/1,000 sites; nothing found = free.
+Website email extractor and contact details scraper: add emails to Google Maps results or find contact emails for a list of company websites. Best email per business with MX check, phones, socials. Does not scrape Maps itself. $2/1,000 sites; nothing found = free.
 
 - Apify Store: [https://apify.com/tidytools/website-contact-extractor](https://apify.com/tidytools/website-contact-extractor)
 - Actor ID: `tidytools/website-contact-extractor` (`kFhBWk7SCYTakF6Fn`)
@@ -8,7 +8,7 @@ Google Maps email extractor: add emails to Google Maps results. Reads each busin
 
 ## Use case
 
-**Google Maps email extractor for $2 per 1,000 websites: give it the results of your Google Maps scraper (or a plain list of domains) and get each business's emails, the best email to use, phone numbers and social profiles, read from the business's own website. Websites with nothing found and unreachable websites are free.**
+**Website Email Extractor is a contact details scraper that finds the emails of Google Maps leads or of a list of company websites: give it a Google Maps scraper's dataset or a list of domains, and get each business's emails, the best email to use, phone numbers and social profiles from its own website, for $2 per 1,000 websites. Websites with nothing found and unreachable websites are free.**
 
 ## Price (pay per event, Apify Free plan)
 

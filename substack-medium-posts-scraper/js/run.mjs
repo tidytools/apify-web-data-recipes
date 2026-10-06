@@ -1,5 +1,5 @@
 // Substack Scraper & Medium Scraper - Newsletter & Blog Posts: run the Actor on Apify and print the results.
-// Store page: apify.com/tidytools/substack-medium-posts-scraper (public from 2026-10-05)
+// Store page: https://apify.com/tidytools/substack-medium-posts-scraper
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 // Run:   node run.mjs

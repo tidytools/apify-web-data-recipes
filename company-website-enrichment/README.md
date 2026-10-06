@@ -12,7 +12,8 @@ Give it a list of company domains, or the dataset of a Google Maps or other lead
 
 - 🏢 **Name** and a **one-line description** of what the company does, written by AI from the website text
 - 🏷️ **Industry** (31 categories, e.g. `software-saas`, `restaurants-food-service`, `legal-services`) and **business model** (`B2B`, `B2C`, `B2B2C`, `nonprofit`, `government`), with a confidence and a short reason
-- 📧 **Emails, phone numbers and social profiles** (Facebook, X, LinkedIn, Instagram, YouTube, TikTok and more), with obfuscated and Cloudflare-protected emails decoded and junk filtered out
+- 👥 **Company size** (employee band such as `11-50` or `1001-5000`) when the company states it: its own schema.org `numberOfEmployees`, or a team size written on the website; otherwise empty, never guessed
+- 📧 **Emails, phone numbers and social profiles** (Facebook, X, LinkedIn, Instagram, YouTube, TikTok and more; company pages only, a person's LinkedIn profile is not returned), with obfuscated and Cloudflare-protected emails decoded and junk filtered out
 - 📍 **Postal address and logo** from the site's schema.org data
 - 🌐 **Language** and a **country guess** (from the postal address, else the country of its phone numbers, else the domain ending such as `.de`), with the source of the guess
 - 🧰 **Tech stack**: CMS, e-commerce platform, analytics, tag manager, CDN, marketing tools and more, detected from the home page (included in the price; can be turned off)

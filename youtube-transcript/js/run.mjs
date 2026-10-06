@@ -1,4 +1,4 @@
-// YouTube Transcript Scraper - Captions, Timestamps & Metadata: run the Actor on Apify and print the results.
+// YouTube Transcript Scraper - Timestamps, No API Key or Login: run the Actor on Apify and print the results.
 // Store page: https://apify.com/tidytools/youtube-transcript
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)

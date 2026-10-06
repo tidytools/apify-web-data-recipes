@@ -1,5 +1,5 @@
 // Bulk Phone Number Validator - Format, Type & Country: run the Actor on Apify and print the results.
-// Store page: apify.com/tidytools/phone-validator (public from 2026-10-06)
+// Store page: https://apify.com/tidytools/phone-validator
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 // Run:   node run.mjs

@@ -1,22 +1,20 @@
-# Bulk Phone Number Validator - Format, Type & Country (available from 2026-10-06)
+# Bulk Phone Number Validator - Format, Type & Country
 
-Validate and format phone numbers in bulk, offline: valid or not, E.164 / international / national format, country, line type (mobile, fixed line, toll free, VoIP) and time zones. CSV upload or another Actor's dataset. Invalid numbers are free. $0.30 per 1,000.
+Validate and format phone numbers in bulk, offline: valid or not, E.164 / international / national format, country, line type (mobile, fixed line, toll free, VoIP) and time zones. CSV upload or another Actor's dataset. Invalid numbers are free. $0.80 per 1,000.
 
-- Apify Store: `apify.com/tidytools/phone-validator` (public from 2026-10-06)
+- Apify Store: [https://apify.com/tidytools/phone-validator](https://apify.com/tidytools/phone-validator)
 - Actor ID: `tidytools/phone-validator` (`lIC2MOymH7l4MlpCH`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/phone-validator`
 
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-06**. Until then the recipes below return an error.
-
 ## Use case
 
-**Phone number validator and formatter** for lists you are about to import into a CRM, a dialer or an SMS tool: give it a list, a CSV or the dataset of a lead scraper and get, for every number, **valid or not**, the **E.164, international, national and RFC 3966 formats**, the **country**, the **line type** (mobile, fixed line, toll free, VoIP…) and the **reason** when it is invalid. **$0.30 per 1,000 valid numbers, no start fee, invalid numbers free.**
+**Phone number validator and formatter** for lists you are about to import into a CRM, a dialer or an SMS tool: give it a list, a CSV or the dataset of a lead scraper and get, for every number, **valid or not**, the **E.164, international, national and RFC 3966 formats**, the **country**, the **line type** (mobile, fixed line, toll free, VoIP…) and the **reason** when it is invalid. **$0.80 per 1,000 valid numbers, no start fee, invalid numbers free.**
 
 ## Price (pay per event, Apify Free plan)
 
 | Event | Price per 1,000 |
 |---|---|
-| Phone number validated | $0.30 |
+| Phone number validated | $0.80 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.
 

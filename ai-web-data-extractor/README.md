@@ -8,7 +8,7 @@ AI scraper and AI extractor: list the fields or describe what you want, and an L
 
 ## Use case
 
-Give it **a list of URLs** and **the fields you want**, or simply **describe what you want in one sentence**. AI reads each page and returns **clean, structured JSON**: no CSS selectors, no XPath, no code, and it keeps working when the site's layout changes.
+**Input:** URLs plus the fields you want (or one sentence). **Output:** one typed JSON row per page, or one row per list item, with `null` for anything the page does not show. **Price:** $0.015 per page that returned data ($15 per 1,000); failed, blocked and empty pages are free.
 
 ## Price (pay per event, Apify Free plan)
 

@@ -1,4 +1,4 @@
-"""Bulk Email Validator & Email List Cleaner - Disposable Check: run the Actor on Apify and print the results.
+"""Email List Cleaner - Bulk Email Validator & Disposable Check: run the Actor on Apify and print the results.
 
 Store page: https://apify.com/tidytools/bulk-email-validator
 Setup:      pip install apify-client

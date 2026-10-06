@@ -1,12 +1,10 @@
-# Substack Scraper & Medium Scraper - Newsletter & Blog Posts (available from 2026-10-05)
+# Substack Scraper & Medium Scraper - Newsletter & Blog Posts
 
 Posts from Substack, Medium, Ghost, Beehiiv, WordPress or any RSS/Atom feed: title, author, date, text, tags, image. Date and keyword filters, new-post alerts, paywall-aware full text. $1/1k posts.
 
-- Apify Store: `apify.com/tidytools/substack-medium-posts-scraper` (public from 2026-10-05)
+- Apify Store: [https://apify.com/tidytools/substack-medium-posts-scraper](https://apify.com/tidytools/substack-medium-posts-scraper)
 - Actor ID: `tidytools/substack-medium-posts-scraper` (`qfs46BiUpvLnavTqe`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/substack-medium-posts-scraper`
-
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-05**. Until then the recipes below return an error.
 
 ## Use case
 
