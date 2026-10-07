@@ -1,22 +1,20 @@
-# Sitemap URL Extractor & Sitemap Scraper - All Website URLs (available from 2026-10-07)
+# Sitemap URL Extractor & Sitemap Scraper - All Website URLs
 
-Get every URL of a website from its sitemaps: finds them via robots.txt, follows indexes and .gz files, returns lastmod, images and hreflang, optional status codes and changes. $0.30/1k URLs.
+Get every URL of a website from its sitemaps: finds them via robots.txt, follows indexes and .gz files, returns lastmod, images and hreflang, optional status codes and changes. $0.50/1k URLs.
 
-- Apify Store: `apify.com/tidytools/sitemap-url-extractor` (public from 2026-10-07)
+- Apify Store: [https://apify.com/tidytools/sitemap-url-extractor](https://apify.com/tidytools/sitemap-url-extractor)
 - Actor ID: `tidytools/sitemap-url-extractor` (`FHYQa0BejmepV5Bwb`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/sitemap-url-extractor`
 
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-07**. Until then the recipes below return an error.
-
 ## Use case
 
-Sitemap URL extractor and sitemap scraper: get all URLs of a website (lastmod, images, videos, hreflang) from robots.txt, sitemap indexes and .gz files, with optional HTTP status checks and change detection. From $0.30 per 1,000 URLs.
+Sitemap URL extractor and sitemap scraper: get all URLs of a website (lastmod, images, videos, hreflang) from robots.txt, sitemap indexes and .gz files, with optional HTTP status checks and change detection. $0.50 per 1,000 URLs on the Free plan, from $0.15 on Business and higher.
 
 ## Price (pay per event, Apify Free plan)
 
 | Event | Price per 1,000 |
 |---|---|
-| URL | $0.30 |
+| URL | $0.50 |
 | URL status check | $0.30 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.

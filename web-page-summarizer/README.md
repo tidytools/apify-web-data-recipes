@@ -1,12 +1,10 @@
-# Article Summarizer & Web Page Summarizer - AI Text Summarizer (available from 2026-10-07)
+# Article Summarizer & Web Page Summarizer - AI Text Summarizer
 
 AI summarizer for URLs, articles or your own text: TL;DR, bullets or executive summary, plus key points, topics, sentiment and keywords. Any language, JavaScript sites. No API key. $6/1,000.
 
-- Apify Store: `apify.com/tidytools/web-page-summarizer` (public from 2026-10-07)
+- Apify Store: [https://apify.com/tidytools/web-page-summarizer](https://apify.com/tidytools/web-page-summarizer)
 - Actor ID: `tidytools/web-page-summarizer` (`UK839QHsFspWRaI7d`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/web-page-summarizer`
-
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-07**. Until then the recipes below return an error.
 
 ## Use case
 
