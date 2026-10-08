@@ -1,6 +1,6 @@
 # YouTube Transcript Scraper - Timestamps, No API Key or Login
 
-YouTube transcript API without a YouTube API key: transcripts with timestamps from videos, channels or playlists, manual or auto captions in any language, plus title, channel, views and date. Optional speech-to-text. Failed videos free. $3/1,000.
+YouTube transcript API without a YouTube API key: transcripts with timestamps from videos, channels or playlists, manual or auto captions in any language, plus title, channel, views and date. Optional speech-to-text. Failed videos free. $2/1,000.
 
 - Apify Store: [https://apify.com/tidytools/youtube-transcript](https://apify.com/tidytools/youtube-transcript)
 - Actor ID: `tidytools/youtube-transcript` (`HquiZorfA0G2SsVDc`)
@@ -8,14 +8,14 @@ YouTube transcript API without a YouTube API key: transcripts with timestamps fr
 
 ## Use case
 
-**YouTube Transcript Scraper is a YouTube transcript API that needs no YouTube API key: paste video, channel or playlist links and get the full transcript, timestamped segments and video details, one row per video, for $3 per 1,000 transcripts. Videos without a transcript and failed videos are free.**
+**YouTube Transcript Scraper is a YouTube transcript API that needs no YouTube API key: paste video, channel or playlist links and get the full transcript, timestamped segments and video details, one row per video, for $2 per 1,000 transcripts. Videos without a transcript and failed videos are free.**
 
 ## Price (pay per event, Apify Free plan)
 
 | Event | Price per 1,000 |
 |---|---|
-| Video transcript | $3.00 |
-| Speech-to-text minute | $8.00 |
+| Video transcript | $2.00 |
+| Speech-to-text minute | $6.00 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.
 

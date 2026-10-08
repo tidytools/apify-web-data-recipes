@@ -1,6 +1,6 @@
 # Website to Markdown Crawler - Content Crawler for LLM & RAG
 
-Website to Markdown crawler for RAG and LLMs: crawl a website or docs site into clean Markdown (URL to Markdown, HTML to Markdown) with RAG chunks. Sitemaps, JavaScript pages, linked PDFs and Word. $1.50/1k pages.
+Website to Markdown crawler for RAG and LLMs: crawl a website or docs site into clean Markdown (URL to Markdown, HTML to Markdown) with RAG chunks. Sitemaps, JavaScript pages, linked PDFs and Word. $1/1k pages.
 
 - Apify Store: [https://apify.com/tidytools/website-markdown-crawler](https://apify.com/tidytools/website-markdown-crawler)
 - Actor ID: `tidytools/website-markdown-crawler` (`TpZrf66Jvgs26hMby`)
@@ -8,13 +8,13 @@ Website to Markdown crawler for RAG and LLMs: crawl a website or docs site into 
 
 ## Use case
 
-**Website to Markdown Crawler converts a website to Markdown for RAG: give it a start URL (a docs site, help center or blog) and get clean, LLM-ready Markdown for every page, RAG chunks with heading paths and one combined `OUTPUT.md`, for $1.50 per 1,000 pages ($2.50 when a real browser is needed), compute included. Failed, blocked and duplicate pages are free.**
+**Website to Markdown Crawler converts a website to Markdown for RAG: give it a start URL (a docs site, help center or blog) and get clean, LLM-ready Markdown for every page, RAG chunks with heading paths and one combined `OUTPUT.md`, for $1 per 1,000 pages ($2.50 when a real browser is needed), compute included. Failed, blocked and duplicate pages are free.**
 
 ## Price (pay per event, Apify Free plan)
 
 | Event | Price per 1,000 |
 |---|---|
-| Page (fast mode) | $1.50 |
+| Page (fast mode) | $1.00 |
 | Page (browser mode) | $2.50 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.

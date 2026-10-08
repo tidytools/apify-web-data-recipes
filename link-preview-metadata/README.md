@@ -1,12 +1,10 @@
-# Link Preview API - Open Graph, Meta Tags & URL Metadata (available from 2026-10-08)
+# Link Preview API - Open Graph, Meta Tags & URL Metadata
 
 Get title, description, preview image, favicon, site name, author, dates and Open Graph / Twitter tags for any list of URLs. JavaScript pages too. $2 per 1,000 URLs.
 
-- Apify Store: `apify.com/tidytools/link-preview-metadata` (public from 2026-10-08)
+- Apify Store: [https://apify.com/tidytools/link-preview-metadata](https://apify.com/tidytools/link-preview-metadata)
 - Actor ID: `tidytools/link-preview-metadata` (`ACySefAmKCzI7W4KG`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/link-preview-metadata`
-
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-08**. Until then the recipes below return an error.
 
 ## Use case
 

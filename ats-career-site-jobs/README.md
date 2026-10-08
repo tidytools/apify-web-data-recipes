@@ -1,6 +1,6 @@
 # Career Page Jobs Scraper - Greenhouse, Lever, Workday & ATS
 
-Career page jobs scraper and ATS jobs scraper: scrape job postings from Greenhouse, Lever, Ashby, Workday + 13 more ATSs, live from company domains or career-page URLs, auto-detected. Salary, remote, new-job alerts. $2/1,000 jobs.
+Career page jobs scraper and ATS jobs scraper: scrape job postings from Greenhouse, Lever, Ashby, Workday + 13 more ATSs, live from company domains or career-page URLs, auto-detected. Salary, remote, new-job alerts. $1/1,000 jobs.
 
 - Apify Store: [https://apify.com/tidytools/ats-career-site-jobs](https://apify.com/tidytools/ats-career-site-jobs)
 - Actor ID: `tidytools/ats-career-site-jobs` (`k95BFAjcwk9AX61BE`)
@@ -8,13 +8,13 @@ Career page jobs scraper and ATS jobs scraper: scrape job postings from Greenhou
 
 ## Use case
 
-**Career Page Jobs Scraper (an ATS jobs scraper) scrapes job postings from Greenhouse, Lever and 15 more applicant tracking systems: give it company domains, career pages or board URLs, and get their live open jobs from Greenhouse, Lever, Ashby, Workday and the rest (auto-detected) in one normalised format, for $2 per 1,000 jobs. Companies without a readable job board and filtered-out jobs are free.**
+**Career Page Jobs Scraper (an ATS jobs scraper) scrapes job postings from Greenhouse, Lever and 15 more applicant tracking systems: give it company domains, career pages or board URLs, and get their live open jobs from Greenhouse, Lever, Ashby, Workday and the rest (auto-detected) in one normalised format, for $1 per 1,000 jobs. Companies without a readable job board and filtered-out jobs are free.**
 
 ## Price (pay per event, Apify Free plan)
 
 | Event | Price per 1,000 |
 |---|---|
-| Job | $2.00 |
+| Job | $1.00 |
 | Company ATS detected | $2.00 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.

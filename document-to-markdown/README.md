@@ -1,6 +1,6 @@
 # PDF to Markdown & Document to Markdown - Text Extractor, OCR
 
-Document parser and PDF parser for LLMs: convert PDF, Word (DOCX/DOC), PowerPoint, Excel and CSV to clean Markdown text. PDF OCR for scanned files, RAG chunks. URLs, uploads, base64. $3/1,000 docs.
+Document parser and PDF parser for LLMs: convert PDF, Word (DOCX/DOC), PowerPoint, Excel and CSV to clean Markdown text. PDF OCR for scanned files, RAG chunks. URLs, uploads, base64. $2/1,000 docs.
 
 - Apify Store: [https://apify.com/tidytools/document-to-markdown](https://apify.com/tidytools/document-to-markdown)
 - Actor ID: `tidytools/document-to-markdown` (`3O5uaRFA9cfTdEzNn`)
@@ -8,14 +8,14 @@ Document parser and PDF parser for LLMs: convert PDF, Word (DOCX/DOC), PowerPoin
 
 ## Use case
 
-PDF to text and PDF to Markdown extractor for PDF, Word (DOCX), PowerPoint, Excel and CSV files: give it links, an uploaded file or base64 and get back **clean Markdown** for each document, ready for ChatGPT / Claude, vector databases and RAG pipelines. **$0.003 per document, no start fee, not per page.**
+PDF to text and PDF to Markdown extractor for PDF, Word (DOCX), PowerPoint, Excel and CSV files: give it links, an uploaded file or base64 and get back **clean Markdown** for each document, ready for ChatGPT / Claude, vector databases and RAG pipelines. **$0.002 per document, no start fee, not per page.**
 
 ## Price (pay per event, Apify Free plan)
 
 | Event | Price per 1,000 |
 |---|---|
-| Converted document | $3.00 |
-| OCR page | $10.00 |
+| Converted document | $2.00 |
+| OCR page | $5.00 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.
 

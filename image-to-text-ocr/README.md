@@ -1,6 +1,6 @@
 # Image to Text OCR API - Extract Text from Images with AI
 
-Extract text from images with AI OCR: receipts, screenshots, signs, document photos and tables as Markdown, in English, Chinese, Japanese and more. URLs, a dataset or base64. $4/1,000 images.
+Extract text from images with AI OCR: receipts, screenshots, signs, document photos and tables as Markdown, in English, Chinese, Japanese and more. URLs, a dataset or base64. $3/1,000 images.
 
 - Apify Store: [https://apify.com/tidytools/image-to-text-ocr](https://apify.com/tidytools/image-to-text-ocr)
 - Actor ID: `tidytools/image-to-text-ocr` (`DuFFQzZueyf7cBjft`)
@@ -20,7 +20,7 @@ Give it images and get their text back:
 
 | Event | Price per 1,000 |
 |---|---|
-| Image transcribed | $4.00 |
+| Image transcribed | $3.00 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.
 

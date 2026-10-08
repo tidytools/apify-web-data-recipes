@@ -1,6 +1,6 @@
 # AI Web Scraper - Extract Structured Data & URL to JSON
 
-AI scraper and AI extractor: list the fields or describe what you want, and an LLM reads each page and returns JSON. No selectors or code. One row per list item, follows detail links. $0.015/page.
+AI scraper and AI extractor: list the fields or describe what you want, and an LLM reads each page and returns JSON. No selectors or code. One row per list item, follows detail links. $0.01/page.
 
 - Apify Store: [https://apify.com/tidytools/ai-web-data-extractor](https://apify.com/tidytools/ai-web-data-extractor)
 - Actor ID: `tidytools/ai-web-data-extractor` (`zuXZ7jgllbXStKb3f`)
@@ -8,13 +8,13 @@ AI scraper and AI extractor: list the fields or describe what you want, and an L
 
 ## Use case
 
-**Input:** URLs plus the fields you want (or one sentence). **Output:** one typed JSON row per page, or one row per list item, with `null` for anything the page does not show. **Price:** $0.015 per page that returned data ($15 per 1,000); failed, blocked and empty pages are free.
+**Input:** URLs plus the fields you want (or one sentence). **Output:** one typed JSON row per page, or one row per list item, with `null` for anything the page does not show. **Price:** $0.01 per page that returned data ($10 per 1,000); failed, blocked and empty pages are free.
 
 ## Price (pay per event, Apify Free plan)
 
 | Event | Price per 1,000 |
 |---|---|
-| Extracted page | $15.00 |
+| Extracted page | $10.00 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.
 

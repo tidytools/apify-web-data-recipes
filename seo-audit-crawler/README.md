@@ -1,6 +1,6 @@
 # SEO Audit Tool - SEO Checker, Site Audit & Core Web Vitals
 
-SEO crawler for technical SEO audits, JS sites too: 0-100 SEO score and fix hints per page, site report (duplicate titles, broken pages, missing H1, meta, alt), optional Core Web Vitals. $8/1k pages.
+SEO crawler for technical SEO audits, JS sites too: 0-100 SEO score and fix hints per page, site report (duplicate titles, broken pages, missing H1, meta, alt), optional Core Web Vitals. $5/1k pages.
 
 - Apify Store: [https://apify.com/tidytools/seo-audit-crawler](https://apify.com/tidytools/seo-audit-crawler)
 - Actor ID: `tidytools/seo-audit-crawler` (`V1FNXB9GeyVft8LTH`)
@@ -8,13 +8,13 @@ SEO crawler for technical SEO audits, JS sites too: 0-100 SEO score and fix hint
 
 ## Use case
 
-**SEO audit tool for $8 per 1,000 pages: it crawls your site, scores every page from 0 to 100 and lists each on-page and technical SEO issue with a fix hint, plus a site report (sitemap, canonicals, duplicates, broken pages). Broken, blocked and failed pages are free.**
+**SEO audit tool for $5 per 1,000 pages: it crawls your site, scores every page from 0 to 100 and lists each on-page and technical SEO issue with a fix hint, plus a site report (sitemap, canonicals, duplicates, broken pages). Broken, blocked and failed pages are free.**
 
 ## Price (pay per event, Apify Free plan)
 
 | Event | Price per 1,000 |
 |---|---|
-| Audited page | $8.00 |
+| Audited page | $5.00 |
 | PageSpeed measurement | $5.00 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.

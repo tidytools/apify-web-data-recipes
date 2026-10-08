@@ -1,30 +1,21 @@
-# App Store Keyword Rank Tracker & App Store Charts - ASO (available from 2026-10-08)
+# App Store Keyword Rank Tracker & App Store Top Charts - ASO
 
 Apple App Store keyword rank tracker and top charts (free, paid, grossing, new) by country and category, plus Apple Podcasts charts and daily rank changes. Official Apple feeds, $0.50/1k rows.
 
-- Apify Store: `apify.com/tidytools/app-store-top-charts` (public from 2026-10-08)
+- Apify Store: [https://apify.com/tidytools/app-store-top-charts](https://apify.com/tidytools/app-store-top-charts)
 - Actor ID: `tidytools/app-store-top-charts` (`u2wdaOwzbQGmcNpXm`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/app-store-top-charts`
 
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-08**. Until then the recipes below return an error.
-
 ## Use case
 
-It gives you **Apple App Store top charts** and **keyword rankings** as clean rows, from Apple's own public feeds:
-
-- 📈 **Top charts**: Top Free, Top Paid, Top Grossing and New apps for **iPhone, iPad and Mac**, in **any App Store country** (us, gb, de, jp, br…), overall or per **category** (Productivity, Finance, Games, "Games: Puzzle"…). Up to the top 100 of each chart
-- 🎙️ **Apple Podcasts charts**: Top Podcasts overall or per category (Technology, Business, True Crime…), with the RSS feed URL and episode count on request
-- 🔎 **Keyword ranks (ASO)**: for each keyword and country, the **position of your app and your competitors** in App Store search results (up to 200 deep), plus the top N apps for that keyword
-- 📊 **Daily rank changes**: turn on **Compare with the previous run** and schedule it: every row gets `changeType` (new, up, down, same), `previousRank` and `rankChange`, and apps that left a chart get a free `dropped` row
-- ⭐ **Optional details**: average rating, rating count, version, last update, content rating and size for every app in a chart (same price)
-- 💵 **$0.50 per 1,000 chart entries or search results**, **$1 per 1,000 tracked-app ranks**. No start fee. Empty charts and failed requests are free
+**Input:** countries plus chart types and categories, or keywords plus the apps you track. **Output:** one row per chart entry, search result or tracked-app rank. **Price:** $0.50 per 1,000 chart entries or search results, $3 per 1,000 tracked-app ranks, no start fee; empty, failed and invalid items are free.
 
 ## Price (pay per event, Apify Free plan)
 
 | Event | Price per 1,000 |
 |---|---|
 | Chart entry or search result | $0.50 |
-| Tracked app keyword rank | $1.00 |
+| Tracked app keyword rank | $3.00 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.
 

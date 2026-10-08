@@ -8,7 +8,7 @@ Website email extractor and contact details scraper: add emails to Google Maps r
 
 ## Use case
 
-**Website Email Extractor is a contact details scraper that finds the emails of Google Maps leads or of a list of company websites: give it a Google Maps scraper's dataset or a list of domains, and get each business's emails, the best email to use, phone numbers and social profiles from its own website, for $2 per 1,000 websites. Websites with nothing found and unreachable websites are free.**
+**Website Email Extractor is a contact details scraper that finds the emails of a list of company websites or of Google Maps leads: paste domains (or give it a Google Maps scraper's dataset), and get each business's emails, the best email to use, phone numbers and social profiles from its own website, for $2 per 1,000 websites. Websites with nothing found and unreachable websites are free.**
 
 ## Price (pay per event, Apify Free plan)
 

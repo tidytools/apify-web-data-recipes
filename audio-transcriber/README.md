@@ -8,7 +8,7 @@ Bulk audio transcription API with Whisper: speech to text, audio to text, video 
 
 ## Use case
 
-**Audio Transcription is a bulk audio transcription API: give it audio or video links (MP3, MP4, podcast RSS feeds, YouTube, Google Drive or Dropbox) and get each file back as text with timestamps plus SRT, VTT, TXT and Markdown files, for $0.006 per audio minute (Whisper large-v3-turbo, 90+ languages). Failed or silent files are free.**
+**Audio Transcription is a bulk audio transcription API: give it audio or video file links (MP3, WAV, M4A, MP4, Google Drive or Dropbox share links, plus YouTube links and podcast RSS feeds) and get each file back as text with timestamps plus SRT, VTT, TXT and Markdown files, for $0.006 per audio minute (Whisper large-v3-turbo, 90+ languages). Failed or silent files are free.**
 
 ## Price (pay per event, Apify Free plan)
 
