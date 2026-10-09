@@ -1,12 +1,10 @@
-# Website Embeddings for RAG - Vector DB, Pinecone, Qdrant (available from 2026-10-09)
+# Website Embeddings for RAG - Vector DB, Pinecone, Qdrant
 
 Crawl a site or docs, chunk the pages and get 1024-dim multilingual bge-m3 embeddings with stable IDs for Pinecone, Qdrant, pgvector or any vector database. No OpenAI key. From $0.20/1k chunks.
 
-- Apify Store: `apify.com/tidytools/website-to-embeddings` (public from 2026-10-09)
+- Apify Store: [https://apify.com/tidytools/website-to-embeddings](https://apify.com/tidytools/website-to-embeddings)
 - Actor ID: `tidytools/website-to-embeddings` (`69AbOL4uxESijjy3s`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/website-to-embeddings`
-
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-09**. Until then the recipes below return an error.
 
 ## Use case
 

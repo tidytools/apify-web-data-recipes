@@ -1,21 +1,14 @@
-# Background Remover - Image Converter, Compressor & Resizer (available from 2026-10-08)
+# Background Remover - Image Converter, Compressor & Resizer
 
 Remove image backgrounds in bulk with AI (hair and fur kept): transparent PNG/WebP or any color, crop to subject. Plus resize, convert to WebP/AVIF/JPEG and compress.
 
-- Apify Store: `apify.com/tidytools/ai-image-toolkit` (public from 2026-10-08)
+- Apify Store: [https://apify.com/tidytools/ai-image-toolkit](https://apify.com/tidytools/ai-image-toolkit)
 - Actor ID: `tidytools/ai-image-toolkit` (`w3p8rtI51QdMqjtKr`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/ai-image-toolkit`
 
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-08**. Until then the recipes below return an error.
-
 ## Use case
 
-Give it a list of images and pick one operation:
-
-- ✂️ **Remove background (AI):** cut out people, products, animals and logos, hair and fur included. Get a **transparent PNG or WebP**, or the subject on **any background color** (white for marketplaces), optionally **cropped to the subject** with a margin.
-- 📐 **Resize:** fit inside a box, fill and smart-crop (`cover` with automatic focus), pad to a square with a color, or stretch.
-- 🔄 **Convert:** JPEG, PNG, WebP or AVIF; transparent areas become white (or your color) in JPEG.
-- 🗜️ **Compress:** smaller files in the same format or as WebP/AVIF/JPEG. It never returns a larger file: if re-encoding does not help, you get the original back.
+**Paste image URLs, get back a download link for every result: background removed (transparent PNG/WebP or any color), resized, converted to WebP/AVIF/JPEG, or compressed. Background removal costs $0.005 per image, resize/convert/compress $0.002 per image (Free plan, no start fee). Failed images are free.**
 
 ## Price (pay per event, Apify Free plan)
 

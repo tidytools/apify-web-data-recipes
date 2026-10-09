@@ -1,12 +1,10 @@
-# AI Alt Text Generator - Image Alt Text & Image Captions (available from 2026-10-09)
+# AI Alt Text Generator - Image Alt Text & Image Captions
 
-Find images missing alt text on pages, a sitemap or a whole site and write AI alt text in any language. Optional SEO title, caption and file name. WCAG accessibility, image SEO. $4/1,000.
+Find images missing alt text on pages, a sitemap or a whole site and write AI alt text in any language. Optional SEO title, caption and file name. WCAG accessibility, image SEO. $6/1,000.
 
-- Apify Store: `apify.com/tidytools/ai-alt-text-generator` (public from 2026-10-09)
+- Apify Store: [https://apify.com/tidytools/ai-alt-text-generator](https://apify.com/tidytools/ai-alt-text-generator)
 - Actor ID: `tidytools/ai-alt-text-generator` (`libCpYWq57jwvqqXR`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/ai-alt-text-generator`
-
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-09**. Until then the recipes below return an error.
 
 ## Use case
 
@@ -16,8 +14,8 @@ AI alt text generator: it finds the **images on your web pages, or across your w
 
 | Event | Price per 1,000 |
 |---|---|
-| Described image | $4.00 |
-| Described image with SEO fields | $6.00 |
+| Described image | $6.00 |
+| Described image with SEO fields | $8.00 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.
 

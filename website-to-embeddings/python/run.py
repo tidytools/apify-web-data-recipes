@@ -1,6 +1,6 @@
 """Website Embeddings for RAG - Vector DB, Pinecone, Qdrant: run the Actor on Apify and print the results.
 
-Store page: apify.com/tidytools/website-to-embeddings (public from 2026-10-09)
+Store page: https://apify.com/tidytools/website-to-embeddings
 Setup:      pip install apify-client
             export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 Run:        python run.py

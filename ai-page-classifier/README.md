@@ -1,12 +1,10 @@
-# Website Classifier & Text Classifier - Industry & Sentiment (available from 2026-10-09)
+# Website Classifier & Text Classifier - Industry & Sentiment
 
 Classify URLs, domains or texts with AI: industry with B2B/B2C, page type, topic, IAB category, sentiment, content moderation or your own labels, with confidence and reason. $4/1,000.
 
-- Apify Store: `apify.com/tidytools/ai-page-classifier` (public from 2026-10-09)
+- Apify Store: [https://apify.com/tidytools/ai-page-classifier](https://apify.com/tidytools/ai-page-classifier)
 - Actor ID: `tidytools/ai-page-classifier` (`6XEMjr8sYaAARYqyi`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/ai-page-classifier`
-
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-09**. Until then the recipes below return an error.
 
 ## Use case
 
