@@ -1,12 +1,10 @@
-# llms.txt Generator & Checker - llms-full.txt, AI SEO (GEO) (available from 2026-10-10)
+# llms.txt Generator & Checker - llms-full.txt, AI SEO (GEO)
 
 Generate llms.txt and llms-full.txt for any website from its sitemap or a crawl, with sections and AI descriptions, or validate existing llms.txt files in bulk. $2 per 1,000 pages or sites.
 
-- Apify Store: `apify.com/tidytools/llms-txt-generator` (public from 2026-10-10)
+- Apify Store: [https://apify.com/tidytools/llms-txt-generator](https://apify.com/tidytools/llms-txt-generator)
 - Actor ID: `tidytools/llms-txt-generator` (`egcg4cyQFYEB7CfPM`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/llms-txt-generator`
-
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-10**. Until then the recipes below return an error.
 
 ## Use case
 
@@ -35,7 +33,7 @@ This is the Actor's prefilled example input. All other fields have defaults; the
 
 ## Sample output
 
-From the Actor's documentation (section "Generate an llms.txt"):
+From the Actor's documentation (section "Output example"):
 
 ```json
 {

@@ -1,6 +1,6 @@
 # Audio Transcription - Speech to Text, Audio to Text, Whisper
 
-Bulk audio transcription API with Whisper: speech to text, audio to text, video to text, MP3 to text, podcast RSS, Drive/Dropbox links. SRT/VTT subtitle generator, speaker diarization, TXT/Markdown, 90+ languages. $0.006/min.
+Bulk audio transcription with Whisper: transcribe audio to text, video to text, speech to text, MP3 to text, YouTube video transcription, podcast RSS, Google Drive/Dropbox links. SRT/VTT subtitle generator, speaker diarization, TXT/Markdown, 90+ languages. $0.006/min.
 
 - Apify Store: [https://apify.com/tidytools/audio-transcriber](https://apify.com/tidytools/audio-transcriber)
 - Actor ID: `tidytools/audio-transcriber` (`3W2KtIbvHitDH8GCc`)
