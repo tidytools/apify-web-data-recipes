@@ -1,6 +1,6 @@
 """Domain Authority Checker - Backlinks & Traffic Rank, Bulk: run the Actor on Apify and print the results.
 
-Store page: apify.com/tidytools/domain-authority (public from 2026-10-12)
+Store page: https://apify.com/tidytools/domain-authority
 Setup:      pip install apify-client
             export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 Run:        python run.py

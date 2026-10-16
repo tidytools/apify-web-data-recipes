@@ -1,6 +1,6 @@
 """Backlink Checker - Referring Domains & Link Gap, Open Data: run the Actor on Apify and print the results.
 
-Store page: apify.com/tidytools/backlink-gap (public from 2026-10-14)
+Store page: https://apify.com/tidytools/backlink-gap
 Setup:      pip install apify-client
             export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 Run:        python run.py
@@ -15,7 +15,7 @@ ACTOR_ID = "tidytools/backlink-gap"
 MAX_TOTAL_CHARGE_USD = Decimal("1.00")  # cost cap: the run stops charging at this amount
 
 RUN_INPUT = {   'mode': 'referringDomains',
-    'domains': ['apify.com', 'tools.yukai.uk'],
+    'domains': ['apify.com', 'scrapingbee.com'],
     'maxReferringDomainsPerDomain': 25}
 
 

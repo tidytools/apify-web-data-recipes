@@ -8,7 +8,7 @@ Apple App Store keyword rank tracker and top charts (free, paid, grossing, new) 
 
 ## Use case
 
-**Input:** countries plus chart types and categories, or keywords plus the apps you track. **Output:** one row per chart entry, search result or tracked-app rank. **Price:** $0.50 per 1,000 chart entries or search results, $3 per 1,000 tracked-app ranks, no start fee; empty, failed and invalid items are free.
+**Input:** countries plus chart types and categories, or keywords plus the apps you track. **Output:** one row per chart entry, search result or tracked-app rank. **Price:** $0.50 per 1,000 chart entries or search results, $3 per 1,000 tracked-app ranks, no start fee; empty, failed and invalid items are free (a search for which Apple returns no apps at all is free too).
 
 ## Price (pay per event, Apify Free plan)
 

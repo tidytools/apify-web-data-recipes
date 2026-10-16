@@ -1,22 +1,20 @@
-# Telegram Channel Scraper - Public Posts, Views & Reactions (available from 2026-10-15)
+# Telegram Channel Scraper - Public Posts, Views & Reactions
 
-Scrape public Telegram channels without login or API keys: post text, date, views, reactions, photos and videos, links, hashtags, forwards and replies, plus channel subscribers. Date and keyword filters, new-post monitoring. $0.50 per 1,000 posts; failed channels are free.
+Scrape public Telegram channels without login or API keys: post text, date, views, reactions, photos and videos, links, hashtags, forwards and replies, plus channel subscribers. Date and keyword filters, new-post monitoring. $1 per 1,000 posts; failed channels are free.
 
-- Apify Store: `apify.com/tidytools/telegram-channel-scraper` (public from 2026-10-15)
+- Apify Store: [https://apify.com/tidytools/telegram-channel-scraper](https://apify.com/tidytools/telegram-channel-scraper)
 - Actor ID: `tidytools/telegram-channel-scraper` (`VaQRGy2pRk3siLAbs`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/telegram-channel-scraper`
 
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-15**. Until then the recipes below return an error.
-
 ## Use case
 
-It reads **public Telegram channels without login, phone number or API keys** and returns one clean row per post, plus the channel's profile.
+**Paste public Telegram channels (t.me/name or @name), get one row per post (text, date, views, reactions, media links, forwards, polls) and one profile row per channel, at $1 per 1,000 posts and $1 per 1,000 channels, with no start fee.** Missing channels, filtered posts and duplicates are free.
 
 ## Price (pay per event, Apify Free plan)
 
 | Event | Price per 1,000 |
 |---|---|
-| Post | $0.50 |
+| Post | $1.00 |
 | Channel info | $1.00 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.

@@ -14,6 +14,7 @@ curl -sS -X POST "https://api.apify.com/v2/acts/tidytools~broken-link-checker/ru
     "https://www.python.org/"
   ],
   "maxPages": 10,
-  "maxLinksToCheck": 2000
+  "maxLinksToCheck": 2000,
+  "acceptStatus": []
 }
 JSON

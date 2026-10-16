@@ -1,24 +1,14 @@
-# Google Ads Transparency Scraper - Competitor Ads by Domain (available from 2026-10-12)
+# Google Ads Transparency Scraper - Competitor Ads by Domain
 
 Competitor ads from Google's Ads Transparency Center by advertiser or domain: text, image and video ads, first and last shown, countries, ad text. Monitor new ads. $1.50 per 1,000 ads, failed searches free.
 
-- Apify Store: `apify.com/tidytools/ads-transparency` (public from 2026-10-12)
+- Apify Store: [https://apify.com/tidytools/ads-transparency](https://apify.com/tidytools/ads-transparency)
 - Actor ID: `tidytools/ads-transparency` (`h2sgUDYx9j6G4FmKM`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/ads-transparency`
 
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-12**. Until then the recipes below return an error.
-
 ## Use case
 
-It reads Google's public **Ads Transparency Center** (adstransparency.google.com), the library where Google shows every ad a verified advertiser runs on Search, YouTube, Display, Maps and Play, and turns it into rows you can sort, filter and export:
-
-- **By advertiser**: a name ("Nike, Inc.", "HubSpot"), an advertiser ID (`AR...`) or a Transparency Center link.
-- **By domain**: `canva.com` returns the ads that send people to canva.com, from every advertiser.
-- **Filters**: country the ad was shown in, format (text, image, video), date range or "last N days".
-- **Per ad**: advertiser, format, **first and last shown**, **days shown**, target domain, the ad image (or video preview), and a link to the ad in the Transparency Center.
-- **Optional details**: every image or video variation and **each country the ad ran in, with the last date it ran there**.
-- **Optional ad text**: the Transparency Center shows text ads as pictures; this Actor can read the **headline, description and display URL** from them with an AI vision model, so you get the actual ad copy as text.
-- **Monitoring**: "Only ads not seen in earlier runs" returns just the new ads of your competitors on each scheduled run.
+**Enter competitors (name, advertiser ID or link) and/or domains, get one row per Google ad: advertiser, format, first and last shown, days shown, image and a link to the ad. $1.50 per 1,000 ads.** Searches that fail or find nothing are free.
 
 ## Price (pay per event, Apify Free plan)
 

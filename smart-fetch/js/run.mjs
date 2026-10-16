@@ -1,5 +1,5 @@
 // Smart Fetch - URL to Markdown from US, Singapore, EU or Taiwan: run the Actor on Apify and print the results.
-// Store page: apify.com/tidytools/smart-fetch (public from 2026-10-11)
+// Store page: https://apify.com/tidytools/smart-fetch
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 // Run:   node run.mjs

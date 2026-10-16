@@ -1,23 +1,21 @@
-# E-commerce Scraper & Price Tracker - Products from Any Store (available from 2026-10-16)
+# E-commerce Scraper & Price Tracker - Products from Any Store
 
-Product name, price, sale price, stock, SKU, GTIN, brand, rating and variants from any online store's product pages, category pages or sitemap. Schedule it to track price drops and back-in-stock. $2 per 1,000 products, $0.50 per 1,000 unchanged checks.
+Product name, price, sale price, stock, SKU, GTIN, brand, rating and variants from any online store's product pages, category pages or sitemap. Schedule it to track price drops and back-in-stock. $2 per 1,000 products, $1 per 1,000 unchanged checks.
 
-- Apify Store: `apify.com/tidytools/product-price-tracker` (public from 2026-10-16)
+- Apify Store: [https://apify.com/tidytools/product-price-tracker](https://apify.com/tidytools/product-price-tracker)
 - Actor ID: `tidytools/product-price-tracker` (`beBAgbCSEHDaC5Aor`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/product-price-tracker`
 
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-16**. Until then the recipes below return an error.
-
 ## Use case
 
-It reads **product data from any online store**: give it product pages, category pages or just a store's home page, and it returns one clean row per product with **name, price, sale price, currency, stock, SKU, GTIN/EAN, brand, rating, image and every variant** (size, color ...) with its own price and stock.
+**Paste product, category or store URLs, get one row per product (name, price, sale price, currency, stock, SKU, GTIN, brand, rating, variants), at $2 per 1,000 products.** Scheduled with price tracking on, unchanged products cost only $1 per 1,000. Pages without product data, blocked or failed pages, duplicates and invalid lines are free. No start fee.
 
 ## Price (pay per event, Apify Free plan)
 
 | Event | Price per 1,000 |
 |---|---|
 | Product | $2.00 |
-| Unchanged product check | $0.50 |
+| Unchanged product check | $1.00 |
 | Browser rendering | $2.00 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.

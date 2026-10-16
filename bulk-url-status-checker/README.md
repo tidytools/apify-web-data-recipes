@@ -1,6 +1,6 @@
 # Bulk URL Status Checker - HTTP Status & 301 Redirect Checker
 
-Paste up to 100,000 URLs, a sitemap or a CSV: get each URL's HTTP status code, full 301/302 redirect chain, final URL and the reason for 404s, DNS and SSL errors. Check a migration redirect map. $1 per 1,000 URLs; timeouts free.
+Bulk HTTP status code and redirect chain checker: paste up to 100,000 URLs, a Google Sheet, CSV or sitemap to check URL status: status code, every 301/302 hop, final URL and why a 404, DNS or SSL check failed. Validate a migration redirect map. $1 per 1,000 URLs; timeouts free.
 
 - Apify Store: [https://apify.com/tidytools/bulk-url-status-checker](https://apify.com/tidytools/bulk-url-status-checker)
 - Actor ID: `tidytools/bulk-url-status-checker` (`ZOWuVMgMJNRNJnmyb`)
@@ -8,7 +8,7 @@ Paste up to 100,000 URLs, a sitemap or a CSV: get each URL's HTTP status code, f
 
 ## Use case
 
-Bulk URL Status Checker is an **HTTP status code and 301 redirect checker for URL lists**: give it up to 100,000 URLs and get one row per URL with the **status code, every redirect hop, the final URL** and the reason when a link fails (404, server error, DNS error, expired SSL certificate, timeout). **$1 per 1,000 URLs, no start fee.**
+Bulk URL Status Checker checks up to 100,000 URLs and returns one row per URL with the HTTP status code, every redirect hop, the final URL, and the reason when a link fails (404, server error, DNS error, expired SSL certificate, timeout).
 
 ## Price (pay per event, Apify Free plan)
 

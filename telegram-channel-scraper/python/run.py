@@ -1,6 +1,6 @@
 """Telegram Channel Scraper - Public Posts, Views & Reactions: run the Actor on Apify and print the results.
 
-Store page: apify.com/tidytools/telegram-channel-scraper (public from 2026-10-15)
+Store page: https://apify.com/tidytools/telegram-channel-scraper
 Setup:      pip install apify-client
             export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 Run:        python run.py

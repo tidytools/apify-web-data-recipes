@@ -8,7 +8,7 @@ AI scraper and AI extractor: list the fields or describe what you want, and an L
 
 ## Use case
 
-**Input:** URLs plus the fields you want (or one sentence). **Output:** one typed JSON row per page, or one row per list item, with `null` for anything the page does not show. **Price:** $0.01 per page that returned data ($10 per 1,000); failed, blocked and empty pages are free.
+**Input:** page URLs (a batch of a few dozen product, job or listing pages is typical) plus the fields you want, or one sentence. **Output:** one typed JSON row per page, or one row per list item, with `null` for anything the page does not show. **Price:** $0.01 per page that returned data ($10 per 1,000); failed, blocked, timed-out and empty pages are free.
 
 ## Price (pay per event, Apify Free plan)
 

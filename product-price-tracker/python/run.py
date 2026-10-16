@@ -1,6 +1,6 @@
 """E-commerce Scraper & Price Tracker - Products from Any Store: run the Actor on Apify and print the results.
 
-Store page: apify.com/tidytools/product-price-tracker (public from 2026-10-16)
+Store page: https://apify.com/tidytools/product-price-tracker
 Setup:      pip install apify-client
             export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 Run:        python run.py

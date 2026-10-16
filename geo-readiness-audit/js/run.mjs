@@ -1,5 +1,5 @@
-// GEO Audit - AI SEO & AEO Checker for ChatGPT & AI Overviews: run the Actor on Apify and print the results.
-// Store page: apify.com/tidytools/geo-readiness-audit (public from 2026-10-10)
+// Answer Engine Optimization & GEO Audit - ChatGPT Fix Plan: run the Actor on Apify and print the results.
+// Store page: https://apify.com/tidytools/geo-readiness-audit
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 // Run:   node run.mjs
@@ -11,9 +11,14 @@ const MAX_TOTAL_CHARGE_USD = 1.0; // cost cap: the run stops charging at this am
 
 const input = {
     "websites": [
-        "https://www.python.org",
-        "https://stripe.com",
-        "https://excalidraw.com"
+        "https://plausible.io"
+    ],
+    "targetQuestions": [
+        "how much does plausible analytics cost",
+        "is plausible analytics gdpr compliant"
+    ],
+    "competitorPages": [
+        "how much does plausible analytics cost | https://usefathom.com/pricing"
     ]
 };
 

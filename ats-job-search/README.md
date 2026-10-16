@@ -1,12 +1,10 @@
-# Job Search API - Greenhouse, Lever, Ashby & Workday Jobs Index (available from 2026-10-10)
+# Job Search API - Greenhouse, Lever, Ashby & Workday Jobs Index
 
 Search 1.4M+ live jobs from 54,000+ company career boards (Greenhouse, Lever, Ashby, Workday, Workable, Personio and 10 more ATSs) in one query, refreshed daily. Posted vs first-seen dates, reposts, duplicates, hiring companies. $1.50/1,000 jobs.
 
-- Apify Store: `apify.com/tidytools/ats-job-search` (public from 2026-10-10)
+- Apify Store: [https://apify.com/tidytools/ats-job-search](https://apify.com/tidytools/ats-job-search)
 - Actor ID: `tidytools/ats-job-search` (`AdBiuPJ3lCiwM0a8M`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/ats-job-search`
-
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-10**. Until then the recipes below return an error.
 
 ## Use case
 
@@ -51,11 +49,15 @@ From the Actor's documentation (section "Output"):
     "remote": false,
     "workplaceType": null,
     "employmentType": "full-time",
+    "seniority": null,
+    "senioritySource": null,
     "department": "Simulation, Evaluation, Validation / Simulation, Evaluation, Validation",
     "salaryMin": null,
     "salaryMax": null,
     "salaryCurrency": null,
     "salaryPeriod": null,
+    "salaryAnnualMin": null,
+    "salaryAnnualMax": null,
     "url": "https://jobs.ashbyhq.com/wayve/102a31c7-44a5-48bc-8c6e-1f4434e83974",
     "applyUrl": "https://jobs.ashbyhq.com/wayve/102a31c7-44a5-48bc-8c6e-1f4434e83974/application",
     "sourcePostedAt": "2026-10-02T15:25:57.680Z",

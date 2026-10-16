@@ -1,22 +1,14 @@
-# Regional Price Checker - Geo Pricing from US, SG, UK, TW (available from 2026-10-11)
+# Regional Price Checker - Geo Pricing from US, SG, UK, TW
 
 See the price, currency, country site and language a page shows in the US, Singapore, London and Taiwan, side by side. Extracts prices (text, JSON-LD, meta tags), flags geo blocks and cookie walls, monitors changes. Failed regions free.
 
-- Apify Store: `apify.com/tidytools/regional-price-check` (public from 2026-10-11)
+- Apify Store: [https://apify.com/tidytools/regional-price-check](https://apify.com/tidytools/regional-price-check)
 - Actor ID: `tidytools/regional-price-check` (`NQ3LNyHkvKKUAjQCt`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/regional-price-check`
 
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-11**. Until then the recipes below return an error.
-
 ## Use case
 
-Give it pricing, product or store pages. It opens each page **from four fixed places at the same time** and shows you, side by side, what a visitor there gets:
-
-- the **price and currency** (from the page text, JSON-LD offers and price meta tags),
-- the **country site** it was redirected to (`spotify.com/uk`, `kayak.sg`, `zendesk.tw`) and the HTTP status,
-- the **language** of the page,
-- **blocks and walls**: "not available in your region", cookie-consent walls, "choose your country" pickers, 404s,
-- a **comparison**: does the page differ by region (`differs: true`), what differs (currency, price, redirect, language, availability, consent wall, page text), a price table converted to one currency, and a text-similarity score.
+**Input:** pricing, product or store page URLs (and, optionally, which of the four regions to use). **Output:** one row per URL with the **price, currency, country site and language a visitor sees in the US, Singapore, London and Taiwan**, a `differs` flag, and a price table converted to one currency. **Price:** $4.00 per 1,000 regions checked (one URL from all four regions = $0.016), no start fee; blocked, walled, timed-out and empty pages and bad input lines are free.
 
 ## Price (pay per event, Apify Free plan)
 

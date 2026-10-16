@@ -1,26 +1,21 @@
-# Backlink Checker - Referring Domains & Link Gap, Open Data (available from 2026-10-14)
+# Backlink Checker - Referring Domains & Link Gap, Open Data
 
-Referring domains of any website, strongest first, with authority score and Chrome traffic rank, plus a competitor link gap: sites linking to your competitors but not to you. Common Crawl web graph, no Ahrefs login. $1 per 1,000 referring domains.
+Referring domains of any website, strongest first, with authority score and Chrome traffic rank, plus a competitor link gap: sites linking to your competitors but not to you. Common Crawl web graph, no Ahrefs login. $1.50 per 1,000 referring domains.
 
-- Apify Store: `apify.com/tidytools/backlink-gap` (public from 2026-10-14)
+- Apify Store: [https://apify.com/tidytools/backlink-gap](https://apify.com/tidytools/backlink-gap)
 - Actor ID: `tidytools/backlink-gap` (`20WDEXIozaSOcbUFu`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/backlink-gap`
 
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-14**. Until then the recipes below return an error.
-
 ## Use case
 
-Two jobs, in bulk and in seconds, for **any website on the web**:
-
-1. **Referring domains**: the websites that link to a domain, **strongest first**, each with a **0-100 authority score** and its **Chrome traffic rank** (Top 1K ... Top 1M websites by real visitors).
-2. **Link gap** ("link intersect"): enter your website and up to 10 competitors and get the **websites that link to your competitors but not to you**, ranked by how many competitors they link to, then by authority. These are your link-building and PR prospects: directories, review sites, partner pages, blogs and news sites that already cover businesses like yours.
+**Give it domains, get the websites that link to them** (authority score and Chrome traffic rank for each): **$1.50 per 1,000 referring domains**. **Give it your site and 1-10 competitors, get the sites that link to them but not to you**: **$3.00 per 1,000 link prospects**. Domains the web graph does not know, duplicates, invalid lines and empty results are free; there is no start fee. Data: the open Common Crawl web graph (domain level, July-September 2026), not Ahrefs or Semrush. Jump to [How to use it](#how-to-use-it).
 
 ## Price (pay per event, Apify Free plan)
 
 | Event | Price per 1,000 |
 |---|---|
-| Referring domain | $1.00 |
-| Link prospect | $2.00 |
+| Referring domain | $1.50 |
+| Link prospect | $3.00 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.
 
@@ -33,7 +28,7 @@ This is the Actor's prefilled example input. All other fields have defaults; the
   "mode": "referringDomains",
   "domains": [
     "apify.com",
-    "tools.yukai.uk"
+    "scrapingbee.com"
   ],
   "maxReferringDomainsPerDomain": 25
 }

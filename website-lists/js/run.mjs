@@ -1,5 +1,5 @@
 // Websites by Technology - BuiltWith Alternative & Store Leads: run the Actor on Apify and print the results.
-// Store page: apify.com/tidytools/website-lists (public from 2026-10-14)
+// Store page: https://apify.com/tidytools/website-lists
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 // Run:   node run.mjs

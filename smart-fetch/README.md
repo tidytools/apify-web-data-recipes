@@ -1,12 +1,10 @@
-# Smart Fetch - URL to Markdown from US, Singapore, EU or Taiwan (available from 2026-10-11)
+# Smart Fetch - URL to Markdown from US, Singapore, EU or Taiwan
 
 Fetch any public URL as clean Markdown, HTML and JSON metadata. Pick the region it is fetched from (US, Singapore, EU, Taiwan residential) or let Auto switch region when a site blocks. JavaScript rendering, robots.txt respected, failed pages free. From $1/1,000 pages.
 
-- Apify Store: `apify.com/tidytools/smart-fetch` (public from 2026-10-11)
+- Apify Store: [https://apify.com/tidytools/smart-fetch](https://apify.com/tidytools/smart-fetch)
 - Actor ID: `tidytools/smart-fetch` (`ZwrMww9WkNBFqS9gl`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/smart-fetch`
-
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-11**. Until then the recipes below return an error.
 
 ## Use case
 

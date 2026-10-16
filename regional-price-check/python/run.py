@@ -1,6 +1,6 @@
 """Regional Price Checker - Geo Pricing from US, SG, UK, TW: run the Actor on Apify and print the results.
 
-Store page: apify.com/tidytools/regional-price-check (public from 2026-10-11)
+Store page: https://apify.com/tidytools/regional-price-check
 Setup:      pip install apify-client
             export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 Run:        python run.py

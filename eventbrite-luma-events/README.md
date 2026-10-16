@@ -1,22 +1,20 @@
-# Eventbrite Scraper & Luma Scraper - Events, Venues, Organizers (available from 2026-10-16)
+# Eventbrite Scraper & Luma Scraper - Events, Venues, Organizers
 
-Events from Eventbrite and Luma by city, keyword and date in one table: date and time, venue and address with coordinates, price, sold out, organizer with events hosted and attendees, category. New-event alerts. $2 per 1,000 events, no start fee.
+Events from Eventbrite and Luma by city, keyword and date in one table: date and time, venue and address with coordinates, price, sold out, organizer with events hosted and attendees, category. New-event alerts. $3 per 1,000 events, no start fee.
 
-- Apify Store: `apify.com/tidytools/eventbrite-luma-events` (public from 2026-10-16)
+- Apify Store: [https://apify.com/tidytools/eventbrite-luma-events](https://apify.com/tidytools/eventbrite-luma-events)
 - Actor ID: `tidytools/eventbrite-luma-events` (`FuauC7YIAgMTglXiq`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/eventbrite-luma-events`
 
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-16**. Until then the recipes below return an error.
-
 ## Use case
 
-It collects **events from Eventbrite and Luma in one table**, by city, keyword and date: "AI events in San Francisco this month", "startup events in Berlin", "online marketing webinars". Each event comes with its **date and time (local and UTC), venue, address and coordinates, price range, sold-out state, category and organizer**, including how many events the organizer has run and how many attendees it has hosted.
+**Enter keywords and cities (or paste Eventbrite and Luma links), get one row per event with date, venue, price and organizer, at $3 per 1,000 events.** Optional organizer website and social links cost $0.002 per organizer. Filtered-out events, duplicates, events seen in earlier runs and failed searches are free. No start fee.
 
 ## Price (pay per event, Apify Free plan)
 
 | Event | Price per 1,000 |
 |---|---|
-| Event | $2.00 |
+| Event | $3.00 |
 | Organizer profile | $2.00 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.

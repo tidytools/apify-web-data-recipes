@@ -8,7 +8,7 @@ Validate JSON-LD and Microdata schema markup on a URL list, a sitemap or a whole
 
 ## Use case
 
-**Schema markup validator for many pages at once**: it extracts and validates schema.org **JSON-LD and Microdata** against Google rich result rules, with **stable issue codes**. A bulk alternative to Google's Rich Results Test and validator.schema.org, which check one page at a time.
+**Paste a list of page URLs (or a sitemap, or a site to crawl) and get one row per page: is the schema.org JSON-LD and Microdata valid for Google rich results, with stable issue codes for every problem. $0.002 per validated page ($2 per 1,000); pages that cannot be read are free.**
 
 ## Price (pay per event, Apify Free plan)
 

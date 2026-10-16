@@ -1,23 +1,14 @@
-# Domain Authority Checker - Backlinks & Traffic Rank, Bulk (available from 2026-10-12)
+# Domain Authority Checker - Backlinks & Traffic Rank, Bulk
 
 Bulk domain authority from open web data: 0-100 authority score, referring domains, web graph rank, Majestic referring subnets and Chrome traffic rank for any domain. No Ahrefs or Moz login. $3 per 1,000 domains.
 
-- Apify Store: `apify.com/tidytools/domain-authority` (public from 2026-10-12)
+- Apify Store: [https://apify.com/tidytools/domain-authority](https://apify.com/tidytools/domain-authority)
 - Actor ID: `tidytools/domain-authority` (`d2qqhs32rIPvhdnbh`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/domain-authority`
 
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-12**. Until then the recipes below return an error.
-
 ## Use case
 
-Give it a list of domains (or URLs, or e-mail addresses). For each one it returns, in bulk and in seconds:
-
-- an **authority score from 0 to 100**,
-- **referring domains**: how many other websites link to it,
-- its **web graph rank** (harmonic centrality) and **PageRank position** among 133 million domains,
-- **Majestic Million** rank, referring subnets and referring IPs (for the top 1 million sites),
-- a **traffic rank** from Chrome's real-user data: "Top 1K / 5K / 10K / 50K / 100K / 500K / 1M websites",
-- the number of subdomains seen.
+**Paste a list of domains, get an authority score (0-100), referring domains and a traffic rank for each one, at $3 per 1,000 domains with data.** Domains that nothing links to, duplicates and invalid lines are free.
 
 ## Price (pay per event, Apify Free plan)
 

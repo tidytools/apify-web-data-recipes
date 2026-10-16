@@ -10,8 +10,9 @@ Extract text from images with AI OCR: receipts, screenshots, signs, document pho
 
 Give it images and get their text back:
 
+- 🖥️ **Screenshots to text**: terminal output, app screens, web pages, chats
 - 🧾 **Receipts, invoices and photos of documents**: line items and totals, in reading order
-- 🖥️ **Screenshots**: terminal output, app screens, web pages
+- 📦 **Bulk OCR**: a whole list of image links in one run, several at a time; every row says which image it belongs to, and one bad link never stops the rest
 - 🪧 **Signs and labels** in photos
 - 🌏 **Many languages and scripts**: English, German, Dutch..., Chinese, Japanese, Korean; the text stays in its original language (nothing is translated)
 - 📊 **Tables**: kept as Markdown tables in *Markdown* mode, or as one line per row in *Plain text* mode

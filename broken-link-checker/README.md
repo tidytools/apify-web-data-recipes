@@ -8,7 +8,7 @@ Crawl a website and find every broken link and image (404, 410, 5xx, dead domain
 
 ## Use case
 
-**Broken link checker for any website**: it crawls your site, collects every link and image on every page and checks each one, so you get **every broken (404) and dead link with the pages where it appears and its anchor text**. Reasons include 404, 410, server errors, dead domains and expired SSL certificates, and a shareable **Markdown report** lists the fixes per page. **Monitoring mode** reports only links that broke since the last run.
+**Broken link checker for any website**: it crawls your site, collects links and images on each page and checks the unique URLs (up to **Max links to check**), so you get **broken (404) and dead links with the pages where they appear and their anchor text**. Cloudflare's page-internal `/cdn-cgi/l/email-protection` email helper is skipped when found in an anchor. Reasons include 404, 410, server errors, dead domains and expired SSL certificates, and a shareable **Markdown report** lists the fixes per page. **Monitoring mode** reports only links that broke since the last run.
 
 ## Price (pay per event, Apify Free plan)
 
@@ -29,7 +29,8 @@ This is the Actor's prefilled example input. All other fields have defaults; the
     "https://www.python.org/"
   ],
   "maxPages": 10,
-  "maxLinksToCheck": 2000
+  "maxLinksToCheck": 2000,
+  "acceptStatus": []
 }
 ```
 

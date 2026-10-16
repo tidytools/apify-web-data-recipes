@@ -1,5 +1,5 @@
 // Eventbrite Scraper & Luma Scraper - Events, Venues, Organizers: run the Actor on Apify and print the results.
-// Store page: apify.com/tidytools/eventbrite-luma-events (public from 2026-10-16)
+// Store page: https://apify.com/tidytools/eventbrite-luma-events
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 // Run:   node run.mjs

@@ -1,16 +1,14 @@
-# Websites by Technology - BuiltWith Alternative & Store Leads (available from 2026-10-14)
+# Websites by Technology - BuiltWith Alternative & Store Leads
 
 Lists of websites that use a technology, by country: Shopify stores in Germany, WordPress sites in Taiwan, HubSpot users in the UK. Candidates come from Chrome's top 1K-1M websites per country; each home page is checked live. $5 per 1,000 websites found; scanning is free.
 
-- Apify Store: `apify.com/tidytools/website-lists` (public from 2026-10-14)
+- Apify Store: [https://apify.com/tidytools/website-lists](https://apify.com/tidytools/website-lists)
 - Actor ID: `tidytools/website-lists` (`V2bdPhQNV5k4k0CnM`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/website-lists`
 
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-14**. Until then the recipes below return an error.
-
 ## Use case
 
-It builds **lead lists of websites that use a technology, in the countries you choose**: "Shopify stores popular in Germany", "WordPress sites in Taiwan's top 10,000", "companies in the US top 10,000 that use HubSpot".
+**Pick a technology and countries, get a list of matching websites** (domain, title, full tech stack with evidence, popularity bucket, e-mail provider): **$5.00 per 1,000 websites found** ($0.005 each, shown on the Pricing tab). Websites that do not match, cannot be read, duplicates and invalid inputs are free, and so is a run that finds nothing; no start fee. Data: Google's public Chrome UX Report top lists (monthly; check `dataRelease` in each run's results for the list month) for the candidates, and each home page read live at run time for the technologies. Jump to [How to use it](#how-to-use-it).
 
 ## Price (pay per event, Apify Free plan)
 

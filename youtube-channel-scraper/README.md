@@ -1,16 +1,14 @@
-# YouTube Channel Scraper - Videos, Shorts, Views & Likes (available from 2026-10-15)
+# YouTube Channel Scraper - Videos, Shorts, Views & Likes
 
 Scrape YouTube channels, playlists and videos: subscribers, total views, join date, country, links, plus each video's views, likes, publish date, duration, tags and description. Videos, Shorts and live tabs. No login, no proxy needed. From $1 per 1,000 videos; failed items are free.
 
-- Apify Store: `apify.com/tidytools/youtube-channel-scraper` (public from 2026-10-15)
+- Apify Store: [https://apify.com/tidytools/youtube-channel-scraper](https://apify.com/tidytools/youtube-channel-scraper)
 - Actor ID: `tidytools/youtube-channel-scraper` (`tYsrX7KkSKgUHIemE`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/youtube-channel-scraper`
 
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-15**. Until then the recipes below return an error.
-
 ## Use case
 
-It turns **YouTube channels, playlists and video links into clean rows**: channel statistics and the newest videos, Shorts and live streams of each channel, with views, likes, publish dates, durations, tags and descriptions.
+**Paste YouTube channels (@handle or URL), playlists or videos, get one row per channel and per video (views, likes, dates, duration, tags) for $1 per 1,000 videos and $2 per 1,000 channels, with no start fee.** Failed, removed, filtered and duplicate items are free.
 
 ## Price (pay per event, Apify Free plan)
 

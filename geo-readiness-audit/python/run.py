@@ -1,6 +1,6 @@
-"""GEO Audit - AI SEO & AEO Checker for ChatGPT & AI Overviews: run the Actor on Apify and print the results.
+"""Answer Engine Optimization & GEO Audit - ChatGPT Fix Plan: run the Actor on Apify and print the results.
 
-Store page: apify.com/tidytools/geo-readiness-audit (public from 2026-10-10)
+Store page: https://apify.com/tidytools/geo-readiness-audit
 Setup:      pip install apify-client
             export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 Run:        python run.py
@@ -14,7 +14,11 @@ from apify_client import ApifyClient
 ACTOR_ID = "tidytools/geo-readiness-audit"
 MAX_TOTAL_CHARGE_USD = Decimal("1.00")  # cost cap: the run stops charging at this amount
 
-RUN_INPUT = {'websites': ['https://www.python.org', 'https://stripe.com', 'https://excalidraw.com']}
+RUN_INPUT = {   'websites': ['https://plausible.io'],
+    'targetQuestions': [   'how much does plausible analytics cost',
+                           'is plausible analytics gdpr compliant'],
+    'competitorPages': [   'how much does plausible analytics cost | '
+                           'https://usefathom.com/pricing']}
 
 
 def main():

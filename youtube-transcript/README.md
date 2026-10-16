@@ -8,7 +8,7 @@ YouTube transcript API without a YouTube API key: transcripts with timestamps fr
 
 ## Use case
 
-**YouTube Transcript Scraper is a YouTube transcript API that needs no YouTube API key: paste video, channel or playlist links and get the full transcript, timestamped segments and video details, one row per video, for $2 per 1,000 transcripts. Videos without a transcript and failed videos are free.**
+**YouTube Transcript Scraper is a YouTube transcript API that needs no YouTube API key: paste video, channel or playlist links and get the full transcript, timestamped segments (unless you turn timestamps off) and video details, normally one result row per video that returns a transcript, for $2 per 1,000 caption transcripts (FREE/BRONZE rate; speech-to-text for videos without captions is billed per audio minute). Videos without a transcript and failed videos are free.**
 
 ## Price (pay per event, Apify Free plan)
 

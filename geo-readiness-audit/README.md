@@ -1,16 +1,14 @@
-# GEO Audit - AI SEO & AEO Checker for ChatGPT & AI Overviews (available from 2026-10-10)
+# Answer Engine Optimization & GEO Audit - ChatGPT Fix Plan
 
-GEO audit: can ChatGPT, Perplexity and Google AI Overviews reach and cite your site? GEO/AEO score, AI crawler and firewall test, llms.txt, schema, prioritized fixes, HTML report. From $0.03/site.
+AEO with a fix plan, not just a score: for each buyer question, see which page ChatGPT, Perplexity or Google AI Overviews would quote, why competitors win, and what to add. Plus a GEO audit of AI crawler access and firewalls. $0.01/question, $0.03/site.
 
-- Apify Store: `apify.com/tidytools/geo-readiness-audit` (public from 2026-10-10)
+- Apify Store: [https://apify.com/tidytools/geo-readiness-audit](https://apify.com/tidytools/geo-readiness-audit)
 - Actor ID: `tidytools/geo-readiness-audit` (`mcmwUZfsZ9rTlgMqr`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/geo-readiness-audit`
 
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-10**. Until then the recipes below return an error.
-
 ## Use case
 
-It checks **whether AI search engines and assistants (ChatGPT, Perplexity, Claude, Google AI Overviews, Copilot) can reach, read and understand your website**, gives it a **GEO score from 0 to 100**, lists the fixes that matter most, and saves a **shareable HTML report** for every site. GEO (Generative Engine Optimization, also called AEO) is SEO for AI answers: if AI crawlers are blocked or see an empty page, your site cannot be cited. Score + fix list + report, with a live firewall test, and an optional check of **whether Google AI Overviews actually cite you** for the queries you choose.
+**It tells you why ChatGPT, Perplexity and Google AI Overviews quote your competitors instead of you, and what to change.** Give it your website and the questions your buyers ask. For each question it finds the page and the passage on your site that an answer engine would most likely quote, scores it 0-100, compares it with the pages that do get cited, and writes a **fix plan**: which page, which section, a rewrite draft built only from facts already on your pages, and what is missing. It also runs a full **GEO audit** (Generative Engine Optimization, also called AEO, answer engine optimization): can AI crawlers reach and read the site at all, with a live firewall test, a 0-100 GEO score and a shareable HTML report.
 
 ## Price (pay per event, Apify Free plan)
 
@@ -18,6 +16,7 @@ It checks **whether AI search engines and assistants (ChatGPT, Perplexity, Claud
 |---|---|
 | Audited website | $30.00 |
 | Sampled page | $4.00 |
+| Target question analyzed | $10.00 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.
 
@@ -28,9 +27,14 @@ This is the Actor's prefilled example input. All other fields have defaults; the
 ```json
 {
   "websites": [
-    "https://www.python.org",
-    "https://stripe.com",
-    "https://excalidraw.com"
+    "https://plausible.io"
+  ],
+  "targetQuestions": [
+    "how much does plausible analytics cost",
+    "is plausible analytics gdpr compliant"
+  ],
+  "competitorPages": [
+    "how much does plausible analytics cost | https://usefathom.com/pricing"
   ]
 }
 ```

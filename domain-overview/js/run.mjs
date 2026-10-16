@@ -1,5 +1,5 @@
 // Domain Overview - Semrush & Ahrefs Alternative, Tech & Hiring: run the Actor on Apify and print the results.
-// Store page: apify.com/tidytools/domain-overview (public from 2026-10-13)
+// Store page: https://apify.com/tidytools/domain-overview
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 // Run:   node run.mjs

@@ -1,24 +1,14 @@
-# Domain Overview - Semrush & Ahrefs Alternative, Tech & Hiring (available from 2026-10-13)
+# Domain Overview - Semrush & Ahrefs Alternative, Tech & Hiring
 
 One row per domain: traffic rank (global and by country, 12-month trend), authority and referring domains, tech stack, open jobs, domain age and AI crawler policy. Bulk lists, no logins. $10 per 1,000 domains; unreadable websites free.
 
-- Apify Store: `apify.com/tidytools/domain-overview` (public from 2026-10-13)
+- Apify Store: [https://apify.com/tidytools/domain-overview](https://apify.com/tidytools/domain-overview)
 - Actor ID: `tidytools/domain-overview` (`qUmyFGvHNegwY3URy`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/domain-overview`
 
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-13**. Until then the recipes below return an error.
-
 ## Use case
 
-Give it a list of domains (or URLs, or e-mail addresses, or another run's dataset). For each domain you get **one row** that answers "how big is this company's website, what is it built with, and is the company growing?":
-
-- 📈 **Traffic rank** from real Chrome users: global Top 1K ... 1M, the top country, the rank in up to 238 countries and the 6-month trend
-- 🔗 **Authority**: a 0-100 score and the number of referring domains (who links to the site), from the Common Crawl web graph
-- 🧰 **Tech stack**: CMS, e-commerce platform, frameworks, analytics, CDN and hosting, plus the **e-mail provider** and the SaaS tools verified in its DNS
-- 💼 **Hiring**: open jobs, remote jobs, hiring countries, sample job titles and the careers page, from our index of 1.4 million openings on 54,000 company career sites (Greenhouse, Lever, Ashby, Workable, SmartRecruiters, Personio and 10 more)
-- 🗓️ **Domain age** and registrar (from the registry's RDAP record)
-- 🤖 **AI crawler policy**: whether robots.txt lets GPTBot, ClaudeBot, PerplexityBot and 26 other AI crawlers in, and whether the site has an `llms.txt`
-- 📝 the site's **title and description**, and a one-line **summary**
+**Input:** a list of domains (or URLs, e-mail addresses, or another run's dataset). **Output:** one row per domain with traffic rank, authority, tech stack, open jobs, domain age and AI crawler policy. **Price:** $10 per 1,000 domains ($0.01 each), only when the website could be read; unreadable websites, duplicates and invalid lines are free. No start fee.
 
 ## Price (pay per event, Apify Free plan)
 

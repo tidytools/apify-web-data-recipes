@@ -1,5 +1,5 @@
 // Backlink Checker - Referring Domains & Link Gap, Open Data: run the Actor on Apify and print the results.
-// Store page: apify.com/tidytools/backlink-gap (public from 2026-10-14)
+// Store page: https://apify.com/tidytools/backlink-gap
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
 // Run:   node run.mjs
@@ -13,7 +13,7 @@ const input = {
     "mode": "referringDomains",
     "domains": [
         "apify.com",
-        "tools.yukai.uk"
+        "scrapingbee.com"
     ],
     "maxReferringDomainsPerDomain": 25
 };

@@ -47,6 +47,8 @@ From the Actor's documentation (section "Output (real result, shortened)"):
     "charged": true,
     "wordCount": 1205,
     "markdown": "# Actor description & SEO description\n\nCopy for LLM\n\nLearn about Actor description and meta description. …\n\n## What is an Actor description?\n\n…",
+    "contentDigestKind": "markdown:v1",
+    "contentDigest": "sha256:…",
     "chunks": [
         { "index": 1, "text": "… ### Is there any benefit in the description and meta description being different?\n\n…", "headingPath": ["Actor description & SEO description", "Regular description vs. SEO description", "Is there any benefit in the description and meta description being different?"], "charCount": 1850 }
     ],

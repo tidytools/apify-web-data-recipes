@@ -14,7 +14,8 @@ const input = {
         "https://www.python.org/"
     ],
     "maxPages": 10,
-    "maxLinksToCheck": 2000
+    "maxLinksToCheck": 2000,
+    "acceptStatus": []
 };
 
 const token = process.env.APIFY_TOKEN;

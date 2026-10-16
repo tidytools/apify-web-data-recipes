@@ -14,7 +14,10 @@ from apify_client import ApifyClient
 ACTOR_ID = "tidytools/broken-link-checker"
 MAX_TOTAL_CHARGE_USD = Decimal("1.00")  # cost cap: the run stops charging at this amount
 
-RUN_INPUT = {'urls': ['https://www.python.org/'], 'maxPages': 10, 'maxLinksToCheck': 2000}
+RUN_INPUT = {   'urls': ['https://www.python.org/'],
+    'maxPages': 10,
+    'maxLinksToCheck': 2000,
+    'acceptStatus': []}
 
 
 def main():

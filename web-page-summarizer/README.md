@@ -8,7 +8,7 @@ AI summarizer for URLs, articles or your own text: TL;DR, bullets or executive s
 
 ## Use case
 
-Give it URLs or your own texts and get a **clear, factual summary of each one**: one line, a paragraph, bullet points, a TL;DR or an executive summary, in the language you choose. Optionally get **key points, topic tags, sentiment and keywords** in the same call, at no extra cost. Works on articles, blogs, documentation, product and company pages, and JavaScript-heavy sites. No API key needed.
+**Paste article URLs or your own texts and get one summary row per item (one line, paragraph, bullets, TL;DR or executive summary, in any language) for $0.006 per summary, with key points, topics, sentiment and keywords included; pages that cannot be summarized are free.** No OpenAI key needed.
 
 ## Price (pay per event, Apify Free plan)
 

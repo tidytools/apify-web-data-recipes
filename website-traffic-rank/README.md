@@ -1,27 +1,20 @@
-# Website Traffic Rank Checker - Similarweb Alternative, Bulk (available from 2026-10-13)
+# Website Traffic Rank Checker - Similarweb Alternative, Bulk
 
-Bulk website traffic rank from Chrome's real-user data: global Top 1K-1M rank, rank in each of 238 countries, top country and 12-month trend for any list of domains. No Similarweb login or proxies. $2 per 1,000 domains.
+Bulk website traffic rank from Chrome's real-user data: global Top 1K-1M rank, rank in each of 238 countries, top country and 12-month trend for any list of domains. No Similarweb login or proxies. $1.50 per 1,000 domains.
 
-- Apify Store: `apify.com/tidytools/website-traffic-rank` (public from 2026-10-13)
+- Apify Store: [https://apify.com/tidytools/website-traffic-rank](https://apify.com/tidytools/website-traffic-rank)
 - Actor ID: `tidytools/website-traffic-rank` (`QTlig3gBQedJW1HV4`)
 - MCP (AI agents): `https://mcp.apify.com/?tools=tidytools/website-traffic-rank`
 
-> **Not public yet.** This Actor is scheduled to be available on the Apify Store from **2026-10-13**. Until then the recipes below return an error.
-
 ## Use case
 
-Give it a list of domains (or URLs, or e-mail addresses). For each one it returns, in bulk and in seconds:
-
-- its **global traffic rank**: Top 1K, 5K, 10K, 50K, 100K, 500K or 1M websites worldwide, measured by real Chrome users,
-- its **rank in every country** where it is popular (238 countries), with the **top country** first,
-- a **12-month history** of the global rank and a **6-month trend**: rising, falling, stable, new or dropped out,
-- optional **rank in the countries you choose** (`rankIn.us`, `rankIn.de`...) for filtering a lead list by market.
+**Input:** a list of domains (or URLs, or e-mail addresses). **Output:** one row per domain with its worldwide rank tier (Top 1K ... Top 1M), its rank in each country, its top country and a 12-month trend. **Price:** $1.50 per 1,000 domains found; domains that are not listed, duplicates and invalid lines are free. No start fee.
 
 ## Price (pay per event, Apify Free plan)
 
 | Event | Price per 1,000 |
 |---|---|
-| Domain checked | $2.00 |
+| Domain checked | $1.50 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.
 
