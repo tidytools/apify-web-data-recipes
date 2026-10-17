@@ -8,7 +8,7 @@ SEO crawler for technical SEO audits, JS sites too: 0-100 SEO score and fix hint
 
 ## Use case
 
-**SEO audit tool for $5 per 1,000 pages: it crawls your site, scores every page from 0 to 100 and lists each on-page and technical SEO issue with a fix hint, plus a site report (sitemap, canonicals, duplicates, broken pages). Broken, blocked and failed pages are free.**
+**SEO audit tool for $5 per 1,000 pages: it crawls your site, scores audited pages from 0 to 100 and lists on-page and technical SEO issues with fix hints, plus a site report (sitemap, canonicals, duplicates, broken pages). Broken, blocked and failed pages are free. Cloudflare email-protection helper links found within pages are skipped.**
 
 ## Price (pay per event, Apify Free plan)
 
