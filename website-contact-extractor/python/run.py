@@ -14,7 +14,7 @@ from apify_client import ApifyClient
 ACTOR_ID = "tidytools/website-contact-extractor"
 MAX_TOTAL_CHARGE_USD = Decimal("1.00")  # cost cap: the run stops charging at this amount
 
-RUN_INPUT = {'domains': ['katzsdelicatessen.com', 'hofbraeuhaus.de']}
+RUN_INPUT = {'domains': ['https://www.hofbraeuhaus.de/'], 'maxPagesPerSite': 1}
 
 
 def main():

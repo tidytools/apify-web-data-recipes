@@ -8,7 +8,7 @@ Career page jobs scraper and ATS jobs scraper: scrape job postings from Greenhou
 
 ## Use case
 
-**Career Page Jobs Scraper (an ATS jobs scraper) scrapes job postings from Greenhouse, Lever and 15 more applicant tracking systems: give it company domains, career pages or board URLs, and get their live open jobs from Greenhouse, Lever, Ashby, Workday and the rest (auto-detected) in one normalised format, for $1 per 1,000 jobs. Companies without a readable job board and filtered-out jobs are free.**
+**Career Page Jobs Scraper (an ATS jobs scraper) scrapes job postings from Greenhouse, Lever and 16 more applicant tracking systems: give it company domains, career pages or board URLs, and get their live open jobs from Greenhouse, Lever, Ashby, Workday and the rest (auto-detected) in one normalised format, for $1 per 1,000 jobs. Companies without a readable job board and filtered-out jobs are free.**
 
 ## Price (pay per event, Apify Free plan)
 

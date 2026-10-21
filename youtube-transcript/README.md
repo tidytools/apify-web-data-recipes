@@ -8,7 +8,11 @@ YouTube transcript API without a YouTube API key: transcripts with timestamps fr
 
 ## Use case
 
-**YouTube Transcript Scraper is a YouTube transcript API that needs no YouTube API key: paste video, channel or playlist links and get the full transcript, timestamped segments (unless you turn timestamps off) and video details, normally one result row per video that returns a transcript, for $2 per 1,000 caption transcripts (FREE/BRONZE rate; speech-to-text for videos without captions is billed per audio minute). Videos without a transcript and failed videos are free.**
+- **$2 per 1,000 caption transcripts** (FREE/BRONZE rate; speech-to-text for videos without captions is billed per audio minute), no start fee; failed and no-caption videos are free.
+- **No YouTube API key, cookies or login**: paste video, channel or playlist links.
+- **Every failure says why** (`failureReason`), and each result says which language and caption type (`source`) you got.
+- Timestamps on by default (`segments`), Markdown video notes, RAG chunks that link to the second in the video and a channel digest, all at no extra charge.
+- **Optional simple output:** set `compactTranscript: true` for `videoUrl` and caption segments with `start`, `end`, `text`; the default output still uses `url` and `start`, `duration`, `text`.
 
 ## Price (pay per event, Apify Free plan)
 
@@ -33,23 +37,34 @@ This is the Actor's prefilled example input. All other fields have defaults; the
 
 ## Sample output
 
-From the Actor's documentation (section "Output (real result, shortened)"):
+From the Actor's documentation (section "Output example"):
 
 ```json
 {
-    "success": true,
-    "videoId": "jNQXAC9IVRw",
-    "title": "Me at the zoo",
-    "channel": "jawed",
-    "durationSec": 19,
-    "language": "en",
-    "source": "manual_captions",
-    "transcript": "All right, so here we are, in front of the elephants the cool thing about these guys is that they have really... really really long trunks and that's cool (baaaaaaaaaaahhh!!) and that's pretty much all there is to say",
-    "segments": [
-        { "start": 1.2, "duration": 2.16, "text": "All right, so here we are, in front of the elephants" }
-    ],
-    "wordCount": 39,
-    "failureReason": null
+  "success": true,
+  "status": "ok",
+  "videoId": "jNQXAC9IVRw",
+  "url": "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+  "title": "Me at the zoo",
+  "channel": "jawed",
+  "channelId": "UC4QobU6STFB0P71PMvOGN5A",
+  "publishDate": "2005-04-23T20:31:52-07:00",
+  "durationSec": 19,
+  "viewCount": 439408167,
+  "requestedLanguages": [],
+  "language": "en",
+  "languageMatch": null,
+  "source": "manual_captions",
+  "isGenerated": false,
+  "availableLanguages": [{ "code": "en", "name": "English", "generated": false }, { "code": "de", "name": "German", "generated": false }],
+  "transcript": "All right, so here we are, in front of the elephants the cool thing about these guys is that they have really... really really long trunks and that's cool (baaaaaaaaaaahhh!!) and that's pretty much all there is to say",
+  "segments": [
+    { "start": 1.2, "duration": 2.16, "text": "All right, so here we are, in front of the elephants" },
+    { "start": 5.318, "duration": 2.656, "text": "the cool thing about these guys is that they have really..." }
+  ],
+  "wordCount": 39,
+  "charCount": 217,
+  "failureReason": null
 }
 ```
 

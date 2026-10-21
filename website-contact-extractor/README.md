@@ -8,7 +8,7 @@ Website email extractor and contact details scraper for bulk domain lists: best 
 
 ## Use case
 
-**Website Email Extractor & Contact Details Scraper for bulk domain lists: paste company domains (or give it a Google Maps scraper's dataset), and get each website's best email (MX-checked), all emails, phone numbers and social profiles, for $2 per 1,000 websites. Websites with nothing found and unreachable websites are free.**
+Paste business websites or a Google Maps scraper's dataset to get the emails, phone numbers and social profiles published on those businesses' websites. This Actor reads the listed sites; it does not scrape Google Maps.
 
 ## Price (pay per event, Apify Free plan)
 
@@ -25,9 +25,9 @@ This is the Actor's prefilled example input. All other fields have defaults; the
 ```json
 {
   "domains": [
-    "katzsdelicatessen.com",
-    "hofbraeuhaus.de"
-  ]
+    "https://www.hofbraeuhaus.de/"
+  ],
+  "maxPagesPerSite": 1
 }
 ```
 

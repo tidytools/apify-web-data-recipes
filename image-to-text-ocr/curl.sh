@@ -11,8 +11,7 @@ curl -sS -X POST "https://api.apify.com/v2/acts/tidytools~image-to-text-ocr/run-
   -d @- <<'JSON'
 {
   "urls": [
-    "https://upload.wikimedia.org/wikipedia/commons/6/67/Japanese_Road_Sign_119_%28Street_name%29.jpg",
-    "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Sahan_Supermarket_receipt%2C_Hillegersberg%2C_Rotterdam_%282021%29_02.jpg/1280px-Sahan_Supermarket_receipt%2C_Hillegersberg%2C_Rotterdam_%282021%29_02.jpg"
+    "https://upload.wikimedia.org/wikipedia/commons/6/67/Japanese_Road_Sign_119_%28Street_name%29.jpg"
   ]
 }
 JSON

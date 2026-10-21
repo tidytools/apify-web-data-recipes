@@ -1,6 +1,6 @@
-# Email List Cleaner - Bulk Email Validator & Disposable Check
+# Email Verification — Bulk CSV List Cleaner
 
-Email list cleaner and bulk email validator: an email verifier and email checker without SMTP pings. Email verification of syntax, domain and MX, disposable, role and free-provider flags, typos (gmial.com → gmail.com). CSV upload, API or another Actor's dataset. Failed lines free. $0.50 per 1,000.
+Email verification for bulk CSV lists without SMTP mailbox checks: syntax, domain and MX, disposable, role and free-provider flags, and typo suggestions. Upload CSV, use API or another Actor's dataset. Failed lines free. $0.50 per 1,000.
 
 - Apify Store: [https://apify.com/tidytools/bulk-email-validator](https://apify.com/tidytools/bulk-email-validator)
 - Actor ID: `tidytools/bulk-email-validator` (`haMAC5lJnzZmQcyqh`)
@@ -8,7 +8,7 @@ Email list cleaner and bulk email validator: an email verifier and email checker
 
 ## Use case
 
-**Email List Cleaner validates an email list in bulk: give it addresses, a CSV file or a lead scraper's dataset (in Apify Console or through the API), and get a verdict (valid, risky or invalid), a 0–100 score and a reason for every address from syntax, domain and MX, disposable, role and typo checks, without SMTP pings, for $0.50 per 1,000 addresses. Syntax errors, failed lookups and duplicates are free.**
+**Verify and clean a bulk CSV email list, pasted addresses or a lead scraper's dataset (in Apify Console or through the API). Each address gets a verdict (valid, risky or invalid), a 0–100 score and a reason from syntax, domain and MX, disposable, role and typo checks. Mailboxes are not probed with SMTP. Pay $0.50 per 1,000 addresses; syntax errors, failed lookups and duplicates are free.**
 
 ## Price (pay per event, Apify Free plan)
 

@@ -1,6 +1,6 @@
-# Google Maps Lead Enrichment - Company Enrichment & Contact Data
+# Firmographics — Company Website Enrichment
 
-Company data enrichment for company names, domains or Google Maps leads: emails, phones, socials, AI one-line description, industry, B2B/B2C, company size, tech stack. Firmographics read from each company's own website; rows map back to the source. $6/1,000.
+Firmographics from each company's own website: industry, business model, stated size clues and contact details. Enter company names, domains or Google Maps leads; rows map back to the source. $6/1,000.
 
 - Apify Store: [https://apify.com/tidytools/company-website-enrichment](https://apify.com/tidytools/company-website-enrichment)
 - Actor ID: `tidytools/company-website-enrichment` (`RcPuCbK3BPevD8Uau`)
@@ -8,7 +8,7 @@ Company data enrichment for company names, domains or Google Maps leads: emails,
 
 ## Use case
 
-Give it a list of company domains or company names, or the dataset of a Google Maps or other lead scraper run, and get one enriched record per company, read from the company's own website:
+Turn company domains, names or a Google Maps lead dataset into website-sourced firmographics and contacts. For example, `stripe.com` becomes one row with industry, business model, a company-size band when stated on its website, contact details and tech stack. Data comes from each company's own website, not LinkedIn headcounts or revenue estimates:
 
 - 🏢 **Name** and a **one-line description** of what the company does, written by AI from the website text
 - 🏷️ **Industry** (31 categories, e.g. `software-saas`, `restaurants-food-service`, `legal-services`) and **business model** (`B2B`, `B2C`, `B2B2C`, `nonprofit`, `government`), with a confidence and a short reason

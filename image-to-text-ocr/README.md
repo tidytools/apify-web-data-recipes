@@ -1,6 +1,6 @@
 # Image to Text OCR API - Extract Text from Images with AI
 
-Extract text from images with AI OCR: receipts, screenshots, signs, document photos and tables as Markdown, in English, Chinese, Japanese and more. URLs, a dataset or base64. $3/1,000 images.
+Extract text from images in bulk with AI OCR: receipts, screenshots, signs, document photos and tables as Markdown, in English, Chinese, Japanese and more. Use URLs, datasets or base64. No-text and failed results are free; no start fee.
 
 - Apify Store: [https://apify.com/tidytools/image-to-text-ocr](https://apify.com/tidytools/image-to-text-ocr)
 - Actor ID: `tidytools/image-to-text-ocr` (`DuFFQzZueyf7cBjft`)
@@ -8,14 +8,7 @@ Extract text from images with AI OCR: receipts, screenshots, signs, document pho
 
 ## Use case
 
-Give it images and get their text back:
-
-- 🖥️ **Screenshots to text**: terminal output, app screens, web pages, chats
-- 🧾 **Receipts, invoices and photos of documents**: line items and totals, in reading order
-- 📦 **Bulk OCR**: a whole list of image links in one run, several at a time; every row says which image it belongs to, and one bad link never stops the rest
-- 🪧 **Signs and labels** in photos
-- 🌏 **Many languages and scripts**: English, German, Dutch..., Chinese, Japanese, Korean; the text stays in its original language (nothing is translated)
-- 📊 **Tables**: kept as Markdown tables in *Markdown* mode, or as one line per row in *Plain text* mode
+Choose **Receipt / invoice fields** (`"mode":"receipt_fields"`) for an image of a receipt or invoice. The dataset row keeps the full OCR `text` and adds `receipt: {vendor, date, total, currency, review}`. For example, an image transcribed as `Vendor: ACME SUPPLIES\nInvoice Date: 2026-10-18\nTotal: USD 105.00` yields `{"vendor":"ACME SUPPLIES","date":"2026-10-18","total":105,"currency":"USD","review":false}`. Only explicit labels are used; an unlabeled shop name is not guessed, and `Subtotal`, `Tax` and `Invoice No` are not extracted as the total or vendor. Missing or ambiguous values are `null`, with `review:true` when the date, total or currency needs checking. Even `review:false` is not an accuracy guarantee: check fields against the source image before accounting use.
 
 ## Price (pay per event, Apify Free plan)
 
@@ -32,8 +25,7 @@ This is the Actor's prefilled example input. All other fields have defaults; the
 ```json
 {
   "urls": [
-    "https://upload.wikimedia.org/wikipedia/commons/6/67/Japanese_Road_Sign_119_%28Street_name%29.jpg",
-    "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Sahan_Supermarket_receipt%2C_Hillegersberg%2C_Rotterdam_%282021%29_02.jpg/1280px-Sahan_Supermarket_receipt%2C_Hillegersberg%2C_Rotterdam_%282021%29_02.jpg"
+    "https://upload.wikimedia.org/wikipedia/commons/6/67/Japanese_Road_Sign_119_%28Street_name%29.jpg"
   ]
 }
 ```

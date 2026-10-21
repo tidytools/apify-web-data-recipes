@@ -11,9 +11,9 @@ const MAX_TOTAL_CHARGE_USD = 1.0; // cost cap: the run stops charging at this am
 
 const input = {
     "domains": [
-        "katzsdelicatessen.com",
-        "hofbraeuhaus.de"
-    ]
+        "https://www.hofbraeuhaus.de/"
+    ],
+    "maxPagesPerSite": 1
 };
 
 const token = process.env.APIFY_TOKEN;

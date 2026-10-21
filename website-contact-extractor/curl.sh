@@ -11,8 +11,8 @@ curl -sS -X POST "https://api.apify.com/v2/acts/tidytools~website-contact-extrac
   -d @- <<'JSON'
 {
   "domains": [
-    "katzsdelicatessen.com",
-    "hofbraeuhaus.de"
-  ]
+    "https://www.hofbraeuhaus.de/"
+  ],
+  "maxPagesPerSite": 1
 }
 JSON

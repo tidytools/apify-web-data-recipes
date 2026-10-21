@@ -1,4 +1,4 @@
-// Email List Cleaner - Bulk Email Validator & Disposable Check: run the Actor on Apify and print the results.
+// Email Verification — Bulk CSV List Cleaner: run the Actor on Apify and print the results.
 // Store page: https://apify.com/tidytools/bulk-email-validator
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)

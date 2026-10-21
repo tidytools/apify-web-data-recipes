@@ -8,7 +8,7 @@ Bulk audio transcription with Whisper: transcribe audio to text, video to text, 
 
 ## Use case
 
-**Audio Transcription is a bulk audio transcription API: give it audio or video file links (MP3, WAV, M4A, MP4, Google Drive or Dropbox share links, plus YouTube links and podcast RSS feeds) and get each file back as text with timestamps plus SRT, VTT, TXT and Markdown files, for $0.006 per audio minute (Whisper large-v3-turbo, 90+ languages). Failed or silent files are free.**
+**Turn an audio file, video link or podcast RSS feed into searchable text with timestamps and downloadable SRT, VTT, TXT and Markdown files.**
 
 ## Price (pay per event, Apify Free plan)
 
@@ -29,9 +29,6 @@ This is the Actor's prefilled example input. All other fields have defaults; the
 {
   "urls": [
     "https://webcapture-api.yukailin.workers.dev/samples/speech-sample.wav"
-  ],
-  "podcastFeeds": [
-    "https://www.nasa.gov/feeds/podcasts/small-steps-giant-leaps"
   ],
   "maxEpisodesPerFeed": 1,
   "subtitleLanguages": []

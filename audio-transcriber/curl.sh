@@ -13,9 +13,6 @@ curl -sS -X POST "https://api.apify.com/v2/acts/tidytools~audio-transcriber/run-
   "urls": [
     "https://webcapture-api.yukailin.workers.dev/samples/speech-sample.wav"
   ],
-  "podcastFeeds": [
-    "https://www.nasa.gov/feeds/podcasts/small-steps-giant-leaps"
-  ],
   "maxEpisodesPerFeed": 1,
   "subtitleLanguages": []
 }
