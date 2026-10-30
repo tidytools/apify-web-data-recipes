@@ -17,6 +17,7 @@ Bulk audio transcription with Whisper: transcribe audio to text, video to text, 
 | Audio minute | $6.00 |
 | Audio minute with speaker labels | $15.00 |
 | AI summary and chapters | $10.00 |
+| Podcast content pack | $100.00 |
 | Translated subtitles (per minute and language) | $2.00 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.
@@ -31,6 +32,7 @@ This is the Actor's prefilled example input. All other fields have defaults; the
     "https://webcapture-api.yukailin.workers.dev/samples/speech-sample.wav"
   ],
   "maxEpisodesPerFeed": 1,
+  "contentPackSubtitleLanguages": [],
   "subtitleLanguages": []
 }
 ```

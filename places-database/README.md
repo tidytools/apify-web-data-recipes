@@ -9,7 +9,7 @@ Business lead lists for any city, box or country from the open Overture Maps pla
 ## Use case
 
 - **You give:** a city and a business type, e.g. `Austin, US` + `dentist` (or `München, DE` + `Zahnarzt`).
-- **You get:** one row per business with name, category, address, coordinates, website, phone (in +E.164 form), role e-mail addresses (info@, contact@) and social links, from the open **Overture Maps places dataset**.
+- **You get:** one row per business with name, category, address, coordinates, website, phone (in +E.164 form), role e-mail addresses (info@, contact@) and social links, from the open **Overture Maps places dataset**. Select **+ Contact enrichment** to read the business website for more emails, phones and social profiles in the same run.
 - **You pay:** **$1 per 1,000 places** returned, no start fee. Locations that are not found, runs that match nothing, filtered-out places and duplicates are free. 20 places cost $0.02.
 - **Good to know:** it is a snapshot of an open dataset, not a live map. In big cities roughly half of the records were last updated more than a year ago; the *Max source age* option keeps only recent ones (see [What to expect](#what-to-expect-from-the-source-data)).
 
@@ -51,6 +51,9 @@ From the Actor's documentation (section "Output example"):
     "website": "http://www.gragger.de/",
     "phone": "+493081866477",
     "emails": ["marketing@gragger.de"],
+    "contactEmails": ["marketing@gragger.de"],
+    "contactPhones": ["+493081866477"],
+    "contactSocials": [],
     "emailType": "role-only",
     "address": "Potsdamer Str. 107",
     "city": "Berlin",
@@ -59,6 +62,9 @@ From the Actor's documentation (section "Output example"):
     "latitude": 52.5,
     "longitude": 13.36,
     "confidence": 0.996,
+    "sourceUpdated": "2026-09-14",
+    "retrievedAt": "2026-10-21T08:00:00.000Z",
+    "lastVerifiedAt": null,
     "release": "2026-09-23.1",
     "license": "CDLA-Permissive-2.0",
     "attribution": "© Overture Maps Foundation (places)"

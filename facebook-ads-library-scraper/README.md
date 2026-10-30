@@ -8,7 +8,7 @@ Find Facebook and Instagram ads by keyword or Facebook Page. Export Library ID, 
 
 ## Use case
 
-Search Meta's public Ad Library by keyword, Facebook Page URL or numeric Page ID and export one row per ad. The browser is rendered through the TidyTools Chrome pool with WARP egress requested. No Meta login is used. This Actor is a draft and has not been published.
+Search Meta's public Ad Library by keyword, Facebook Page URL, numeric Page ID or a copied Ad Library search URL and export one row per ad: advertiser, start and end dates, days running, copy, headline, display domain, landing link, CTA, creatives and platforms. The browser is rendered through the TidyTools Chrome pool with WARP egress requested. No Meta login is used. This Actor is available on the Apify Store.
 
 ## Price (pay per event, Apify Free plan)
 
@@ -35,7 +35,7 @@ This is the Actor's prefilled example input. All other fields have defaults; the
 From the Actor's documentation (section "Output example"):
 
 ```json
-{"input":"nike","searchType":"keyword","country":"US","libraryId":"100000000000000","advertiserName":"Nike","pageUrl":"https://www.facebook.com/Nike/","startedAt":"2026-10-01","active":true,"platforms":["Facebook","Instagram"],"adText":"Find your next run","linkUrl":"https://www.nike.com/running","cta":"Shop now","imageUrls":["https://cdn.example.com/ad.jpg"],"videoUrls":[],"variationCount":1,"adUrl":"https://www.facebook.com/ads/library/?id=100000000000000","success":true,"errorType":null,"charged":true,"chargedEvents":["ad"],"scrapedAt":"2026-10-20T00:00:00.000Z"}
+{"input":"nike","searchType":"keyword","country":"US","libraryId":"100000000000000","advertiserName":"Nike","pageUrl":"https://www.facebook.com/nike/","pageId":null,"pageProfilePictureUrl":"https://cdn.example.com/nike-avatar.jpg","startedAt":"2026-06-20","endedAt":null,"activeDays":123,"active":true,"platforms":["Facebook","Instagram"],"adText":"Get the gear that goes hard on and off the field.","title":"Nike Tempo Shorts","linkDescription":null,"linkCaption":"NIKE.COM","linkUrl":"https://www.nike.com/running","cta":"Shop Now","displayFormat":"image","imageUrls":["https://cdn.example.com/ad.jpg"],"videoUrls":[],"variationCount":null,"hasMultipleVersions":true,"euTransparency":false,"spend":null,"impressions":null,"adUrl":"https://www.facebook.com/ads/library/?id=100000000000000","success":true,"errorType":null,"charged":true,"chargedEvents":["ad"],"scrapedAt":"2026-10-21T00:00:00.000Z"}
 ```
 
 ## Run it

@@ -15,6 +15,9 @@ Paste a list of public company websites or domains, or select a dataset that con
 | Event | Price per 1,000 |
 |---|---|
 | Processed website | $2.00 |
+| Validated email | $1.00 |
+| Additional page | $3.00 |
+| Decision maker | $3.00 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.
 

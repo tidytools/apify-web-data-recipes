@@ -10,6 +10,7 @@ const ACTOR_ID = 'tidytools/audio-to-text-files';
 const MAX_TOTAL_CHARGE_USD = 1.0; // cost cap: the run stops charging at this amount
 
 const input = {
+    "contentPackSubtitleLanguages": [],
     "urls": [
         "https://webcapture-api.yukailin.workers.dev/samples/speech-sample.wav"
     ],

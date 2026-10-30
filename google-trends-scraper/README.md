@@ -1,6 +1,6 @@
 # Google Trends Scraper - Interest, Regions, Trending Now
 
-Google Trends data with retries for 429 errors: interest over time, interest by region, top and rising related queries for up to 5 compared terms, and Trending Now by country with search volume. CSV export, new-trend alerts. $2 per 1,000 term reports, no start fee.
+Batch-compare Google Trends keywords by country and time, e.g. {"searchTerms":["chatgpt, claude"],"geo":"US"}. On 429 it cools down and retries; partial results, only successful reports charged. Interest over time, by region, related queries, Trending Now, CSV. $2 per 1,000 term reports.
 
 - Apify Store: [https://apify.com/tidytools/google-trends-scraper](https://apify.com/tidytools/google-trends-scraper)
 - Actor ID: `tidytools/google-trends-scraper` (`VFeRdMvjUYJ1Vubtj`)
@@ -8,7 +8,9 @@ Google Trends data with retries for 429 errors: interest over time, interest by 
 
 ## Use case
 
-**Enter search terms (up to 5 per line to compare them), countries and a time range, and get Google's interest over time, interest by region and rising related queries as clean rows; or enter a country and get its Trending Now list. $2 per 1,000 term reports and $0.50 per 1,000 trending searches, with no start fee.** Searches without enough Google data and failed requests are free.
+**Compare batches of Google Trends keywords by country and time range; comma-separated terms in one search are compared on the same scale.**
+Paste this batch input: `{"searchTerms":["chatgpt, claude, gemini","sourdough"],"geo":"US","timeRange":"today 12-m"}` (each array entry is one search).
+**If Google rate-limits a search, the Actor cools down and retries; it returns completed reports plus free failure rows for the rest, and charges only successful reports.**
 
 ## Price (pay per event, Apify Free plan)
 

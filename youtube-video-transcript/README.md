@@ -1,4 +1,4 @@
-# YouTube Video Transcript - Bulk Captions with Timestamps
+# YouTube to Text - Bulk YouTube Transcripts with Timestamps
 
 Paste public YouTube video URLs to get ready-made captions with text and start/end timestamps. Multiple videos per run; unavailable captions and blocked requests are free. $2 per 1,000 caption transcripts.
 
@@ -8,7 +8,7 @@ Paste public YouTube video URLs to get ready-made captions with text and start/e
 
 ## Use case
 
-**Paste public YouTube video URLs → get one transcript per video with `start` and `end` timestamps.** The default uses existing manual or auto-generated captions. Paste one link or a list; no YouTube API key is needed.
+**Turn public YouTube videos to text with one caption transcript per video and `start`/`end` timestamps.** The default reads existing manual or auto-generated captions. Paste one link or a list; no YouTube API key is needed.
 
 ## Price (pay per event, Apify Free plan)
 

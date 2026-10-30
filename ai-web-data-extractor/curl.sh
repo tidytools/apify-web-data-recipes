@@ -16,9 +16,7 @@ curl -sS -X POST "https://api.apify.com/v2/acts/tidytools~ai-web-data-extractor/
   "fields": {
     "title": "string",
     "price": "number",
-    "in_stock": "boolean",
-    "stock_count": "integer",
-    "upc": "string"
+    "in_stock": "boolean"
   }
 }
 JSON

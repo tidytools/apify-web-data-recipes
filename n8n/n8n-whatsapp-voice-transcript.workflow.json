@@ -1,0 +1,340 @@
+{
+  "name": "WhatsApp voice note to Apify audio-transcriber (single file)",
+  "active": false,
+  "nodes": [
+    {
+      "id": "79300000-0000-4000-8000-000000000001",
+      "name": "WhatsApp webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        300
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "whatsapp-voice-transcript",
+        "authentication": "headerAuth",
+        "responseMode": "onReceived",
+        "responseCode": 200,
+        "options": {}
+      }
+    },
+    {
+      "id": "79300000-0000-4000-8000-000000000002",
+      "name": "Prepare one audio",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        300
+      ],
+      "parameters": {
+        "jsCode": "// Adapt only these example mappings to your verified provider version. Never copy webhook tokens or base64 to output.\nconst PUBLIC_HOSTS = ['media.example.org']; // Replace with hosts you control and have verified allow anonymous, short-lived GETs.\nconst seen = $getWorkflowStaticData('global');\nseen.whatsappAudioIds ??= {};\nfunction directUrl(value) {\n  if (typeof value !== 'string') return null;\n  try {\n    const u = new URL(value);\n    if (u.protocol !== 'https:' || u.username || u.password || u.port || !PUBLIC_HOSTS.includes(u.hostname.toLowerCase())) return null;\n    if (/\\/(?:message\\/download|chat\\/getBase64FromMediaMessage)(?:\\/|$)/i.test(u.pathname)) return null;\n    return u.href;\n  } catch { return null; }\n}\nfunction prepare(payload) {\n  const p = payload?.body ?? payload ?? {};\n  let provider, message, id, instance, isAudio, fromMe, candidate;\n  if (p.EventType === 'messages' && p.message) {\n    provider = 'uazapi'; message = p.message; id = message.id; instance = p.instanceName;\n    isAudio = /^(?:audio|audiomessage)$/i.test(message.messageType ?? '');\n    fromMe = message.fromMe === true;\n    candidate = message.content?.directDownloadUrl; // User-supplied enrichment, not a guaranteed uazapi field.\n  } else if (p.event === 'MESSAGES_UPSERT' && p.data) {\n    provider = 'evolution'; message = p.data; id = message.key?.id; instance = p.instance;\n    isAudio = message.messageType === 'audioMessage' || !!message.message?.audioMessage;\n    fromMe = message.key?.fromMe === true;\n    candidate = message.message?.mediaUrl; // May require auth; only use after host and anonymous GET verification.\n  } else return { action: 'ignore', reason: 'unsupported_event' };\n  if (!isAudio || fromMe || typeof id !== 'string' || !id || typeof instance !== 'string' || !instance) return { action: 'ignore', reason: 'not_incoming_audio_or_missing_id' };\n  const key = `${provider}:${instance}:${id}`;\n  if (seen.whatsappAudioIds[key]) return { action: 'ignore', reason: 'duplicate_id', provider, messageId: id };\n  const url = directUrl(candidate);\n  if (!url) return { action: 'needs_direct_url', reason: 'Provide a short-lived, anonymous HTTPS direct-download URL on an approved host; base64, localhost and provider API URLs are not accepted.', provider, messageId: id };\n  // Small sequential-delivery cache. For concurrent or durable dedupe, use a data table with a unique message key.\n  const now = Date.now();\n  for (const [oldKey, when] of Object.entries(seen.whatsappAudioIds)) if (now - when > 7 * 86400000) delete seen.whatsappAudioIds[oldKey];\n  if (Object.keys(seen.whatsappAudioIds).length >= 1000) delete seen.whatsappAudioIds[Object.keys(seen.whatsappAudioIds)[0]];\n  seen.whatsappAudioIds[key] = now;\n  return { action: 'transcribe', provider, messageId: id, actorInput: { urls: [url], fileConcurrency: 1, language: 'pt' } };\n}\nreturn $input.all().map(({ json }) => ({ json: prepare(json) }));"
+      }
+    },
+    {
+      "id": "79300000-0000-4000-8000-000000000003",
+      "name": "Direct audio URL?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        440,
+        300
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "eligible",
+              "leftValue": "={{ $json.action }}",
+              "rightValue": "transcribe",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "79300000-0000-4000-8000-000000000004",
+      "name": "Transcribe single file",
+      "type": "@apify/n8n-nodes-apify.apify",
+      "typeVersion": 1,
+      "position": [
+        660,
+        180
+      ],
+      "parameters": {
+        "resource": "Actors",
+        "operation": "Run actor and get dataset",
+        "actorSource": "store",
+        "actorId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "3W2KtIbvHitDH8GCc",
+          "cachedResultName": "tidytools/audio-transcriber",
+          "cachedResultUrl": "https://console.apify.com/actors/3W2KtIbvHitDH8GCc/input"
+        },
+        "customBody": "={{ JSON.stringify($json.actorInput) }}",
+        "memory": 2048,
+        "maxTotalChargeUsd": 0.5
+      }
+    },
+    {
+      "id": "79300000-0000-4000-8000-000000000005",
+      "name": "Keep result fields",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        180
+      ],
+      "parameters": {
+        "jsCode": "// Actor returns one Dataset row for this one-file run. Preserve the free failure details.\nreturn $input.all().flatMap(({ json: row }) => {\n  if (row.success !== true && row.success !== false) return [];\n  return [{ json: { success: row.success, source: row.url ?? row.input ?? '', text: row.text ?? '', errorType: row.errorType ?? '', retryable: row.retryable === true, error: row.error ?? '' } }];\n});"
+      }
+    },
+    {
+      "id": "79300000-0000-4000-8000-000000000006",
+      "name": "Transcribed?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1100,
+        180
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "success",
+              "leftValue": "={{ $json.success }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "79300000-0000-4000-8000-000000000007",
+      "name": "Needs direct URL?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        660,
+        460
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "needs-url",
+              "leftValue": "={{ $json.action }}",
+              "rightValue": "needs_direct_url",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "79300000-0000-4000-8000-000000000008",
+      "name": "Success — local output",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1320,
+        100
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "79300000-0000-4000-8000-000000000009",
+      "name": "Free error — local output",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1320,
+        280
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "79300000-0000-4000-8000-000000000010",
+      "name": "Provide short-lived direct URL",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        880,
+        420
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "79300000-0000-4000-8000-000000000011",
+      "name": "Ignored",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        880,
+        600
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "79300000-0000-4000-8000-000000000012",
+      "name": "Setup (PT-BR)",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -420,
+        -220
+      ],
+      "parameters": {
+        "color": 1,
+        "width": 680,
+        "height": 900,
+        "content": "## Exemplo — áudio de WhatsApp → transcrição única\n\nExemplo para adaptar aos campos da SUA versão de uazapiGO ou Evolution; não é plug-and-play. Webhook responde 200 imediatamente e o processamento continua depois. Não publique nem ative antes de configurar autenticação do Webhook (Header Auth; no provedor ou proxy de entrada) e a credencial Apify local. Nunca inclua tokens ou áudio/base64 no JSON compartilhado. Desative o armazenamento de dados de execuções com payload sensível conforme sua política.\n\n**Mapeamentos de exemplo:** uazapiGO: `EventType=messages`, `message.id`, `message.messageType`, `message.fromMe`; `message.content.directDownloadUrl` é um campo de enriquecimento que VOCÊ precisa fornecer. Evolution: `event=MESSAGES_UPSERT`, `data.key.id`, `data.key.fromMe`, `data.messageType` ou `data.message.audioMessage`; `data.message.mediaUrl` só serve se for download público. Verifique no payload da sua versão. Não use a URL CDN criptografada do WhatsApp.\n\nEdite `PUBLIC_HOSTS` no Code node com os hosts HTTPS que você testou com GET anônimo; o `media.example.org` é apenas placeholder. URL localhost, base64, endpoint da API com autenticação, campo ausente ou host não aprovado → **Provide short-lived direct URL**, zero chamadas ao Actor. Faça o upload temporário em armazenamento seu com link curto e acesso anônimo ou adapte a etapa de mídia; não exponha dados privados por tempo indefinido. O teste de formato/host não comprova que a URL é acessível: teste download anônimo antes de ativar.\n\nInstale `@apify/n8n-nodes-apify`; selecione sua credencial no node Apify. Entrada: `{\"urls\":[url],\"fileConcurrency\":1,\"language\":\"pt\"}`. Espanhol: troque `language: 'pt'` por `language: 'es'` no Code node. O Actor cobra US$0.006 por minuto iniciado de áudio transcrito; arquivos que falham geram linha gratuita. URL deve baixar diretamente sem cabeçalho de autorização. Saídas: sucesso, erro gratuito (`errorType`, `retryable`, `text`) e URL necessária. Nenhuma resposta ao WhatsApp é enviada; se adicionar uma, configure SUA credencial do provedor localmente no n8n.\n\nA deduplicação em static data é pequena e funciona para entregas sequenciais publicadas; não garante exclusão atômica em execuções simultâneas nem durante testes. Para volume ou garantia forte, troque por Data Table com chave única de instância+ID. Validação local de JSON e payloads fictícios apenas; importação n8n, webhook real, URL pública e execução Apify ainda não verificados. Veja o README para uazapi, Evolution e WAHA. A publicação deste arquivo no GitHub não significa que foi submetido ao Creator Portal."
+      }
+    }
+  ],
+  "connections": {
+    "WhatsApp webhook": {
+      "main": [
+        [
+          {
+            "node": "Prepare one audio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare one audio": {
+      "main": [
+        [
+          {
+            "node": "Direct audio URL?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Direct audio URL?": {
+      "main": [
+        [
+          {
+            "node": "Transcribe single file",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Needs direct URL?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcribe single file": {
+      "main": [
+        [
+          {
+            "node": "Keep result fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Keep result fields": {
+      "main": [
+        [
+          {
+            "node": "Transcribed?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcribed?": {
+      "main": [
+        [
+          {
+            "node": "Success — local output",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Free error — local output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Needs direct URL?": {
+      "main": [
+        [
+          {
+            "node": "Provide short-lived direct URL",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Ignored",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": [],
+  "pinData": {}
+}

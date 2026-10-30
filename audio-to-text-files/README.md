@@ -17,6 +17,7 @@ Convert audio files to text: paste direct MP3, WAV, M4A, OGG or FLAC links or up
 | Audio minute | $6.00 |
 | Audio minute with speaker labels | $15.00 |
 | AI summary and chapters | $10.00 |
+| Podcast content pack | $100.00 |
 | Translated subtitles (per minute and language) | $2.00 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.
@@ -27,6 +28,7 @@ This is the Actor's prefilled example input. All other fields have defaults; the
 
 ```json
 {
+  "contentPackSubtitleLanguages": [],
   "urls": [
     "https://webcapture-api.yukailin.workers.dev/samples/speech-sample.wav"
   ],

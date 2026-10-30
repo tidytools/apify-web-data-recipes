@@ -28,6 +28,7 @@ This is the Actor's prefilled example input. All other fields have defaults; the
   "urls": [
     "https://docs.apify.com/academy"
   ],
+  "maxPages": 10,
   "requestHeaders": {},
   "removeBoilerplate": true
 }

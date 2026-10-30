@@ -1,4 +1,4 @@
-// YouTube Video Transcript - Bulk Captions with Timestamps: run the Actor on Apify and print the results.
+// YouTube to Text - Bulk YouTube Transcripts with Timestamps: run the Actor on Apify and print the results.
 // Store page: https://apify.com/tidytools/youtube-video-transcript
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)

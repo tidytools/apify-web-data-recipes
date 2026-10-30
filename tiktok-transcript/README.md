@@ -1,4 +1,4 @@
-# TikTok Transcript - Video to Text with Timestamps
+# TikTok to Text - TikTok Video Transcript with Timestamps
 
 Transcribe public TikTok video speech to text with timestamped segments and optional SRT/VTT subtitles. One row per video; failed, private, silent and non-TikTok links are free. Audio billed by the minute.
 
@@ -8,7 +8,7 @@ Transcribe public TikTok video speech to text with timestamped segments and opti
 
 ## Use case
 
-Paste public TikTok video links and receive one dataset row per video with the spoken words, timed `segments`, detected `language`, and `billedMinutes`. SRT and VTT subtitles are saved when timing is available. The Actor transcribes the video's **original sound track**; it does not copy TikTok captions or use licensed music.
+Turn public TikTok videos to text: each video produces one TikTok transcript row with spoken words, timed `segments`, detected `language`, and `billedMinutes`. SRT and VTT subtitles are saved when timing is available. The Actor transcribes the video's **original sound track**; it does not copy TikTok captions or use licensed music.
 
 ## Price (pay per event, Apify Free plan)
 
@@ -17,6 +17,7 @@ Paste public TikTok video links and receive one dataset row per video with the s
 | Audio minute | $6.00 |
 | Audio minute with speaker labels | $15.00 |
 | AI summary and chapters | $10.00 |
+| Podcast content pack | $100.00 |
 | Translated subtitles (per minute and language) | $2.00 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.
@@ -27,6 +28,7 @@ This is the Actor's prefilled example input. All other fields have defaults; the
 
 ```json
 {
+  "contentPackSubtitleLanguages": [],
   "urls": [
     "https://www.tiktok.com/@nasa/video/7665075736742530317",
     "https://www.tiktok.com/@zachking/video/7652362186873916686"

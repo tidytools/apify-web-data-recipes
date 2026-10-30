@@ -1,0 +1,443 @@
+{
+  "name": "Turn Google Maps results or a domain list into verified, enriched sales leads in Google Sheets (Apify)",
+  "nodes": [
+    {
+      "id": "3f7b2c10-9a4e-4d61-b8c2-5e0a1d360001",
+      "name": "Start",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        300
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "3f7b2c10-9a4e-4d61-b8c2-5e0a1d360002",
+      "name": "Lead list settings",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        220,
+        300
+      ],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "s1",
+              "name": "mapsDatasetId",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "id": "s2",
+              "name": "websiteColumn",
+              "type": "string",
+              "value": "Website"
+            },
+            {
+              "id": "s3",
+              "name": "maxRowsPerRun",
+              "type": "number",
+              "value": 500
+            },
+            {
+              "id": "s4",
+              "name": "dedupeName",
+              "type": "string",
+              "value": "my-lead-list"
+            },
+            {
+              "id": "s5",
+              "name": "emailsToCheck",
+              "type": "string",
+              "value": "emails"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "3f7b2c10-9a4e-4d61-b8c2-5e0a1d360003",
+      "name": "Read the domain sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        440,
+        300
+      ],
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "mode": "url",
+          "value": ""
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "3f7b2c10-9a4e-4d61-b8c2-5e0a1d360004",
+      "name": "Websites to read",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        660,
+        300
+      ],
+      "parameters": {
+        "jsCode": "// Input for the email extractor: a Google Maps run's dataset (if mapsDatasetId is set) or the sheet's websites.\n// requiredContact \"email\": only websites where an email is found are charged.\nconst s = $('Lead list settings').first().json;\nconst common = { requiredContact: 'email', dedupeStoreName: s.dedupeName, maxPagesPerSite: 5 };\nconst mapsId = String(s.mapsDatasetId ?? '').trim();\nif (mapsId) return [{ json: { ceBody: { datasetId: mapsId, ...common } } }];\nconst rows = [];\nfor (const { json: r } of $('Read the domain sheet').all()) {\n  const website = String(r[s.websiteColumn] ?? '').trim();\n  if (!website) continue;\n  rows.push({ row_number: r.row_number, website });\n  if (rows.length >= s.maxRowsPerRun) break;\n}\nif (!rows.length) return [];\nreturn [{ json: { ceBody: { rows, datasetField: 'website', rowIdField: 'row_number', ...common } } }];"
+      }
+    },
+    {
+      "id": "3f7b2c10-9a4e-4d61-b8c2-5e0a1d360005",
+      "name": "Find emails on the websites",
+      "type": "@apify/n8n-nodes-apify.apify",
+      "typeVersion": 1,
+      "position": [
+        880,
+        300
+      ],
+      "parameters": {
+        "resource": "Actors",
+        "operation": "Run actor",
+        "actorSource": "store",
+        "actorId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "kFhBWk7SCYTakF6Fn",
+          "cachedResultName": "tidytools/website-contact-extractor",
+          "cachedResultUrl": "https://console.apify.com/actors/kFhBWk7SCYTakF6Fn/input"
+        },
+        "customBody": "={{ JSON.stringify($json.ceBody, null, 2) }}",
+        "waitForFinish": true,
+        "memory": 512,
+        "maxTotalChargeUsd": 1
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "c1",
+              "leftValue": "={{ !/processed, 0 charged/.test($json.statusMessage || '') }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "3f7b2c10-9a4e-4d61-b8c2-5e0a1d360010",
+      "name": "Any email found?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1100,
+        300
+      ]
+    },
+    {
+      "id": "3f7b2c10-9a4e-4d61-b8c2-5e0a1d360006",
+      "name": "Verify the emails",
+      "type": "@apify/n8n-nodes-apify.apify",
+      "typeVersion": 1,
+      "position": [
+        1320,
+        300
+      ],
+      "parameters": {
+        "resource": "Actors",
+        "operation": "Run actor",
+        "actorSource": "store",
+        "actorId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "haMAC5lJnzZmQcyqh",
+          "cachedResultName": "tidytools/bulk-email-validator",
+          "cachedResultUrl": "https://console.apify.com/actors/haMAC5lJnzZmQcyqh/input"
+        },
+        "customBody": "={\n  \"datasetId\": \"{{ $json.defaultDatasetId }}\",\n  \"datasetField\": \"{{ $('Lead list settings').first().json.emailsToCheck }}\"\n}",
+        "waitForFinish": true,
+        "memory": 256,
+        "maxTotalChargeUsd": 0.5
+      }
+    },
+    {
+      "id": "3f7b2c10-9a4e-4d61-b8c2-5e0a1d360009",
+      "name": "Add company data",
+      "type": "@apify/n8n-nodes-apify.apify",
+      "typeVersion": 1,
+      "position": [
+        1540,
+        300
+      ],
+      "parameters": {
+        "resource": "Actors",
+        "operation": "Run actor and get dataset",
+        "actorSource": "store",
+        "actorId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "RcPuCbK3BPevD8Uau",
+          "cachedResultName": "tidytools/company-website-enrichment",
+          "cachedResultUrl": "https://console.apify.com/actors/RcPuCbK3BPevD8Uau/input"
+        },
+        "customBody": "={\n  \"datasetId\": \"{{ $json.defaultDatasetId }}\"\n}",
+        "memory": 512,
+        "maxTotalChargeUsd": 1
+      }
+    },
+    {
+      "id": "3f7b2c10-9a4e-4d61-b8c2-5e0a1d360007",
+      "name": "Ready-to-send rows",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1760,
+        300
+      ],
+      "parameters": {
+        "jsCode": "// One sheet row per checked address, best first: deliverable (1), risky (2), undeliverable (3), not checked (4);\n// within each, the business's best email first, then the higher score. Rows without an address are skipped.\n// Company columns come from the enrichment step (one charge per company; empty when the website could not be read).\nconst rows = $input.all().map(({ json: r }) => r).filter((r) => String(r.email ?? '').includes('@'));\nrows.sort((a, b) => (a.sendPriority ?? 4) - (b.sendPriority ?? 4)\n  || Number(b.isBestEmail === true) - Number(a.isBestEmail === true)\n  || (b.score ?? -1) - (a.score ?? -1));\nconst social = (r, k) => (r.socialProfiles ?? {})[k] ?? '';\nconst checkedAt = $now.toISO();\nreturn rows.map((r) => ({ json: {\n  'Email': r.email,\n  'Send priority': r.sendPriority ?? 4,\n  'Send status': r.sendStatus ?? 'not_checked',\n  'Business': r.businessName ?? r.name ?? '',\n  'Website': r.website ?? r.url ?? '',\n  'Place ID': r.placeId ?? '',\n  'Source row': r.rowId ?? '',\n  'Best email of the business': r.isBestEmail === true ? 'yes' : 'no',\n  'Score': r.score ?? '',\n  'Role address': r.role ? 'yes' : 'no',\n  'What the company does': r.description ?? '',\n  'Industry': r.industry ?? '',\n  'B2B or B2C': r.businessModel ?? '',\n  'Employees': r.companySize ?? '',\n  'Country': r.countryGuess ?? '',\n  'Phone': r.primaryPhone ?? '',\n  'LinkedIn': social(r, 'linkedin'),\n  'Facebook': social(r, 'facebook'),\n  'Instagram': social(r, 'instagram'),\n  'Company data note': r.error ?? r.aiError ?? '',\n  'Checked at': checkedAt,\n} }));"
+      }
+    },
+    {
+      "id": "3f7b2c10-9a4e-4d61-b8c2-5e0a1d360008",
+      "name": "Write the Ready to send tab",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1980,
+        300
+      ],
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "url",
+          "value": ""
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "Email"
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "3f7b2c10-9a4e-4d61-b8c2-5e0a1d360020",
+      "name": "Sticky Note - Overview",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -520,
+        0
+      ],
+      "parameters": {
+        "color": 1,
+        "width": 460,
+        "height": 1180,
+        "content": "## Google Maps leads to verified, enriched sales leads\n\n**Who it's for:** sales and agency teams who prospect local businesses from Google Maps (or a list of company websites) and need a lead list they can segment and import without bouncing.\n\n### How it works\n1. Takes the websites from a **Google Maps scraper run** (its dataset ID) or a **sheet of domains**.\n2. **Google Maps Email Extractor** (tidytools/website-contact-extractor) reads each business's own website (robots.txt respected) and returns its emails. Only websites with an email are charged. If no website has an email, the run stops there.\n3. **Bulk Email Validator** (tidytools/bulk-email-validator) checks every address: syntax, MX records, disposable, role, typos. No mail server is contacted.\n4. **Lead & Company Enrichment** (tidytools/company-website-enrichment) adds what the company does, industry, B2B/B2C, employees when stated, and company social profiles; one charge per company.\n5. Writes a ranked **Ready to send** tab (deliverable, risky, undeliverable) with business name, website and place ID.\n\n### Setup\n1. Add your Apify credential to the three Apify nodes and your Google credential to both Sheets nodes.\n2. In **Lead list settings**, paste a Google Maps run's dataset ID into `mapsDatasetId` (then disable **Read the domain sheet**), or set your website column and pick the domain sheet.\n3. Add a `Ready to send` tab with the header `Email`, `Send priority`, `Send status`, `Business`, `Website`, `Place ID`, `Source row`, `Best email of the business`, `Score`, `Role address`, `What the company does`, `Industry`, `B2B or B2C`, `Employees`, `Country`, `Phone`, `LinkedIn`, `Facebook`, `Instagram`, `Company data note`, `Checked at` and pick it in the last node.\n4. Click **Execute workflow**.\n\n### Cost\n$2 per 1,000 websites with an email, $0.50 per 1,000 addresses, $6 per 1,000 companies (Apify pay-per-event, Oct 2026). Our 20-website test: about $0.17. Caps: $1, $0.50, $1."
+      }
+    },
+    {
+      "id": "3f7b2c10-9a4e-4d61-b8c2-5e0a1d360021",
+      "name": "Sticky Note - Websites",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        160,
+        140
+      ],
+      "parameters": {
+        "color": 7,
+        "width": 640,
+        "height": 320,
+        "content": "## 1. Websites to read\nA Google Maps run's dataset ID, or the website column of your sheet (up to `maxRowsPerRun`)."
+      }
+    },
+    {
+      "id": "3f7b2c10-9a4e-4d61-b8c2-5e0a1d360022",
+      "name": "Sticky Note - Find and verify",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        840,
+        140
+      ],
+      "parameters": {
+        "color": 7,
+        "width": 880,
+        "height": 320,
+        "content": "## 2. Find, verify and enrich\nThe extractor's dataset goes into the validator, the validator's into the enrichment. Set `emailsToCheck` to `bestEmail` to check one address per business."
+      }
+    },
+    {
+      "id": "3f7b2c10-9a4e-4d61-b8c2-5e0a1d360023",
+      "name": "Sticky Note - Ready to send",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1740,
+        140
+      ],
+      "parameters": {
+        "color": 7,
+        "width": 440,
+        "height": 320,
+        "content": "## 3. Ready to send\nRanked rows, matched on `Email`, so re-runs update instead of duplicating."
+      }
+    },
+    {
+      "id": "3f7b2c10-9a4e-4d61-b8c2-5e0a1d360024",
+      "name": "Sticky Note - Deliverable",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1520,
+        500
+      ],
+      "parameters": {
+        "color": 7,
+        "width": 480,
+        "height": 220,
+        "content": "### What \"deliverable\" means\nThe domain accepts mail and nothing looks wrong. Mailboxes are not probed, so some addresses can still bounce. Follow anti-spam and data-protection rules when you send."
+      }
+    }
+  ],
+  "connections": {
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "Lead list settings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lead list settings": {
+      "main": [
+        [
+          {
+            "node": "Read the domain sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read the domain sheet": {
+      "main": [
+        [
+          {
+            "node": "Websites to read",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Websites to read": {
+      "main": [
+        [
+          {
+            "node": "Find emails on the websites",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find emails on the websites": {
+      "main": [
+        [
+          {
+            "node": "Any email found?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verify the emails": {
+      "main": [
+        [
+          {
+            "node": "Add company data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add company data": {
+      "main": [
+        [
+          {
+            "node": "Ready-to-send rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ready-to-send rows": {
+      "main": [
+        [
+          {
+            "node": "Write the Ready to send tab",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Any email found?": {
+      "main": [
+        [
+          {
+            "node": "Verify the emails",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}

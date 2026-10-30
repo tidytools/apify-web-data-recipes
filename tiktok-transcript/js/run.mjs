@@ -1,4 +1,4 @@
-// TikTok Transcript - Video to Text with Timestamps: run the Actor on Apify and print the results.
+// TikTok to Text - TikTok Video Transcript with Timestamps: run the Actor on Apify and print the results.
 // Store page: https://apify.com/tidytools/tiktok-transcript
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
@@ -10,6 +10,7 @@ const ACTOR_ID = 'tidytools/tiktok-transcript';
 const MAX_TOTAL_CHARGE_USD = 1.0; // cost cap: the run stops charging at this amount
 
 const input = {
+    "contentPackSubtitleLanguages": [],
     "urls": [
         "https://www.tiktok.com/@nasa/video/7665075736742530317",
         "https://www.tiktok.com/@zachking/video/7652362186873916686"

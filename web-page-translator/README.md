@@ -8,7 +8,7 @@ Translate texts, JSON and datasets, SRT/VTT subtitles and web pages into many la
 
 ## Use case
 
-**Bulk AI translator for texts, JSON, datasets, SRT/VTT subtitles and web pages: several languages at once, glossary, Markdown and timestamps kept. $1.50 per 1M characters, no API key.**
+**Bulk AI translator for texts, JSON, datasets, SRT/VTT/ASS/SSA/LRC subtitles and web pages: several languages at once, glossary, Markdown and timestamps kept. $1.50 per 1M characters, no API key.**
 
 ## Price (pay per event, Apify Free plan)
 

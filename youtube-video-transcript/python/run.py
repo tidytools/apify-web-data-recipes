@@ -1,4 +1,4 @@
-"""YouTube Video Transcript - Bulk Captions with Timestamps: run the Actor on Apify and print the results.
+"""YouTube to Text - Bulk YouTube Transcripts with Timestamps: run the Actor on Apify and print the results.
 
 Store page: https://apify.com/tidytools/youtube-video-transcript
 Setup:      pip install apify-client

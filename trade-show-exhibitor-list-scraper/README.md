@@ -1,6 +1,6 @@
-# Trade Show Exhibitors Scraper - Exhibitor List, Booth, Website
+# Exhibitor List Scraper - Trade Show Exhibitors, Expo Exhibitors
 
-Exhibitor lists from trade show and expo directories: company, booth, hall, categories, country, website, description, logo. a2z (Personify) and ExpoFP natively; other sites via AI. Company data only.
+Export trade show exhibitors and expo exhibitors from public Map Your Show, a2z/Personify and ExpoFP directories. Recent indexed shows can return a clearly marked 10-company preview if the live list fails. Company data only.
 
 - Apify Store: [https://apify.com/tidytools/trade-show-exhibitor-list-scraper](https://apify.com/tidytools/trade-show-exhibitor-list-scraper)
 - Actor ID: `tidytools/trade-show-exhibitor-list-scraper` (`kF9CLDGcwUS4BehnG`)
@@ -8,7 +8,7 @@ Exhibitor lists from trade show and expo directories: company, booth, hall, cate
 
 ## Use case
 
-It turns **trade show exhibitor directories into a clean company list**: one row per exhibiting company with **name, booth, hall, categories, country, city, website, description, logo and profile link**, plus the event name and dates. Paste the directory URL, or just the event's own website: the Actor finds the directory platform behind it and reads the **public data the directory page itself loads**. No login, no browser for the supported platforms, and **company-level data only**.
+**Find company exhibitors from public trade show directories**: it turns a show's exhibitor directory into a clean company list — one row per exhibiting company with **name, booth, hall, website, country** (plus categories, city, description, logo and profile link when the directory publishes them), together with the event name and dates. Exhibitor directories on **a2z / Personify**, **ExpoFP**, **Map Your Show**, public **Swapcard** exhibitor pages, and company/booth tables are read directly; other directory pages use **AI extraction**. Paste the directory URL, or just the event's own website: the Actor finds the directory platform behind it and reads the **public data the directory page itself loads**. No login, no browser for the supported platforms, and **company data only**.
 
 ## Price (pay per event, Apify Free plan)
 

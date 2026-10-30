@@ -1,0 +1,299 @@
+{
+  "name": "Add missing emails to a Google Maps or places dataset, keeping every place ID (Apify)",
+  "nodes": [
+    {
+      "id": "9d4f7b12-3a6e-4c8b-b2d1-7e5a0c3f0001",
+      "name": "Start",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        300
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "9d4f7b12-3a6e-4c8b-b2d1-7e5a0c3f0002",
+      "name": "Dataset settings",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        220,
+        300
+      ],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d1",
+              "name": "datasetId",
+              "type": "string",
+              "value": "PASTE_THE_DATASET_ID_OF_YOUR_GOOGLE_MAPS_OR_PLACES_RUN"
+            },
+            {
+              "id": "d3",
+              "name": "websiteField",
+              "type": "string",
+              "value": "website"
+            },
+            {
+              "id": "d2",
+              "name": "dedupeName",
+              "type": "string",
+              "value": "my-lead-lists"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "9d4f7b12-3a6e-4c8b-b2d1-7e5a0c3f0003",
+      "name": "Find emails for places without one",
+      "type": "@apify/n8n-nodes-apify.apify",
+      "typeVersion": 1,
+      "position": [
+        440,
+        300
+      ],
+      "parameters": {
+        "resource": "Actors",
+        "operation": "Run actor and get dataset",
+        "actorSource": "store",
+        "actorId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "kFhBWk7SCYTakF6Fn",
+          "cachedResultName": "tidytools/website-contact-extractor",
+          "cachedResultUrl": "https://console.apify.com/actors/kFhBWk7SCYTakF6Fn/input"
+        },
+        "customBody": "={\n  \"datasetId\": \"{{ $json.datasetId }}\",\n  \"datasetField\": \"{{ $json.websiteField }}\",\n  \"datasetKeepFields\": [\"title\", \"name\", \"placeId\", \"id\", \"categoryName\", \"category\", \"address\", \"city\", \"phone\", \"url\"],\n  \"onlyMissingEmail\": true,\n  \"requiredContact\": \"email\",\n  \"dedupeStoreName\": \"{{ $json.dedupeName }}\",\n  \"maxPagesPerSite\": 5\n}",
+        "memory": 512,
+        "maxTotalChargeUsd": 1
+      }
+    },
+    {
+      "id": "9d4f7b12-3a6e-4c8b-b2d1-7e5a0c3f0004",
+      "name": "Lead row",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        660,
+        300
+      ],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "r1",
+              "name": "Place ID",
+              "type": "string",
+              "value": "={{ $json.rowId ?? '' }}"
+            },
+            {
+              "id": "r2",
+              "name": "Business",
+              "type": "string",
+              "value": "={{ $json.source?.title ?? $json.source?.name ?? $json.organizationName ?? '' }}"
+            },
+            {
+              "id": "r3",
+              "name": "Category",
+              "type": "string",
+              "value": "={{ $json.source?.categoryName ?? $json.source?.category ?? '' }}"
+            },
+            {
+              "id": "r4",
+              "name": "Address",
+              "type": "string",
+              "value": "={{ $json.source?.address ?? '' }}"
+            },
+            {
+              "id": "r5",
+              "name": "Website",
+              "type": "string",
+              "value": "={{ $json.input ?? '' }}"
+            },
+            {
+              "id": "r6",
+              "name": "Email",
+              "type": "string",
+              "value": "={{ $json.fill?.email ?? $json.fill?.emails ?? (Array.isArray($json.originalEmail) ? $json.originalEmail.join(', ') : ($json.originalEmail ?? '')) }}"
+            },
+            {
+              "id": "r7",
+              "name": "Email source",
+              "type": "string",
+              "value": "={{ $json.emailStatus === 'already_had_email' ? 'original data' : ($json.emailStatus === 'new_email' ? 'website' : '') }}"
+            },
+            {
+              "id": "r8",
+              "name": "Phone",
+              "type": "string",
+              "value": "={{ $json.source?.phone || $json.primaryPhone || '' }}"
+            },
+            {
+              "id": "r9",
+              "name": "Status",
+              "type": "string",
+              "value": "={{ $json.emailStatus === 'new_email' ? 'email found' : $json.emailStatus === 'no_email_found' ? 'no email on the website' : $json.emailStatus === 'already_had_email' ? 'had an email' : ($json.retryable ? 'retry: ' + $json.errorType : 'not read: ' + ($json.errorType ?? '')) }}"
+            },
+            {
+              "id": "r10",
+              "name": "Charged",
+              "type": "boolean",
+              "value": "={{ $json.charged === true }}"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "9d4f7b12-3a6e-4c8b-b2d1-7e5a0c3f0005",
+      "name": "Append to Google Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        880,
+        300
+      ],
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "url",
+          "value": ""
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {}
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "9d4f7b12-3a6e-4c8b-b2d1-7e5a0c3f0020",
+      "name": "Sticky Note - Overview",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -520,
+        0
+      ],
+      "parameters": {
+        "color": 1,
+        "width": 460,
+        "height": 940,
+        "content": "## Add the missing emails to a dataset you already have\n\n**Who it's for:** you already ran a Google Maps scraper, Places Database or a directory scraper on Apify, and most places have a website but no email.\n\n### How it works\n1. **Email Extractor** (tidytools/website-contact-extractor) reads the dataset by its ID. Places that **already have an email** are not read and not charged (`onlyMissingEmail`). Websites where no email is found are not charged (`requiredContact: email`; set it to `any` to also pay for phone-only results).\n2. Every other website is read once (home, contact, imprint, about pages). Chain branches that share one website are read and charged once, but **each place keeps its own Place ID** and gets its own row.\n3. One row per place goes to Google Sheets: your original email is kept; a new email is added only where there was none.\n\n### Failed websites\nTimeouts and blocked sites are listed in the run's key-value store record **RETRY**. Its `input` is a ready-made input: start the Actor with it (Console: Input > JSON) to try only those places again.\n\n### Dedupe across runs\nWith the same **dedupe name**, a website read in an earlier run (90 days) is returned again without being read or charged.\n\n### Setup\n1. Add your Apify credential to the Apify node and your Google credential to the Sheets node.\n2. In **Dataset settings** paste the **dataset ID** of your scraper run (Apify Console > the run > Storage > Dataset ID). Keep `websiteField` = `website` for Google Maps and Places Database; change it if your scraper names the field differently.\n3. Pick your sheet and click **Execute workflow**.\n\n### Cost\n$2 per 1,000 websites where an email, phone or social profile is found. Places with an email already, places without a website, social pages, unreachable sites and reused websites are free (Apify pay-per-event, Oct 2026). $1 cap on the node; raise it for bigger datasets."
+      }
+    },
+    {
+      "id": "87e0383e-5367-419a-b038-41e774c268ca",
+      "name": "Sticky Note - Dataset",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        160,
+        140
+      ],
+      "parameters": {
+        "content": "## 1. Your dataset\nPaste the dataset ID of your scraper run. `websiteField` names the field that holds the website.",
+        "height": 320,
+        "width": 220,
+        "color": 7
+      }
+    },
+    {
+      "id": "909f1c33-6380-4090-88d0-98044a5979e5",
+      "name": "Sticky Note - Find",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        400,
+        140
+      ],
+      "parameters": {
+        "content": "## 2. Find the emails\nPlaces that already have an email are skipped (free). One read per website, one result per place.",
+        "height": 320,
+        "width": 200,
+        "color": 7
+      }
+    },
+    {
+      "id": "55988d25-2d0c-4927-bbac-799d13f42a31",
+      "name": "Sticky Note - Rows",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        620,
+        140
+      ],
+      "parameters": {
+        "content": "## 3. One row per place\nOriginal email kept, new email only where there was none. Failed websites show a status.",
+        "height": 320,
+        "width": 420,
+        "color": 7
+      }
+    }
+  ],
+  "connections": {
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "Dataset settings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Dataset settings": {
+      "main": [
+        [
+          {
+            "node": "Find emails for places without one",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find emails for places without one": {
+      "main": [
+        [
+          {
+            "node": "Lead row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lead row": {
+      "main": [
+        [
+          {
+            "node": "Append to Google Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}

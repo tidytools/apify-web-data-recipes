@@ -10,6 +10,7 @@ const ACTOR_ID = 'tidytools/video-transcript-files';
 const MAX_TOTAL_CHARGE_USD = 1.0; // cost cap: the run stops charging at this amount
 
 const input = {
+    "contentPackSubtitleLanguages": [],
     "urls": [
         "https://archive.org/download/gerald-ford-inaugural-address-august-9-1974-720p/Gerald%20Ford%20inaugural%20address_%20August%209%2C%201974%20%28720p%29.mp4"
     ],

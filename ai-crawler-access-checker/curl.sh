@@ -11,9 +11,7 @@ curl -sS -X POST "https://api.apify.com/v2/acts/tidytools~ai-crawler-access-chec
   -d @- <<'JSON'
 {
   "websites": [
-    "https://www.nytimes.com",
-    "python.org",
-    "docs.anthropic.com"
+    "https://www.nytimes.com"
   ]
 }
 JSON

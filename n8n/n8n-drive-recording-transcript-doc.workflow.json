@@ -1,0 +1,660 @@
+{
+  "name": "Transcribe Google Drive recordings to Google Docs without the 25 MB Whisper limit (Apify)",
+  "nodes": [
+    {
+      "id": "a7e31c52-6d0b-4f1e-9c3a-2b8d4e6f0001",
+      "name": "New recording in Drive",
+      "type": "n8n-nodes-base.googleDriveTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        300
+      ],
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "triggerOn": "specificFolder",
+        "folderToWatch": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "event": "fileCreated",
+        "options": {}
+      }
+    },
+    {
+      "id": "a7e31c52-6d0b-4f1e-9c3a-2b8d4e6f0002",
+      "name": "Only audio and video files",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        220,
+        300
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f1",
+              "leftValue": "={{ $json.mimeType }}",
+              "rightValue": "audio/",
+              "operator": {
+                "type": "string",
+                "operation": "startsWith"
+              }
+            },
+            {
+              "id": "f2",
+              "leftValue": "={{ $json.mimeType }}",
+              "rightValue": "video/",
+              "operator": {
+                "type": "string",
+                "operation": "startsWith"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "a7e31c52-6d0b-4f1e-9c3a-2b8d4e6f0003",
+      "name": "Transcript settings",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        440,
+        300
+      ],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "s1",
+              "name": "language",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "id": "s2",
+              "name": "speakerLabels",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "id": "s3",
+              "name": "summarize",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "id": "s4",
+              "name": "vocabulary",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "id": "s5",
+              "name": "maxMinutesPerFile",
+              "type": "number",
+              "value": 240
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "a7e31c52-6d0b-4f1e-9c3a-2b8d4e6f0005",
+      "name": "Transcribe (no 25 MB limit)",
+      "type": "@apify/n8n-nodes-apify.apify",
+      "typeVersion": 1,
+      "position": [
+        1540,
+        300
+      ],
+      "parameters": {
+        "resource": "Actors",
+        "operation": "Run actor and get dataset",
+        "actorSource": "store",
+        "actorId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "3W2KtIbvHitDH8GCc",
+          "cachedResultName": "tidytools/audio-transcriber",
+          "cachedResultUrl": "https://console.apify.com/actors/3W2KtIbvHitDH8GCc/input"
+        },
+        "customBody": "={\n  \"urls\": [\"https://drive.google.com/file/d/{{ $('New recording in Drive').item.json.id }}/view\"],\n  \"sourceFileId\": \"gdrive:{{ $('New recording in Drive').item.json.id }}\",\n  \"resumeStore\": \"n8n-drive-recordings\",\n  \"language\": \"{{ $('Transcript settings').item.json.language }}\",\n  \"speakerLabels\": {{ $('Transcript settings').item.json.speakerLabels }},\n  \"summarize\": {{ $('Transcript settings').item.json.summarize }},\n  \"vocabulary\": {{ JSON.stringify($('Transcript settings').item.json.vocabulary) }},\n  \"maxMinutesPerFile\": {{ $('Transcript settings').item.json.maxMinutesPerFile }},\n  \"saveSubtitles\": true,\n  \"saveTranscriptFiles\": true\n}",
+        "memory": 1024,
+        "maxTotalChargeUsd": 2
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "id": "a7e31c52-6d0b-4f1e-9c3a-2b8d4e6f0006",
+      "name": "Transcribed?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2200,
+        300
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c1",
+              "leftValue": "={{ $('Transcribe (no 25 MB limit)').item.json.success }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "a7e31c52-6d0b-4f1e-9c3a-2b8d4e6f0007",
+      "name": "Transcript text",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2420,
+        200
+      ],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "t1",
+              "name": "docTitle",
+              "type": "string",
+              "value": "={{ 'Transcript - ' + $('New recording in Drive').item.json.name }}"
+            },
+            {
+              "id": "t2",
+              "name": "docText",
+              "type": "string",
+              "value": "={{ (() => {\n  const j = $('Transcribe (no 25 MB limit)').item.json;\n  const pad = (n) => String(n).padStart(2, '0');\n  const clock = (s) => { s = Math.floor(s || 0); const h = Math.floor(s / 3600), m = Math.floor(s / 60) % 60; return h ? `${h}:${pad(m)}:${pad(s % 60)}` : `${m}:${pad(s % 60)}`; };\n  const head = [\n    `Source: ${$('New recording in Drive').item.json.name}`,\n    `Source file ID: ${$('New recording in Drive').item.json.id}`,\n    `Apify run ID: ${j.runId || '-'}${j.reused ? ` (transcript reused from run ${j.reusedFromRunId}, not charged again)` : ''}`,\n    ($('Add temporary anyone-reader link').isExecuted ? ($('Remove the temporary link (always runs)').item.json.error ? 'Sharing: the temporary link could NOT be removed automatically - remove it in Drive (Share > General access)' : 'Sharing: temporary link removed after the run') : 'Sharing: file was already shared by link, left unchanged'),\n    `Length: ${clock(j.durationSeconds)} (${j.billedMinutes} min billed)`,\n    j.language ? `Language: ${j.language}` : '',\n    j.speakers ? `Speakers: ${j.speakers}` : '',\n    `Files: TXT ${j.txtUrl || '-'} | Markdown ${j.mdUrl || '-'} | SRT ${j.srtUrl || '-'}`,\n  ].filter(Boolean).join('\\n');\n  const chapters = (j.chapters || []).map((c) => `${c.start} ${c.title}`).join('\\n');\n  const summary = j.summary ? `\\n\\nSUMMARY\\n${j.summary}${chapters ? `\\n\\nCHAPTERS\\n${chapters}` : ''}` : '';\n  const paras = j.paragraphs || [];\n  const body = paras.length ? paras.map((p) => `${p.speaker != null ? `Speaker ${p.speaker} ` : ''}[${clock(p.start)}] ${p.text}`).join('\\n\\n') : (j.text || '');\n  return `${head}${summary}\\n\\nTRANSCRIPT\\n\\n${body}\\n`;\n})() }}"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "a7e31c52-6d0b-4f1e-9c3a-2b8d4e6f0008",
+      "name": "Create Google Doc",
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        2640,
+        200
+      ],
+      "parameters": {
+        "folderId": "default",
+        "title": "={{ $json.docTitle }}"
+      }
+    },
+    {
+      "id": "a7e31c52-6d0b-4f1e-9c3a-2b8d4e6f0009",
+      "name": "Write transcript into the Doc",
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        2860,
+        200
+      ],
+      "parameters": {
+        "operation": "update",
+        "documentURL": "={{ $json.id }}",
+        "actionsUi": {
+          "actionFields": [
+            {
+              "action": "insert",
+              "text": "={{ $('Transcript text').item.json.docText }}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "a7e31c52-6d0b-4f1e-9c3a-2b8d4e6f0010",
+      "name": "Not transcribed (not charged)",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2420,
+        440
+      ],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "n1",
+              "name": "file",
+              "type": "string",
+              "value": "={{ $('New recording in Drive').item.json.name }}"
+            },
+            {
+              "id": "n2",
+              "name": "reason",
+              "type": "string",
+              "value": "={{ ($('Transcribe (no 25 MB limit)').item.json.errorType ? $('Transcribe (no 25 MB limit)').item.json.errorType + ': ' : '') + ($('Transcribe (no 25 MB limit)').item.json.error || 'unknown error') }}"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "a7e31c52-6d0b-4f1e-9c3a-2b8d4e6f0020",
+      "name": "Sticky Note - Overview",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -540,
+        0
+      ],
+      "parameters": {
+        "color": 1,
+        "width": 480,
+        "height": 1000,
+        "content": "## Google Drive recording to transcript Google Doc (no 25 MB Whisper limit)\n\n**Who it's for:** teams that drop meeting, interview or lecture recordings into a Drive folder and want a searchable transcript Doc, without compressing or splitting the files. The OpenAI Whisper API rejects files over 25 MB; here only the file link is sent and an Apify Actor downloads the file (up to 2 GB, any length). No OpenAI key needed.\n\n### How it works\n1. A new audio or video file in the watched folder starts the flow.\n2. If the file has no \"anyone with the link\" access yet, a temporary view-only link is added so the Actor can download it.\n3. **tidytools/audio-transcriber** returns the text with timestamps, paragraphs and links to TXT, Markdown and SRT files.\n4. The temporary link is deleted right after the run, whether it succeeded or failed. Existing sharing is never changed.\n5. A Google Doc \"Transcript - <file name>\" is created with the details, the optional summary and the timestamped transcript.\n\n### Retries never pay twice\nThe run gets the Drive file id as `sourceFileId` and a `resumeStore`: if this execution fails after the transcript was made, running it again returns the saved transcript (not charged).\n\n### Cost (Apify pay-per-event, October 2026)\n$0.006 per audio minute (60 minutes = $0.36); speaker labels $0.015 per minute instead; AI summary $0.01 per file. Failed downloads and files without speech are free. Capped at $2 per run.\n\n### Setup\n1. Connect your Google Drive, Google Docs and Apify credentials.\n2. Pick the folder in **New recording in Drive**.\n3. Optional: language, speaker labels, summary and vocabulary in **Transcript settings**.\n\nIf Drive refuses to remove the temporary link, the Doc header says so; remove it by hand. Try a non-sensitive file first."
+      }
+    },
+    {
+      "id": "a7e31c52-6d0b-4f1e-9c3a-2b8d4e6f0021",
+      "name": "Sticky Note - Transcribe",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        620,
+        140
+      ],
+      "parameters": {
+        "color": 7,
+        "width": 1500,
+        "height": 420,
+        "content": "## 1. Check sharing, share temporarily, transcribe, clean up\nThe Actor needs a downloadable link. A link added here is removed again right after the run (success or failure); existing sharing is never touched. Recordings of several hours work; raise `maxMinutesPerFile` in the settings for longer ones."
+      }
+    },
+    {
+      "id": "a7e31c52-6d0b-4f1e-9c3a-2b8d4e6f0022",
+      "name": "Sticky Note - Doc",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2380,
+        40
+      ],
+      "parameters": {
+        "color": 7,
+        "width": 660,
+        "height": 320,
+        "content": "## 2. Transcript Google Doc\nTimestamped paragraphs (with Speaker 1, 2... when speaker labels are on). The Doc also links the TXT, Markdown and SRT files saved by the Actor."
+      }
+    },
+    {
+      "id": "a7e31c52-6d0b-4f1e-9c3a-2b8d4e6f0023",
+      "name": "Sticky Note - Failed",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2380,
+        400
+      ],
+      "parameters": {
+        "color": 7,
+        "width": 440,
+        "height": 220,
+        "content": "## Not transcribed\nDownload errors, unsupported files and recordings without speech end up here. They are not charged. Connect Slack or email if you want an alert."
+      }
+    },
+    {
+      "id": "a7e31c52-6d0b-4f1e-9c3a-2b8d4e6f0011",
+      "name": "List existing permissions",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        660,
+        300
+      ],
+      "parameters": {
+        "method": "GET",
+        "url": "=https://www.googleapis.com/drive/v3/files/{{ $('New recording in Drive').item.json.id }}/permissions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleDriveOAuth2Api",
+        "options": {},
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "fields",
+              "value": "permissions(id,type,role)"
+            },
+            {
+              "name": "pageSize",
+              "value": "100"
+            },
+            {
+              "name": "supportsAllDrives",
+              "value": "true"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "a7e31c52-6d0b-4f1e-9c3a-2b8d4e6f0012",
+      "name": "Already shared with anyone?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        880,
+        300
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "p1",
+              "leftValue": "={{ ($json.permissions || []).some(p => p.type === 'anyone') }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "a7e31c52-6d0b-4f1e-9c3a-2b8d4e6f0013",
+      "name": "Add temporary anyone-reader link",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1100,
+        400
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "=https://www.googleapis.com/drive/v3/files/{{ $('New recording in Drive').item.json.id }}/permissions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleDriveOAuth2Api",
+        "options": {},
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "supportsAllDrives",
+              "value": "true"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={ \"role\": \"reader\", \"type\": \"anyone\", \"allowFileDiscovery\": false }"
+      }
+    },
+    {
+      "id": "a7e31c52-6d0b-4f1e-9c3a-2b8d4e6f0014",
+      "name": "Link added by this flow?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1760,
+        300
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "q1",
+              "leftValue": "={{ $('Add temporary anyone-reader link').isExecuted }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "a7e31c52-6d0b-4f1e-9c3a-2b8d4e6f0015",
+      "name": "Remove the temporary link (always runs)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1980,
+        200
+      ],
+      "parameters": {
+        "method": "DELETE",
+        "url": "=https://www.googleapis.com/drive/v3/files/{{ $('New recording in Drive').item.json.id }}/permissions/{{ $('Add temporary anyone-reader link').item.json.id }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleDriveOAuth2Api",
+        "options": {},
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "supportsAllDrives",
+              "value": "true"
+            }
+          ]
+        }
+      },
+      "onError": "continueRegularOutput"
+    }
+  ],
+  "connections": {
+    "New recording in Drive": {
+      "main": [
+        [
+          {
+            "node": "Only audio and video files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Only audio and video files": {
+      "main": [
+        [
+          {
+            "node": "Transcript settings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcript settings": {
+      "main": [
+        [
+          {
+            "node": "List existing permissions",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcribe (no 25 MB limit)": {
+      "main": [
+        [
+          {
+            "node": "Link added by this flow?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcribed?": {
+      "main": [
+        [
+          {
+            "node": "Transcript text",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Not transcribed (not charged)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcript text": {
+      "main": [
+        [
+          {
+            "node": "Create Google Doc",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Google Doc": {
+      "main": [
+        [
+          {
+            "node": "Write transcript into the Doc",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "List existing permissions": {
+      "main": [
+        [
+          {
+            "node": "Already shared with anyone?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Already shared with anyone?": {
+      "main": [
+        [
+          {
+            "node": "Transcribe (no 25 MB limit)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Add temporary anyone-reader link",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add temporary anyone-reader link": {
+      "main": [
+        [
+          {
+            "node": "Transcribe (no 25 MB limit)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Link added by this flow?": {
+      "main": [
+        [
+          {
+            "node": "Remove the temporary link (always runs)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Transcribed?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Remove the temporary link (always runs)": {
+      "main": [
+        [
+          {
+            "node": "Transcribed?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}

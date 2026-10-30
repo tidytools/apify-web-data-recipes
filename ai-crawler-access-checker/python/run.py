@@ -14,7 +14,7 @@ from apify_client import ApifyClient
 ACTOR_ID = "tidytools/ai-crawler-access-checker"
 MAX_TOTAL_CHARGE_USD = Decimal("1.00")  # cost cap: the run stops charging at this amount
 
-RUN_INPUT = {'websites': ['https://www.nytimes.com', 'python.org', 'docs.anthropic.com']}
+RUN_INPUT = {'websites': ['https://www.nytimes.com']}
 
 
 def main():

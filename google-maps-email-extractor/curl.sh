@@ -10,6 +10,6 @@ curl -sS -X POST "https://api.apify.com/v2/acts/tidytools~google-maps-email-extr
   -H "Content-Type: application/json" \
   -d @- <<'JSON'
 {
-  "mapsData": "[{\"title\":\"Sample Shop A\",\"address\":\"Example Street 1\",\"categoryName\":\"Shop\",\"website\":\"https://example.com\"},{\"title\":\"Sample Shop B\",\"address\":\"Example Street 2\",\"website\":\"https://example.org\"},{\"title\":\"Sample Shop C\",\"address\":\"Example Street 3\",\"website\":null}]"
+  "mapsData": "[{\"title\":\"Hofbräuhaus München\",\"address\":\"Platzl 9, 80331 München\",\"website\":\"https://www.hofbraeuhaus.de/\"},{\"title\":\"Daunt Books Marylebone\",\"address\":\"83-84 Marylebone High Street, London W1U 4QW\",\"website\":\"https://dauntbooks.co.uk/\"}]"
 }
 JSON

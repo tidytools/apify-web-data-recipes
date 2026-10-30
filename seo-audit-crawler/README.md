@@ -8,7 +8,10 @@ SEO crawler for technical SEO audits, JS sites too: 0-100 SEO score and fix hint
 
 ## Use case
 
-**SEO audit tool for $5 per 1,000 pages: it crawls your site, scores audited pages from 0 to 100 and lists on-page and technical SEO issues with fix hints, plus a site report (sitemap, canonicals, duplicates, broken pages). Broken, blocked and failed pages are free. Cloudflare email-protection helper links found within pages are skipped.**
+**For SEO agencies, consultants and site owners:** use this SEO Audit Tool, SEO Checker and Site Audit to crawl whole sites, compare your site with competitors side by side, and see what changed since the previous run.
+**From $0.005 per audited page on Free/Bronze; failed pages are free.** Download the printable `REPORT_HTML` client report after the run (or save it as a PDF). Optional PageSpeed measurements have a separate charge.
+**AI search readiness is included at the same page price:** each site's report now checks AI crawler rules in robots.txt, `/llms.txt`, JSON-LD coverage and answer-style headings, with a 0–100 signal score and up to five fixes. It does not promise that ChatGPT, Perplexity or Google AI will cite your site.
+**Weekly monitoring, only regressions:** run a saved input from a weekly Apify Schedule with `compareWithPrevious: true`, `weeklyChangesDigest: true` and a fixed `monitorName`. Each run's `WEEKLY_CHANGES` record then lists only new issues, score drops and pages no longer found ([setup steps](#weekly-schedule-setup)). Audited pages are still billed at the page price; the comparison and digest add no charge.
 
 ## Price (pay per event, Apify Free plan)
 

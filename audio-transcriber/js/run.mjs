@@ -14,6 +14,7 @@ const input = {
         "https://webcapture-api.yukailin.workers.dev/samples/speech-sample.wav"
     ],
     "maxEpisodesPerFeed": 1,
+    "contentPackSubtitleLanguages": [],
     "subtitleLanguages": []
 };
 

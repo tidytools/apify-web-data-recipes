@@ -17,6 +17,7 @@ Turn spoken audio in a video file into a timestamped transcript and downloadable
 | Audio minute | $6.00 |
 | Audio minute with speaker labels | $15.00 |
 | AI summary and chapters | $10.00 |
+| Podcast content pack | $100.00 |
 | Translated subtitles (per minute and language) | $2.00 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.
@@ -27,6 +28,7 @@ This is the Actor's prefilled example input. All other fields have defaults; the
 
 ```json
 {
+  "contentPackSubtitleLanguages": [],
   "urls": [
     "https://archive.org/download/gerald-ford-inaugural-address-august-9-1974-720p/Gerald%20Ford%20inaugural%20address_%20August%209%2C%201974%20%28720p%29.mp4"
   ],

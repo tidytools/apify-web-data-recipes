@@ -13,6 +13,7 @@ const input = {
     "urls": [
         "https://docs.apify.com/academy"
     ],
+    "maxPages": 10,
     "requestHeaders": {},
     "removeBoilerplate": true
 };

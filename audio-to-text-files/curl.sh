@@ -10,6 +10,7 @@ curl -sS -X POST "https://api.apify.com/v2/acts/tidytools~audio-to-text-files/ru
   -H "Content-Type: application/json" \
   -d @- <<'JSON'
 {
+  "contentPackSubtitleLanguages": [],
   "urls": [
     "https://webcapture-api.yukailin.workers.dev/samples/speech-sample.wav"
   ],

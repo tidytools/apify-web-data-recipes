@@ -14,7 +14,8 @@ from apify_client import ApifyClient
 ACTOR_ID = "tidytools/audio-to-text-files"
 MAX_TOTAL_CHARGE_USD = Decimal("1.00")  # cost cap: the run stops charging at this amount
 
-RUN_INPUT = {   'urls': ['https://webcapture-api.yukailin.workers.dev/samples/speech-sample.wav'],
+RUN_INPUT = {   'contentPackSubtitleLanguages': [],
+    'urls': ['https://webcapture-api.yukailin.workers.dev/samples/speech-sample.wav'],
     'subtitleLanguages': [],
     'podcastFeeds': [],
     'maxEpisodesPerFeed': 1}

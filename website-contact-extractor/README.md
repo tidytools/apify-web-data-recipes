@@ -8,13 +8,16 @@ Website email extractor and contact details scraper for bulk domain lists: best 
 
 ## Use case
 
-Paste business websites or a Google Maps scraper's dataset to get the emails, phone numbers and social profiles published on those businesses' websites. This Actor reads the listed sites; it does not scrape Google Maps.
+**Paste a list of websites, get one row per website with its emails, phone numbers and social profiles** (LinkedIn, Facebook, Instagram, X, YouTube, TikTok and more), ready for CSV, Google Sheets or your CRM. Company names (with a city) and a Google Maps scraper's dataset work too; this Actor reads the listed websites and does not scrape Google Maps itself.
 
 ## Price (pay per event, Apify Free plan)
 
 | Event | Price per 1,000 |
 |---|---|
 | Processed website | $2.00 |
+| Validated email | $1.00 |
+| Additional page | $3.00 |
+| Decision maker | $3.00 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.
 

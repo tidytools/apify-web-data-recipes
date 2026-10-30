@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-# Trade Show Exhibitors Scraper - Exhibitor List, Booth, Website: run the Actor, wait for it (up to 300 s) and print the dataset items as JSON.
+# Exhibitor List Scraper - Trade Show Exhibitors, Expo Exhibitors: run the Actor, wait for it (up to 300 s) and print the dataset items as JSON.
 # Store page: https://apify.com/tidytools/trade-show-exhibitor-list-scraper
 # Usage: export APIFY_TOKEN=your_token && sh curl.sh
 # maxTotalChargeUsd is a cost cap: the run stops charging at this amount.

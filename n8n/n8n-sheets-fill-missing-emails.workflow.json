@@ -1,0 +1,330 @@
+{
+  "name": "Fill missing emails in a Google Sheet from each company website (Apify)",
+  "nodes": [
+    {
+      "id": "6c1e2a70-4b1d-4f0e-8c11-2f4a9e1d0001",
+      "name": "Start",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        300
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "6c1e2a70-4b1d-4f0e-8c11-2f4a9e1d0002",
+      "name": "Sheet settings",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        220,
+        300
+      ],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "s1",
+              "name": "websiteColumn",
+              "type": "string",
+              "value": "Website"
+            },
+            {
+              "id": "s2",
+              "name": "emailColumn",
+              "type": "string",
+              "value": "Email"
+            },
+            {
+              "id": "s3",
+              "name": "phoneColumn",
+              "type": "string",
+              "value": "Phone"
+            },
+            {
+              "id": "s4",
+              "name": "statusColumn",
+              "type": "string",
+              "value": "Email lookup"
+            },
+            {
+              "id": "s5",
+              "name": "dedupeName",
+              "type": "string",
+              "value": "my-lead-sheet"
+            },
+            {
+              "id": "s6",
+              "name": "maxRowsPerRun",
+              "type": "number",
+              "value": 500
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "6c1e2a70-4b1d-4f0e-8c11-2f4a9e1d0003",
+      "name": "Read the sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        440,
+        300
+      ],
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "mode": "url",
+          "value": ""
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "6c1e2a70-4b1d-4f0e-8c11-2f4a9e1d0004",
+      "name": "Rows without an email",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        660,
+        300
+      ],
+      "parameters": {
+        "jsCode": "// Rows with a website and an empty email cell that were not looked up yet.\n// A row whose status starts with \"retry\" (timeout, blocked...) is tried again; every other status is final.\nconst s = $('Sheet settings').first().json;\nconst rows = [];\nfor (const { json: r } of $input.all()) {\n  const website = String(r[s.websiteColumn] ?? '').trim();\n  const email = String(r[s.emailColumn] ?? '').trim();\n  const status = String(r[s.statusColumn] ?? '').trim().toLowerCase();\n  if (!website || email) continue;\n  if (status && !status.startsWith('retry')) continue;\n  rows.push({ row_number: r.row_number, website, email: '', phone: String(r[s.phoneColumn] ?? '') });\n  if (rows.length >= s.maxRowsPerRun) break;\n}\nif (!rows.length) return [];\nreturn [{ json: { rows } }];"
+      }
+    },
+    {
+      "id": "6c1e2a70-4b1d-4f0e-8c11-2f4a9e1d0005",
+      "name": "Find emails on the websites",
+      "type": "@apify/n8n-nodes-apify.apify",
+      "typeVersion": 1,
+      "position": [
+        880,
+        300
+      ],
+      "parameters": {
+        "resource": "Actors",
+        "operation": "Run actor and get dataset",
+        "actorSource": "store",
+        "actorId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "kFhBWk7SCYTakF6Fn",
+          "cachedResultName": "tidytools/website-contact-extractor",
+          "cachedResultUrl": "https://console.apify.com/actors/kFhBWk7SCYTakF6Fn/input"
+        },
+        "customBody": "={\n  \"rows\": {{ JSON.stringify($json.rows) }},\n  \"datasetField\": \"website\",\n  \"rowIdField\": \"row_number\",\n  \"emailField\": \"email\",\n  \"phoneField\": \"phone\",\n  \"onlyMissingEmail\": true,\n  \"requiredContact\": \"email\",\n  \"dedupeStoreName\": \"{{ $('Sheet settings').first().json.dedupeName }}\",\n  \"maxPagesPerSite\": 5\n}",
+        "memory": 512,
+        "maxTotalChargeUsd": 1
+      }
+    },
+    {
+      "id": "6c1e2a70-4b1d-4f0e-8c11-2f4a9e1d0006",
+      "name": "Values for the same rows",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1100,
+        300
+      ],
+      "parameters": {
+        "jsCode": "// One update per sheet row, matched by row_number (= rowId). Only empty cells are filled:\n// the Actor's `fill` already leaves out columns that had a value, and the sheet is checked again here.\nconst s = $('Sheet settings').first().json;\nconst sheet = new Map($('Read the sheet').all().map(({ json: r }) => [String(r.row_number), r]));\nconst empty = (v) => String(v ?? '').trim() === '';\nconst statusOf = (r) => {\n  if (r.emailStatus === 'new_email') return r.fromPreviousRun ? 'email found (earlier run)' : 'email found';\n  if (r.emailStatus === 'no_email_found') return 'no email on the website';\n  if (r.emailStatus === 'already_had_email') return 'had an email';\n  if (r.retryable) return `retry: ${r.errorType}`;\n  if (r.errorType === 'not_a_website') return 'social or directory page, not a website';\n  return `not read: ${r.errorType ?? 'unknown'}`;\n};\nconst checkedAt = $now.toISO();\nconst out = [];\nconst done = new Set();\nfor (const { json: r } of $input.all()) {\n  const id = String(r.rowId ?? '');\n  if (!id || done.has(id) || !sheet.has(id)) continue;\n  done.add(id);\n  const row = sheet.get(id);\n  const update = { row_number: row.row_number, [s.statusColumn]: statusOf(r), 'Email checked at': checkedAt };\n  const fill = r.fill || {};\n  if (fill.email && empty(row[s.emailColumn])) update[s.emailColumn] = fill.email;\n  if (fill.phone && s.phoneColumn in row && empty(row[s.phoneColumn])) update[s.phoneColumn] = fill.phone;\n  if (r.emailsText && 'All emails' in row && empty(row['All emails'])) update['All emails'] = r.emailsText;\n  out.push({ json: update });\n}\nreturn out;"
+      }
+    },
+    {
+      "id": "6c1e2a70-4b1d-4f0e-8c11-2f4a9e1d0007",
+      "name": "Write back to the same rows",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1320,
+        300
+      ],
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "mode": "url",
+          "value": ""
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "row_number"
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "6c1e2a70-4b1d-4f0e-8c11-2f4a9e1d0020",
+      "name": "Sticky Note - Overview",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -520,
+        0
+      ],
+      "parameters": {
+        "color": 1,
+        "width": 460,
+        "height": 980,
+        "content": "## Fill the missing emails in a Google Sheet\n\n**Who it's for:** anyone with a lead list (from Google Maps, a directory, a trade show or a CRM export) where many rows have a website but no email.\n\n#Only websites where an email is found are charged (`requiredContact: email`).\n\n## How it works\n1. Reads the sheet and keeps only rows that have a website, an **empty email cell** and no final lookup status.\n2. **Email Extractor** (tidytools/website-contact-extractor on Apify) reads each website once: home page plus contact, imprint and about pages. Branches of a chain that share one website are read once, but every row gets its own result.\n3. Writes back to **the same row** (matched by `row_number`): the email and phone **only into empty cells**, never over your own values, plus a status column.\n\n### Run it again any time\n- Rows already looked up are skipped by the status column.\n- Rows with `retry: timeout` / `retry: blocked`... are tried again on the next run.\n- The Actor remembers websites it already read under your **dedupe name** (90 days), so a website is never paid for twice, even in another sheet.\n\n### Setup\n1. Add your Apify credential to the Apify node and your Google credential to both Sheets nodes; pick the same spreadsheet and sheet in both.\n2. Set your column names in **Sheet settings**. Add two empty columns to the header: `Email lookup` and `Email checked at` (optionally `All emails`).\n3. Click **Execute workflow**.\n\n### Cost\n$2 per 1,000 websites where an email, phone or social profile is found. Websites with nothing found, unreachable ones, rows that already have an email and reused websites are free (Apify pay-per-event, Oct 2026). The Apify node has a $1 cap (about 500 websites); raise it for bigger sheets."
+      }
+    },
+    {
+      "id": "6c1e2a70-4b1d-4f0e-8c11-2f4a9e1d0021",
+      "name": "Sticky Note - Status",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        860,
+        500
+      ],
+      "parameters": {
+        "color": 7,
+        "width": 480,
+        "height": 260,
+        "content": "### Status values written to the sheet\n- `email found` / `email found (earlier run)`\n- `no email on the website` (final)\n- `retry: timeout`, `retry: blocked` -> tried again next run\n- `social or directory page, not a website`\n- `not read: not_found`, `not read: network` (final)"
+      }
+    },
+    {
+      "id": "97a1e327-aacc-44a5-8026-e37f3e9273f3",
+      "name": "Sticky Note - Rows",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        160,
+        140
+      ],
+      "parameters": {
+        "content": "## 1. Rows that need an email\nYour column names live in Sheet settings. Only rows with a website, an empty email cell and no final status go on.",
+        "height": 320,
+        "width": 640,
+        "color": 7
+      }
+    },
+    {
+      "id": "0e7b008e-d09b-4700-8ef8-c03c4c1eeb36",
+      "name": "Sticky Note - Find",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        840,
+        140
+      ],
+      "parameters": {
+        "content": "## 2. Find the emails\nOne Apify run for all rows. Every row keeps its own result, even when several rows share one website.",
+        "height": 320,
+        "width": 440,
+        "color": 7
+      }
+    },
+    {
+      "id": "16bb7726-437b-4821-837c-316c99beffa8",
+      "name": "Sticky Note - Write",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1300,
+        140
+      ],
+      "parameters": {
+        "content": "## 3. Write back\nSame rows (matched by `row_number`), empty cells only.",
+        "height": 320,
+        "width": 360,
+        "color": 7
+      }
+    }
+  ],
+  "connections": {
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "Sheet settings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sheet settings": {
+      "main": [
+        [
+          {
+            "node": "Read the sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read the sheet": {
+      "main": [
+        [
+          {
+            "node": "Rows without an email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rows without an email": {
+      "main": [
+        [
+          {
+            "node": "Find emails on the websites",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find emails on the websites": {
+      "main": [
+        [
+          {
+            "node": "Values for the same rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Values for the same rows": {
+      "main": [
+        [
+          {
+            "node": "Write back to the same rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}

@@ -16,6 +16,7 @@ MAX_TOTAL_CHARGE_USD = Decimal("1.00")  # cost cap: the run stops charging at th
 
 RUN_INPUT = {   'urls': ['https://webcapture-api.yukailin.workers.dev/samples/speech-sample.wav'],
     'maxEpisodesPerFeed': 1,
+    'contentPackSubtitleLanguages': [],
     'subtitleLanguages': []}
 
 

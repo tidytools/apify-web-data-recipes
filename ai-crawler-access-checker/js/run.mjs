@@ -11,9 +11,7 @@ const MAX_TOTAL_CHARGE_USD = 1.0; // cost cap: the run stops charging at this am
 
 const input = {
     "websites": [
-        "https://www.nytimes.com",
-        "python.org",
-        "docs.anthropic.com"
+        "https://www.nytimes.com"
     ]
 };
 

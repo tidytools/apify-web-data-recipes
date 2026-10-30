@@ -10,7 +10,7 @@ const ACTOR_ID = 'tidytools/google-maps-email-extractor';
 const MAX_TOTAL_CHARGE_USD = 1.0; // cost cap: the run stops charging at this amount
 
 const input = {
-    "mapsData": "[{\"title\":\"Sample Shop A\",\"address\":\"Example Street 1\",\"categoryName\":\"Shop\",\"website\":\"https://example.com\"},{\"title\":\"Sample Shop B\",\"address\":\"Example Street 2\",\"website\":\"https://example.org\"},{\"title\":\"Sample Shop C\",\"address\":\"Example Street 3\",\"website\":null}]"
+    "mapsData": "[{\"title\":\"Hofbräuhaus München\",\"address\":\"Platzl 9, 80331 München\",\"website\":\"https://www.hofbraeuhaus.de/\"},{\"title\":\"Daunt Books Marylebone\",\"address\":\"83-84 Marylebone High Street, London W1U 4QW\",\"website\":\"https://dauntbooks.co.uk/\"}]"
 };
 
 const token = process.env.APIFY_TOKEN;

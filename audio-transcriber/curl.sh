@@ -14,6 +14,7 @@ curl -sS -X POST "https://api.apify.com/v2/acts/tidytools~audio-transcriber/run-
     "https://webcapture-api.yukailin.workers.dev/samples/speech-sample.wav"
   ],
   "maxEpisodesPerFeed": 1,
+  "contentPackSubtitleLanguages": [],
   "subtitleLanguages": []
 }
 JSON

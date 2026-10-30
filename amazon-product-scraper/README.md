@@ -49,6 +49,7 @@ From the Actor's documentation (section "Output example"):
     "asin": "B0DCH8VDXF",
     "parentAsin": "B0FFMX7Y3Q",
     "url": "https://www.amazon.com/dp/B0DCH8VDXF",
+    "sourcePage": "desktop",
     "title": "Apple EarPods Headphones with USB-C Plug, Wired Ear Buds with Built-in Remote to Control Music, Phone Calls, and Volume",
     "brand": "Apple",
     "price": 19,

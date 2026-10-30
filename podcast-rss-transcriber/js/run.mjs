@@ -1,4 +1,4 @@
-// Podcast Transcription - RSS Episodes to Text: run the Actor on Apify and print the results.
+// Podcast to Text - Transcribe RSS Podcast Episodes: run the Actor on Apify and print the results.
 // Store page: https://apify.com/tidytools/podcast-rss-transcriber
 // Setup: npm install apify-client
 //        export APIFY_TOKEN=your_token   (Apify Console > Settings > API & Integrations)
@@ -10,6 +10,7 @@ const ACTOR_ID = 'tidytools/podcast-rss-transcriber';
 const MAX_TOTAL_CHARGE_USD = 1.0; // cost cap: the run stops charging at this amount
 
 const input = {
+    "contentPackSubtitleLanguages": [],
     "podcastFeeds": [
         "https://www.nasa.gov/feeds/podcasts/small-steps-giant-leaps"
     ],

@@ -1,0 +1,891 @@
+{
+  "name": "Transcribe Dropbox or presigned-URL recordings to Google Docs - large files, safe retries (Apify)",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "transcribe-recording-link",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "name": "Webhook: transcribe a link",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        200
+      ],
+      "webhookId": "b5f1c0de-2a77-4c1e-9d55-7e3a3c2b9a01"
+    },
+    {
+      "parameters": {},
+      "name": "Test with an example",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e1",
+              "name": "body.url",
+              "type": "string",
+              "value": "https://tools.yukai.uk/samples/speech-sample.wav"
+            },
+            {
+              "id": "e2",
+              "name": "body.fileName",
+              "type": "string",
+              "value": "speech-sample.wav"
+            },
+            {
+              "id": "e3",
+              "name": "body.dropboxPath",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "id": "e4",
+              "name": "body.sourceFileId",
+              "type": "string",
+              "value": ""
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Example input",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        220,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "s1",
+              "name": "language",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "id": "s2",
+              "name": "speakerLabels",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "id": "s3",
+              "name": "summarize",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "id": "s4",
+              "name": "vocabulary",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "id": "s5",
+              "name": "maxMinutesPerFile",
+              "type": "number",
+              "value": 240
+            },
+            {
+              "id": "s6",
+              "name": "resumeStore",
+              "type": "string",
+              "value": "n8n-recordings"
+            },
+            {
+              "id": "s7",
+              "name": "url",
+              "type": "string",
+              "value": "={{ ($json.body || $json).url || '' }}"
+            },
+            {
+              "id": "s8",
+              "name": "dropboxPath",
+              "type": "string",
+              "value": "={{ ($json.body || $json).dropboxPath || '' }}"
+            },
+            {
+              "id": "s9",
+              "name": "fileName",
+              "type": "string",
+              "value": "={{ ($json.body || $json).fileName || '' }}"
+            },
+            {
+              "id": "s10",
+              "name": "sourceFileId",
+              "type": "string",
+              "value": "={{ ($json.body || $json).sourceFileId || '' }}"
+            }
+          ]
+        },
+        "includeOtherFields": false,
+        "options": {}
+      },
+      "name": "Transcript settings",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        440,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "d1",
+              "leftValue": "={{ $json.dropboxPath }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "name": "Dropbox path given?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        660,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.dropboxapi.com/2/files/get_temporary_link",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "dropboxOAuth2Api",
+        "options": {},
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ path: $('Transcript settings').item.json.dropboxPath }) }}"
+      },
+      "name": "Get Dropbox temporary link",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        880,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// One stable id per recording: your sourceFileId, else the Dropbox file id (stays the same after renames and for\n// every new temporary link), else the presigned URL without its signature (bucket + object), else the URL.\nconst s = $('Transcript settings').first().json;\nconst dbx = $('Get Dropbox temporary link').isExecuted ? $('Get Dropbox temporary link').first().json : null;\nconst url = dbx ? dbx.link : s.url;\nif (!url) throw new Error('Send a \"url\" (presigned URL, Dropbox temporary link or any public file link) or a \"dropboxPath\"');\n// The Code node has no URL class, so the link is split with a regular expression.\nconst parts = url.match(/^([a-z][a-z0-9+.-]*:\\/\\/[^/?#]+)([^?#]*)(?:\\?([^#]*))?/i) || [];\nconst [, origin = '', pathname = '', query = ''] = parts;\nconst signed = query.split('&').some((q) => /^(x-amz-signature|x-goog-signature|signature|sig)$/i.test(q.split('=')[0]));\nconst stripped = signed ? `${origin}${pathname}` : url;\nconst sourceFileId = s.sourceFileId || (dbx ? `dropbox:${dbx.metadata.id}` : stripped);\n// Short key for Google Drive appProperties (key + value must stay under 124 bytes): cyrb53 hash of the id.\nconst cyrb53 = (str, seed = 0) => {\n  let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;\n  for (let i = 0; i < str.length; i++) { const ch = str.charCodeAt(i); h1 = Math.imul(h1 ^ ch, 2654435761); h2 = Math.imul(h2 ^ ch, 1597334677); }\n  h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909);\n  h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909);\n  return (4294967296 * (2097151 & h2) + (h1 >>> 0)).toString(36);\n};\nconst name = s.fileName || (dbx ? dbx.metadata.name : decodeURIComponent(pathname.split('/').pop() || 'recording'));\nreturn [{ json: { url, sourceFileId, sourceKey: `v1-${cyrb53(sourceFileId)}`, fileName: name, docTitle: `Transcript - ${name}` } }];"
+      },
+      "name": "Source file id",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1100,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://www.googleapis.com/drive/v3/files",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleDriveOAuth2Api",
+        "options": {},
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "q",
+              "value": "={{ \"appProperties has { key='tidytoolsSource' and value='\" + $json.sourceKey + \"' } and trashed=false\" }}"
+            },
+            {
+              "name": "fields",
+              "value": "files(id,name,webViewLink,appProperties)"
+            },
+            {
+              "name": "supportsAllDrives",
+              "value": "true"
+            },
+            {
+              "name": "includeItemsFromAllDrives",
+              "value": "true"
+            }
+          ]
+        }
+      },
+      "name": "Find the Doc of this recording",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1320,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "a1",
+              "leftValue": "={{ ($json.files || []).some((f) => (f.appProperties || {}).tidytoolsStatus === 'complete') }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "name": "Already delivered?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1540,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "x1",
+              "name": "docId",
+              "type": "string",
+              "value": "={{ $json.files.find((f) => f.appProperties.tidytoolsStatus === 'complete').id }}"
+            },
+            {
+              "id": "x2",
+              "name": "docUrl",
+              "type": "string",
+              "value": "={{ $json.files.find((f) => f.appProperties.tidytoolsStatus === 'complete').webViewLink }}"
+            },
+            {
+              "id": "x3",
+              "name": "sourceFileId",
+              "type": "string",
+              "value": "={{ $('Source file id').item.json.sourceFileId }}"
+            },
+            {
+              "id": "x4",
+              "name": "runId",
+              "type": "string",
+              "value": "={{ $json.files.find((f) => f.appProperties.tidytoolsStatus === 'complete').appProperties.tidytoolsRunId }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Already delivered (no new run, no new Doc)",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1760,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "Actors",
+        "operation": "Run actor and get dataset",
+        "actorSource": "store",
+        "actorId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "3W2KtIbvHitDH8GCc",
+          "cachedResultName": "tidytools/audio-transcriber",
+          "cachedResultUrl": "https://console.apify.com/actors/3W2KtIbvHitDH8GCc/input"
+        },
+        "customBody": "={\n  \"urls\": [{{ JSON.stringify($('Source file id').item.json.url) }}],\n  \"sourceFileId\": {{ JSON.stringify($('Source file id').item.json.sourceFileId) }},\n  \"resumeStore\": {{ JSON.stringify($('Transcript settings').item.json.resumeStore) }},\n  \"language\": {{ JSON.stringify($('Transcript settings').item.json.language) }},\n  \"speakerLabels\": {{ $('Transcript settings').item.json.speakerLabels }},\n  \"summarize\": {{ $('Transcript settings').item.json.summarize }},\n  \"vocabulary\": {{ JSON.stringify($('Transcript settings').item.json.vocabulary) }},\n  \"maxMinutesPerFile\": {{ $('Transcript settings').item.json.maxMinutesPerFile }},\n  \"fileTimeoutSecs\": 3600,\n  \"saveSubtitles\": true,\n  \"saveTranscriptFiles\": true\n}",
+        "memory": 1024,
+        "maxTotalChargeUsd": 3
+      },
+      "name": "Transcribe (any size, resumable)",
+      "type": "@apify/n8n-nodes-apify.apify",
+      "typeVersion": 1,
+      "position": [
+        1760,
+        400
+      ],
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c1",
+              "leftValue": "={{ $json.success }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "name": "Transcribed?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1980,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "t1",
+              "name": "docText",
+              "type": "string",
+              "value": "={{ (() => {\n  const j = $('Transcribe (any size, resumable)').item.json;\n  const pad = (n) => String(n).padStart(2, '0');\n  const clock = (s) => { s = Math.floor(s || 0); const h = Math.floor(s / 3600), m = Math.floor(s / 60) % 60; return h ? `${h}:${pad(m)}:${pad(s % 60)}` : `${m}:${pad(s % 60)}`; };\n  const head = [\n    `Source: ${$('Source file id').item.json.fileName}`,\n    `Source file ID: ${j.sourceFileId || $('Source file id').item.json.sourceFileId}`,\n    `Apify run ID: ${j.runId || '-'}${j.reused ? ` (transcript reused from run ${j.reusedFromRunId}, not charged again)` : ''}`,\n    `Length: ${clock(j.durationSeconds)} (${j.billedMinutes} min billed)`,\n    j.language ? `Language: ${j.language}` : '',\n    j.speakers ? `Speakers: ${j.speakers}` : '',\n    `Files: TXT ${j.txtUrl || '-'} | Markdown ${j.mdUrl || '-'} | SRT ${j.srtUrl || '-'}`,\n  ].filter(Boolean).join('\\n');\n  const chapters = (j.chapters || []).map((c) => `${c.start} ${c.title}`).join('\\n');\n  const summary = j.summary ? `\\n\\nSUMMARY\\n${j.summary}${chapters ? `\\n\\nCHAPTERS\\n${chapters}` : ''}` : '';\n  const paras = j.paragraphs || [];\n  const body = paras.length ? paras.map((p) => `${p.speaker != null ? `Speaker ${p.speaker} ` : ''}[${clock(p.start)}] ${p.text}`).join('\\n\\n') : (j.text || '');\n  return `${head}${summary}\\n\\nTRANSCRIPT\\n\\n${body}\\n`;\n})() }}"
+            },
+            {
+              "id": "t2",
+              "name": "existingDocId",
+              "type": "string",
+              "value": "={{ (($('Find the Doc of this recording').item.json.files) || [])[0]?.id || '' }}"
+            },
+            {
+              "id": "t3",
+              "name": "runId",
+              "type": "string",
+              "value": "={{ $('Transcribe (any size, resumable)').item.json.runId || '' }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Transcript text",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2200,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "r1",
+              "leftValue": "={{ $json.existingDocId }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "name": "Doc started by an earlier try?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2420,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.googleapis.com/drive/v3/files",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleDriveOAuth2Api",
+        "options": {},
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "supportsAllDrives",
+              "value": "true"
+            },
+            {
+              "name": "fields",
+              "value": "id,webViewLink"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ name: $('Source file id').item.json.docTitle, mimeType: 'application/vnd.google-apps.document', appProperties: { tidytoolsSource: $('Source file id').item.json.sourceKey, tidytoolsRunId: $('Transcript text').item.json.runId, tidytoolsStatus: 'writing' } }) }}"
+      },
+      "name": "Create the Doc (tagged with the source id)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2640,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "i1",
+              "name": "docId",
+              "type": "string",
+              "value": "={{ $('Create the Doc (tagged with the source id)').isExecuted ? $('Create the Doc (tagged with the source id)').item.json.id : $('Transcript text').item.json.existingDocId }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Doc id",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2860,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://www.googleapis.com/upload/drive/v3/files/{{ $json.docId }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleDriveOAuth2Api",
+        "options": {},
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "uploadType",
+              "value": "media"
+            },
+            {
+              "name": "supportsAllDrives",
+              "value": "true"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "text/plain; charset=UTF-8",
+        "body": "={{ $('Transcript text').item.json.docText }}"
+      },
+      "name": "Write the transcript (replaces the Doc's text)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3080,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://www.googleapis.com/drive/v3/files/{{ $('Doc id').item.json.docId }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleDriveOAuth2Api",
+        "options": {},
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "supportsAllDrives",
+              "value": "true"
+            },
+            {
+              "name": "fields",
+              "value": "id,webViewLink,appProperties"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ appProperties: { tidytoolsStatus: 'complete', tidytoolsRunId: $('Transcript text').item.json.runId } }) }}"
+      },
+      "name": "Mark the Doc complete",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3300,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "n1",
+              "name": "sourceFileId",
+              "type": "string",
+              "value": "={{ $('Source file id').item.json.sourceFileId }}"
+            },
+            {
+              "id": "n2",
+              "name": "runId",
+              "type": "string",
+              "value": "={{ $json.runId || '' }}"
+            },
+            {
+              "id": "n3",
+              "name": "reason",
+              "type": "string",
+              "value": "={{ ($json.errorType ? $json.errorType + ': ' : '') + ($json.error || 'unknown error') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Not transcribed (not charged)",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2200,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "color": 1,
+        "width": 520,
+        "height": 1060,
+        "content": "## Recording link (Dropbox or presigned URL) to transcript Google Doc - large files, safe retries\n\n**Who it's for:** teams whose recordings live in Dropbox, S3, R2, Google Cloud Storage, Azure or any storage that can hand out a link, and who want a transcript Google Doc without downloading 200-500 MB videos into n8n.\n\n### How it works\n1. Send `POST /webhook/transcribe-recording-link` with JSON: `{\"url\": \"<presigned URL>\", \"fileName\": \"meeting.mp4\"}` or `{\"dropboxPath\": \"/Recordings/meeting.mp4\"}` (the flow asks Dropbox for a temporary link itself). Optional: `sourceFileId` (your own id).\n2. **Source file id**: your id, else the Dropbox file id, else the presigned URL without its signature. It stays the same for every new link to the same file.\n3. If a Doc for this source id is already **complete**, the flow stops: no new Apify run, no second Doc.\n4. **tidytools/audio-transcriber** downloads the file itself (streamed to disk, up to 2 GB, interrupted downloads continue) and returns the transcript.\n5. A Google Doc tagged with the source id is created (or the one an earlier failed try started is reused), the text is written, and the Doc is marked complete.\n\n### Retries never pay twice\n`resumeStore` keeps finished transcripts by source file id. If the execution fails after the transcript was made, retry it: the saved transcript is returned (not charged) and the half-made Doc is reused.\n\n### Cost (Apify pay-per-event, October 2026)\n$0.006 per audio minute (60 minutes = $0.36). Failed downloads, files without speech and reused transcripts are free. The Apify node caps each run at $3.\n\n### Setup (5 minutes)\nCredentials: Apify API, Google Drive OAuth2, and Dropbox OAuth2 only for `dropboxPath`. Presigned URLs should stay valid for at least 2 hours. Adjust **Transcript settings**; **Test with an example** runs a short sample file."
+      },
+      "name": "Sticky Note - Overview",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -560,
+        -40
+      ]
+    },
+    {
+      "parameters": {
+        "color": 7,
+        "width": 860,
+        "height": 440,
+        "content": "## 1. Link and source id\nA Dropbox path is turned into a 4-hour temporary link. The source id stays the same for every new link to the same recording, so retries and re-sent files are recognised."
+      },
+      "name": "Sticky Note - Link",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        400,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "color": 7,
+        "width": 860,
+        "height": 460,
+        "content": "## 2. Skip finished work, transcribe\nA complete Doc for this source id ends the flow. Otherwise the Actor transcribes the link; with `resumeStore` a transcript made by an earlier try is returned again without charge."
+      },
+      "name": "Sticky Note - Transcribe",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1290,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "color": 7,
+        "width": 1300,
+        "height": 380,
+        "content": "## 3. One Doc per recording\nThe Doc carries the source id (Drive appProperties), the Apify run id and a status. A Doc left half-written by a failed try is reused and overwritten, never duplicated."
+      },
+      "name": "Sticky Note - Doc",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2180,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "color": 7,
+        "width": 440,
+        "height": 240,
+        "content": "## Not transcribed\nExpired or refused links (`link_expired`, `drive_not_shared`...), unsupported files and recordings without speech end up here, not charged. Connect Slack or email for alerts."
+      },
+      "name": "Sticky Note - Failed",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2180,
+        500
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook: transcribe a link": {
+      "main": [
+        [
+          {
+            "node": "Transcript settings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Test with an example": {
+      "main": [
+        [
+          {
+            "node": "Example input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Example input": {
+      "main": [
+        [
+          {
+            "node": "Transcript settings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcript settings": {
+      "main": [
+        [
+          {
+            "node": "Dropbox path given?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Dropbox path given?": {
+      "main": [
+        [
+          {
+            "node": "Get Dropbox temporary link",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Source file id",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Dropbox temporary link": {
+      "main": [
+        [
+          {
+            "node": "Source file id",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Source file id": {
+      "main": [
+        [
+          {
+            "node": "Find the Doc of this recording",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find the Doc of this recording": {
+      "main": [
+        [
+          {
+            "node": "Already delivered?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Already delivered?": {
+      "main": [
+        [
+          {
+            "node": "Already delivered (no new run, no new Doc)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Transcribe (any size, resumable)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcribe (any size, resumable)": {
+      "main": [
+        [
+          {
+            "node": "Transcribed?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcribed?": {
+      "main": [
+        [
+          {
+            "node": "Transcript text",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Not transcribed (not charged)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcript text": {
+      "main": [
+        [
+          {
+            "node": "Doc started by an earlier try?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Doc started by an earlier try?": {
+      "main": [
+        [
+          {
+            "node": "Doc id",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Create the Doc (tagged with the source id)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create the Doc (tagged with the source id)": {
+      "main": [
+        [
+          {
+            "node": "Doc id",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Doc id": {
+      "main": [
+        [
+          {
+            "node": "Write the transcript (replaces the Doc's text)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Write the transcript (replaces the Doc's text)": {
+      "main": [
+        [
+          {
+            "node": "Mark the Doc complete",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}

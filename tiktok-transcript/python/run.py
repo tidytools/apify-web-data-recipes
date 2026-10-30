@@ -1,4 +1,4 @@
-"""TikTok Transcript - Video to Text with Timestamps: run the Actor on Apify and print the results.
+"""TikTok to Text - TikTok Video Transcript with Timestamps: run the Actor on Apify and print the results.
 
 Store page: https://apify.com/tidytools/tiktok-transcript
 Setup:      pip install apify-client
@@ -14,7 +14,8 @@ from apify_client import ApifyClient
 ACTOR_ID = "tidytools/tiktok-transcript"
 MAX_TOTAL_CHARGE_USD = Decimal("1.00")  # cost cap: the run stops charging at this amount
 
-RUN_INPUT = {   'urls': [   'https://www.tiktok.com/@nasa/video/7665075736742530317',
+RUN_INPUT = {   'contentPackSubtitleLanguages': [],
+    'urls': [   'https://www.tiktok.com/@nasa/video/7665075736742530317',
                 'https://www.tiktok.com/@zachking/video/7652362186873916686']}
 
 

@@ -8,7 +8,7 @@ AI scraper and AI extractor: list the fields or describe what you want, and an L
 
 ## Use case
 
-**Input:** a bulk list of page URLs (product, job or listing pages), or the URL field of a crawler's dataset, up to 10,000 per run, plus the fields you want, or one sentence. **Output:** one typed JSON row per page, or one row per list item, with `null` for anything the page does not show. **Price:** $0.01 per page that returned data ($10 per 1,000); failed, blocked, timed-out and empty pages are free.
+Set `followPagination: true` to extract the starting list page and follow its same-domain **Next** or next page-number links. It is off by default. `maxPages` includes the starting page: default **5**, maximum **50**, per starting URL. **Each successful page creates one `page-extracted` event**, even when one page produces many item rows. Pagination stops when the page has no next link; it does not guess a URL from `?page=N` alone. Repeated URLs and identical page content also stop the chain; failed and empty pages are free. This follows list pages, whereas `followLinks` reads a start page for free and extracts its linked detail pages.
 
 ## Price (pay per event, Apify Free plan)
 
@@ -30,9 +30,7 @@ This is the Actor's prefilled example input. All other fields have defaults; the
   "fields": {
     "title": "string",
     "price": "number",
-    "in_stock": "boolean",
-    "stock_count": "integer",
-    "upc": "string"
+    "in_stock": "boolean"
   }
 }
 ```
@@ -45,7 +43,7 @@ From the Actor's documentation (section "Input example: one row per page"):
 {
     "url": "https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html",
     "success": true,
-    "data": { "title": "A Light in the Attic", "price": 51.77, "in_stock": true, "stock_count": 22, "upc": "a897fe39b1053632" },
+    "data": { "title": "A Light in the Attic", "price": 51.77, "in_stock": true },
     "completeness": 1,
     "charged": true
 }

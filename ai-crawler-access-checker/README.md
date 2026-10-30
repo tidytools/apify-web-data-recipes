@@ -28,9 +28,7 @@ This is the Actor's prefilled example input. All other fields have defaults; the
 ```json
 {
   "websites": [
-    "https://www.nytimes.com",
-    "python.org",
-    "docs.anthropic.com"
+    "https://www.nytimes.com"
   ]
 }
 ```

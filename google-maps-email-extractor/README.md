@@ -8,13 +8,16 @@ Add website emails, phones and social profiles to Google Maps scraper results. O
 
 ## Use case
 
-Turn Google Maps place results into one contact row per business for a CRM. Every source place gets a row, including places without a listed website. This Actor reads an existing Google Maps Scraper dataset or a pasted export; it does not scrape Google Maps.
+Search businesses with a Google Maps Scraper, then give its dataset to this Actor: it returns one contact row per business for a CRM, including places without a listed website. The website's emails, phones and social profiles appear alongside the place name, address, category and Maps ID. This Actor reads an existing Google Maps Scraper dataset or a pasted export; it does not scrape Google Maps.
 
 ## Price (pay per event, Apify Free plan)
 
 | Event | Price per 1,000 |
 |---|---|
 | Processed website | $2.00 |
+| Validated email | $1.00 |
+| Additional page | $3.00 |
+| Decision maker | $3.00 |
 
 Paid plans get the same or lower prices. See the Store page for what is and is not charged.
 
@@ -24,7 +27,7 @@ This is the Actor's prefilled example input. All other fields have defaults; the
 
 ```json
 {
-  "mapsData": "[{\"title\":\"Sample Shop A\",\"address\":\"Example Street 1\",\"categoryName\":\"Shop\",\"website\":\"https://example.com\"},{\"title\":\"Sample Shop B\",\"address\":\"Example Street 2\",\"website\":\"https://example.org\"},{\"title\":\"Sample Shop C\",\"address\":\"Example Street 3\",\"website\":null}]"
+  "mapsData": "[{\"title\":\"Hofbräuhaus München\",\"address\":\"Platzl 9, 80331 München\",\"website\":\"https://www.hofbraeuhaus.de/\"},{\"title\":\"Daunt Books Marylebone\",\"address\":\"83-84 Marylebone High Street, London W1U 4QW\",\"website\":\"https://dauntbooks.co.uk/\"}]"
 }
 ```
 
@@ -33,7 +36,7 @@ This is the Actor's prefilled example input. All other fields have defaults; the
 From the Actor's documentation (section "Output example"):
 
 ```json
-{"placeName":"Sample Cafe","address":"1 Example Street","category":"Cafe","website":"https://sample.example/","emails":["hello@sample.example"],"phones":["+1 555 0100"],"socials":{"instagram":"https://instagram.com/sample"},"placeId":"ChIJsample","charged":true}
+{"placeName":"Hofbräuhaus München","placeAddress":"Platzl 9, 80331 München","website":"https://www.hofbraeuhaus.de/","emails":["willkommen@hofbraeuhaus.de"],"phones":["+49 89 290136100"],"socials":{},"checkedAt":"2026-10-21T08:00:00.000Z","charged":true}
 ```
 
 ## Run it

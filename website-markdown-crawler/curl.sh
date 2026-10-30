@@ -13,6 +13,7 @@ curl -sS -X POST "https://api.apify.com/v2/acts/tidytools~website-markdown-crawl
   "urls": [
     "https://docs.apify.com/academy"
   ],
+  "maxPages": 10,
   "requestHeaders": {},
   "removeBoilerplate": true
 }

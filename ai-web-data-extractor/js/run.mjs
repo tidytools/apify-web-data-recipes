@@ -16,9 +16,7 @@ const input = {
     "fields": {
         "title": "string",
         "price": "number",
-        "in_stock": "boolean",
-        "stock_count": "integer",
-        "upc": "string"
+        "in_stock": "boolean"
     }
 };
 

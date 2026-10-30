@@ -13,6 +13,7 @@ YouTube transcript API without a YouTube API key: transcripts with timestamps fr
 - **Every failure says why** (`failureReason`), and each result says which language and caption type (`source`) you got.
 - Timestamps on by default (`segments`), Markdown video notes, RAG chunks that link to the second in the video and a channel digest, all at no extra charge.
 - **Optional simple output:** set `compactTranscript: true` for `videoUrl` and caption segments with `start`, `end`, `text`; the default output still uses `url` and `start`, `duration`, `text`.
+- **Optional subtitle downloads:** set `subtitleFormats: ["srt", "vtt"]` to add `subtitleSrtUrl` and `subtitleVttUrl` to successful rows. Select either format alone if preferred. These files are included at no extra charge.
 
 ## Price (pay per event, Apify Free plan)
 

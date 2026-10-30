@@ -10,6 +10,7 @@ curl -sS -X POST "https://api.apify.com/v2/acts/tidytools~video-transcript-files
   -H "Content-Type: application/json" \
   -d @- <<'JSON'
 {
+  "contentPackSubtitleLanguages": [],
   "urls": [
     "https://archive.org/download/gerald-ford-inaugural-address-august-9-1974-720p/Gerald%20Ford%20inaugural%20address_%20August%209%2C%201974%20%28720p%29.mp4"
   ],
