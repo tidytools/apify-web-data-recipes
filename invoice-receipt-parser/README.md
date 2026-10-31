@@ -1,6 +1,6 @@
 # Invoice Parser & Receipt Parser - Invoice OCR to JSON/CSV
 
-Invoice parser and receipt parser for public PDF, JPG and PNG URLs. Invoice OCR returns supplier, invoice number, date, currency, subtotal, tax, total and line items as JSON, one row per document; export CSV for Excel. $0.01 per readable page; unreadable documents are free.
+Invoice parser and receipt parser for PDF, JPG and PNG URLs. Invoice OCR returns one row per line item by default, repeating supplier, invoice number, date, currency and totals on every row. Documents without items return one row. $0.01 per readable page; unreadable documents are free.
 
 - Apify Store: [https://apify.com/tidytools/invoice-receipt-parser](https://apify.com/tidytools/invoice-receipt-parser)
 - Actor ID: `tidytools/invoice-receipt-parser` (`YDGmNa4fnOX8ZiCWG`)
@@ -8,7 +8,7 @@ Invoice parser and receipt parser for public PDF, JPG and PNG URLs. Invoice OCR 
 
 ## Use case
 
-Read public invoice or receipt PDF, JPG and PNG URLs into structured header fields and an item array. Paste a document URL, choose **invoice** (default) or **receipt**, then export the Dataset as JSON or CSV; Excel can open the CSV.
+Read public invoice or receipt PDF, JPG and PNG URLs into structured rows: **one row per line item by default**, with the document header repeated on each row. Paste a document URL, choose **invoice** (default) or **receipt**, then export the Dataset as JSON or CSV; Excel can open the CSV.
 
 ## Price (pay per event, Apify Free plan)
 
@@ -36,7 +36,7 @@ This is the Actor's prefilled example input. All other fields have defaults; the
 From the Actor's documentation (section "Output example"):
 
 ```json
-{"url":"https://example.org/invoice.pdf","success":true,"charged":true,"supplier":"Example Ltd","invoice_number":"INV-1","date":"2026-10-01","currency":"USD","subtotal":100,"tax":10,"total":110,"line_items":"[{\"description\":\"Service\",\"quantity\":1,\"unit_price\":100,\"amount\":100}]","documentPagesRead":1}
+{"url":"https://example.org/invoice.pdf","documentUrl":"https://example.org/invoice.pdf","lineItemIndex":0,"success":true,"charged":true,"supplier":"Example Ltd","invoice_number":"INV-1","date":"2026-10-01","currency":"USD","subtotal":100,"tax":10,"total":110,"item_description":"Service","item_quantity":1,"item_unit_price":100,"item_amount":100,"documentPagesRead":1,"documentTruncated":false}
 ```
 
 ## Run it

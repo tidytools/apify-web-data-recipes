@@ -8,7 +8,8 @@ AI scraper and AI extractor: list the fields or describe what you want, and an L
 
 ## Use case
 
-Set `followPagination: true` to extract the starting list page and follow its same-domain **Next** or next page-number links. It is off by default. `maxPages` includes the starting page: default **5**, maximum **50**, per starting URL. **Each successful page creates one `page-extracted` event**, even when one page produces many item rows. Pagination stops when the page has no next link; it does not guess a URL from `?page=N` alone. Repeated URLs and identical page content also stop the chain; failed and empty pages are free. This follows list pages, whereas `followLinks` reads a start page for free and extracts its linked detail pages.
+Paste a page URL into `urls`, name the fields in `fields` or describe them in one sentence, then run. Get structured JSON in `data`—no CSS selectors or code.
+Start with this single book page and its three fields. Missing values return as `null` rather than guessed answers.
 
 ## Price (pay per event, Apify Free plan)
 
